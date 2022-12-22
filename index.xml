@@ -5,7 +5,7 @@
     <link>https://blog.lty520.ml/</link>
     <description>Recent content on Ling的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-ch</language>
+    <language>zh-cn</language>
     
         <atom:link href="https://blog.lty520.ml/index.xml" rel="self" type="application/rss+xml" />
     
@@ -36,7 +36,7 @@
 &lt;/li&gt;
 &lt;li&gt;Openwrt 单臂路由 + SSRPlus
 &lt;ul&gt;
-&lt;li&gt;因为是单臂路由，有的设备不能自定于网关 + SSRPlus 自定义程度不够+ PassWall 莫名其妙的不能用+住校+主流机场换用了 Clash ，决定每个平台分别使用 Clash&lt;/li&gt;
+&lt;li&gt;因为是单臂路由，有的设备不能自定义网关 + SSRPlus 自定义程度不够+ PassWall 莫名其妙的不能用+住校+主流机场换用了 Clash ，决定每个平台分别使用 Clash&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;决定全平台使用 Clash&lt;/li&gt;
