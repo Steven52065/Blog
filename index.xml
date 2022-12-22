@@ -13,16 +13,25 @@
     
     
         <item>
-        <title>Hello_World</title>
-        <link>http://example.org/posts/hello_world/</link>
+        <title>Hello World</title>
+        <link>http://example.org/posts/hello-world/</link>
         <pubDate>Wed, 21 Dec 2022 22:55:49 +0800</pubDate>
         
-        <guid>http://example.org/posts/hello_world/</guid>
-        <description>Ling的博客 http://example.org/posts/hello_world/ -&lt;p&gt;尝试过很多种博客框架，比如:WordPress､Hexo&lt;br&gt;
-然后因为各种原因，博客一直没用起来。有的原因是用了一段时间，搭博客的服务器跑路了(用的白嫖服务器)，有的是莫名其妙就不能用了(Github Pages)&lt;br&gt;
-现在终于又搭了起来，希望可以用下去吧
-(希望吧)&lt;/p&gt;
-- http://example.org/posts/hello_world/ - </description>
+        <guid>http://example.org/posts/hello-world/</guid>
+        <description>Ling的博客 http://example.org/posts/hello-world/ -&lt;p&gt;尝试过很多种博客框架，比如:WordPress､Hexo&lt;br&gt;
+然后因为各种原因，博客一直没用起来。有的原因是用了一段时间，搭博客的服务器跑路了(白嫖的服务器)，有的是莫名其妙就不能用了(Github Pages)&lt;br&gt;
+现在终于又搭了起来，希望可以用下去(希望吧)&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;搭建过程参考文章&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://zz2summer.github.io/github-pages-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/#%E5%85%AD%E9%83%A8%E7%BD%B2%E5%88%B0-github&#34;&gt;Github Pages + Hugo 搭建个人博客&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/31417255&#34;&gt;在VScode上配置Git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.leftpocket.cn/post/hugo/hugo_vercel/&#34;&gt;从零开始搭建个人博客（四）- hugo自动部署到vercel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://themes.gohugo.io/themes/hugo-theme-diary/&#34;&gt;Hugo Themes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.kidhero.club/p/%E5%9C%A8vscode%E4%B8%8A%E9%85%8D%E7%BD%AEhugo%E7%BC%96%E8%BE%91%E7%8E%AF%E5%A2%83/&#34;&gt;在VSCode上配置hugo编辑环境&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io/getting-started/quick-start/&#34;&gt;官方文档&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+- http://example.org/posts/hello-world/ - </description>
         </item>
     
     
