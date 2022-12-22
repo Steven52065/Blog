@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html><head>
+<title>全平台统一代理——Clash</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<link rel="stylesheet" href="/scss/journal.min.c5d92f380bf10f6849c7ac487c7df2b22c081e0851e5339224f1ae29210b20d2.css" integrity="sha256-xdkvOAvxD2hJx6xIfH3ysiwIHghR5TOSJPGuKSELINI=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.9f8d8c2df9285089d141edd4a50cb7506c7948e6ab79a29968dced1bd0ab7d22.css" integrity="sha256-n42MLfkoUInRQe3UpQy3UGx5SOareaKZaNztG9CrfSI=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://blog.lty520.ml/">
+    
+        <div class="nav-title">
+            Ling的博客
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	1 Ling的博客
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%bb%a3%e7%90%86%e8%bd%af%e4%bb%b6%e7%9a%84%e4%bd%bf%e7%94%a8%e5%8e%86%e7%a8%8b" onclick="onNavClick(`#代理软件的使用历程-nav`)" id="代理软件的使用历程-nav">
+									代理软件的使用历程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%85%a8%e5%b9%b3%e5%8f%b0-clash-%e7%9a%84%e8%b0%83%e6%95%99%e8%bf%87%e7%a8%8b" onclick="onNavClick(`#全平台-clash-的调教过程-nav`)" id="全平台-clash-的调教过程-nav">
+									全平台 Clash 的调教过程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e7%9b%ae%e7%9a%84" onclick="onNavClick(`#目的-nav`)" id="目的-nav">
+									目的
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%85%8d%e7%bd%ae" onclick="onNavClick(`#配置-nav`)" id="配置-nav">
+									配置
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%af%e7%94%a8%e4%ba%8e-subconverter-%e7%9a%84%e8%a7%84%e5%88%99%e7%89%87%e6%ae%b5" onclick="onNavClick(`#可用于-subconverter-的规则片段-nav`)" id="可用于-subconverter-的规则片段-nav">
+									可用于 subconverter 的规则片段
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+<div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%bb%a3%e7%90%86%e8%bd%af%e4%bb%b6%e7%9a%84%e4%bd%bf%e7%94%a8%e5%8e%86%e7%a8%8b" onclick="onNavClick(`#代理软件的使用历程-nav`)" id="代理软件的使用历程-nav">
+									代理软件的使用历程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%85%a8%e5%b9%b3%e5%8f%b0-clash-%e7%9a%84%e8%b0%83%e6%95%99%e8%bf%87%e7%a8%8b" onclick="onNavClick(`#全平台-clash-的调教过程-nav`)" id="全平台-clash-的调教过程-nav">
+									全平台 Clash 的调教过程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e7%9b%ae%e7%9a%84" onclick="onNavClick(`#目的-nav`)" id="目的-nav">
+									目的
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%85%8d%e7%bd%ae" onclick="onNavClick(`#配置-nav`)" id="配置-nav">
+									配置
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%af%e7%94%a8%e4%ba%8e-subconverter-%e7%9a%84%e8%a7%84%e5%88%99%e7%89%87%e6%ae%b5" onclick="onNavClick(`#可用于-subconverter-的规则片段-nav`)" id="可用于-subconverter-的规则片段-nav">
+									可用于 subconverter 的规则片段
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://blog.lty520.ml/">
+            Ling的博客
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://blog.lty520.ml/">
+        <div class="single-column-header-title">Ling的博客</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    全平台统一代理——Clash
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2022-12-22 21:22
+                        </time>
+                        
+
+                        
+
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h1 id="代理软件的使用历程">代理软件的使用历程</h1>
+<ul>
+<li>使用赛风VPN
+<ul>
+<li>听人提及到 SSR ，转用 SSR</li>
+</ul>
+</li>
+<li>每个设备分别使用 SSR
+<ul>
+<li>由于 SSR 封锁严重，跟随购买的机场换为 V2ray</li>
+</ul>
+</li>
+<li>每个设备分别使用 V2ray
+<ul>
+<li>困扰于每个平台都要运行代理软件 + V2ray 客户端不怎么好使+ Linux 运行代理程序需要命令行+手中刚好有树莓派，决定换用 Openwrt</li>
+</ul>
+</li>
+<li>Openwrt 单臂路由 + SSRPlus
+<ul>
+<li>因为是单臂路由，有的设备不能自定于网关 + SSRPlus 自定义程度不够+ PassWall 莫名其妙的不能用+住校+主流机场换用了 Clash ，决定每个平台分别使用 Clash</li>
+</ul>
+</li>
+<li>决定全平台使用 Clash</li>
+</ul>
+<hr>
+<h1 id="全平台-clash-的调教过程">全平台 Clash 的调教过程</h1>
+<p><em>(其实是 subconverter 的调教过程)</em><br>
+虽然用了 Clash ，但机场提供的配置方案不是很符合个人需求(而且主用的机场没有 ipv6 的配置)，且手中有多个机场(主用机场 + 便宜的备用机场 + 按流量付费，使用特殊节点的机场)，于是使用了 <a href="https://github.com/tindy2013/subconverter">subconverter</a> 来制作 Clash 配置文件。</p>
+<h2 id="目的">目的</h2>
+<ol>
+<li>将<strong>多个</strong>机场的订阅合并为一个</li>
+<li>国内直连( ipv4 + ipv6 )，游戏平台自选直连和代理，哔哩哔哩自选直连和代理， Netflix 自选直连和代理，其他国外一律代理</li>
+<li>有一个单独的文件用以手动添加一些直连的域名(用于DDNS NAS的域名)</li>
+<li>使用 Doh 进行域名解析</li>
+</ol>
+<h2 id="配置">配置</h2>
+<p><strong>以默认为主，修改部分条目</strong><br>
+/pref.ini<br>
+用于添加多条机场订阅</p>
+<pre tabindex="0"><code>[common]
+    default_url=机场订阅地址1|机场订阅地址2|机场订阅地址3
+</code></pre><p>从 url 获取规则片段，并分成几个策略组</p>
+<pre tabindex="0"><code>[rulesets]
+    ruleset=DIRECT,rules/DirectDomain.list
+    ;手动添加的直连域名
+
+    ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list,86400
+    ;局域网IP段 直连
+
+    ruleset=Bilibili,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Ruleset/Bilibili.list,86400
+    ;Bilibili域名
+    ruleset=Netflix,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Netflix.list,86400
+    ;Netflix域名 IP段
+
+    ruleset=Game,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Providers/Ruleset/Steam.yaml,86400
+    ;steam域名
+    ruleset=Game,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Providers/Ruleset/Epic.yaml,86400
+    ;epic域名
+    ruleset=Game,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Providers/Ruleset/Xbox.yaml,86400
+    ;Xbox域名
+
+    ruleset=DIRECT,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPs/ChinaIPs.list,86400
+    ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list,86400
+    ruleset=DIRECT,[]GEOIP,CN
+    ;中国IP段
+    ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list,86400
+    ;中国域名
+    ruleset=Proxy,[]FINAL
+</code></pre><p>为策略组添加节点</p>
+<pre tabindex="0"><code>[proxy_groups]
+    custom_proxy_group=Proxy`select`.*
+    custom_proxy_group=Netflix`select`Proxy`.*
+    custom_proxy_group=Game`select`[]DIRECT`.*
+    custom_proxy_group=Bilibili`select`[]DIRECT`.*
+</code></pre><p>/base/all_base.tpl</p>
+<pre tabindex="0"><code>{% if request.target == &#34;clash&#34; or request.target == &#34;clashr&#34; %}
+    dns:
+        enable: true
+        ipv6: false
+        listen: 0.0.0.0:53
+        enhanced-mode: fake-ip
+        fake-ip-range: 198.18.0.1/16
+        fake-ip-filter:
+            - &#39;*.lan&#39;
+            - &#39;localhost.ptlogin2.qq.com&#39;
+            - &#39;dns.msftncsi.com&#39;
+            - &#39;www.msftncsi.com&#39;
+            - &#39;www.msftconnecttest.com&#39;
+        nameserver:
+            - https://223.5.5.5/dns-query
+        fallback:
+            - https://223.5.5.5/dns-query
+        fallback-filter:
+            geoip: true
+            ipcidr:
+            - 240.0.0.0/4
+</code></pre><p>最后将其部署在了服务器上，并用 Nginx 配置了反向代理和 SSL 加密，得益于 Clash 的在多个平台上都有其客户端，将每个客户端的订阅地址修改为 subconverter 提供的配置文件地址，就可以实现了全平台的代理统一</p>
+<h2 id="可用于-subconverter-的规则片段">可用于 subconverter 的规则片段</h2>
+<ul>
+<li><a href="https://github.com/Loyalsoldier/clash-rules/blob/master/README.md">github.com/Loyalsoldier/clash-rules</a></li>
+<li><a href="https://github.com/ACL4SSR/ACL4SSR/tree/master/Clash">github.com/ACL4SSR/ACL4SSR</a></li>
+<li><a href="https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash">github.com/blackmatrix7/ios_rule_script</a></li>
+<li><a href="https://github.com/DivineEngine/Profiles/tree/master/Clash/RuleSet">github.com/DivineEngine/Profiles</a></li>
+</ul>
+<hr>
+<p>参考文章</p>
+<ul>
+<li><a href="https://mybj.org/2021/09/subconverter/">利用 subconverter 实现订阅合并与转换</a></li>
+<li><a href="https://github.com/tindy2013/subconverter">github.com/tindy2013/subconverter</a></li>
+<li><a href="https://blog.xianyu.one/2021/05/12/Linux/tutorial/subconverter/">subconverter 订阅转换及搭配 clash 使用教程</a></li>
+<li><a href="https://docs.cfw.lbyczf.com/">Clash for Windows</a></li>
+</ul>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">Last modified on 2022-12-22</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts">
+			Next<br>No newer posts.
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E7%B3%BB%E5%88%97/">
+			Previous<br>全平台统一系列
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	1 Ling的博客
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>
