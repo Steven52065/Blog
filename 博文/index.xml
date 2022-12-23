@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>博文s on Ling的博客</title>
+    <link>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/</link>
+    <description>Recent content in 博文s on Ling的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 22 Dec 2022 21:22:33 +0800</lastBuildDate><atom:link href="https://blog.lty520.ml/%E5%8D%9A%E6%96%87/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>全平台统一代理——Clash</title>
+      <link>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/</link>
+      <pubDate>Thu, 22 Dec 2022 21:22:33 +0800</pubDate>
+      
+      <guid>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/</guid>
+      <description>代理软件的使用历程 使用赛风VPN 听人提及到 SSR ，转用 SSR 每个设备分别使用 SSR 由于 SSR 封锁严重，跟随购买的机场换为 V2ray 每个设备分别使用 V2ray 困扰于每个平台都要运行代理软件 + V2ray 客户端不怎么好使+ Linux 运行代理程序需要命令行+手中刚好有树莓派，决定换用 Openwrt Openwrt 单臂路由 + SSRPlus 因为是单臂路由，有的设备不能自定义网关 + SSRPlus 自定义程度不够+ PassWall 莫名其妙的不能用+住校+主流机场换用了 Clash ，决定每个平台分别使用 Clash 决定全平台使用 Clash 全平台 Clash 的调教过程 (其实是 subconverter 的调教过程)
+虽然用了 Clash ，但机场提供的配置方案不是很符合个人需求(而且主用的机场没有 ipv6 的配置)，且手中有多个机场(主用机场 + 便宜的备用机场 + 按流量付费，使用特殊节点的机场)，于是使用了 subconverter 来制作 Clash 配置文件。
+目的 将多个机场的订阅合并为一个 国内直连( ipv4 + ipv6 )，游戏平台自选直连和代理，哔哩哔哩自选直连和代理， Netflix 自选直连和代理，其他国外一律代理 有一个单独的文件用以手动添加一些直连的域名(用于DDNS NAS的域名) 使用 Doh 进行域名解析 配置 以默认为主，修改部分条目</description>
+    </item>
+    
+    <item>
+      <title>全平台统一系列</title>
+      <link>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E7%B3%BB%E5%88%97/</link>
+      <pubDate>Thu, 22 Dec 2022 17:28:48 +0800</pubDate>
+      
+      <guid>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E7%B3%BB%E5%88%97/</guid>
+      <description>因为一直苦恼于手中多个平台的软件各不相同，数据难以同步且不便于使用。因此有了这个系列，希望将Win､Android､Ipados(或许还会包括Linux､Ios)等平台的软件进行统一。
+全平台统一代理——Clash </description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/hello-world/</link>
+      <pubDate>Wed, 21 Dec 2022 22:55:49 +0800</pubDate>
+      
+      <guid>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/hello-world/</guid>
+      <description>尝试过很多种博客框架，比如: WordPress ､ Hexo
+然后因为各种原因，博客一直没用起来。有的原因是用了一段时间，搭博客的服务器跑路了(白嫖的服务器)，有的是莫名其妙就不能用了(Github Pages)
+现在终于又搭了起来，希望可以用下去(希望吧)
+搭建过程参考文章
+Github Pages + Hugo 搭建个人博客 在VScode上配置Git 从零开始搭建个人博客（四）- hugo自动部署到vercel Hugo Themes 在VSCode上配置hugo编辑环境 官方文档 </description>
+    </item>
+    
+  </channel>
+</rss>

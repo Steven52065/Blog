@@ -2,18 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blog.lty520.ml/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/</loc>
+    <loc>https://blog.lty520.ml/</loc>
     <lastmod>2022-12-22T21:22:33+08:00</lastmod>
   </url><url>
-    <loc>https://blog.lty520.ml/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E7%B3%BB%E5%88%97/</loc>
+    <loc>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/</loc>
+    <lastmod>2022-12-22T21:22:33+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/</loc>
+    <lastmod>2022-12-22T21:22:33+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E7%B3%BB%E5%88%97/</loc>
     <lastmod>2022-12-22T17:28:48+08:00</lastmod>
   </url><url>
-    <loc>https://blog.lty520.ml/hello-world/</loc>
+    <loc>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/hello-world/</loc>
     <lastmod>2022-12-21T22:55:49+08:00</lastmod>
   </url><url>
     <loc>https://blog.lty520.ml/categories/</loc>
-  </url><url>
-    <loc>https://blog.lty520.ml/</loc>
   </url><url>
     <loc>https://blog.lty520.ml/tags/</loc>
   </url>
