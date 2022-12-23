@@ -6,9 +6,34 @@
     <description>Recent content on Ling的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 22 Dec 2022 21:22:33 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 23 Dec 2022 22:15:42 +0800</lastBuildDate>
     
         <atom:link href="https://blog.lty520.ml/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>白嫖节点的使用</title>
+        <link>https://blog.lty520.ml/%E9%9A%8F%E8%AE%B0/%E7%99%BD%E5%AB%96%E8%8A%82%E7%82%B9%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+        <pubDate>Fri, 23 Dec 2022 22:15:42 +0800</pubDate>
+        
+        <guid>https://blog.lty520.ml/%E9%9A%8F%E8%AE%B0/%E7%99%BD%E5%AB%96%E8%8A%82%E7%82%B9%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+        <description>Ling的博客 https://blog.lty520.ml/%E9%9A%8F%E8%AE%B0/%E7%99%BD%E5%AB%96%E8%8A%82%E7%82%B9%E7%9A%84%E4%BD%BF%E7%94%A8/ -&lt;p&gt;因为是 Vless 的节点，所以本文只会介绍 V2ray 相关软件的使用方法。其他客户端( Clash、Openwrt 等)就不写了。&lt;/p&gt;
+&lt;h1 id=&#34;windows&#34;&gt;Windows&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;下载 &lt;a href=&#34;https://github.com/2dust/v2rayN/releases&#34;&gt;V2rayN 客户端&lt;/a&gt; ，选择最新版本，下载 v2rayN.zip 文件，并解压&lt;/li&gt;
+&lt;li&gt;下载 &lt;a href=&#34;https://github.com/XTLS/Xray-core/releases&#34;&gt;Xray-core&lt;/a&gt; ,选择对应的系统、架构下载（如果不知道，那就是 Xray-windows-64.zip ），将解压出的文件放到 V2rayN 客户端 的文件目录下（即和 v2rayN.exe 文件在一起）。&lt;/li&gt;
+&lt;li&gt;启动 V2rayN ，复制节点信息后在 V2rayN 中右键，并选择“从剪贴板批量导入URL”，若出现“成功”二字，导入成功&lt;/li&gt;
+&lt;li&gt;右键节点，选择“测试服务器真连接延迟”若测试结果中出现延时，说明节点正常（用不了是你的问题）&lt;/li&gt;
+&lt;li&gt;试试吧&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;android&#34;&gt;Android&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;ios&#34;&gt;Ios&lt;/h1&gt;
+- https://blog.lty520.ml/%E9%9A%8F%E8%AE%B0/%E7%99%BD%E5%AB%96%E8%8A%82%E7%82%B9%E7%9A%84%E4%BD%BF%E7%94%A8/ - </description>
+        </item>
     
     
     
