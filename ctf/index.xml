@@ -15,7 +15,9 @@
       <guid>https://blog.lty520.ml/ctf/wp-buuctf-lsb1/</guid>
       <description>题目链接: https://buuoj.cn/challenges#LSB
 题目 思路 因为题目名为 LSB ，并且给了张图，使用工具 Stegsolve 可以看到 在 R、G、B 三个通道的第0位的图片上方有一些马赛克（和图片肉眼看到的白色不符），使用 Data Extract 功能，分别选择 R、G、B 三个通道的第0位、Row、LSB First、RGB 排列方式，保存为一张图片。
-扫码即可得 flag 为 cumtctf{1sb_i4_s0_Ea4y}
+扫码即可得 cumtctf{1sb_i4_s0_Ea4y}
+但是，这不是 flag ！（被坑了）
+flag 为 flag{1sb_i4_s0_Ea4y}
 发现了个名为 LSB_hide 的软件，好像很好用的样子，但是7G内存不够它用的 QAQ</description>
     </item>
     
