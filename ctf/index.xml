@@ -6,7 +6,44 @@
     <description>Recent content in CTFs on Ling的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 10 Jan 2023 01:08:23 +0800</lastBuildDate><atom:link href="https://blog.lty520.ml/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Jan 2023 20:45:12 +0800</lastBuildDate><atom:link href="https://blog.lty520.ml/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WP BUUCTF LSB1</title>
+      <link>https://blog.lty520.ml/ctf/wp-buuctf-lsb1/</link>
+      <pubDate>Tue, 10 Jan 2023 20:45:12 +0800</pubDate>
+      
+      <guid>https://blog.lty520.ml/ctf/wp-buuctf-lsb1/</guid>
+      <description>题目链接: https://buuoj.cn/challenges#LSB
+题目 思路 因为题目名为 LSB ，并且给了张图，使用工具 Stegsolve 可以看到 在 R、G、B 三个通道的第0位的图片上方有一些马赛克（和图片肉眼看到的白色不符），使用 Data Extract 功能，分别选择 R、G、B 三个通道的第0位、Row、LSB First、RGB 排列方式，保存为一张图片。
+扫码即可得 flag 为 cumtctf{1sb_i4_s0_Ea4y}
+发现了个名为 LSB_hide 的软件，好像很好用的样子，但是7G内存不够它用的 QAQ</description>
+    </item>
+    
+    <item>
+      <title>WP BUUCTF Rabbit1</title>
+      <link>https://blog.lty520.ml/ctf/wp-buuctf-rabbit1/</link>
+      <pubDate>Tue, 10 Jan 2023 20:26:12 +0800</pubDate>
+      
+      <guid>https://blog.lty520.ml/ctf/wp-buuctf-rabbit1/</guid>
+      <description>题目链接: https://buuoj.cn/challenges#Rabbit
+题目 U2FsdGVkX1/+ydnDPowGbjjJXhZxm2MP2AgI
+思路 因为题目名为 Rabbit ，以及给到的密文是 U2 开头，使用工具 https://www.sojson.com/encrypt_rabbit.html 可以解得 Cute_Rabbit ，所以 flag 即为 flag{Cute_Rabbit}
+没搞明白 CyberChef 咋用，还要 Key ，lv 啥的，明明别的直接就可以，怪</description>
+    </item>
+    
+    <item>
+      <title>WP BUUCUF Password1</title>
+      <link>https://blog.lty520.ml/ctf/wp-buucuf-password1/</link>
+      <pubDate>Tue, 10 Jan 2023 20:13:06 +0800</pubDate>
+      
+      <guid>https://blog.lty520.ml/ctf/wp-buucuf-password1/</guid>
+      <description>题目链接: https://buuoj.cn/challenges#password
+题目 姓名：张三 生日：19900315
+key 格式为 key{xxxxxxxxxx}
+思路 因为 x 为10位，张三为两个字的名字，生日占8位，因此可以猜到 flag 为 key{zs19900315}
+所以&amp;quot;注意：得到的 flag 请包上 flag{} 提交&amp;quot;是闹那样&amp;hellip;&amp;quot;</description>
+    </item>
+    
     <item>
       <title>Test</title>
       <link>https://blog.lty520.ml/ctf/test/</link>
