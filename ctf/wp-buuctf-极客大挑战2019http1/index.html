@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-<title>CTFs</title>
+<title>WP BUUCTF [极客大挑战2019]Http1</title>
 
 
 
@@ -34,6 +34,8 @@
 
 
 
+      <script src="/js/toc.js"></script>
+    
     <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
 <link rel="stylesheet" href="/scss/journal.min.c5d92f380bf10f6849c7ac487c7df2b22c081e0851e5339224f1ae29210b20d2.css" integrity="sha256-xdkvOAvxD2hJx6xIfH3ysiwIHghR5TOSJPGuKSELINI=" media="screen">
 
@@ -59,6 +61,12 @@
 
 
 
+
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+  />
 
 
 
@@ -149,6 +157,60 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 </div><div id="extraContainer" class="extra-container">
     
     
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%a2%98%e7%9b%ae" onclick="onNavClick(`#题目-nav`)" id="题目-nav">
+									题目
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%80%9d%e8%b7%af" onclick="onNavClick(`#思路-nav`)" id="思路-nav">
+									思路
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+    
     <div class="pagination">
         <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
             <i class="material-icons pagination-action-icon">
@@ -161,8 +223,6 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 dark_mode
             </span>
         </a>
-        
-        
         
         
     </div>
@@ -217,6 +277,60 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
             
             
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%a2%98%e7%9b%ae" onclick="onNavClick(`#题目-nav`)" id="题目-nav">
+									题目
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%80%9d%e8%b7%af" onclick="onNavClick(`#思路-nav`)" id="思路-nav">
+									思路
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
         </div>
     </div>
 </div>
@@ -256,246 +370,117 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 <div id="streamContainer" class="stream-container">
 
     <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    WP BUUCTF [极客大挑战2019]Http1
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2023-01-12 01:05
+                        </time>
+                        
+
+                        
+
+                        
+                        
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            31 s.
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <p>题目链接: <a href="https://buuoj.cn/challenges#%5B%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98%202019%5DHttp">https://buuoj.cn/challenges#[%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98%202019]Http</a></p>
+<h1 id="题目">题目</h1>
+<p>一个网站</p>
+<h1 id="思路">思路</h1>
+<p>题目给了一个网站，在网页源码里可以找到一句<br>
+<strong>&lt;a style=&ldquo;border:none;cursor:default;&rdquo; onclick=&ldquo;return false&rdquo; href=&ldquo;Secret.php&rdquo;&gt;</strong><br>
+可以猜到题目和 Secret.php 有关<br>
+打开后即可按照题目提示分别加上三个请求头:</p>
+<ul>
+<li>Referer:https://Sycsecret.buuoj.cn</li>
+<li>User-Agent:Syclover</li>
+<li>X-Forwarded-For:127.0.0.1</li>
+</ul>
+<pre tabindex="0"><code>    import httpx
+    url = &#39;http://node4.buuoj.cn:27094/Secret.php&#39;
+    headers = {&#34;Referer&#34;:&#34;https://Sycsecret.buuoj.cn&#34;,&#34;User-Agent&#34;:&#34;Syclover&#34;,&#34;X-Forwarded-For&#34;:&#34;127.0.0.1&#34;}
+    r = httpx.get(url,headers=headers)
+    print(r.text)
+</code></pre><p>可得 flag 为 <strong>flag{10b601e9-9ce4-4abc-b69d-32123353d17e}</strong><br>
+<em>见了鬼了，用 Postman 死活不行&hellip;还得是 Python</em></p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2023-01-12</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts">
+			下回<br>已经到头啦。
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/ctf/wp-buuctf-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019knife1/">
+			上回<br>WP BUUCTF [极客大挑战2019]Knife1
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+<div id="waline"></div>
+<script>
+    Waline.init({
+        el: '#waline',
         
-            <a class="a-block">
-                <div class="post-item-wrapper post-item-wrapper-no-hover">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title post-item-title-small year">
-                                2023
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="/ctf/wp-buuctf-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019http1/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                WP BUUCTF [极客大挑战2019]Http1
-                            </div>
-                            <div class="post-item-meta">
-    2023-01-12
-    &emsp;
+        serverURL: "https://blog-waline.lty520.ml/" ,
+    });
     
-    
-    <i class="material-icons" style="font-size:10px">schedule</i>
-    
+    </script>
 
-    
-    
 
-    
-    31 s
-    
-    
-    &emsp;
-    
-</div>
 
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="/ctf/wp-buuctf-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019knife1/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                WP BUUCTF [极客大挑战2019]Knife1
-                            </div>
-                            <div class="post-item-meta">
-    2023-01-12
-    &emsp;
-    
-    
-    <i class="material-icons" style="font-size:10px">schedule</i>
-    
-
-    
-    
-
-    
-    26 s
-    
-    
-    &emsp;
-    
-</div>
-
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="/ctf/wp-buuctf-quoted-printable1/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                WP BUUCTF Quoted Printable1
-                            </div>
-                            <div class="post-item-meta">
-    2023-01-12
-    &emsp;
-    
-    
-    <i class="material-icons" style="font-size:10px">schedule</i>
-    
-
-    
-    
-
-    
-    47 s
-    
-    
-    &emsp;
-    
-</div>
-
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="/ctf/wp-buuctf-lsb1/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                WP BUUCTF LSB1
-                            </div>
-                            <div class="post-item-meta">
-    2023-01-10
-    &emsp;
-    
-    
-    <i class="material-icons" style="font-size:10px">schedule</i>
-    
-
-    
-    
-
-    
-    49 s
-    
-    
-    &emsp;
-    
-</div>
-
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="/ctf/wp-buuctf-rabbit1/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                WP BUUCTF Rabbit1
-                            </div>
-                            <div class="post-item-meta">
-    2023-01-10
-    &emsp;
-    
-    
-    <i class="material-icons" style="font-size:10px">schedule</i>
-    
-
-    
-    
-
-    
-    20 s
-    
-    
-    &emsp;
-    
-</div>
-
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="/ctf/wp-buucuf-password1/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                WP BUUCUF Password1
-                            </div>
-                            <div class="post-item-meta">
-    2023-01-10
-    &emsp;
-    
-    
-    <i class="material-icons" style="font-size:10px">schedule</i>
-    
-
-    
-    
-
-    
-    29 s
-    
-    
-    &emsp;
-    
-</div>
-
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="/ctf/test/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                Test
-                            </div>
-                            <div class="post-item-meta">
-    2023-01-10
-    &emsp;
-    
-    
-    <i class="material-icons" style="font-size:10px">schedule</i>
-    
-
-    
-    
-
-    
-    0 s
-    
-    
-    &emsp;
-    
-</div>
-
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-        
+            </div>
+        </div>
     </div>
 
 
-
                     </div>
-            </div>
-
-
-<div id="single-column-footer">
+            </div><div id="single-column-footer">
 Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
 <br>
 移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>

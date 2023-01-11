@@ -6,7 +6,54 @@
     <description>Recent content in CTFs on Ling的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 10 Jan 2023 20:45:12 +0800</lastBuildDate><atom:link href="https://blog.lty520.ml/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Jan 2023 01:05:28 +0800</lastBuildDate><atom:link href="https://blog.lty520.ml/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WP BUUCTF [极客大挑战2019]Http1</title>
+      <link>https://blog.lty520.ml/ctf/wp-buuctf-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019http1/</link>
+      <pubDate>Thu, 12 Jan 2023 01:05:28 +0800</pubDate>
+      
+      <guid>https://blog.lty520.ml/ctf/wp-buuctf-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019http1/</guid>
+      <description>题目链接: https://buuoj.cn/challenges#[%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98%202019]Http
+题目 一个网站
+思路 题目给了一个网站，在网页源码里可以找到一句
+&amp;lt;a style=&amp;ldquo;border:none;cursor:default;&amp;rdquo; onclick=&amp;ldquo;return false&amp;rdquo; href=&amp;ldquo;Secret.php&amp;rdquo;&amp;gt;
+可以猜到题目和 Secret.php 有关
+打开后即可按照题目提示分别加上三个请求头:
+Referer:https://Sycsecret.buuoj.cn User-Agent:Syclover X-Forwarded-For:127.0.0.1 import httpx url = &amp;#39;http://node4.buuoj.cn:27094/Secret.php&amp;#39; headers = {&amp;#34;Referer&amp;#34;:&amp;#34;https://Sycsecret.buuoj.cn&amp;#34;,&amp;#34;User-Agent&amp;#34;:&amp;#34;Syclover&amp;#34;,&amp;#34;X-Forwarded-For&amp;#34;:&amp;#34;127.0.0.1&amp;#34;} r = httpx.get(url,headers=headers) print(r.text) 可得 flag 为 flag{10b601e9-9ce4-4abc-b69d-32123353d17e}
+见了鬼了，用 Postman 死活不行&amp;hellip;还得是 Python</description>
+    </item>
+    
+    <item>
+      <title>WP BUUCTF [极客大挑战2019]Knife1</title>
+      <link>https://blog.lty520.ml/ctf/wp-buuctf-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019knife1/</link>
+      <pubDate>Thu, 12 Jan 2023 00:38:56 +0800</pubDate>
+      
+      <guid>https://blog.lty520.ml/ctf/wp-buuctf-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019knife1/</guid>
+      <description>题目链接: https://buuoj.cn/challenges#[%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98%202019]Knife
+题目 打开靶机，给了两句话
+我家菜刀丢了，你能帮我找一下么
+eval($_POST[&amp;ldquo;Syc&amp;rdquo;]);
+思路 题目提到了菜刀,所以选择蚁剑（主要是电脑上没有菜刀2333）
+很简单，一步到位
+在网站根目录下可以找到名为 flag 的文件，可得 flag 为 flag{20d3c2b8-71fa-41fa-a8f6-fc7bcd5f8137}</description>
+    </item>
+    
+    <item>
+      <title>WP BUUCTF Quoted Printable1</title>
+      <link>https://blog.lty520.ml/ctf/wp-buuctf-quoted-printable1/</link>
+      <pubDate>Thu, 12 Jan 2023 00:03:27 +0800</pubDate>
+      
+      <guid>https://blog.lty520.ml/ctf/wp-buuctf-quoted-printable1/</guid>
+      <description>题目链接: https://buuoj.cn/challenges#Quoted-printable
+题目 =E9=82=A3=E4=BD=A0=E4=B9=9F=E5=BE=88=E6=A3=92=E5=93=A6
+思路 没啥思路，尝试了一下，并不是16进制
+尝试扔到 CyberChef 里，居然解出来了
+flag 为 flag{那你也很棒哦}
+查了一下，这东西叫 Quoted-printable ，可译为可打印字符引用编码或使用可打印字符的编码
+将8-bit字节值可编码为3个字符：一个等号“=”后跟随两个十六进制数字（0–9或A–F）表示该字节的数值。 所以还是16进制&amp;hellip;这点并没有猜错 2333
+Quoted-printable 维基百科</description>
+    </item>
+    
     <item>
       <title>WP BUUCTF LSB1</title>
       <link>https://blog.lty520.ml/ctf/wp-buuctf-lsb1/</link>
