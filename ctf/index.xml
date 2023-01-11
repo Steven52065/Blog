@@ -89,7 +89,8 @@ flag 为 flag{1sb_i4_s0_Ea4y}
       <description>题目链接: https://buuoj.cn/challenges#password
 题目 姓名：张三 生日：19900315
 key 格式为 key{xxxxxxxxxx}
-思路 因为 x 为10位，张三为两个字的名字，生日占8位，因此可以猜到 flag 为 key{zs19900315}
+思路 因为 x 为10位，张三为两个字的名字，生日占8位，因此可以猜到 flag
+为 key{zs19900315}
 所以&amp;quot;注意：得到的 flag 请包上 flag{} 提交&amp;quot;是闹那样&amp;hellip;&amp;quot;</description>
     </item>
     
