@@ -6,7 +6,49 @@
     <description>Recent content in CTFs on Ling的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 12 Jan 2023 01:05:28 +0800</lastBuildDate><atom:link href="https://blog.lty520.ml/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Jan 2023 02:05:24 +0800</lastBuildDate><atom:link href="https://blog.lty520.ml/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WP BUUCTF Alice与Bob</title>
+      <link>https://blog.lty520.ml/ctf/wp-buuctf-alice%E4%B8%8Ebob/</link>
+      <pubDate>Fri, 13 Jan 2023 02:05:24 +0800</pubDate>
+      
+      <guid>https://blog.lty520.ml/ctf/wp-buuctf-alice%E4%B8%8Ebob/</guid>
+      <description>题目链接: https://buuoj.cn/challenges#Alice%E4%B8%8EBob
+题目 密码学历史中，有两位知名的杰出人物，Alice和Bob。他们的爱情经过置换和轮加密也难以混淆，即使是没有身份认证也可以知根知底。就像在数学王国中的素数一样，孤傲又热情。下面是一个大整数:98554799767,请分解为两个素数，分解后，小的放前面，大的放后面，合成一个新的数字，进行md5的32位小写哈希，提交答案。 注意：得到的 flag 请包上 flag{} 提交
+思路 去掉阅读短文似的没用的信息，即先分解质因数，再求md5即可
+使用 整数分解工具 将 98554799767 分解为 101999 和 966233 求 101999966233 的 md5 结果，为 d450209323a847c8d01c6be47c81811a 可得 flag 为 flag{d450209323a847c8d01c6be47c81811a}</description>
+    </item>
+    
+    <item>
+      <title>WP BUUCTF 丢失的MD51</title>
+      <link>https://blog.lty520.ml/ctf/wp-buuctf-%E4%B8%A2%E5%A4%B1%E7%9A%84md51/</link>
+      <pubDate>Fri, 13 Jan 2023 00:32:23 +0800</pubDate>
+      
+      <guid>https://blog.lty520.ml/ctf/wp-buuctf-%E4%B8%A2%E5%A4%B1%E7%9A%84md51/</guid>
+      <description>题目链接: https://buuoj.cn/challenges#%E4%B8%A2%E5%A4%B1%E7%9A%84MD5
+题目 import hashlib for i in range(32,127): for j in range(32,127): for k in range(32,127): m=hashlib.md5() m.update(&amp;#39;TASC&amp;#39;+chr(i)+&amp;#39;O3RJMV&amp;#39;+chr(j)+&amp;#39;WDJKX&amp;#39;+chr(k)+&amp;#39;ZM&amp;#39;) des=m.hexdigest() if &amp;#39;e9032&amp;#39; in des and &amp;#39;da&amp;#39; in des and &amp;#39;911513&amp;#39; in des: print des 思路 遇到 python 题目，当然是要先运行一下啦
+报错
+仔细研究后发现这 TM 居然是 python2 的题目&amp;hellip;
+只要装上 python2 环境，运行一下，可以得到一串字符串，包上 flag{} 即可
+所以 flag 就为 flag{e9032994dabac08080091151380478a2}
+结果这题的大部分时间都用在了装 python2 环境上了&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>WP BUUCTF 篱笆墙的影子1</title>
+      <link>https://blog.lty520.ml/ctf/wp-buuctf-%E7%AF%B1%E7%AC%86%E5%A2%99%E7%9A%84%E5%BD%B1%E5%AD%901/</link>
+      <pubDate>Fri, 13 Jan 2023 00:09:44 +0800</pubDate>
+      
+      <guid>https://blog.lty520.ml/ctf/wp-buuctf-%E7%AF%B1%E7%AC%86%E5%A2%99%E7%9A%84%E5%BD%B1%E5%AD%901/</guid>
+      <description>题目链接: https://buuoj.cn/challenges#%E7%AF%B1%E7%AC%86%E5%A2%99%E7%9A%84%E5%BD%B1%E5%AD%90
+题目 felhaagv{ewtehtehfilnakgw}
+思路 题目提到了篱笆墙，这篱笆不就是栅栏嘛
+尝试一下栅栏密码，成功
+每两个为一组
+可得 flag 为 flag{wethinkwehavetheflag}
+做到一半发现 ubuntu 的 python 环境炸了&amp;hellip;头秃</description>
+    </item>
+    
     <item>
       <title>WP BUUCTF [极客大挑战2019]Http1</title>
       <link>https://blog.lty520.ml/ctf/wp-buuctf-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019http1/</link>
