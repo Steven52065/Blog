@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-<title>WP BUUCTF Alice与Bob</title>
+<title>WP BUUCTF 大白1</title>
 
 
 
@@ -379,12 +379,12 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
             >
                 <div class="post-title">
-                    WP BUUCTF Alice与Bob
+                    WP BUUCTF 大白1
                     
                     <div class="post-meta">
                         
                         <time itemprop="datePublished">
-                            2023-01-13 02:05
+                            2023-01-14 01:09
                         </time>
                         
 
@@ -401,7 +401,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                             
                             1 min
                             
-                            5 s.
+                            48 s.
                         
                     </div>
                 </div>
@@ -411,20 +411,50 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
                 <div class="post-body" v-pre>
                 
-                    <p>题目链接: <a href="https://buuoj.cn/challenges#Alice%E4%B8%8EBob">https://buuoj.cn/challenges#Alice%E4%B8%8EBob</a></p>
+                    <p>题目链接: <a href="https://buuoj.cn/challenges#%E5%A4%A7%E7%99%BD">https://buuoj.cn/challenges#%E5%A4%A7%E7%99%BD</a></p>
 <h1 id="题目">题目</h1>
-<p>密码学历史中，有两位知名的杰出人物，Alice和Bob。他们的爱情经过置换和轮加密也难以混淆，即使是没有身份认证也可以知根知底。就像在数学王国中的素数一样，孤傲又热情。下面是一个大整数:98554799767,请分解为两个素数，分解后，小的放前面，大的放后面，合成一个新的数字，进行md5的32位小写哈希，提交答案。 注意：得到的 flag 请包上 flag{} 提交</p>
+<p>看不到图？ 是不是屏幕太小了 注意：得到的 flag 请包上 flag{} 提交</p>
 <h1 id="思路">思路</h1>
-<p>去掉阅读短文似的没用的信息，即先分解质因数，再求md5即可</p>
-<ol>
-<li>使用 <a href="https://zh.numberempire.com/numberfactorizer.php">整数分解工具</a> 将 98554799767 分解为 101999 和 966233</li>
-<li>求 101999966233 的 md5 结果，为 d450209323a847c8d01c6be47c81811a</li>
-</ol>
-<p>可得 flag 为 <strong>flag{d450209323a847c8d01c6be47c81811a}</strong></p>
+<p>题目中提到了<strong>看不到图</strong>以及<strong>屏幕太小了</strong>,再加上题目给了一张 png 图片，由此可以猜到这题修改了图片的长或宽，让设备只能显示图片的一部分，从而隐藏了 flag<br>
+使用脚本</p>
+<pre tabindex="0"><code>import zlib
+import struct
+
+filename = &#39;2.png&#39;
+with open(filename, &#39;rb&#39;) as f:
+    all_b = f.read()
+    crc32key = int(all_b[29:33].hex(), 16)
+    data = bytearray(all_b[12:29])
+    n = 4095  # 理论上0xffffffff,但考虑到屏幕实际/cpu，0x0fff就差不多了
+    for w in range(n):  # 高和宽一起爆破
+        width = bytearray(struct.pack(&#39;&gt;i&#39;, w))  # q为8字节，i为4字节，h为2字节
+        for h in range(n):
+            height = bytearray(struct.pack(&#39;&gt;i&#39;, h))
+            for x in range(4):
+                data[x + 4] = width[x]
+                data[x + 8] = height[x]
+            crc32result = zlib.crc32(data)
+            if crc32result == crc32key:
+                # 2021.7.20，有时候显示的宽高依然看不出具体的值，干脆输出data部分
+                print(data.hex())
+                print(&#34;宽为：&#34;, end=&#34;&#34;)
+                print(width)
+                print(&#34;高为：&#34;, end=&#34;&#34;)
+                print(height)
+                exit(0)
+</code></pre><p>可以一键得出图片正确的长和宽，将图片信息修改为正确的长和宽即可看到 flag<br>
+<img src="/img/CTF/WP-BUUCTF-%E5%A4%A7%E7%99%BD1/img1.png" alt="img1"></p>
+<p>可得 flag 为 <strong>flag{He1l0_d4_ba1}</strong></p>
+<hr>
+<p><em>之前用的脚本咋找不到了呢&hellip;</em></p>
+<hr>
+<ul>
+<li>脚本来源 <a href="https://www.cnblogs.com/yunqian2017/p/14449346.html">png图片CRC爆破原理的学习</a></li>
+</ul>
 
                     
                     <HR width="100%" id="EOF">
-		    <p style="color:#777;">最后修改于 2023-01-13</p>
+		    <p style="color:#777;">最后修改于 2023-01-14</p>
                     
                 </div>
             </div>
@@ -433,14 +463,14 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
             <nav class="post-pagination">
 
                 
-                <a class="newer-posts" href="/ctf/wp-buuctf-%E5%A4%A7%E7%99%BD1/">
-			下回<br>WP BUUCTF 大白1
+                <a class="newer-posts" href="/ctf/wp-buuctf-%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99/">
+			下回<br>WP BUUCTF 隐藏的钥匙
                 </a>
                 
                 
                 
-                <a class="older-posts" href="/ctf/wp-buuctf-%E4%B8%A2%E5%A4%B1%E7%9A%84md51/">
-			上回<br>WP BUUCTF 丢失的MD51
+                <a class="older-posts" href="/ctf/wp-buuctf-alice%E4%B8%8Ebob/">
+			上回<br>WP BUUCTF Alice与Bob
                 </a>
                 
             </nav>

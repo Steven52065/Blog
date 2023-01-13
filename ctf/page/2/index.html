@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-<title>WP BUUCTF Alice与Bob</title>
+<title>CTFs</title>
 
 
 
@@ -34,8 +34,6 @@
 
 
 
-      <script src="/js/toc.js"></script>
-    
     <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
 <link rel="stylesheet" href="/scss/journal.min.c5d92f380bf10f6849c7ac487c7df2b22c081e0851e5339224f1ae29210b20d2.css" integrity="sha256-xdkvOAvxD2hJx6xIfH3ysiwIHghR5TOSJPGuKSELINI=" media="screen">
 
@@ -61,12 +59,6 @@
 
 
 
-
-<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/@waline/client@v2/dist/waline.css"
-  />
 
 
 
@@ -157,60 +149,6 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 </div><div id="extraContainer" class="extra-container">
     
     
-    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
-
-
-	<div class="toc-content">
-	
-		
-		
-		
-		<center>- 目录 -</center>
-		
-		
-		<ul>
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#%e9%a2%98%e7%9b%ae" onclick="onNavClick(`#题目-nav`)" id="题目-nav">
-									题目
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#%e6%80%9d%e8%b7%af" onclick="onNavClick(`#思路-nav`)" id="思路-nav">
-									思路
-								</a>
-							</li>
-						
-						
-					
-				
-			
-		</ul>
-	</div>
-
-</div>
-    
     <div class="pagination">
         <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
             <i class="material-icons pagination-action-icon">
@@ -223,6 +161,24 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 dark_mode
             </span>
         </a>
+        
+        
+        
+            <div class="pagination-indicator">
+                <span style="text-align: center">
+                    2<br><div style="display: inline-block; transform: rotate(-28deg)">-</div><br>2
+                </span>
+            </div>
+            
+            
+            <a class="pagination-action" href="/ctf/">
+                <i class="material-icons pagination-action-icon">
+                    chevron_left
+                </i>
+            </a>
+            
+
+            
         
         
     </div>
@@ -277,60 +233,6 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
             
             
-            <div class="toc">
-
-
-	<div class="toc-content">
-	
-		
-		
-		
-		<center>- 目录 -</center>
-		
-		
-		<ul>
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#%e9%a2%98%e7%9b%ae" onclick="onNavClick(`#题目-nav`)" id="题目-nav">
-									题目
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#%e6%80%9d%e8%b7%af" onclick="onNavClick(`#思路-nav`)" id="思路-nav">
-									思路
-								</a>
-							</li>
-						
-						
-					
-				
-			
-		</ul>
-	</div>
-
-</div>
-            
         </div>
     </div>
 </div>
@@ -370,109 +272,113 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 <div id="streamContainer" class="stream-container">
 
     <div class="post-list-container post-list-container-shadow">
-        <div class="post">
-            
-            
-            
-
-            <div class="post-head-wrapper-text-only"
-                
-            >
-                <div class="post-title">
-                    WP BUUCTF Alice与Bob
-                    
-                    <div class="post-meta">
-                        
-                        <time itemprop="datePublished">
-                            2023-01-13 02:05
-                        </time>
-                        
-
-                        
-
-                        
-                        
-                            <i class="material-icons" style="">schedule</i>
-                            
-
-                            
-                            
-
-                            
-                            1 min
-                            
-                            5 s.
-                        
+        
+            <a class="a-block">
+                <div class="post-item-wrapper post-item-wrapper-no-hover">
+                    <div class="post-item post-item-no-gaps">
+                        <div class="post-item-info-wrapper">
+                            <div class="post-item-title post-item-title-small year">
+                                2023
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
             
-            <div class="post-body-wrapper">
-                
-                <div class="post-body" v-pre>
-                
-                    <p>题目链接: <a href="https://buuoj.cn/challenges#Alice%E4%B8%8EBob">https://buuoj.cn/challenges#Alice%E4%B8%8EBob</a></p>
-<h1 id="题目">题目</h1>
-<p>密码学历史中，有两位知名的杰出人物，Alice和Bob。他们的爱情经过置换和轮加密也难以混淆，即使是没有身份认证也可以知根知底。就像在数学王国中的素数一样，孤傲又热情。下面是一个大整数:98554799767,请分解为两个素数，分解后，小的放前面，大的放后面，合成一个新的数字，进行md5的32位小写哈希，提交答案。 注意：得到的 flag 请包上 flag{} 提交</p>
-<h1 id="思路">思路</h1>
-<p>去掉阅读短文似的没用的信息，即先分解质因数，再求md5即可</p>
-<ol>
-<li>使用 <a href="https://zh.numberempire.com/numberfactorizer.php">整数分解工具</a> 将 98554799767 分解为 101999 和 966233</li>
-<li>求 101999966233 的 md5 结果，为 d450209323a847c8d01c6be47c81811a</li>
-</ol>
-<p>可得 flag 为 <strong>flag{d450209323a847c8d01c6be47c81811a}</strong></p>
-
-                    
-                    <HR width="100%" id="EOF">
-		    <p style="color:#777;">最后修改于 2023-01-13</p>
-                    
-                </div>
-            </div>
-            
-            
-            <nav class="post-pagination">
-
-                
-                <a class="newer-posts" href="/ctf/wp-buuctf-%E5%A4%A7%E7%99%BD1/">
-			下回<br>WP BUUCTF 大白1
-                </a>
-                
-                
-                
-                <a class="older-posts" href="/ctf/wp-buuctf-%E4%B8%A2%E5%A4%B1%E7%9A%84md51/">
-			上回<br>WP BUUCTF 丢失的MD51
-                </a>
-                
-            </nav>
-            <div class="post-comment-wrapper">
-                
-
-
-
-
-
-
-
-
-<div id="waline"></div>
-<script>
-    Waline.init({
-        el: '#waline',
-        
-        serverURL: "https://blog-waline.lty520.ml/" ,
-    });
+            <a href="/ctf/wp-buuctf-rabbit1/" class="a-block">
+                <div class="post-item-wrapper">
+                    <div class="post-item post-item-no-gaps">
+                        <div class="post-item-info-wrapper">
+                            <div class="post-item-title">
+                                WP BUUCTF Rabbit1
+                            </div>
+                            <div class="post-item-meta">
+    2023-01-10
+    &emsp;
     
-    </script>
+    
+    <i class="material-icons" style="font-size:10px">schedule</i>
+    
 
+    
+    
 
+    
+    20 s
+    
+    
+    &emsp;
+    
+</div>
 
-            </div>
-        </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="/ctf/wp-buucuf-password1/" class="a-block">
+                <div class="post-item-wrapper">
+                    <div class="post-item post-item-no-gaps">
+                        <div class="post-item-info-wrapper">
+                            <div class="post-item-title">
+                                WP BUUCUF Password1
+                            </div>
+                            <div class="post-item-meta">
+    2023-01-10
+    &emsp;
+    
+    
+    <i class="material-icons" style="font-size:10px">schedule</i>
+    
+
+    
+    
+
+    
+    29 s
+    
+    
+    &emsp;
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </a>
+            
+        
     </div>
 
 
+
                     </div>
-            </div><div id="single-column-footer">
+            </div>
+
+<div class="pagination">
+    
+    <a class="pagination-action" href="/ctf/" style="opacity:1">
+    
+        <i class="material-icons pagination-action-icon">
+            chevron_left
+        </i>
+    </a>
+
+        <div class="pagination-indicator">
+            <span>2/2</span>
+        </div>
+
+        
+            <a class="pagination-action" style="opacity:0">
+        
+                <i class="material-icons pagination-action-icon">
+                    chevron_right
+                </i>
+            </a>
+</div>
+
+
+<div id="single-column-footer">
 Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
 <br>
 移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>

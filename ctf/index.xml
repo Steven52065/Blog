@@ -6,7 +6,42 @@
     <description>Recent content in CTFs on Ling的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 13 Jan 2023 02:05:24 +0800</lastBuildDate><atom:link href="https://blog.lty520.ml/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 14 Jan 2023 01:52:14 +0800</lastBuildDate><atom:link href="https://blog.lty520.ml/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WP BUUCTF Zip伪加密</title>
+      <link>https://blog.lty520.ml/ctf/wp-buuctf-zip%E4%BC%AA%E5%8A%A0%E5%AF%86/</link>
+      <pubDate>Sat, 14 Jan 2023 01:52:14 +0800</pubDate>
+      
+      <guid>https://blog.lty520.ml/ctf/wp-buuctf-zip%E4%BC%AA%E5%8A%A0%E5%AF%86/</guid>
+      <description>题目 注意：得到的 flag 请包上 flag{} 提交 以及一个解压需要密码的 zip 压缩包
+思路 既然题目叫Zip伪加密,那么就从Zip伪加密入手（废话文学.jpg）
+相关知识 zip文件头协议(部分)
+压缩源文件数据区： 50 4B 03 04：这是头文件标记（0x04034b50） 14 00：解压文件所需 pkware 版本 00 00：全局方式位标记（有无加密） 08 00：压缩方式 5A 7E：最后修改文件时间 F7 46：最后修改文件日期 16 B5 80 14：CRC-32校验（1480B516） 19 00 00 00：压缩后尺寸（25） 17 00 00 00：未压缩尺寸（23） 07 00：文件名长度 00 00：扩展记录长度 压缩源文件目录区： 50 4B 01 02：目录中文件文件头标记(0x02014b50) 3F 00：压缩使用的 pkware 版本 14 00：解压文件所需 pkware 版本 00 00：全局方式位标记（有无加密，这个更改这里进行伪加密，改为09 00打开就会提示有密码了） 08 00：压缩方式 5A 7E：最后修改文件时间 F7 46：最后修改文件日期 16 B5 80 14：CRC-32校验（1480B516） 19 00 00 00：压缩后尺寸（25） 17 00 00 00：未压缩尺寸（23） 07 00：文件名长度 24 00：扩展字段长度 00 00：文件注释长度 00 00：磁盘开始号 00 00：内部文件属性 20 00 00 00：外部文件属性 00 00 00 00：局部头部偏移量 压缩源文件目录结束标志： 50 4B 05 06：目录结束标记 00 00：当前磁盘编号 00 00：目录区开始磁盘编号 01 00：本磁盘上纪录总数 01 00：目录区中纪录总数 59 00 00 00：目录区尺寸大小 3E 00 00 00：目录区对第一张磁盘的偏移量 00 00：ZIP 文件注释长度 如上所述，只要将第二个50 4B后的09 00改为00 00即可</description>
+    </item>
+    
+    <item>
+      <title>WP BUUCTF 隐藏的钥匙</title>
+      <link>https://blog.lty520.ml/ctf/wp-buuctf-%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99/</link>
+      <pubDate>Sat, 14 Jan 2023 01:44:31 +0800</pubDate>
+      
+      <guid>https://blog.lty520.ml/ctf/wp-buuctf-%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99/</guid>
+      <description>题目 思路 使用 Notepad++ 打开后搜索 flag 即可找到被 Base64 编码后的信息 flag:base64:(Mzc3Y2JhZGRhMWVjYTJmMmY3M2QzNjI3Nzc4MWYwMGE=)
+使用 Base64 解码后即可得到 flag flag{377cbadda1eca2f2f73d36277781f00a}</description>
+    </item>
+    
+    <item>
+      <title>WP BUUCTF 大白1</title>
+      <link>https://blog.lty520.ml/ctf/wp-buuctf-%E5%A4%A7%E7%99%BD1/</link>
+      <pubDate>Sat, 14 Jan 2023 01:09:55 +0800</pubDate>
+      
+      <guid>https://blog.lty520.ml/ctf/wp-buuctf-%E5%A4%A7%E7%99%BD1/</guid>
+      <description>题目链接: https://buuoj.cn/challenges#%E5%A4%A7%E7%99%BD
+题目 看不到图？ 是不是屏幕太小了 注意：得到的 flag 请包上 flag{} 提交
+思路 题目中提到了看不到图以及屏幕太小了,再加上题目给了一张 png 图片，由此可以猜到这题修改了图片的长或宽，让设备只能显示图片的一部分，从而隐藏了 flag
+使用脚本
+import zlib import struct filename = &amp;#39;2.png&amp;#39; with open(filename, &amp;#39;rb&amp;#39;) as f: all_b = f.read() crc32key = int(all_b[29:33].hex(), 16) data = bytearray(all_b[12:29]) n = 4095 # 理论上0xffffffff,但考虑到屏幕实际/cpu，0x0fff就差不多了 for w in range(n): # 高和宽一起爆破 width = bytearray(struct.pack(&amp;#39;&amp;gt;i&amp;#39;, w)) # q为8字节，i为4字节，h为2字节 for h in range(n): height = bytearray(struct.pack(&amp;#39;&amp;gt;i&amp;#39;, h)) for x in range(4): data[x + 4] = width[x] data[x + 8] = height[x] crc32result = zlib.</description>
+    </item>
+    
     <item>
       <title>WP BUUCTF Alice与Bob</title>
       <link>https://blog.lty520.ml/ctf/wp-buuctf-alice%E4%B8%8Ebob/</link>
@@ -134,15 +169,6 @@ key 格式为 key{xxxxxxxxxx}
 思路 因为 x 为10位，张三为两个字的名字，生日占8位，因此可以猜到 flag
 为 key{zs19900315}
 所以&amp;quot;注意：得到的 flag 请包上 flag{} 提交&amp;quot;是闹那样&amp;hellip;&amp;quot;</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>https://blog.lty520.ml/ctf/test/</link>
-      <pubDate>Tue, 10 Jan 2023 01:08:23 +0800</pubDate>
-      
-      <guid>https://blog.lty520.ml/ctf/test/</guid>
-      <description>test test</description>
     </item>
     
   </channel>

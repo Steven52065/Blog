@@ -6,9 +6,140 @@
     <description>Recent content on Ling的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 13 Jan 2023 02:05:24 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 14 Jan 2023 01:52:14 +0800</lastBuildDate>
     
         <atom:link href="https://blog.lty520.ml/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>WP BUUCTF Zip伪加密</title>
+        <link>https://blog.lty520.ml/ctf/wp-buuctf-zip%E4%BC%AA%E5%8A%A0%E5%AF%86/</link>
+        <pubDate>Sat, 14 Jan 2023 01:52:14 +0800</pubDate>
+        
+        <guid>https://blog.lty520.ml/ctf/wp-buuctf-zip%E4%BC%AA%E5%8A%A0%E5%AF%86/</guid>
+        <description>Ling的博客 https://blog.lty520.ml/ctf/wp-buuctf-zip%E4%BC%AA%E5%8A%A0%E5%AF%86/ -&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
+&lt;p&gt;注意：得到的 flag 请包上 flag{} 提交  以及一个解压需要密码的 zip 压缩包&lt;/p&gt;
+&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
+&lt;p&gt;既然题目叫&lt;strong&gt;Zip伪加密&lt;/strong&gt;,那么就从&lt;strong&gt;Zip伪加密&lt;/strong&gt;入手（废话文学.jpg）&lt;/p&gt;
+&lt;h2 id=&#34;相关知识&#34;&gt;相关知识&lt;/h2&gt;
+&lt;p&gt;zip文件头协议(部分)&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;压缩源文件数据区：
+50 4B 03 04：这是头文件标记（0x04034b50）
+14 00：解压文件所需 pkware 版本
+00 00：全局方式位标记（有无加密）
+08 00：压缩方式
+5A 7E：最后修改文件时间
+F7 46：最后修改文件日期
+16 B5 80 14：CRC-32校验（1480B516）
+19 00 00 00：压缩后尺寸（25）
+17 00 00 00：未压缩尺寸（23）
+07 00：文件名长度
+00 00：扩展记录长度
+
+压缩源文件目录区：
+50 4B 01 02：目录中文件文件头标记(0x02014b50)
+3F 00：压缩使用的 pkware 版本
+14 00：解压文件所需 pkware 版本
+00 00：全局方式位标记（有无加密，这个更改这里进行伪加密，改为09 00打开就会提示有密码了）
+08 00：压缩方式
+5A 7E：最后修改文件时间
+F7 46：最后修改文件日期
+16 B5 80 14：CRC-32校验（1480B516）
+19 00 00 00：压缩后尺寸（25）
+17 00 00 00：未压缩尺寸（23）
+07 00：文件名长度
+24 00：扩展字段长度
+00 00：文件注释长度
+00 00：磁盘开始号
+00 00：内部文件属性
+20 00 00 00：外部文件属性
+00 00 00 00：局部头部偏移量
+
+压缩源文件目录结束标志：
+50 4B 05 06：目录结束标记
+00 00：当前磁盘编号
+00 00：目录区开始磁盘编号
+01 00：本磁盘上纪录总数
+01 00：目录区中纪录总数
+59 00 00 00：目录区尺寸大小
+3E 00 00 00：目录区对第一张磁盘的偏移量
+00 00：ZIP 文件注释长度
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如上所述，只要将第二个50 4B后的09 00改为00 00即可&lt;br&gt;
+解压得到 flag &lt;strong&gt;flag{Adm1N-B2G-kU-SZIP}&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;zip文件头协议部分 引自&lt;a href=&#34;https://blog.csdn.net/ETF6996/article/details/51946250&#34;&gt;zip伪加密&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+- https://blog.lty520.ml/ctf/wp-buuctf-zip%E4%BC%AA%E5%8A%A0%E5%AF%86/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>WP BUUCTF 隐藏的钥匙</title>
+        <link>https://blog.lty520.ml/ctf/wp-buuctf-%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99/</link>
+        <pubDate>Sat, 14 Jan 2023 01:44:31 +0800</pubDate>
+        
+        <guid>https://blog.lty520.ml/ctf/wp-buuctf-%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99/</guid>
+        <description>Ling的博客 https://blog.lty520.ml/ctf/wp-buuctf-%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99/ -&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.lty520.ml/img/CTF/WP-BUUCTF-%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99/%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99.jpg&#34; alt=&#34;隐藏的钥匙&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
+&lt;p&gt;使用 Notepad++ 打开后搜索 &lt;strong&gt;flag&lt;/strong&gt; 即可找到被 Base64 编码后的信息 &lt;strong&gt;flag:base64:(Mzc3Y2JhZGRhMWVjYTJmMmY3M2QzNjI3Nzc4MWYwMGE=)&lt;/strong&gt;&lt;br&gt;
+使用 Base64 解码后即可得到 flag &lt;strong&gt;flag{377cbadda1eca2f2f73d36277781f00a}&lt;/strong&gt;&lt;/p&gt;
+- https://blog.lty520.ml/ctf/wp-buuctf-%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>WP BUUCTF 大白1</title>
+        <link>https://blog.lty520.ml/ctf/wp-buuctf-%E5%A4%A7%E7%99%BD1/</link>
+        <pubDate>Sat, 14 Jan 2023 01:09:55 +0800</pubDate>
+        
+        <guid>https://blog.lty520.ml/ctf/wp-buuctf-%E5%A4%A7%E7%99%BD1/</guid>
+        <description>Ling的博客 https://blog.lty520.ml/ctf/wp-buuctf-%E5%A4%A7%E7%99%BD1/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%E5%A4%A7%E7%99%BD&#34;&gt;https://buuoj.cn/challenges#%E5%A4%A7%E7%99%BD&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
+&lt;p&gt;看不到图？ 是不是屏幕太小了 注意：得到的 flag 请包上 flag{} 提交&lt;/p&gt;
+&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
+&lt;p&gt;题目中提到了&lt;strong&gt;看不到图&lt;/strong&gt;以及&lt;strong&gt;屏幕太小了&lt;/strong&gt;,再加上题目给了一张 png 图片，由此可以猜到这题修改了图片的长或宽，让设备只能显示图片的一部分，从而隐藏了 flag&lt;br&gt;
+使用脚本&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;import zlib
+import struct
+
+filename = &amp;#39;2.png&amp;#39;
+with open(filename, &amp;#39;rb&amp;#39;) as f:
+    all_b = f.read()
+    crc32key = int(all_b[29:33].hex(), 16)
+    data = bytearray(all_b[12:29])
+    n = 4095  # 理论上0xffffffff,但考虑到屏幕实际/cpu，0x0fff就差不多了
+    for w in range(n):  # 高和宽一起爆破
+        width = bytearray(struct.pack(&amp;#39;&amp;gt;i&amp;#39;, w))  # q为8字节，i为4字节，h为2字节
+        for h in range(n):
+            height = bytearray(struct.pack(&amp;#39;&amp;gt;i&amp;#39;, h))
+            for x in range(4):
+                data[x + 4] = width[x]
+                data[x + 8] = height[x]
+            crc32result = zlib.crc32(data)
+            if crc32result == crc32key:
+                # 2021.7.20，有时候显示的宽高依然看不出具体的值，干脆输出data部分
+                print(data.hex())
+                print(&amp;#34;宽为：&amp;#34;, end=&amp;#34;&amp;#34;)
+                print(width)
+                print(&amp;#34;高为：&amp;#34;, end=&amp;#34;&amp;#34;)
+                print(height)
+                exit(0)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;可以一键得出图片正确的长和宽，将图片信息修改为正确的长和宽即可看到 flag&lt;br&gt;
+&lt;img src=&#34;https://blog.lty520.ml/img/CTF/WP-BUUCTF-%E5%A4%A7%E7%99%BD1/img1.png&#34; alt=&#34;img1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;可得 flag 为 &lt;strong&gt;flag{He1l0_d4_ba1}&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;之前用的脚本咋找不到了呢&amp;hellip;&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;脚本来源 &lt;a href=&#34;https://www.cnblogs.com/yunqian2017/p/14449346.html&#34;&gt;png图片CRC爆破原理的学习&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+- https://blog.lty520.ml/ctf/wp-buuctf-%E5%A4%A7%E7%99%BD1/ - </description>
+        </item>
     
     
     
@@ -177,57 +308,6 @@ flag 为 &lt;strong&gt;flag{1sb_i4_s0_Ea4y}&lt;/strong&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;em&gt;发现了个名为 LSB_hide 的软件，好像很好用的样子，但是7G内存不够它用的 QAQ&lt;/em&gt;&lt;/p&gt;
 - https://blog.lty520.ml/ctf/wp-buuctf-lsb1/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>WP BUUCTF Rabbit1</title>
-        <link>https://blog.lty520.ml/ctf/wp-buuctf-rabbit1/</link>
-        <pubDate>Tue, 10 Jan 2023 20:26:12 +0800</pubDate>
-        
-        <guid>https://blog.lty520.ml/ctf/wp-buuctf-rabbit1/</guid>
-        <description>Ling的博客 https://blog.lty520.ml/ctf/wp-buuctf-rabbit1/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#Rabbit&#34;&gt;https://buuoj.cn/challenges#Rabbit&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
-&lt;p&gt;U2FsdGVkX1/+ydnDPowGbjjJXhZxm2MP2AgI&lt;/p&gt;
-&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
-&lt;p&gt;因为题目名为 Rabbit ，以及给到的密文是 U2 开头，使用工具 &lt;a href=&#34;https://www.sojson.com/encrypt_rabbit.html&#34;&gt;https://www.sojson.com/encrypt_rabbit.html&lt;/a&gt; 可以解得 Cute_Rabbit ，所以 flag 即为 &lt;strong&gt;flag{Cute_Rabbit}&lt;/strong&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;em&gt;没搞明白 CyberChef 咋用，还要 Key ，lv 啥的，明明别的直接就可以，怪&lt;/em&gt;&lt;/p&gt;
-- https://blog.lty520.ml/ctf/wp-buuctf-rabbit1/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>WP BUUCUF Password1</title>
-        <link>https://blog.lty520.ml/ctf/wp-buucuf-password1/</link>
-        <pubDate>Tue, 10 Jan 2023 20:13:06 +0800</pubDate>
-        
-        <guid>https://blog.lty520.ml/ctf/wp-buucuf-password1/</guid>
-        <description>Ling的博客 https://blog.lty520.ml/ctf/wp-buucuf-password1/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#password&#34;&gt;https://buuoj.cn/challenges#password&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
-&lt;p&gt;姓名：张三
-生日：19900315&lt;/p&gt;
-&lt;p&gt;key 格式为 key{xxxxxxxxxx}&lt;/p&gt;
-&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
-&lt;p&gt;因为 x 为10位，张三为两个字的名字，生日占8位，因此可以猜到 flag&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;为 &lt;strong&gt;key{zs19900315}&lt;/strong&gt;&lt;br&gt;
-&lt;em&gt;所以&amp;quot;注意：得到的 flag 请包上 flag{} 提交&amp;quot;是闹那样&amp;hellip;&amp;quot;&lt;/em&gt;&lt;/p&gt;
-- https://blog.lty520.ml/ctf/wp-buucuf-password1/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Test</title>
-        <link>https://blog.lty520.ml/ctf/test/</link>
-        <pubDate>Tue, 10 Jan 2023 01:08:23 +0800</pubDate>
-        
-        <guid>https://blog.lty520.ml/ctf/test/</guid>
-        <description>Ling的博客 https://blog.lty520.ml/ctf/test/ -&lt;p&gt;test test&lt;/p&gt;
-- https://blog.lty520.ml/ctf/test/ - </description>
         </item>
     
     

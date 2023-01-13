@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-<title>WP BUUCTF Alice与Bob</title>
+<title>WP BUUCTF 隐藏的钥匙</title>
 
 
 
@@ -379,12 +379,12 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
             >
                 <div class="post-title">
-                    WP BUUCTF Alice与Bob
+                    WP BUUCTF 隐藏的钥匙
                     
                     <div class="post-meta">
                         
                         <time itemprop="datePublished">
-                            2023-01-13 02:05
+                            2023-01-14 01:44
                         </time>
                         
 
@@ -399,9 +399,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                             
 
                             
-                            1 min
-                            
-                            5 s.
+                            10 s.
                         
                     </div>
                 </div>
@@ -411,20 +409,15 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
                 <div class="post-body" v-pre>
                 
-                    <p>题目链接: <a href="https://buuoj.cn/challenges#Alice%E4%B8%8EBob">https://buuoj.cn/challenges#Alice%E4%B8%8EBob</a></p>
-<h1 id="题目">题目</h1>
-<p>密码学历史中，有两位知名的杰出人物，Alice和Bob。他们的爱情经过置换和轮加密也难以混淆，即使是没有身份认证也可以知根知底。就像在数学王国中的素数一样，孤傲又热情。下面是一个大整数:98554799767,请分解为两个素数，分解后，小的放前面，大的放后面，合成一个新的数字，进行md5的32位小写哈希，提交答案。 注意：得到的 flag 请包上 flag{} 提交</p>
+                    <h1 id="题目">题目</h1>
+<p><img src="/img/CTF/WP-BUUCTF-%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99/%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99.jpg" alt="隐藏的钥匙"></p>
 <h1 id="思路">思路</h1>
-<p>去掉阅读短文似的没用的信息，即先分解质因数，再求md5即可</p>
-<ol>
-<li>使用 <a href="https://zh.numberempire.com/numberfactorizer.php">整数分解工具</a> 将 98554799767 分解为 101999 和 966233</li>
-<li>求 101999966233 的 md5 结果，为 d450209323a847c8d01c6be47c81811a</li>
-</ol>
-<p>可得 flag 为 <strong>flag{d450209323a847c8d01c6be47c81811a}</strong></p>
+<p>使用 Notepad++ 打开后搜索 <strong>flag</strong> 即可找到被 Base64 编码后的信息 <strong>flag:base64:(Mzc3Y2JhZGRhMWVjYTJmMmY3M2QzNjI3Nzc4MWYwMGE=)</strong><br>
+使用 Base64 解码后即可得到 flag <strong>flag{377cbadda1eca2f2f73d36277781f00a}</strong></p>
 
                     
                     <HR width="100%" id="EOF">
-		    <p style="color:#777;">最后修改于 2023-01-13</p>
+		    <p style="color:#777;">最后修改于 2023-01-14</p>
                     
                 </div>
             </div>
@@ -433,14 +426,14 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
             <nav class="post-pagination">
 
                 
-                <a class="newer-posts" href="/ctf/wp-buuctf-%E5%A4%A7%E7%99%BD1/">
-			下回<br>WP BUUCTF 大白1
+                <a class="newer-posts" href="/ctf/wp-buuctf-zip%E4%BC%AA%E5%8A%A0%E5%AF%86/">
+			下回<br>WP BUUCTF Zip伪加密
                 </a>
                 
                 
                 
-                <a class="older-posts" href="/ctf/wp-buuctf-%E4%B8%A2%E5%A4%B1%E7%9A%84md51/">
-			上回<br>WP BUUCTF 丢失的MD51
+                <a class="older-posts" href="/ctf/wp-buuctf-%E5%A4%A7%E7%99%BD1/">
+			上回<br>WP BUUCTF 大白1
                 </a>
                 
             </nav>
