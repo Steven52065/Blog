@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-<title>WP BUUCTF Zip伪加密</title>
+<title>WP BUUCTF 丢失的MD5</title>
 
 
 
@@ -206,30 +206,6 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 					
 				
 			
-				
-				
-					
-						
-						
-						
-						
-							
-								
-									<ul>
-								
-							
-						
-						
-							<li>
-								<a href="#%e7%9b%b8%e5%85%b3%e7%9f%a5%e8%af%86" onclick="onNavClick(`#相关知识-nav`)" id="相关知识-nav">
-									相关知识
-								</a>
-							</li>
-						
-						
-					
-				
-			
 		</ul>
 	</div>
 
@@ -350,30 +326,6 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 					
 				
 			
-				
-				
-					
-						
-						
-						
-						
-							
-								
-									<ul>
-								
-							
-						
-						
-							<li>
-								<a href="#%e7%9b%b8%e5%85%b3%e7%9f%a5%e8%af%86" onclick="onNavClick(`#相关知识-nav`)" id="相关知识-nav">
-									相关知识
-								</a>
-							</li>
-						
-						
-					
-				
-			
 		</ul>
 	</div>
 
@@ -427,12 +379,12 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
             >
                 <div class="post-title">
-                    WP BUUCTF Zip伪加密
+                    WP BUUCTF 丢失的MD5
                     
                     <div class="post-meta">
                         
                         <time itemprop="datePublished">
-                            2023-01-14 01:52
+                            2023-01-13 00:32
                         </time>
                         
 
@@ -447,9 +399,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                             
 
                             
-                            3 min
-                            
-                            7 s.
+                            39 s.
                         
                     </div>
                 </div>
@@ -459,63 +409,29 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
                 <div class="post-body" v-pre>
                 
-                    <h1 id="题目">题目</h1>
-<p>注意：得到的 flag 请包上 flag{} 提交  以及一个解压需要密码的 zip 压缩包</p>
-<h1 id="思路">思路</h1>
-<p>既然题目叫<strong>Zip伪加密</strong>,那么就从<strong>Zip伪加密</strong>入手（废话文学.jpg）</p>
-<h2 id="相关知识">相关知识</h2>
-<p>zip文件头协议(部分)</p>
-<pre tabindex="0"><code>压缩源文件数据区：
-50 4B 03 04：这是头文件标记（0x04034b50）
-14 00：解压文件所需 pkware 版本
-00 00：全局方式位标记（有无加密）
-08 00：压缩方式
-5A 7E：最后修改文件时间
-F7 46：最后修改文件日期
-16 B5 80 14：CRC-32校验（1480B516）
-19 00 00 00：压缩后尺寸（25）
-17 00 00 00：未压缩尺寸（23）
-07 00：文件名长度
-00 00：扩展记录长度
-
-压缩源文件目录区：
-50 4B 01 02：目录中文件文件头标记(0x02014b50)
-3F 00：压缩使用的 pkware 版本
-14 00：解压文件所需 pkware 版本
-00 00：全局方式位标记（有无加密，这个更改这里进行伪加密，改为09 00打开就会提示有密码了）
-08 00：压缩方式
-5A 7E：最后修改文件时间
-F7 46：最后修改文件日期
-16 B5 80 14：CRC-32校验（1480B516）
-19 00 00 00：压缩后尺寸（25）
-17 00 00 00：未压缩尺寸（23）
-07 00：文件名长度
-24 00：扩展字段长度
-00 00：文件注释长度
-00 00：磁盘开始号
-00 00：内部文件属性
-20 00 00 00：外部文件属性
-00 00 00 00：局部头部偏移量
-
-压缩源文件目录结束标志：
-50 4B 05 06：目录结束标记
-00 00：当前磁盘编号
-00 00：目录区开始磁盘编号
-01 00：本磁盘上纪录总数
-01 00：目录区中纪录总数
-59 00 00 00：目录区尺寸大小
-3E 00 00 00：目录区对第一张磁盘的偏移量
-00 00：ZIP 文件注释长度
-</code></pre><p>如上所述，只要将第二个50 4B后的09 00改为00 00即可<br>
-解压得到 flag <strong>flag{Adm1N-B2G-kU-SZIP}</strong></p>
+                    <p>题目链接: <a href="https://buuoj.cn/challenges#%E4%B8%A2%E5%A4%B1%E7%9A%84MD5">https://buuoj.cn/challenges#%E4%B8%A2%E5%A4%B1%E7%9A%84MD5</a></p>
+<h1 id="题目">题目</h1>
+<pre tabindex="0"><code>import hashlib   
+for i in range(32,127):
+    for j in range(32,127):
+        for k in range(32,127):
+            m=hashlib.md5()
+            m.update(&#39;TASC&#39;+chr(i)+&#39;O3RJMV&#39;+chr(j)+&#39;WDJKX&#39;+chr(k)+&#39;ZM&#39;)
+            des=m.hexdigest()
+            if &#39;e9032&#39; in des and &#39;da&#39; in des and &#39;911513&#39; in des:
+                print des
+</code></pre><h1 id="思路">思路</h1>
+<p>遇到 python 题目，当然是要先运行一下啦<br>
+报错<br>
+仔细研究后发现这 TM 居然是 python2 的题目&hellip;<br>
+只要装上 python2 环境，运行一下，可以得到一串字符串，包上 <strong>flag{}</strong> 即可<br>
+所以 flag 就为 <strong>flag{e9032994dabac08080091151380478a2}</strong></p>
 <hr>
-<ul>
-<li>zip文件头协议部分 引自<a href="https://blog.csdn.net/ETF6996/article/details/51946250">zip伪加密</a></li>
-</ul>
+<p><em>结果这题的大部分时间都用在了装 python2 环境上了&hellip;</em></p>
 
                     
                     <HR width="100%" id="EOF">
-		    <p style="color:#777;">最后修改于 2023-01-14</p>
+		    <p style="color:#777;">最后修改于 2023-01-13</p>
                     
                 </div>
             </div>
@@ -524,14 +440,14 @@ F7 46：最后修改文件日期
             <nav class="post-pagination">
 
                 
-                <a class="newer-posts" href="/ctf/wp-buuctf-rsa/">
-			下回<br>WP BUUCTF RSA
+                <a class="newer-posts" href="/ctf/wp-buuctf-alice%E4%B8%8Ebob/">
+			下回<br>WP BUUCTF Alice与Bob
                 </a>
                 
                 
                 
-                <a class="older-posts" href="/ctf/wp-buuctf-%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99/">
-			上回<br>WP BUUCTF 隐藏的钥匙
+                <a class="older-posts" href="/ctf/wp-buuctf-%E7%AF%B1%E7%AC%86%E5%A2%99%E7%9A%84%E5%BD%B1%E5%AD%90/">
+			上回<br>WP BUUCTF 篱笆墙的影子
                 </a>
                 
             </nav>

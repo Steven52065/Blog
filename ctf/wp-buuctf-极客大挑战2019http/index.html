@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-<title>WP BUUCTF Zip伪加密</title>
+<title>WP BUUCTF [极客大挑战2019]Http</title>
 
 
 
@@ -206,30 +206,6 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 					
 				
 			
-				
-				
-					
-						
-						
-						
-						
-							
-								
-									<ul>
-								
-							
-						
-						
-							<li>
-								<a href="#%e7%9b%b8%e5%85%b3%e7%9f%a5%e8%af%86" onclick="onNavClick(`#相关知识-nav`)" id="相关知识-nav">
-									相关知识
-								</a>
-							</li>
-						
-						
-					
-				
-			
 		</ul>
 	</div>
 
@@ -350,30 +326,6 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 					
 				
 			
-				
-				
-					
-						
-						
-						
-						
-							
-								
-									<ul>
-								
-							
-						
-						
-							<li>
-								<a href="#%e7%9b%b8%e5%85%b3%e7%9f%a5%e8%af%86" onclick="onNavClick(`#相关知识-nav`)" id="相关知识-nav">
-									相关知识
-								</a>
-							</li>
-						
-						
-					
-				
-			
 		</ul>
 	</div>
 
@@ -427,12 +379,12 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
             >
                 <div class="post-title">
-                    WP BUUCTF Zip伪加密
+                    WP BUUCTF [极客大挑战2019]Http
                     
                     <div class="post-meta">
                         
                         <time itemprop="datePublished">
-                            2023-01-14 01:52
+                            2023-01-12 01:05
                         </time>
                         
 
@@ -447,9 +399,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                             
 
                             
-                            3 min
-                            
-                            7 s.
+                            31 s.
                         
                     </div>
                 </div>
@@ -459,63 +409,31 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
                 <div class="post-body" v-pre>
                 
-                    <h1 id="题目">题目</h1>
-<p>注意：得到的 flag 请包上 flag{} 提交  以及一个解压需要密码的 zip 压缩包</p>
+                    <p>题目链接: <a href="https://buuoj.cn/challenges#%5B%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98%202019%5DHttp">https://buuoj.cn/challenges#[%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98%202019]Http</a></p>
+<h1 id="题目">题目</h1>
+<p>一个网站</p>
 <h1 id="思路">思路</h1>
-<p>既然题目叫<strong>Zip伪加密</strong>,那么就从<strong>Zip伪加密</strong>入手（废话文学.jpg）</p>
-<h2 id="相关知识">相关知识</h2>
-<p>zip文件头协议(部分)</p>
-<pre tabindex="0"><code>压缩源文件数据区：
-50 4B 03 04：这是头文件标记（0x04034b50）
-14 00：解压文件所需 pkware 版本
-00 00：全局方式位标记（有无加密）
-08 00：压缩方式
-5A 7E：最后修改文件时间
-F7 46：最后修改文件日期
-16 B5 80 14：CRC-32校验（1480B516）
-19 00 00 00：压缩后尺寸（25）
-17 00 00 00：未压缩尺寸（23）
-07 00：文件名长度
-00 00：扩展记录长度
-
-压缩源文件目录区：
-50 4B 01 02：目录中文件文件头标记(0x02014b50)
-3F 00：压缩使用的 pkware 版本
-14 00：解压文件所需 pkware 版本
-00 00：全局方式位标记（有无加密，这个更改这里进行伪加密，改为09 00打开就会提示有密码了）
-08 00：压缩方式
-5A 7E：最后修改文件时间
-F7 46：最后修改文件日期
-16 B5 80 14：CRC-32校验（1480B516）
-19 00 00 00：压缩后尺寸（25）
-17 00 00 00：未压缩尺寸（23）
-07 00：文件名长度
-24 00：扩展字段长度
-00 00：文件注释长度
-00 00：磁盘开始号
-00 00：内部文件属性
-20 00 00 00：外部文件属性
-00 00 00 00：局部头部偏移量
-
-压缩源文件目录结束标志：
-50 4B 05 06：目录结束标记
-00 00：当前磁盘编号
-00 00：目录区开始磁盘编号
-01 00：本磁盘上纪录总数
-01 00：目录区中纪录总数
-59 00 00 00：目录区尺寸大小
-3E 00 00 00：目录区对第一张磁盘的偏移量
-00 00：ZIP 文件注释长度
-</code></pre><p>如上所述，只要将第二个50 4B后的09 00改为00 00即可<br>
-解压得到 flag <strong>flag{Adm1N-B2G-kU-SZIP}</strong></p>
-<hr>
+<p>题目给了一个网站，在网页源码里可以找到一句<br>
+<strong>&lt;a style=&ldquo;border:none;cursor:default;&rdquo; onclick=&ldquo;return false&rdquo; href=&ldquo;Secret.php&rdquo;&gt;</strong><br>
+可以猜到题目和 Secret.php 有关<br>
+打开后即可按照题目提示分别加上三个请求头:</p>
 <ul>
-<li>zip文件头协议部分 引自<a href="https://blog.csdn.net/ETF6996/article/details/51946250">zip伪加密</a></li>
+<li>Referer:https://Sycsecret.buuoj.cn</li>
+<li>User-Agent:Syclover</li>
+<li>X-Forwarded-For:127.0.0.1</li>
 </ul>
+<pre tabindex="0"><code>    import httpx
+    url = &#39;http://node4.buuoj.cn:27094/Secret.php&#39;
+    headers = {&#34;Referer&#34;:&#34;https://Sycsecret.buuoj.cn&#34;,&#34;User-Agent&#34;:&#34;Syclover&#34;,&#34;X-Forwarded-For&#34;:&#34;127.0.0.1&#34;}
+    r = httpx.get(url,headers=headers)
+    print(r.text)
+</code></pre><p>可得 flag 为 <strong>flag{10b601e9-9ce4-4abc-b69d-32123353d17e}</strong></p>
+<hr>
+<p><em>见了鬼了，用 Postman 死活不行&hellip;<img src="/img/CTF/WP-BUUCTF-%5B%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019%5DHttp1/img1.png" alt="不好使的Postman">还得是 Python</em></p>
 
                     
                     <HR width="100%" id="EOF">
-		    <p style="color:#777;">最后修改于 2023-01-14</p>
+		    <p style="color:#777;">最后修改于 2023-01-12</p>
                     
                 </div>
             </div>
@@ -524,14 +442,14 @@ F7 46：最后修改文件日期
             <nav class="post-pagination">
 
                 
-                <a class="newer-posts" href="/ctf/wp-buuctf-rsa/">
-			下回<br>WP BUUCTF RSA
+                <a class="newer-posts" href="/ctf/wp-buuctf-%E7%AF%B1%E7%AC%86%E5%A2%99%E7%9A%84%E5%BD%B1%E5%AD%90/">
+			下回<br>WP BUUCTF 篱笆墙的影子
                 </a>
                 
                 
                 
-                <a class="older-posts" href="/ctf/wp-buuctf-%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99/">
-			上回<br>WP BUUCTF 隐藏的钥匙
+                <a class="older-posts" href="/ctf/wp-buuctf-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019knife/">
+			上回<br>WP BUUCTF [极客大挑战2019]Knife
                 </a>
                 
             </nav>
