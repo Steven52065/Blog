@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-<title>WP BUUCTF 乌镇峰会种图</title>
+<title>WP BUUCTF 面具下的flag</title>
 
 
 
@@ -379,12 +379,12 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
             >
                 <div class="post-title">
-                    WP BUUCTF 乌镇峰会种图
+                    WP BUUCTF 面具下的flag
                     
                     <div class="post-meta">
                         
                         <time itemprop="datePublished">
-                            2023-01-15 01:23
+                            2023-01-16 23:21
                         </time>
                         
 
@@ -399,7 +399,9 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                             
 
                             
-                            17 s.
+                            1 min
+                            
+                            11 s.
                         
                     </div>
                 </div>
@@ -409,17 +411,49 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
                 <div class="post-body" v-pre>
                 
-                    <p>题目链接: <a href="https://buuoj.cn/challenges#%E4%B9%8C%E9%95%87%E5%B3%B0%E4%BC%9A%E7%A7%8D%E5%9B%BE">https://buuoj.cn/challenges#%E4%B9%8C%E9%95%87%E5%B3%B0%E4%BC%9A%E7%A7%8D%E5%9B%BE</a></p>
+                    <p>题目链接: <a href="https://buuoj.cn/challenges#%E9%9D%A2%E5%85%B7%E4%B8%8B%E7%9A%84flag">https://buuoj.cn/challenges#%E9%9D%A2%E5%85%B7%E4%B8%8B%E7%9A%84flag</a></p>
 <h1 id="题目">题目</h1>
-<p><img src="/img/CTF/WP-BUUCTF-%E4%B9%8C%E9%95%87%E5%B3%B0%E4%BC%9A%E7%A7%8D%E5%9B%BE/img1.jpg" alt="题图"></p>
+<p><img src="/img/CTF/WP-BUUCTF-%E9%9D%A2%E5%85%B7%E4%B8%8B%E7%9A%84flag/mianju.jpg" alt="题图"></p>
 <h1 id="思路">思路</h1>
-<p>使用 Notepad++ 打开图片后即可在末尾找到 flag <strong>flag{97314e7864a8f62627b26f3f998c37f1}</strong></p>
-<hr>
-<p><em>又是用 binwalk，又是用 stegsolve，结果这么简单&hellip;</em></p>
+<p>首先将文件用 binwalk 分解,可以分解出一个压缩包，通过伪加密的方式可以解开，解开后得到名为 <strong>flag.vmdk</strong> 的文件<br>
+在 kali 下使用 <strong>7z x 文件路径</strong> 可以解出</p>
+<pre tabindex="0"><code>├── $RECYCLE.BIN
+│   └── S-1-5-21-2200156829-3544857562-508093875-1001
+│       └── desktop.ini
+├── key_part_one
+│   └── NUL
+├── key_part_two
+│   ├── where_is_flag_part_two.txt
+│   └── where_is_flag_part_two.txt:flag_part_two_is_here.txt
+└── [SYSTEM]
+    ├── $AttrDef
+    ├── $BadClus
+    ├── $Bitmap
+    ├── $Boot
+    ├── $Extend
+    │   ├── $ObjId
+    │   ├── $Quota
+    │   ├── $Reparse
+    │   └── $RmMetadata
+    │       ├── $Repair
+    │       ├── $Repair:$Config
+    │       ├── $Txf
+    │       └── $TxfLog
+    │           ├── $Tops
+    │           ├── $Tops:$T
+    │           └── $TxfLog.blf
+    ├── $LogFile
+    ├── $MFT
+    ├── $MFTMirr
+    ├── $Secure
+    ├── $Secure:$SDS
+    ├── $UpCase
+    └── $Volume
+</code></pre><p>在 <strong>NUL</strong> 文件和 <strong>where_is_flag_part_two.txt:flag_part_two_is_here.txt</strong> 里可以分别找到两段代码，使用工具 <a href="https://www.splitbrain.org/services/ook">Brainfuck/Ook! Obfuscation/Encoding</a> 可以解出前后两半flag，拼在一起即可得 flag 为 <strong>flag{N7F5_AD5_i5_funny!}</strong></p>
 
                     
                     <HR width="100%" id="EOF">
-		    <p style="color:#777;">最后修改于 2023-01-15</p>
+		    <p style="color:#777;">最后修改于 2023-01-16</p>
                     
                 </div>
             </div>
@@ -428,14 +462,14 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
             <nav class="post-pagination">
 
                 
-                <a class="newer-posts" href="/ctf/wp-buuctf-%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E4%B8%96%E7%95%8C/">
-			下回<br>WP BUUCTF 另外一个世界
+                <a class="newer-posts" href="/ctf/wp-buuctf-%E7%AC%AC%E4%B8%80%E7%AB%A0web%E5%85%A5%E9%97%A8%E7%B2%97%E5%BF%83%E7%9A%84%E5%B0%8F%E6%9D%8E/">
+			下回<br>WP BUUCTF [第一章web入门]粗心的小李
                 </a>
                 
                 
                 
-                <a class="older-posts" href="/ctf/wp-buuctf-%E4%BF%A1%E6%81%AF%E5%8C%96%E6%97%B6%E4%BB%A3%E7%9A%84%E6%AD%A5%E4%BC%90/">
-			上回<br>WP BUUCTF 信息化时代的步伐
+                <a class="older-posts" href="/ctf/wp-buuctf-%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E4%B8%96%E7%95%8C/">
+			上回<br>WP BUUCTF 另外一个世界
                 </a>
                 
             </nav>

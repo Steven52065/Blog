@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-<title>WP BUUCTF 乌镇峰会种图</title>
+<title>CTFs</title>
 
 
 
@@ -34,8 +34,6 @@
 
 
 
-      <script src="/js/toc.js"></script>
-    
     <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
 <link rel="stylesheet" href="/scss/journal.min.c5d92f380bf10f6849c7ac487c7df2b22c081e0851e5339224f1ae29210b20d2.css" integrity="sha256-xdkvOAvxD2hJx6xIfH3ysiwIHghR5TOSJPGuKSELINI=" media="screen">
 
@@ -61,12 +59,6 @@
 
 
 
-
-<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/@waline/client@v2/dist/waline.css"
-  />
 
 
 
@@ -157,60 +149,6 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 </div><div id="extraContainer" class="extra-container">
     
     
-    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
-
-
-	<div class="toc-content">
-	
-		
-		
-		
-		<center>- 目录 -</center>
-		
-		
-		<ul>
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#%e9%a2%98%e7%9b%ae" onclick="onNavClick(`#题目-nav`)" id="题目-nav">
-									题目
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#%e6%80%9d%e8%b7%af" onclick="onNavClick(`#思路-nav`)" id="思路-nav">
-									思路
-								</a>
-							</li>
-						
-						
-					
-				
-			
-		</ul>
-	</div>
-
-</div>
-    
     <div class="pagination">
         <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
             <i class="material-icons pagination-action-icon">
@@ -223,6 +161,24 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 dark_mode
             </span>
         </a>
+        
+        
+        
+            <div class="pagination-indicator">
+                <span style="text-align: center">
+                    3<br><div style="display: inline-block; transform: rotate(-28deg)">-</div><br>3
+                </span>
+            </div>
+            
+            
+            <a class="pagination-action" href="/ctf/page/2/">
+                <i class="material-icons pagination-action-icon">
+                    chevron_left
+                </i>
+            </a>
+            
+
+            
         
         
     </div>
@@ -277,60 +233,6 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
             
             
-            <div class="toc">
-
-
-	<div class="toc-content">
-	
-		
-		
-		
-		<center>- 目录 -</center>
-		
-		
-		<ul>
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#%e9%a2%98%e7%9b%ae" onclick="onNavClick(`#题目-nav`)" id="题目-nav">
-									题目
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#%e6%80%9d%e8%b7%af" onclick="onNavClick(`#思路-nav`)" id="思路-nav">
-									思路
-								</a>
-							</li>
-						
-						
-					
-				
-			
-		</ul>
-	</div>
-
-</div>
-            
         </div>
     </div>
 </div>
@@ -370,104 +272,82 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 <div id="streamContainer" class="stream-container">
 
     <div class="post-list-container post-list-container-shadow">
-        <div class="post">
-            
-            
-            
-
-            <div class="post-head-wrapper-text-only"
-                
-            >
-                <div class="post-title">
-                    WP BUUCTF 乌镇峰会种图
-                    
-                    <div class="post-meta">
-                        
-                        <time itemprop="datePublished">
-                            2023-01-15 01:23
-                        </time>
-                        
-
-                        
-
-                        
-                        
-                            <i class="material-icons" style="">schedule</i>
-                            
-
-                            
-                            
-
-                            
-                            17 s.
-                        
+        
+            <a class="a-block">
+                <div class="post-item-wrapper post-item-wrapper-no-hover">
+                    <div class="post-item post-item-no-gaps">
+                        <div class="post-item-info-wrapper">
+                            <div class="post-item-title post-item-title-small year">
+                                2023
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
             
-            <div class="post-body-wrapper">
-                
-                <div class="post-body" v-pre>
-                
-                    <p>题目链接: <a href="https://buuoj.cn/challenges#%E4%B9%8C%E9%95%87%E5%B3%B0%E4%BC%9A%E7%A7%8D%E5%9B%BE">https://buuoj.cn/challenges#%E4%B9%8C%E9%95%87%E5%B3%B0%E4%BC%9A%E7%A7%8D%E5%9B%BE</a></p>
-<h1 id="题目">题目</h1>
-<p><img src="/img/CTF/WP-BUUCTF-%E4%B9%8C%E9%95%87%E5%B3%B0%E4%BC%9A%E7%A7%8D%E5%9B%BE/img1.jpg" alt="题图"></p>
-<h1 id="思路">思路</h1>
-<p>使用 Notepad++ 打开图片后即可在末尾找到 flag <strong>flag{97314e7864a8f62627b26f3f998c37f1}</strong></p>
-<hr>
-<p><em>又是用 binwalk，又是用 stegsolve，结果这么简单&hellip;</em></p>
-
-                    
-                    <HR width="100%" id="EOF">
-		    <p style="color:#777;">最后修改于 2023-01-15</p>
-                    
-                </div>
-            </div>
-            
-            
-            <nav class="post-pagination">
-
-                
-                <a class="newer-posts" href="/ctf/wp-buuctf-%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E4%B8%96%E7%95%8C/">
-			下回<br>WP BUUCTF 另外一个世界
-                </a>
-                
-                
-                
-                <a class="older-posts" href="/ctf/wp-buuctf-%E4%BF%A1%E6%81%AF%E5%8C%96%E6%97%B6%E4%BB%A3%E7%9A%84%E6%AD%A5%E4%BC%90/">
-			上回<br>WP BUUCTF 信息化时代的步伐
-                </a>
-                
-            </nav>
-            <div class="post-comment-wrapper">
-                
-
-
-
-
-
-
-
-
-<div id="waline"></div>
-<script>
-    Waline.init({
-        el: '#waline',
-        
-        serverURL: "https://blog-waline.lty520.ml/" ,
-    });
+            <a href="/ctf/wp-buucuf-password/" class="a-block">
+                <div class="post-item-wrapper">
+                    <div class="post-item post-item-no-gaps">
+                        <div class="post-item-info-wrapper">
+                            <div class="post-item-title">
+                                WP BUUCUF Password
+                            </div>
+                            <div class="post-item-meta">
+    2023-01-10
+    &emsp;
     
-    </script>
+    
+    <i class="material-icons" style="font-size:10px">schedule</i>
+    
 
+    
+    
 
+    
+    29 s
+    
+    
+    &emsp;
+    
+</div>
 
-            </div>
-        </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            
+        
     </div>
 
 
+
                     </div>
-            </div><div id="single-column-footer">
+            </div>
+
+<div class="pagination">
+    
+    <a class="pagination-action" href="/ctf/page/2/" style="opacity:1">
+    
+        <i class="material-icons pagination-action-icon">
+            chevron_left
+        </i>
+    </a>
+
+        <div class="pagination-indicator">
+            <span>3/3</span>
+        </div>
+
+        
+            <a class="pagination-action" style="opacity:0">
+        
+                <i class="material-icons pagination-action-icon">
+                    chevron_right
+                </i>
+            </a>
+</div>
+
+
+<div id="single-column-footer">
 Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
 <br>
 移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
