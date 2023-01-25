@@ -6,7 +6,23 @@
     <description>Recent content in 博文s on Ling的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 22 Dec 2022 21:22:33 +0800</lastBuildDate><atom:link href="https://blog.lty520.ml/%E5%8D%9A%E6%96%87/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 Jan 2023 15:17:09 +0800</lastBuildDate><atom:link href="https://blog.lty520.ml/%E5%8D%9A%E6%96%87/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>全平台统一输入法——Rime</title>
+      <link>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%BE%93%E5%85%A5%E6%B3%95rime/</link>
+      <pubDate>Wed, 25 Jan 2023 15:17:09 +0800</pubDate>
+      
+      <guid>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%BE%93%E5%85%A5%E6%B3%95rime/</guid>
+      <description>输入法的使用历程 PC 安卓使用原版搜狗输入法，ios 使用原装输入法 习惯驱使 PC 使用禁止联网的搜狗输入法 考虑到隐私问题及不断爆出的输入法上传用户打字内容的新闻 安卓使用 Gboard 隐私问题及换用了 Pixel 手机 PC 使用 Win11 自带输入法 换电脑，找不到禁止联网的搜狗输入法的安装包了 决定全平台使用 Rime 希望去除输入法的隐私暴露问题和解决多平台输入法的词库统一问题 全平台 Rime 的调教过程 基本配置 使用 SivanLaai/rime-pure 【rime 小狼毫\trime 同文】手机/PC一站式配置【简约皮肤\拼音搜狗词库\原创trime同文 四叶草九宫格拼音\四叶草拼音\小鹤双拼\极品五笔\QQ五笔\徐码\郑码】 的配置
+使用 studyzy/imewlconverter 深蓝词库转换 将搜狗输入法的细胞词库转换为 Rime 支持的词库
+添加的词库
+网络流行新词【官方推荐】 全国县及县以上行政区划地名 开发大神专用词库【官方推荐】 使用坚果云同步多个平台的个人词典
+Win 添加拆字词库 思路 由于长期使用搜狗输入法，习惯了拆字输入一些不认识的字(如: henian = 稔；huohuohuo = 焱)
+参考文章rime拆字词库 给 Rime 添加了 拆字词库后也出现了评论区里提到的卡顿问题，使用体验不是很好
+参考 Issue rime导入拆字词库后在输入拼音中包含u的词语的时候会卡一下才弹出候选词列表 决定尝试用拆字词库替换原装的五笔反查词库
+过程 使用脚本将拆字词库的 &amp;lsquo;u&amp;rsquo; 去掉 with open(&amp;#39;chaizi.dict.yaml&amp;#39;,&amp;#39;a&amp;#39;,encoding=&amp;#39;UTF-8&amp;#39;) as ff: for line in open(&amp;#39;luna_pinyin_simp.</description>
+    </item>
+    
     <item>
       <title>全平台统一代理——Clash</title>
       <link>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/</link>

@@ -6,9 +6,132 @@
     <description>Recent content on Ling的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 17 Jan 2023 01:41:38 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 25 Jan 2023 15:17:09 +0800</lastBuildDate>
     
         <atom:link href="https://blog.lty520.ml/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>全平台统一代理——Clash</title>
+        <link>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/</link>
+        <pubDate>Thu, 22 Dec 2022 21:22:33 +0800</pubDate>
+        
+        <guid>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/</guid>
+        <description>Ling的博客 https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/ -&lt;h1 id=&#34;代理软件的使用历程&#34;&gt;代理软件的使用历程&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;使用赛风VPN
+&lt;ul&gt;
+&lt;li&gt;听人提及到 SSR ，转用 SSR&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;每个设备分别使用 SSR
+&lt;ul&gt;
+&lt;li&gt;由于 SSR 封锁严重，跟随购买的机场换为 V2ray&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;每个设备分别使用 V2ray
+&lt;ul&gt;
+&lt;li&gt;困扰于每个平台都要运行代理软件 + V2ray 客户端不怎么好使+ Linux 运行代理程序需要命令行+手中刚好有树莓派，决定换用 Openwrt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Openwrt 单臂路由 + SSRPlus
+&lt;ul&gt;
+&lt;li&gt;因为是单臂路由，有的设备不能自定义网关 + SSRPlus 自定义程度不够+ PassWall 莫名其妙的不能用+住校+主流机场换用了 Clash ，决定每个平台分别使用 Clash&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;决定全平台使用 Clash&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;全平台-clash-的调教过程&#34;&gt;全平台 Clash 的调教过程&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;(其实是 subconverter 的调教过程)&lt;/em&gt;&lt;br&gt;
+虽然用了 Clash ，但机场提供的配置方案不是很符合个人需求(而且主用的机场没有 ipv6 的配置)，且手中有多个机场(主用机场 + 便宜的备用机场 + 按流量付费，使用特殊节点的机场)，于是使用了 &lt;a href=&#34;https://github.com/tindy2013/subconverter&#34;&gt;subconverter&lt;/a&gt; 来制作 Clash 配置文件。&lt;/p&gt;
+&lt;h2 id=&#34;目的&#34;&gt;目的&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;将&lt;strong&gt;多个&lt;/strong&gt;机场的订阅合并为一个&lt;/li&gt;
+&lt;li&gt;国内直连( ipv4 + ipv6 )，游戏平台自选直连和代理，哔哩哔哩自选直连和代理， Netflix 自选直连和代理，其他国外一律代理&lt;/li&gt;
+&lt;li&gt;有一个单独的文件用以手动添加一些直连的域名(用于DDNS NAS的域名)&lt;/li&gt;
+&lt;li&gt;使用 Doh 进行域名解析&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;以默认为主，修改部分条目&lt;/strong&gt;&lt;br&gt;
+/pref.ini&lt;br&gt;
+用于添加多条机场订阅&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[common]
+    default_url=机场订阅地址1|机场订阅地址2|机场订阅地址3
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;从 url 获取规则片段，并分成几个策略组&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[rulesets]
+    ruleset=DIRECT,rules/DirectDomain.list
+    ;手动添加的直连域名
+
+    ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list,86400
+    ;局域网IP段 直连
+
+    ruleset=Bilibili,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Ruleset/Bilibili.list,86400
+    ;Bilibili域名
+    ruleset=Netflix,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Netflix.list,86400
+    ;Netflix域名 IP段
+
+    ruleset=Game,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Providers/Ruleset/Steam.yaml,86400
+    ;steam域名
+    ruleset=Game,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Providers/Ruleset/Epic.yaml,86400
+    ;epic域名
+    ruleset=Game,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Providers/Ruleset/Xbox.yaml,86400
+    ;Xbox域名
+
+    ruleset=DIRECT,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPs/ChinaIPs.list,86400
+    ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list,86400
+    ruleset=DIRECT,[]GEOIP,CN
+    ;中国IP段
+    ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list,86400
+    ;中国域名
+    ruleset=Proxy,[]FINAL
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;为策略组添加节点&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[proxy_groups]
+    custom_proxy_group=Proxy`select`.*
+    custom_proxy_group=Netflix`select`Proxy`.*
+    custom_proxy_group=Game`select`[]DIRECT`.*
+    custom_proxy_group=Bilibili`select`[]DIRECT`.*
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;/base/all_base.tpl&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;{% if request.target == &amp;#34;clash&amp;#34; or request.target == &amp;#34;clashr&amp;#34; %}
+    dns:
+        enable: true
+        ipv6: false
+        listen: 0.0.0.0:53
+        enhanced-mode: fake-ip
+        fake-ip-range: 198.18.0.1/16
+        fake-ip-filter:
+            - &amp;#39;*.lan&amp;#39;
+            - &amp;#39;localhost.ptlogin2.qq.com&amp;#39;
+            - &amp;#39;dns.msftncsi.com&amp;#39;
+            - &amp;#39;www.msftncsi.com&amp;#39;
+            - &amp;#39;www.msftconnecttest.com&amp;#39;
+        nameserver:
+            - https://223.5.5.5/dns-query
+        fallback:
+            - https://223.5.5.5/dns-query
+        fallback-filter:
+            geoip: true
+            ipcidr:
+            - 240.0.0.0/4
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;最后将其部署在了服务器上，并用 Nginx 配置了反向代理和 SSL 加密，得益于 Clash 的在多个平台上都有其客户端，将每个客户端的订阅地址修改为 subconverter 提供的配置文件地址，就可以实现了全平台的代理统一&lt;/p&gt;
+&lt;h2 id=&#34;可用于-subconverter-的规则片段&#34;&gt;可用于 subconverter 的规则片段&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Loyalsoldier/clash-rules/blob/master/README.md&#34;&gt;github.com/Loyalsoldier/clash-rules&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ACL4SSR/ACL4SSR/tree/master/Clash&#34;&gt;github.com/ACL4SSR/ACL4SSR&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash&#34;&gt;github.com/blackmatrix7/ios_rule_script&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/DivineEngine/Profiles/tree/master/Clash/RuleSet&#34;&gt;github.com/DivineEngine/Profiles&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;参考文章&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://mybj.org/2021/09/subconverter/&#34;&gt;利用 subconverter 实现订阅合并与转换&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/tindy2013/subconverter&#34;&gt;github.com/tindy2013/subconverter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.xianyu.one/2021/05/12/Linux/tutorial/subconverter/&#34;&gt;subconverter 订阅转换及搭配 clash 使用教程&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.cfw.lbyczf.com/&#34;&gt;Clash for Windows&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+- https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/ - </description>
+        </item>
     
     
     

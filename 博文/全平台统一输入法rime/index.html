@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html><head>
+<title>全平台统一输入法——Rime</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="全平台换用 Rime 的调教及添加拆字功能">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<link rel="stylesheet" href="/scss/journal.min.c5d92f380bf10f6849c7ac487c7df2b22c081e0851e5339224f1ae29210b20d2.css" integrity="sha256-xdkvOAvxD2hJx6xIfH3ysiwIHghR5TOSJPGuKSELINI=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.9f8d8c2df9285089d141edd4a50cb7506c7948e6ab79a29968dced1bd0ab7d22.css" integrity="sha256-n42MLfkoUInRQe3UpQy3UGx5SOareaKZaNztG9CrfSI=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+  />
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3MGTDD77JD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3MGTDD77JD');
+</script>
+
+</head>
+<body>
+    	<div id="app"><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://blog.lty520.ml/">
+    
+        <div class="nav-title">
+            Ling的博客
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/%E5%8D%9A%E6%96%87">
+                博文
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/%E9%9A%8F%E8%AE%B0">
+                随记
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/ctf">
+                CTF
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS Feed
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2023 Ling的博客
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%be%93%e5%85%a5%e6%b3%95%e7%9a%84%e4%bd%bf%e7%94%a8%e5%8e%86%e7%a8%8b" onclick="onNavClick(`#输入法的使用历程-nav`)" id="输入法的使用历程-nav">
+									输入法的使用历程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%85%a8%e5%b9%b3%e5%8f%b0-rime-%e7%9a%84%e8%b0%83%e6%95%99%e8%bf%87%e7%a8%8b" onclick="onNavClick(`#全平台-rime-的调教过程-nav`)" id="全平台-rime-的调教过程-nav">
+									全平台 Rime 的调教过程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%9f%ba%e6%9c%ac%e9%85%8d%e7%bd%ae" onclick="onNavClick(`#基本配置-nav`)" id="基本配置-nav">
+									基本配置
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#win" onclick="onNavClick(`#win-nav`)" id="win-nav">
+									Win
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e6%b7%bb%e5%8a%a0%e6%8b%86%e5%ad%97%e8%af%8d%e5%ba%93" onclick="onNavClick(`#添加拆字词库-nav`)" id="添加拆字词库-nav">
+									添加拆字词库
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e6%80%9d%e8%b7%af" onclick="onNavClick(`#思路-nav`)" id="思路-nav">
+									思路
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%bf%87%e7%a8%8b" onclick="onNavClick(`#过程-nav`)" id="过程-nav">
+									过程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+								</ul>
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%a4%9a%e5%b9%b3%e5%8f%b0%e4%b8%aa%e4%ba%ba%e8%af%8d%e5%ba%93%e7%9a%84%e5%90%8c%e6%ad%a5" onclick="onNavClick(`#多平台个人词库的同步-nav`)" id="多平台个人词库的同步-nav">
+									多平台个人词库的同步
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e6%80%9d%e8%b7%af-1" onclick="onNavClick(`#思路-1-nav`)" id="思路-1-nav">
+									思路
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+<div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/%E5%8D%9A%E6%96%87">
+                    博文
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/%E9%9A%8F%E8%AE%B0">
+                    随记
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/ctf">
+                    CTF
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS Feed
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%be%93%e5%85%a5%e6%b3%95%e7%9a%84%e4%bd%bf%e7%94%a8%e5%8e%86%e7%a8%8b" onclick="onNavClick(`#输入法的使用历程-nav`)" id="输入法的使用历程-nav">
+									输入法的使用历程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%85%a8%e5%b9%b3%e5%8f%b0-rime-%e7%9a%84%e8%b0%83%e6%95%99%e8%bf%87%e7%a8%8b" onclick="onNavClick(`#全平台-rime-的调教过程-nav`)" id="全平台-rime-的调教过程-nav">
+									全平台 Rime 的调教过程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%9f%ba%e6%9c%ac%e9%85%8d%e7%bd%ae" onclick="onNavClick(`#基本配置-nav`)" id="基本配置-nav">
+									基本配置
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#win" onclick="onNavClick(`#win-nav`)" id="win-nav">
+									Win
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e6%b7%bb%e5%8a%a0%e6%8b%86%e5%ad%97%e8%af%8d%e5%ba%93" onclick="onNavClick(`#添加拆字词库-nav`)" id="添加拆字词库-nav">
+									添加拆字词库
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e6%80%9d%e8%b7%af" onclick="onNavClick(`#思路-nav`)" id="思路-nav">
+									思路
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%bf%87%e7%a8%8b" onclick="onNavClick(`#过程-nav`)" id="过程-nav">
+									过程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+								</ul>
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%a4%9a%e5%b9%b3%e5%8f%b0%e4%b8%aa%e4%ba%ba%e8%af%8d%e5%ba%93%e7%9a%84%e5%90%8c%e6%ad%a5" onclick="onNavClick(`#多平台个人词库的同步-nav`)" id="多平台个人词库的同步-nav">
+									多平台个人词库的同步
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e6%80%9d%e8%b7%af-1" onclick="onNavClick(`#思路-1-nav`)" id="思路-1-nav">
+									思路
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://blog.lty520.ml/">
+            Ling的博客
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://blog.lty520.ml/">
+        <div class="single-column-header-title">Ling的博客</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    全平台统一输入法——Rime
+                    
+                    <div class="post-subtitle">
+                        全平台换用 Rime 的调教及添加拆字功能
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2023-01-25 15:17
+                        </time>
+                        
+
+                        
+
+                        
+                        
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            4 min
+                            
+                            33 s.
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h1 id="输入法的使用历程">输入法的使用历程</h1>
+<ul>
+<li>PC 安卓使用原版搜狗输入法，ios 使用原装输入法
+<ul>
+<li>习惯驱使</li>
+</ul>
+</li>
+<li>PC 使用禁止联网的搜狗输入法
+<ul>
+<li>考虑到隐私问题及不断爆出的输入法上传用户打字内容的新闻</li>
+</ul>
+</li>
+<li>安卓使用 Gboard
+<ul>
+<li>隐私问题及换用了 Pixel 手机</li>
+</ul>
+</li>
+<li>PC 使用 Win11 自带输入法
+<ul>
+<li>换电脑，找不到禁止联网的搜狗输入法的安装包了</li>
+</ul>
+</li>
+<li>决定全平台使用 Rime
+<ul>
+<li>希望去除输入法的隐私暴露问题和解决多平台输入法的词库统一问题</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="全平台-rime-的调教过程">全平台 Rime 的调教过程</h1>
+<h2 id="基本配置">基本配置</h2>
+<ul>
+<li>
+<p>使用 <a href="https://github.com/SivanLaai/rime-pure">SivanLaai/rime-pure 【rime 小狼毫\trime 同文】手机/PC一站式配置【简约皮肤\拼音搜狗词库\原创trime同文 四叶草九宫格拼音\四叶草拼音\小鹤双拼\极品五笔\QQ五笔\徐码\郑码】</a> 的配置</p>
+</li>
+<li>
+<p>使用 <a href="https://github.com/studyzy/imewlconverter">studyzy/imewlconverter 深蓝词库转换</a> 将搜狗输入法的细胞词库转换为 Rime 支持的词库</p>
+</li>
+<li>
+<p>添加的词库</p>
+<ul>
+<li><a href="https://pinyin.sogou.com/dict/detail/index/4">网络流行新词【官方推荐】</a></li>
+<li><a href="https://pinyin.sogou.com/dict/detail/index/11314">全国县及县以上行政区划地名</a></li>
+<li><a href="https://pinyin.sogou.com/dict/detail/index/75228">开发大神专用词库【官方推荐】</a></li>
+</ul>
+</li>
+<li>
+<p>使用<strong>坚果云</strong>同步多个平台的个人词典</p>
+</li>
+</ul>
+<h2 id="win">Win</h2>
+<h3 id="添加拆字词库">添加拆字词库</h3>
+<h4 id="思路">思路</h4>
+<p>由于长期使用搜狗输入法，习惯了拆字输入一些不认识的字(如: henian = 稔；huohuohuo = 焱)<br>
+参考文章<a href="http://gerry.lamost.org/blog/?p=296003">rime拆字词库</a> 给 Rime 添加了 拆字词库后也出现了评论区里提到的卡顿问题，使用体验不是很好<br>
+参考 Issue <a href="https://github.com/rime/home/issues/762">rime导入拆字词库后在输入拼音中包含u的词语的时候会卡一下才弹出候选词列表</a> 决定尝试用拆字词库替换原装的五笔反查词库</p>
+<h4 id="过程">过程</h4>
+<ol>
+<li>使用脚本将拆字词库的 &lsquo;u&rsquo; 去掉</li>
+</ol>
+<pre tabindex="0"><code>with open(&#39;chaizi.dict.yaml&#39;,&#39;a&#39;,encoding=&#39;UTF-8&#39;) as ff:
+    for line in open(&#39;luna_pinyin_simp.chaizi.dict.yaml&#39;,&#39;r&#39;,encoding=&#39;UTF-8&#39;):
+        a = line.replace(&#39;	u&#39;,&#39;	&#39;)
+        ff.write(a)
+</code></pre><p><strong>注意：其格式爲以製表符分隔的值（TSV），每行定義一條「文字－編碼」的對應關係（不是空格！！！）</strong> <em>复制自<a href="https://github.com/rime/home/wiki/RimeWithSchemata#%E7%A2%BC%E8%A1%A8%E8%88%87%E8%A9%9E%E5%85%B8">RimeWithSchemata</a></em></p>
+<p><em>luna_pinyin_simp.chaizi.dict.yaml 来自<a href="http://gerry.lamost.org/blog/?p=296003">rime拆字词库</a></em><br>
+2. 使用处理后得到的 chaizi.dict.yaml 内容替换 Rime 安装目录 \weasel-0.14.3\data\stroke.dict.yaml 的内容<br>
+3. 将 RimeData\clover.schema.yaml 的 reverse_lookup 字段替换为</p>
+<pre tabindex="0"><code>reverse_lookup:
+  dictionary: stroke
+  enable_completion: false
+  prefix: &#34;`&#34;
+  suffix: &#34;&#39;&#34;
+  tips: 〔拆字〕
+  # preedit_format:
+  #   - xlit/hspnz/一丨丿丶乙/
+  # comment_format:
+  #   - xform/([nl])v/$1ü/
+</code></pre><ol start="4">
+<li>重新部署</li>
+</ol>
+<h1 id="多平台个人词库的同步">多平台个人词库的同步</h1>
+<h2 id="思路-1">思路</h2>
+<ol>
+<li>将 Android 、 ios 的个人词库上传到 PC
+<ul>
+<li>将 PC 的同步文件夹（默认为RimeData\sync\设备ID）同步到坚果云</li>
+<li>Android 使用 FolderSync 手动上传 同步文件夹</li>
+<li>ios 使用<strong>电脑快传</strong>功能，将 iPad/sync/设备ID 上传到电脑</li>
+</ul>
+</li>
+<li>PC 将各个平台的个人词库混合
+<ul>
+<li>使用 Rime 的<strong>用户资料同步</strong>功能即可</li>
+</ul>
+</li>
+<li>Android 、 ios 分别拉取 PC 的个人词库
+<ul>
+<li>Android 使用 FolderSync 将坚果云上的 PC 同步文件 同步到本地</li>
+<li>ios 使用<strong>电脑快传</strong>功能 将 PC 上的 PC 同步文件 同步到本地</li>
+</ul>
+</li>
+<li>Android 、 ios 分别同步个人资料</li>
+</ol>
+<hr>
+<p>参考文章</p>
+<ul>
+<li><a href="https://github.com/rime/home/wiki">rime/home/wiki</a></li>
+<li><a href="http://gerry.lamost.org/blog/?p=296003">rime拆字词库</a></li>
+<li><a href="https://github.com/rime/home/issues/762">rime导入拆字词库后在输入拼音中包含u的词语的时候会卡一下才弹出候选词列表</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/471412208">Rime输入法词库扩充（搜狗词库，QQ拼音词库，清华词库，拆字词库……）</a></li>
+</ul>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2023-01-25</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts">
+			下回<br>已经到头啦。
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/ctf/wp-buuctf-%E7%AC%AC%E4%B8%80%E7%AB%A0web%E5%85%A5%E9%97%A8%E7%B2%97%E5%BF%83%E7%9A%84%E5%B0%8F%E6%9D%8E/">
+			上回<br>WP BUUCTF [第一章web入门]粗心的小李
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+<div id="waline"></div>
+<script>
+    Waline.init({
+        el: '#waline',
+        
+        serverURL: "https://blog-waline.lty520.ml/" ,
+    });
+    
+    </script>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2023 Ling的博客
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>

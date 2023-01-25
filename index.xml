@@ -6,9 +6,132 @@
     <description>Recent content on Ling的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 17 Jan 2023 01:41:38 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 25 Jan 2023 15:17:09 +0800</lastBuildDate>
     
         <atom:link href="https://blog.lty520.ml/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>全平台统一输入法——Rime</title>
+        <link>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%BE%93%E5%85%A5%E6%B3%95rime/</link>
+        <pubDate>Wed, 25 Jan 2023 15:17:09 +0800</pubDate>
+        
+        <guid>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%BE%93%E5%85%A5%E6%B3%95rime/</guid>
+        <description>Ling的博客 https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%BE%93%E5%85%A5%E6%B3%95rime/ -&lt;h1 id=&#34;输入法的使用历程&#34;&gt;输入法的使用历程&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;PC 安卓使用原版搜狗输入法，ios 使用原装输入法
+&lt;ul&gt;
+&lt;li&gt;习惯驱使&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;PC 使用禁止联网的搜狗输入法
+&lt;ul&gt;
+&lt;li&gt;考虑到隐私问题及不断爆出的输入法上传用户打字内容的新闻&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;安卓使用 Gboard
+&lt;ul&gt;
+&lt;li&gt;隐私问题及换用了 Pixel 手机&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;PC 使用 Win11 自带输入法
+&lt;ul&gt;
+&lt;li&gt;换电脑，找不到禁止联网的搜狗输入法的安装包了&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;决定全平台使用 Rime
+&lt;ul&gt;
+&lt;li&gt;希望去除输入法的隐私暴露问题和解决多平台输入法的词库统一问题&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;全平台-rime-的调教过程&#34;&gt;全平台 Rime 的调教过程&lt;/h1&gt;
+&lt;h2 id=&#34;基本配置&#34;&gt;基本配置&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;使用 &lt;a href=&#34;https://github.com/SivanLaai/rime-pure&#34;&gt;SivanLaai/rime-pure 【rime 小狼毫\trime 同文】手机/PC一站式配置【简约皮肤\拼音搜狗词库\原创trime同文 四叶草九宫格拼音\四叶草拼音\小鹤双拼\极品五笔\QQ五笔\徐码\郑码】&lt;/a&gt; 的配置&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用 &lt;a href=&#34;https://github.com/studyzy/imewlconverter&#34;&gt;studyzy/imewlconverter 深蓝词库转换&lt;/a&gt; 将搜狗输入法的细胞词库转换为 Rime 支持的词库&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;添加的词库&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://pinyin.sogou.com/dict/detail/index/4&#34;&gt;网络流行新词【官方推荐】&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://pinyin.sogou.com/dict/detail/index/11314&#34;&gt;全国县及县以上行政区划地名&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://pinyin.sogou.com/dict/detail/index/75228&#34;&gt;开发大神专用词库【官方推荐】&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用&lt;strong&gt;坚果云&lt;/strong&gt;同步多个平台的个人词典&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;win&#34;&gt;Win&lt;/h2&gt;
+&lt;h3 id=&#34;添加拆字词库&#34;&gt;添加拆字词库&lt;/h3&gt;
+&lt;h4 id=&#34;思路&#34;&gt;思路&lt;/h4&gt;
+&lt;p&gt;由于长期使用搜狗输入法，习惯了拆字输入一些不认识的字(如: henian = 稔；huohuohuo = 焱)&lt;br&gt;
+参考文章&lt;a href=&#34;http://gerry.lamost.org/blog/?p=296003&#34;&gt;rime拆字词库&lt;/a&gt; 给 Rime 添加了 拆字词库后也出现了评论区里提到的卡顿问题，使用体验不是很好&lt;br&gt;
+参考 Issue &lt;a href=&#34;https://github.com/rime/home/issues/762&#34;&gt;rime导入拆字词库后在输入拼音中包含u的词语的时候会卡一下才弹出候选词列表&lt;/a&gt; 决定尝试用拆字词库替换原装的五笔反查词库&lt;/p&gt;
+&lt;h4 id=&#34;过程&#34;&gt;过程&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;使用脚本将拆字词库的 &amp;lsquo;u&amp;rsquo; 去掉&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;with open(&amp;#39;chaizi.dict.yaml&amp;#39;,&amp;#39;a&amp;#39;,encoding=&amp;#39;UTF-8&amp;#39;) as ff:
+    for line in open(&amp;#39;luna_pinyin_simp.chaizi.dict.yaml&amp;#39;,&amp;#39;r&amp;#39;,encoding=&amp;#39;UTF-8&amp;#39;):
+        a = line.replace(&amp;#39;	u&amp;#39;,&amp;#39;	&amp;#39;)
+        ff.write(a)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;注意：其格式爲以製表符分隔的值（TSV），每行定義一條「文字－編碼」的對應關係（不是空格！！！）&lt;/strong&gt; &lt;em&gt;复制自&lt;a href=&#34;https://github.com/rime/home/wiki/RimeWithSchemata#%E7%A2%BC%E8%A1%A8%E8%88%87%E8%A9%9E%E5%85%B8&#34;&gt;RimeWithSchemata&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;luna_pinyin_simp.chaizi.dict.yaml 来自&lt;a href=&#34;http://gerry.lamost.org/blog/?p=296003&#34;&gt;rime拆字词库&lt;/a&gt;&lt;/em&gt;&lt;br&gt;
+2. 使用处理后得到的 chaizi.dict.yaml 内容替换 Rime 安装目录 \weasel-0.14.3\data\stroke.dict.yaml 的内容&lt;br&gt;
+3. 将 RimeData\clover.schema.yaml 的 reverse_lookup 字段替换为&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;reverse_lookup:
+  dictionary: stroke
+  enable_completion: false
+  prefix: &amp;#34;`&amp;#34;
+  suffix: &amp;#34;&amp;#39;&amp;#34;
+  tips: 〔拆字〕
+  # preedit_format:
+  #   - xlit/hspnz/一丨丿丶乙/
+  # comment_format:
+  #   - xform/([nl])v/$1ü/
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;重新部署&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;多平台个人词库的同步&#34;&gt;多平台个人词库的同步&lt;/h1&gt;
+&lt;h2 id=&#34;思路-1&#34;&gt;思路&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;将 Android 、 ios 的个人词库上传到 PC
+&lt;ul&gt;
+&lt;li&gt;将 PC 的同步文件夹（默认为RimeData\sync\设备ID）同步到坚果云&lt;/li&gt;
+&lt;li&gt;Android 使用 FolderSync 手动上传 同步文件夹&lt;/li&gt;
+&lt;li&gt;ios 使用&lt;strong&gt;电脑快传&lt;/strong&gt;功能，将 iPad/sync/设备ID 上传到电脑&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;PC 将各个平台的个人词库混合
+&lt;ul&gt;
+&lt;li&gt;使用 Rime 的&lt;strong&gt;用户资料同步&lt;/strong&gt;功能即可&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Android 、 ios 分别拉取 PC 的个人词库
+&lt;ul&gt;
+&lt;li&gt;Android 使用 FolderSync 将坚果云上的 PC 同步文件 同步到本地&lt;/li&gt;
+&lt;li&gt;ios 使用&lt;strong&gt;电脑快传&lt;/strong&gt;功能 将 PC 上的 PC 同步文件 同步到本地&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Android 、 ios 分别同步个人资料&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;参考文章&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/rime/home/wiki&#34;&gt;rime/home/wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://gerry.lamost.org/blog/?p=296003&#34;&gt;rime拆字词库&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/rime/home/issues/762&#34;&gt;rime导入拆字词库后在输入拼音中包含u的词语的时候会卡一下才弹出候选词列表&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/471412208&#34;&gt;Rime输入法词库扩充（搜狗词库，QQ拼音词库，清华词库，拆字词库……）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+- https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%BE%93%E5%85%A5%E6%B3%95rime/ - </description>
+        </item>
     
     
     
@@ -300,27 +423,6 @@ with open(filename, &amp;#39;rb&amp;#39;) as f:
 &lt;li&gt;脚本来源 &lt;a href=&#34;https://www.cnblogs.com/yunqian2017/p/14449346.html&#34;&gt;png图片CRC爆破原理的学习&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 - https://blog.lty520.ml/ctf/wp-buuctf-%E5%A4%A7%E7%99%BD/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>WP BUUCTF Alice与Bob</title>
-        <link>https://blog.lty520.ml/ctf/wp-buuctf-alice%E4%B8%8Ebob/</link>
-        <pubDate>Fri, 13 Jan 2023 02:05:24 +0800</pubDate>
-        
-        <guid>https://blog.lty520.ml/ctf/wp-buuctf-alice%E4%B8%8Ebob/</guid>
-        <description>Ling的博客 https://blog.lty520.ml/ctf/wp-buuctf-alice%E4%B8%8Ebob/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#Alice%E4%B8%8EBob&#34;&gt;https://buuoj.cn/challenges#Alice%E4%B8%8EBob&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
-&lt;p&gt;密码学历史中，有两位知名的杰出人物，Alice和Bob。他们的爱情经过置换和轮加密也难以混淆，即使是没有身份认证也可以知根知底。就像在数学王国中的素数一样，孤傲又热情。下面是一个大整数:98554799767,请分解为两个素数，分解后，小的放前面，大的放后面，合成一个新的数字，进行md5的32位小写哈希，提交答案。 注意：得到的 flag 请包上 flag{} 提交&lt;/p&gt;
-&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
-&lt;p&gt;去掉阅读短文似的没用的信息，即先分解质因数，再求md5即可&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;使用 &lt;a href=&#34;https://zh.numberempire.com/numberfactorizer.php&#34;&gt;整数分解工具&lt;/a&gt; 将 98554799767 分解为 101999 和 966233&lt;/li&gt;
-&lt;li&gt;求 101999966233 的 md5 结果，为 d450209323a847c8d01c6be47c81811a&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;可得 flag 为 &lt;strong&gt;flag{d450209323a847c8d01c6be47c81811a}&lt;/strong&gt;&lt;/p&gt;
-- https://blog.lty520.ml/ctf/wp-buuctf-alice%E4%B8%8Ebob/ - </description>
         </item>
     
     
