@@ -6,95 +6,9 @@
     <description>Recent content on Ling的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 17 Jan 2023 02:42:03 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 17 Jan 2023 01:41:38 +0800</lastBuildDate>
     
         <atom:link href="https://blog.lty520.ml/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    
-        <item>
-        <title>WP BUUCTF 被嗅探的流量</title>
-        <link>https://blog.lty520.ml/ctf/wp-buuctf-%E8%A2%AB%E5%97%85%E6%8E%A2%E7%9A%84%E6%B5%81%E9%87%8F/</link>
-        <pubDate>Tue, 17 Jan 2023 02:42:03 +0800</pubDate>
-        
-        <guid>https://blog.lty520.ml/ctf/wp-buuctf-%E8%A2%AB%E5%97%85%E6%8E%A2%E7%9A%84%E6%B5%81%E9%87%8F/</guid>
-        <description>Ling的博客 https://blog.lty520.ml/ctf/wp-buuctf-%E8%A2%AB%E5%97%85%E6%8E%A2%E7%9A%84%E6%B5%81%E9%87%8F/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%E8%A2%AB%E5%97%85%E6%8E%A2%E7%9A%84%E6%B5%81%E9%87%8F&#34;&gt;https://buuoj.cn/challenges#%E8%A2%AB%E5%97%85%E6%8E%A2%E7%9A%84%E6%B5%81%E9%87%8F&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
-&lt;p&gt;某黑客潜入到某公司内网通过嗅探抓取了一段文件传输的数据，该数据也被该公司截获，你能帮该公司分析他抓取的到底是什么文件的数据吗？ 注意：得到的 flag 请包上 flag{} 提交&lt;/p&gt;
-&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
-&lt;p&gt;下载后可得 被嗅探的流量.pcapng 文件，用 &lt;strong&gt;Wireshark&lt;/strong&gt; 打开后翻翻翻，可以找到一条上传一张图片的流量&lt;br&gt;
-&lt;img src=&#34;https://blog.lty520.ml/img/CTF/WP-BUUCTF-%E8%A2%AB%E5%97%85%E6%8E%A2%E7%9A%84%E6%B5%81%E9%87%8F/img1.png&#34; alt=&#34;一段流量&#34;&gt;&lt;br&gt;
-在这段流量的末尾可以发现 flag&lt;br&gt;
-&lt;img src=&#34;https://blog.lty520.ml/img/CTF/WP-BUUCTF-%E8%A2%AB%E5%97%85%E6%8E%A2%E7%9A%84%E6%B5%81%E9%87%8F/img2.png&#34; alt=&#34;flag&#34;&gt;
-可得 flag 为 &lt;strong&gt;flag{da73d88936010da1eeeb36e945ec4b97}&lt;/strong&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;em&gt;还好不用再提取出来上传的那张图片&amp;hellip;&lt;/em&gt;
-&lt;img src=&#34;https://blog.lty520.ml/img/CTF/WP-BUUCTF-%E8%A2%AB%E5%97%85%E6%8E%A2%E7%9A%84%E6%B5%81%E9%87%8F/img3.png&#34; alt=&#34;66CCFF&#34;&gt;
-&lt;em&gt;野生锦依卫？？？&lt;/em&gt;&lt;/p&gt;
-- https://blog.lty520.ml/ctf/wp-buuctf-%E8%A2%AB%E5%97%85%E6%8E%A2%E7%9A%84%E6%B5%81%E9%87%8F/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>WP BUUCTF 文件中的秘密</title>
-        <link>https://blog.lty520.ml/ctf/wp-buuctf-%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E7%A7%98%E5%AF%86/</link>
-        <pubDate>Tue, 17 Jan 2023 02:15:06 +0800</pubDate>
-        
-        <guid>https://blog.lty520.ml/ctf/wp-buuctf-%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E7%A7%98%E5%AF%86/</guid>
-        <description>Ling的博客 https://blog.lty520.ml/ctf/wp-buuctf-%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E7%A7%98%E5%AF%86/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E7%A7%98%E5%AF%86&#34;&gt;https://buuoj.cn/challenges#%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E7%A7%98%E5%AF%86&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.lty520.ml/img/CTF/WP-BUUCTF-%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E7%A7%98%E5%AF%86/%E5%9B%BE%E7%89%87%E4%B8%AD%E7%9A%84%E7%A7%98%E5%AF%86.jpeg&#34; alt=&#34;题图&#34;&gt;&lt;/p&gt;
-&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
-&lt;p&gt;在文件属性-详细信息-备注 中放着 flag &lt;strong&gt;flag{870c5a72806115cb5439345d8b014396}&lt;/strong&gt;&lt;br&gt;
-&lt;img src=&#34;https://blog.lty520.ml/img/CTF/WP-BUUCTF-%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E7%A7%98%E5%AF%86/img1.png&#34; alt=&#34;属性&#34;&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;em&gt;又是用 binwalk，又是用 notepad++ ，结果这么简单&amp;hellip;（好熟悉的话）&lt;/em&gt;&lt;/p&gt;
-- https://blog.lty520.ml/ctf/wp-buuctf-%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E7%A7%98%E5%AF%86/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>WP BUUCTF [第一章web入门]常见的搜集</title>
-        <link>https://blog.lty520.ml/ctf/wp-buuctf-%E7%AC%AC%E4%B8%80%E7%AB%A0web%E5%85%A5%E9%97%A8%E5%B8%B8%E8%A7%81%E7%9A%84%E6%90%9C%E9%9B%86/</link>
-        <pubDate>Tue, 17 Jan 2023 01:57:18 +0800</pubDate>
-        
-        <guid>https://blog.lty520.ml/ctf/wp-buuctf-%E7%AC%AC%E4%B8%80%E7%AB%A0web%E5%85%A5%E9%97%A8%E5%B8%B8%E8%A7%81%E7%9A%84%E6%90%9C%E9%9B%86/</guid>
-        <description>Ling的博客 https://blog.lty520.ml/ctf/wp-buuctf-%E7%AC%AC%E4%B8%80%E7%AB%A0web%E5%85%A5%E9%97%A8%E5%B8%B8%E8%A7%81%E7%9A%84%E6%90%9C%E9%9B%86/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%5B%E7%AC%AC%E4%B8%80%E7%AB%A0%20web%E5%85%A5%E9%97%A8%5D%E5%B8%B8%E8%A7%81%E7%9A%84%E6%90%9C%E9%9B%86&#34;&gt;https://buuoj.cn/challenges#[%E7%AC%AC%E4%B8%80%E7%AB%A0%20web%E5%85%A5%E9%97%A8]%E5%B8%B8%E8%A7%81%E7%9A%84%E6%90%9C%E9%9B%86&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
-&lt;p&gt;敏感文件
-Hello, CTFer!
-信息搜集之所以重要，是因为其往往会带给我们一些意想不到的东西&lt;/p&gt;
-&lt;p&gt;hack fun&lt;/p&gt;
-&lt;p&gt;very easy&lt;/p&gt;
-&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
-&lt;h2 id=&#34;相关知识&#34;&gt;相关知识&lt;/h2&gt;
-&lt;p&gt;常见的敏感文件&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;1、gedit备份文件，格式为filename~，比如index.php~
-2、vim备份文件，格式为.filename.swp或者*.swo或者*.swn，比如.index.php.swp
-3、robots.txt
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在 robots.txt 文件下可以得到&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;User-agent: *
-Disallow:
-/flag1_is_her3_fun.txt
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在 flag1_is_her3_fun.txt 文件下可以得到&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;flag1:n1book{info_1
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在 index.php~ 文件下可以得到&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;敏感文件
-Hello, CTFer!
-信息搜集之所以重要，是因为其往往会带给我们一些意想不到的东西
-
-hack fun
-
-flag2:s_v3ry_im
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在 .index.php.swp 文件下可以得到&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;flag3:p0rtant_hack}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;拼接即可得 flag &lt;strong&gt;n1book{info_1s_v3ry_imp0rtant_hack}&lt;/strong&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;em&gt;好像可以用&lt;strong&gt;御剑&lt;/strong&gt;来扫目录（没用过）&lt;/em&gt;&lt;/p&gt;
-- https://blog.lty520.ml/ctf/wp-buuctf-%E7%AC%AC%E4%B8%80%E7%AB%A0web%E5%85%A5%E9%97%A8%E5%B8%B8%E8%A7%81%E7%9A%84%E6%90%9C%E9%9B%86/ - </description>
-        </item>
     
     
     
@@ -319,6 +233,94 @@ F7 46：最后修改文件日期
 &lt;li&gt;zip文件头协议部分 引自&lt;a href=&#34;https://blog.csdn.net/ETF6996/article/details/51946250&#34;&gt;zip伪加密&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 - https://blog.lty520.ml/ctf/wp-buuctf-zip%E4%BC%AA%E5%8A%A0%E5%AF%86/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>WP BUUCTF 隐藏的钥匙</title>
+        <link>https://blog.lty520.ml/ctf/wp-buuctf-%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99/</link>
+        <pubDate>Sat, 14 Jan 2023 01:44:31 +0800</pubDate>
+        
+        <guid>https://blog.lty520.ml/ctf/wp-buuctf-%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99/</guid>
+        <description>Ling的博客 https://blog.lty520.ml/ctf/wp-buuctf-%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99/ -&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.lty520.ml/img/CTF/WP-BUUCTF-%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99/%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99.jpg&#34; alt=&#34;隐藏的钥匙&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
+&lt;p&gt;使用 Notepad++ 打开后搜索 &lt;strong&gt;flag&lt;/strong&gt; 即可找到被 Base64 编码后的信息 &lt;strong&gt;flag:base64:(Mzc3Y2JhZGRhMWVjYTJmMmY3M2QzNjI3Nzc4MWYwMGE=)&lt;/strong&gt;&lt;br&gt;
+使用 Base64 解码后即可得到 flag &lt;strong&gt;flag{377cbadda1eca2f2f73d36277781f00a}&lt;/strong&gt;&lt;/p&gt;
+- https://blog.lty520.ml/ctf/wp-buuctf-%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>WP BUUCTF 大白</title>
+        <link>https://blog.lty520.ml/ctf/wp-buuctf-%E5%A4%A7%E7%99%BD/</link>
+        <pubDate>Sat, 14 Jan 2023 01:09:55 +0800</pubDate>
+        
+        <guid>https://blog.lty520.ml/ctf/wp-buuctf-%E5%A4%A7%E7%99%BD/</guid>
+        <description>Ling的博客 https://blog.lty520.ml/ctf/wp-buuctf-%E5%A4%A7%E7%99%BD/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%E5%A4%A7%E7%99%BD&#34;&gt;https://buuoj.cn/challenges#%E5%A4%A7%E7%99%BD&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
+&lt;p&gt;看不到图？ 是不是屏幕太小了 注意：得到的 flag 请包上 flag{} 提交&lt;/p&gt;
+&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
+&lt;p&gt;题目中提到了&lt;strong&gt;看不到图&lt;/strong&gt;以及&lt;strong&gt;屏幕太小了&lt;/strong&gt;,再加上题目给了一张 png 图片，由此可以猜到这题修改了图片的长或宽，让设备只能显示图片的一部分，从而隐藏了 flag&lt;br&gt;
+使用脚本&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;import zlib
+import struct
+
+filename = &amp;#39;2.png&amp;#39;
+with open(filename, &amp;#39;rb&amp;#39;) as f:
+    all_b = f.read()
+    crc32key = int(all_b[29:33].hex(), 16)
+    data = bytearray(all_b[12:29])
+    n = 4095  # 理论上0xffffffff,但考虑到屏幕实际/cpu，0x0fff就差不多了
+    for w in range(n):  # 高和宽一起爆破
+        width = bytearray(struct.pack(&amp;#39;&amp;gt;i&amp;#39;, w))  # q为8字节，i为4字节，h为2字节
+        for h in range(n):
+            height = bytearray(struct.pack(&amp;#39;&amp;gt;i&amp;#39;, h))
+            for x in range(4):
+                data[x + 4] = width[x]
+                data[x + 8] = height[x]
+            crc32result = zlib.crc32(data)
+            if crc32result == crc32key:
+                # 2021.7.20，有时候显示的宽高依然看不出具体的值，干脆输出data部分
+                print(data.hex())
+                print(&amp;#34;宽为：&amp;#34;, end=&amp;#34;&amp;#34;)
+                print(width)
+                print(&amp;#34;高为：&amp;#34;, end=&amp;#34;&amp;#34;)
+                print(height)
+                exit(0)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;可以一键得出图片正确的长和宽，将图片信息修改为正确的长和宽即可看到 flag&lt;br&gt;
+&lt;img src=&#34;https://blog.lty520.ml/img/CTF/WP-BUUCTF-%E5%A4%A7%E7%99%BD1/img1.png&#34; alt=&#34;img1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;可得 flag 为 &lt;strong&gt;flag{He1l0_d4_ba1}&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;之前用的脚本咋找不到了呢&amp;hellip;&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;脚本来源 &lt;a href=&#34;https://www.cnblogs.com/yunqian2017/p/14449346.html&#34;&gt;png图片CRC爆破原理的学习&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+- https://blog.lty520.ml/ctf/wp-buuctf-%E5%A4%A7%E7%99%BD/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>WP BUUCTF Alice与Bob</title>
+        <link>https://blog.lty520.ml/ctf/wp-buuctf-alice%E4%B8%8Ebob/</link>
+        <pubDate>Fri, 13 Jan 2023 02:05:24 +0800</pubDate>
+        
+        <guid>https://blog.lty520.ml/ctf/wp-buuctf-alice%E4%B8%8Ebob/</guid>
+        <description>Ling的博客 https://blog.lty520.ml/ctf/wp-buuctf-alice%E4%B8%8Ebob/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#Alice%E4%B8%8EBob&#34;&gt;https://buuoj.cn/challenges#Alice%E4%B8%8EBob&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
+&lt;p&gt;密码学历史中，有两位知名的杰出人物，Alice和Bob。他们的爱情经过置换和轮加密也难以混淆，即使是没有身份认证也可以知根知底。就像在数学王国中的素数一样，孤傲又热情。下面是一个大整数:98554799767,请分解为两个素数，分解后，小的放前面，大的放后面，合成一个新的数字，进行md5的32位小写哈希，提交答案。 注意：得到的 flag 请包上 flag{} 提交&lt;/p&gt;
+&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
+&lt;p&gt;去掉阅读短文似的没用的信息，即先分解质因数，再求md5即可&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;使用 &lt;a href=&#34;https://zh.numberempire.com/numberfactorizer.php&#34;&gt;整数分解工具&lt;/a&gt; 将 98554799767 分解为 101999 和 966233&lt;/li&gt;
+&lt;li&gt;求 101999966233 的 md5 结果，为 d450209323a847c8d01c6be47c81811a&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;可得 flag 为 &lt;strong&gt;flag{d450209323a847c8d01c6be47c81811a}&lt;/strong&gt;&lt;/p&gt;
+- https://blog.lty520.ml/ctf/wp-buuctf-alice%E4%B8%8Ebob/ - </description>
         </item>
     
     
