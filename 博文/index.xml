@@ -6,7 +6,29 @@
     <description>Recent content in 博文s on Ling的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 25 Jan 2023 15:17:09 +0800</lastBuildDate><atom:link href="https://blog.lty520.ml/%E5%8D%9A%E6%96%87/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Feb 2023 13:30:03 +0800</lastBuildDate><atom:link href="https://blog.lty520.ml/%E5%8D%9A%E6%96%87/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>努比亚Z50的调教</title>
+      <link>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%8A%AA%E6%AF%94%E4%BA%9Az50%E7%9A%84%E8%B0%83%E6%95%99/</link>
+      <pubDate>Wed, 01 Feb 2023 13:30:03 +0800</pubDate>
+      
+      <guid>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%8A%AA%E6%AF%94%E4%BA%9Az50%E7%9A%84%E8%B0%83%E6%95%99/</guid>
+      <description>型号：黑礁 12+256
+总评 一部给了我不少惊喜的手机
+颜值
+还不错，背板是类似与 Pixel3XL 的撞色设计，方形的镜头模组个人感觉比华为的圆环好看一些 系统
+因为买前就听说了 MyOS 抄了各大厂的系统以及算是小厂的系统，所以对系统的期望并不高（以及用惯了 Pixel 这种完全没有本地化适配的系统），上手用起来还是可以的，各大厂该有的功能基本都有 相机
+比 Pixel3XL 的单摄强，等效 35mm 比一般的手机更近一些，虚化挺好看的
+微距用着感觉比 K50 至尊版 的要更近、更清晰 一点 性能
+8Gen2 ，实测雷兔兔跑分 1216748 分,比别家的要低几万，影响也不大（并非到手就测，或许是后台已经在运行一些软件的缘故？）
+跑分截图 系统 谷歌服务 因其自带谷歌服务，所以只需要在 Apkpure 下载一个 Google Play Store 安装上，就可以找到谷歌应用商店的图标了
+尝试过使用谷歌服务安装器（如 Go谷歌安装器 ），会显示谷歌框架完整，但哪怕重装谷歌框架也无法解决找不到谷歌应用商店的图标的问题。所以可能只能手动安装了
+LSPatch 因为不能解 BL 锁刷机，所以只能选择这种方案了
+曾经在另一部同样不能解 BL 和 Root 的手机试过太极框架，或许是手机太老的缘故，体验并不好，所以这次换了这个
+安装 LSPatch 在 LSPosed/LSPatch/releases 下载安装后即可
+使用 Shizuku ，自动安装修补后的 app 默认的 LSPatch 也可以用，但修补后的 app 必须手动安装，所以可以安装 Shizuku ，给 LSPatch 权限后即可自动安装修补后的 app</description>
+    </item>
+    
     <item>
       <title>全平台统一输入法——Rime</title>
       <link>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%BE%93%E5%85%A5%E6%B3%95rime/</link>

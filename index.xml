@@ -6,9 +6,110 @@
     <description>Recent content on Ling的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 25 Jan 2023 15:17:09 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 01 Feb 2023 13:30:03 +0800</lastBuildDate>
     
         <atom:link href="https://blog.lty520.ml/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>努比亚Z50的调教</title>
+        <link>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%8A%AA%E6%AF%94%E4%BA%9Az50%E7%9A%84%E8%B0%83%E6%95%99/</link>
+        <pubDate>Wed, 01 Feb 2023 13:30:03 +0800</pubDate>
+        
+        <guid>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%8A%AA%E6%AF%94%E4%BA%9Az50%E7%9A%84%E8%B0%83%E6%95%99/</guid>
+        <description>Ling的博客 https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%8A%AA%E6%AF%94%E4%BA%9Az50%E7%9A%84%E8%B0%83%E6%95%99/ -&lt;p&gt;型号：黑礁 12+256&lt;/p&gt;
+&lt;h1 id=&#34;总评&#34;&gt;总评&lt;/h1&gt;
+&lt;p&gt;一部给了我不少惊喜的手机&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;颜值&lt;br&gt;
+还不错，背板是类似与 Pixel3XL 的撞色设计，方形的镜头模组个人感觉比华为的圆环好看一些&lt;/li&gt;
+&lt;li&gt;系统&lt;br&gt;
+因为买前就听说了 MyOS 抄了各大厂的系统以及算是小厂的系统，所以对系统的期望并不高（以及用惯了 Pixel 这种完全没有本地化适配的系统），上手用起来还是可以的，各大厂该有的功能基本都有&lt;/li&gt;
+&lt;li&gt;相机&lt;br&gt;
+比 Pixel3XL 的单摄强，等效 35mm 比一般的手机更近一些，虚化挺好看的&lt;br&gt;
+微距用着感觉比 K50 至尊版 的要更近、更清晰 一点&lt;/li&gt;
+&lt;li&gt;性能&lt;br&gt;
+8Gen2 ，实测雷兔兔跑分 1216748 分,比别家的要低几万，影响也不大（并非到手就测，或许是后台已经在运行一些软件的缘故？）&lt;br&gt;
+&lt;a href=&#34;https://blog.lty520.ml/img/%E5%8D%9A%E6%96%87/%E5%8A%AA%E6%AF%94%E4%BA%9AZ50%E7%9A%84%E8%B0%83%E6%95%99/%E9%9B%B7%E5%85%94%E5%85%94%E8%B7%91%E5%88%86.jpg&#34;&gt;跑分截图&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;系统&#34;&gt;系统&lt;/h1&gt;
+&lt;h2 id=&#34;谷歌服务&#34;&gt;谷歌服务&lt;/h2&gt;
+&lt;p&gt;因其自带谷歌服务，所以只需要在 &lt;a href=&#34;https://apkpure.com/cn/google-play-store/com.android.vending&#34;&gt;Apkpure&lt;/a&gt; 下载一个 &lt;strong&gt;Google Play Store&lt;/strong&gt; 安装上，就可以找到谷歌应用商店的图标了&lt;br&gt;
+&lt;em&gt;尝试过使用谷歌服务安装器（如 Go谷歌安装器 ），会显示谷歌框架完整，但哪怕重装谷歌框架也无法解决找不到谷歌应用商店的图标的问题。所以可能只能手动安装了&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;lspatchhttpsgithubcomlsposedlspatch&#34;&gt;&lt;a href=&#34;https://github.com/LSPosed/LSPatch&#34;&gt;LSPatch&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;因为不能解 BL 锁刷机，所以只能选择这种方案了&lt;br&gt;
+&lt;em&gt;曾经在另一部同样不能解 BL 和 Root 的手机试过太极框架，或许是手机太老的缘故，体验并不好，所以这次换了这个&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;安装-lspatch&#34;&gt;安装 LSPatch&lt;/h3&gt;
+&lt;p&gt;在&lt;a href=&#34;https://github.com/LSPosed/LSPatch/releases&#34;&gt; LSPosed/LSPatch/releases &lt;/a&gt; 下载安装后即可&lt;/p&gt;
+&lt;h4 id=&#34;使用-shizuku-自动安装修补后的-app&#34;&gt;使用 Shizuku ，自动安装修补后的 app&lt;/h4&gt;
+&lt;p&gt;默认的 LSPatch 也可以用，但修补后的 app 必须手动安装，所以可以安装 &lt;a href=&#34;https://shizuku.rikka.app/&#34;&gt;Shizuku&lt;/a&gt; ，给 LSPatch 权限后即可自动安装修补后的 app&lt;br&gt;
+&lt;em&gt;没有 Shizuku 也是完全可以的，只不过需要手动安装，麻烦一点&lt;/em&gt;&lt;br&gt;
+&lt;em&gt;Shizuku 安装教程 &lt;a href=&#34;https://www.bilibili.com/video/BV1Ye411N7Av/&#34;&gt;没有 Root 也能玩机？这是我讲过最强的APP！！！！&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;使用到的模块&#34;&gt;使用到的模块&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;QQ
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/fankes/TSBattery&#34;&gt;TSBattery&lt;/a&gt; 可以限制 QQ 的一些服务，省点电&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/cinit/QAuxiliary&#34;&gt;QAuxiliary&lt;/a&gt; 功能很多，主要用它去掉 QQ 的一些没用的功能（比如“一起听歌”、“群帖子”之类的）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Xposed-Modules-Repo/com.fkzhang.qqxposed&#34;&gt;QX&lt;/a&gt; 防撤回&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;微信
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Xposed-Modules-Repo/com.fkzhang.wechatxposed&#34;&gt;WX&lt;/a&gt; 防撤回&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;哔哩哔哩
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/WankkoRee/Portrait2Landscape&#34;&gt;不要竖屏&lt;/a&gt; 将竖屏视频变为横屏视频&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;桌面&#34;&gt;桌面&lt;/h1&gt;
+&lt;h2 id=&#34;第三方桌面&#34;&gt;第三方桌面&lt;/h2&gt;
+&lt;p&gt;因为上一部手机是 Pixel3XL ，习惯了 Pixel Launcher 的风格（而且感觉谷歌的 Material You 风格真的比国内这些个魔改系统好看多了）&lt;br&gt;
+因此选择了类似于 Pixel Launcher 的 &lt;a href=&#34;https://lawnchair.app/&#34;&gt;Lawnchair&lt;/a&gt; 直接下载安装即可&lt;br&gt;
+因为努比亚禁止了使用第三方桌面（真搞不懂明明这么小的市场份额还不愿意放开一点&amp;hellip;），所以可以使用 hyperion ，安装后会让你选择 hyperion 的桌面，这时只要选择 &lt;strong&gt;Lawnchair&lt;/strong&gt; 就可以了（怪）&lt;/p&gt;
+&lt;h2 id=&#34;图标&#34;&gt;图标&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/LawnchairLauncher/lawnicons&#34;&gt; lawnicons &lt;/a&gt;和 &lt;a href=&#34;https://www.coolapk.com/apk/app.lawnchair.lawnicons&#34;&gt;cayicons&lt;/a&gt;&lt;br&gt;
+对比：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;lawnicons 在 github 上开源，可以直接提交自己的图标；但对国内软件兼容性差&lt;/li&gt;
+&lt;li&gt;cayicons 由国内大佬在 lawnicons 基础上开发，（貌似）只能等大佬自行添加图标；但对国内软件兼容性更好&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最后选择了 lawnicons （有时间了自己把常用的图标提交上去吧）&lt;br&gt;
+&lt;em&gt;如果有一天兼容了自己常用的软件，这里会有一张桌面的截图的&lt;/em&gt;&lt;/p&gt;
+&lt;h1 id=&#34;软件下载&#34;&gt;软件下载&lt;/h1&gt;
+&lt;p&gt;不是很想用自带的应用商店（因为有开屏广告以及首页推荐的都是乱七八糟的东西），所以找了一些替代品&lt;br&gt;
+&lt;em&gt;用四个替代一个真的好么&amp;hellip;&lt;/em&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Google play store&lt;br&gt;
+下载大部分应用（如果有的话），毕竟总所周知国内厂商做的应用，国际板通常都会比国内版干净、好用、要求权限少&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://f-droid.org/&#34;&gt;F-Droid&lt;/a&gt;&lt;br&gt;
+可以用来下载一些免费开源软件，貌似更新比 Google play store 要快一些（比如 Trime ）&lt;br&gt;
+&lt;em&gt;下载太慢或打不开可以使用&lt;a href=&#34;https://mirrors.tuna.tsinghua.edu.cn/help/fdroid/&#34;&gt;清华大学开源软件镜像站&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://apkpure.com/cn/&#34;&gt;APKPure&lt;/a&gt;&lt;br&gt;
+用以下载 Google play store 没有的软件&lt;/li&gt;
+&lt;li&gt;酷安&lt;br&gt;
+用以下载以上平台没有的软件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;功能补全替换&#34;&gt;功能补全/替换&lt;/h1&gt;
+&lt;p&gt;毕竟努比亚是个小厂（和国内的华米 OV 以及国外的三星苹果相比），系统功能没那么完善，还需要一些第三方 app 进行补充；以及将一些系统 app 换成更习惯的第三方 app &lt;br&gt;
+&lt;em&gt;说实话个人感觉这个系统给我的惊喜还是蛮多的（毕竟之前用的是 Pixel&amp;hellip;）&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;跳过广告&#34;&gt;跳过广告&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://wpengapp.com/lightstart&#34;&gt;轻启动&lt;/a&gt; 跳过 app 的开屏广告&lt;/p&gt;
+&lt;h2 id=&#34;输入法&#34;&gt;输入法&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;../%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%BE%93%E5%85%A5%E6%B3%95rime&#34;&gt;Rime&lt;/a&gt; 毕竟都统一了是吧&lt;em&gt;目前还没有&lt;/em&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;- 23年2月1日
+    安卓13无法正常显示候选框
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;浏览器&#34;&gt;浏览器&lt;/h2&gt;
+&lt;p&gt;Chrome 因为书签的同步被绑在了谷歌的服务下&amp;hellip;（不过没有那些乱七八糟的资讯也还蛮好的）&lt;/p&gt;
+&lt;h2 id=&#34;密码管理&#34;&gt;密码管理&lt;/h2&gt;
+&lt;p&gt;Keepass
+&lt;em&gt;还有一篇“全平台统一密码管理——Keepass”的博文还没写呢&amp;hellip;&lt;/em&gt;&lt;/p&gt;
+- https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%8A%AA%E6%AF%94%E4%BA%9Az50%E7%9A%84%E8%B0%83%E6%95%99/ - </description>
+        </item>
     
     
     
@@ -372,57 +473,6 @@ F7 46：最后修改文件日期
 &lt;p&gt;使用 Notepad++ 打开后搜索 &lt;strong&gt;flag&lt;/strong&gt; 即可找到被 Base64 编码后的信息 &lt;strong&gt;flag:base64:(Mzc3Y2JhZGRhMWVjYTJmMmY3M2QzNjI3Nzc4MWYwMGE=)&lt;/strong&gt;&lt;br&gt;
 使用 Base64 解码后即可得到 flag &lt;strong&gt;flag{377cbadda1eca2f2f73d36277781f00a}&lt;/strong&gt;&lt;/p&gt;
 - https://blog.lty520.ml/ctf/wp-buuctf-%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>WP BUUCTF 大白</title>
-        <link>https://blog.lty520.ml/ctf/wp-buuctf-%E5%A4%A7%E7%99%BD/</link>
-        <pubDate>Sat, 14 Jan 2023 01:09:55 +0800</pubDate>
-        
-        <guid>https://blog.lty520.ml/ctf/wp-buuctf-%E5%A4%A7%E7%99%BD/</guid>
-        <description>Ling的博客 https://blog.lty520.ml/ctf/wp-buuctf-%E5%A4%A7%E7%99%BD/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%E5%A4%A7%E7%99%BD&#34;&gt;https://buuoj.cn/challenges#%E5%A4%A7%E7%99%BD&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
-&lt;p&gt;看不到图？ 是不是屏幕太小了 注意：得到的 flag 请包上 flag{} 提交&lt;/p&gt;
-&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
-&lt;p&gt;题目中提到了&lt;strong&gt;看不到图&lt;/strong&gt;以及&lt;strong&gt;屏幕太小了&lt;/strong&gt;,再加上题目给了一张 png 图片，由此可以猜到这题修改了图片的长或宽，让设备只能显示图片的一部分，从而隐藏了 flag&lt;br&gt;
-使用脚本&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;import zlib
-import struct
-
-filename = &amp;#39;2.png&amp;#39;
-with open(filename, &amp;#39;rb&amp;#39;) as f:
-    all_b = f.read()
-    crc32key = int(all_b[29:33].hex(), 16)
-    data = bytearray(all_b[12:29])
-    n = 4095  # 理论上0xffffffff,但考虑到屏幕实际/cpu，0x0fff就差不多了
-    for w in range(n):  # 高和宽一起爆破
-        width = bytearray(struct.pack(&amp;#39;&amp;gt;i&amp;#39;, w))  # q为8字节，i为4字节，h为2字节
-        for h in range(n):
-            height = bytearray(struct.pack(&amp;#39;&amp;gt;i&amp;#39;, h))
-            for x in range(4):
-                data[x + 4] = width[x]
-                data[x + 8] = height[x]
-            crc32result = zlib.crc32(data)
-            if crc32result == crc32key:
-                # 2021.7.20，有时候显示的宽高依然看不出具体的值，干脆输出data部分
-                print(data.hex())
-                print(&amp;#34;宽为：&amp;#34;, end=&amp;#34;&amp;#34;)
-                print(width)
-                print(&amp;#34;高为：&amp;#34;, end=&amp;#34;&amp;#34;)
-                print(height)
-                exit(0)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;可以一键得出图片正确的长和宽，将图片信息修改为正确的长和宽即可看到 flag&lt;br&gt;
-&lt;img src=&#34;https://blog.lty520.ml/img/CTF/WP-BUUCTF-%E5%A4%A7%E7%99%BD1/img1.png&#34; alt=&#34;img1&#34;&gt;&lt;/p&gt;
-&lt;p&gt;可得 flag 为 &lt;strong&gt;flag{He1l0_d4_ba1}&lt;/strong&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;em&gt;之前用的脚本咋找不到了呢&amp;hellip;&lt;/em&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;ul&gt;
-&lt;li&gt;脚本来源 &lt;a href=&#34;https://www.cnblogs.com/yunqian2017/p/14449346.html&#34;&gt;png图片CRC爆破原理的学习&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-- https://blog.lty520.ml/ctf/wp-buuctf-%E5%A4%A7%E7%99%BD/ - </description>
         </item>
     
     
