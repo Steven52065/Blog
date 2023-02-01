@@ -6,9 +6,75 @@
     <description>Recent content on Ling的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 01 Feb 2023 13:30:03 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 02 Feb 2023 01:33:23 +0800</lastBuildDate>
     
         <atom:link href="https://blog.lty520.ml/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>WP BUUCTF 被劫持的神秘礼物</title>
+        <link>https://blog.lty520.ml/ctf/wp-buuctf-%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9/</link>
+        <pubDate>Thu, 02 Feb 2023 01:33:23 +0800</pubDate>
+        
+        <guid>https://blog.lty520.ml/ctf/wp-buuctf-%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9/</guid>
+        <description>Ling的博客 https://blog.lty520.ml/ctf/wp-buuctf-%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9&#34;&gt;https://buuoj.cn/challenges#%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
+&lt;p&gt;某天小明收到了一件很特别的礼物，有奇怪的后缀，奇怪的名字和格式。小明找到了知心姐姐度娘，度娘好像知道这是啥，但是度娘也不知道里面是啥。。。你帮帮小明？找到帐号密码，串在一起，用32位小写MD5哈希一下得到的就是答案。 链接: &lt;a href=&#34;https://pan.baidu.com/s/1pwVVpA5_WWY8Og6dhCcWRw&#34;&gt;https://pan.baidu.com/s/1pwVVpA5_WWY8Og6dhCcWRw&lt;/a&gt; 提取码: 31vk 注意：得到的 flag 请包上 flag{} 提交&lt;/p&gt;
+&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
+&lt;p&gt;下载后发现文件是 gift.pcapng&lt;br&gt;
+既然是 pcapng 文件，反手扔进 Wireshark 里&lt;br&gt;
+可以找到一条登录的 Post 请求&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;4	0.003591	192.168.78.134	192.168.60.123	HTTP	704	POST /index.php?r=member/index/login HTTP/1.1  (application/x-www-form-urlencoded)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;可以发现这条请求发送的 name 是 &lt;strong&gt;admina&lt;/strong&gt; ，word 是 &lt;strong&gt;adminb&lt;/strong&gt;&lt;br&gt;
+拼成 adminaadminb 后取小写 md5&lt;br&gt;
+可得 1d240aafe21a86afc11f38a45b541a49&lt;br&gt;
+即 flag 为 &lt;strong&gt;flag{1d240aafe21a86afc11f38a45b541a49}&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;貌似礼物是张图片？没找到看这张图片的方法（理论上应该能看到的&amp;hellip;）&lt;/em&gt;&lt;/p&gt;
+- https://blog.lty520.ml/ctf/wp-buuctf-%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>WP BUUCTF Webshell后门</title>
+        <link>https://blog.lty520.ml/ctf/wp-buuctf-webshell%E5%90%8E%E9%97%A8/</link>
+        <pubDate>Thu, 02 Feb 2023 01:15:01 +0800</pubDate>
+        
+        <guid>https://blog.lty520.ml/ctf/wp-buuctf-webshell%E5%90%8E%E9%97%A8/</guid>
+        <description>Ling的博客 https://blog.lty520.ml/ctf/wp-buuctf-webshell%E5%90%8E%E9%97%A8/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#webshell%E5%90%8E%E9%97%A8&#34;&gt;https://buuoj.cn/challenges#webshell%E5%90%8E%E9%97%A8&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
+&lt;p&gt;朋友的网站被黑客上传了webshell后门，他把网站打包备份了，你能帮忙找到黑客的webshell在哪吗？(Webshell中的密码(md5)即为答案)。&lt;/p&gt;
+&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
+&lt;p&gt;下载打开后是一整个网站的源码，用火绒病毒查杀即可找到风险文件&lt;br&gt;
+打开文件后即可得到 flag&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;最初以为后门是上传到了那一堆图片里，找了老久&amp;hellip;&lt;/em&gt;&lt;/p&gt;
+- https://blog.lty520.ml/ctf/wp-buuctf-webshell%E5%90%8E%E9%97%A8/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>WP BUUCTF 来首歌吧</title>
+        <link>https://blog.lty520.ml/ctf/wp-buuctf-%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7/</link>
+        <pubDate>Thu, 02 Feb 2023 00:49:47 +0800</pubDate>
+        
+        <guid>https://blog.lty520.ml/ctf/wp-buuctf-%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7/</guid>
+        <description>Ling的博客 https://blog.lty520.ml/ctf/wp-buuctf-%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7&#34;&gt;https://buuoj.cn/challenges#%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
+&lt;p&gt;一首音乐&lt;/p&gt;
+&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
+&lt;p&gt;看到是一首音乐，先听一下&lt;br&gt;
+右声道是彩虹猫，左声道是一段摩斯密码&lt;br&gt;
+扔进 Au 里手动翻译即可&lt;br&gt;
+&lt;img src=&#34;https://blog.lty520.ml/img/CTF/WP-BUUCTF-%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7/img1.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;不查不知道，这首彩虹猫居然可以追溯到2010年7月25日上传到油管的《喵喵喵喵喵喵喵！》（还是 Miku 唱的）&lt;/em&gt;&lt;br&gt;
+&lt;a href=&#34;https://www.nicovideo.jp/watch/sm11509720&#34;&gt;【初音ミク】Nyanyanyanyanyanyanya!【オリジナループ】&lt;/a&gt;&lt;/p&gt;
+- https://blog.lty520.ml/ctf/wp-buuctf-%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7/ - </description>
+        </item>
     
     
     
@@ -363,116 +429,6 @@ Hello, CTFer!
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;所以使用工具 &lt;a href=&#34;https://www.qqxiuzi.cn/bianma/dianbao.php&#34;&gt;电报码在线翻译&lt;/a&gt; 很容易可以将 &lt;strong&gt;606046152623600817831216121621196386&lt;/strong&gt; 翻译为&lt;strong&gt;计算机要从娃娃抓起&lt;/strong&gt;&lt;br&gt;
 即可得 flag &lt;strong&gt;flag{计算机要从娃娃抓起}&lt;/strong&gt;&lt;/p&gt;
 - https://blog.lty520.ml/ctf/wp-buuctf-%E4%BF%A1%E6%81%AF%E5%8C%96%E6%97%B6%E4%BB%A3%E7%9A%84%E6%AD%A5%E4%BC%90/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>WP BUUCTF RSA</title>
-        <link>https://blog.lty520.ml/ctf/wp-buuctf-rsa/</link>
-        <pubDate>Sat, 14 Jan 2023 21:56:08 +0800</pubDate>
-        
-        <guid>https://blog.lty520.ml/ctf/wp-buuctf-rsa/</guid>
-        <description>Ling的博客 https://blog.lty520.ml/ctf/wp-buuctf-rsa/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#RSA&#34;&gt;https://buuoj.cn/challenges#RSA&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
-&lt;p&gt;在一次RSA密钥对生成中，假设p=473398607161，q=4511491，e=17
-求解出d作为flga提交&lt;/p&gt;
-&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
-&lt;p&gt;给 python3 环境安装上 libnum 包，然后运行脚本即可&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;import libnum
-p = 473398607161
-q = 4511491
-e = 17
-phi = (p-1)*(q-1)
-d = libnum.invmod(e,phi)
-print(d)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;可得 d 为 125631357777427553&lt;br&gt;
-即 flag 为 &lt;strong&gt;flag{125631357777427553}&lt;/strong&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;ul&gt;
-&lt;li&gt;脚本来源 &lt;a href=&#34;https://www.freebuf.com/articles/web/287854.html&#34;&gt;『CTF』史上最全 RSA 题目总结&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-- https://blog.lty520.ml/ctf/wp-buuctf-rsa/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>WP BUUCTF Zip伪加密</title>
-        <link>https://blog.lty520.ml/ctf/wp-buuctf-zip%E4%BC%AA%E5%8A%A0%E5%AF%86/</link>
-        <pubDate>Sat, 14 Jan 2023 01:52:14 +0800</pubDate>
-        
-        <guid>https://blog.lty520.ml/ctf/wp-buuctf-zip%E4%BC%AA%E5%8A%A0%E5%AF%86/</guid>
-        <description>Ling的博客 https://blog.lty520.ml/ctf/wp-buuctf-zip%E4%BC%AA%E5%8A%A0%E5%AF%86/ -&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
-&lt;p&gt;注意：得到的 flag 请包上 flag{} 提交  以及一个解压需要密码的 zip 压缩包&lt;/p&gt;
-&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
-&lt;p&gt;既然题目叫&lt;strong&gt;Zip伪加密&lt;/strong&gt;,那么就从&lt;strong&gt;Zip伪加密&lt;/strong&gt;入手（废话文学.jpg）&lt;/p&gt;
-&lt;h2 id=&#34;相关知识&#34;&gt;相关知识&lt;/h2&gt;
-&lt;p&gt;zip文件头协议(部分)&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;压缩源文件数据区：
-50 4B 03 04：这是头文件标记（0x04034b50）
-14 00：解压文件所需 pkware 版本
-00 00：全局方式位标记（有无加密）
-08 00：压缩方式
-5A 7E：最后修改文件时间
-F7 46：最后修改文件日期
-16 B5 80 14：CRC-32校验（1480B516）
-19 00 00 00：压缩后尺寸（25）
-17 00 00 00：未压缩尺寸（23）
-07 00：文件名长度
-00 00：扩展记录长度
-
-压缩源文件目录区：
-50 4B 01 02：目录中文件文件头标记(0x02014b50)
-3F 00：压缩使用的 pkware 版本
-14 00：解压文件所需 pkware 版本
-00 00：全局方式位标记（有无加密，这个更改这里进行伪加密，改为09 00打开就会提示有密码了）
-08 00：压缩方式
-5A 7E：最后修改文件时间
-F7 46：最后修改文件日期
-16 B5 80 14：CRC-32校验（1480B516）
-19 00 00 00：压缩后尺寸（25）
-17 00 00 00：未压缩尺寸（23）
-07 00：文件名长度
-24 00：扩展字段长度
-00 00：文件注释长度
-00 00：磁盘开始号
-00 00：内部文件属性
-20 00 00 00：外部文件属性
-00 00 00 00：局部头部偏移量
-
-压缩源文件目录结束标志：
-50 4B 05 06：目录结束标记
-00 00：当前磁盘编号
-00 00：目录区开始磁盘编号
-01 00：本磁盘上纪录总数
-01 00：目录区中纪录总数
-59 00 00 00：目录区尺寸大小
-3E 00 00 00：目录区对第一张磁盘的偏移量
-00 00：ZIP 文件注释长度
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如上所述，只要将第二个50 4B后的09 00改为00 00即可&lt;br&gt;
-解压得到 flag &lt;strong&gt;flag{Adm1N-B2G-kU-SZIP}&lt;/strong&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;ul&gt;
-&lt;li&gt;zip文件头协议部分 引自&lt;a href=&#34;https://blog.csdn.net/ETF6996/article/details/51946250&#34;&gt;zip伪加密&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-- https://blog.lty520.ml/ctf/wp-buuctf-zip%E4%BC%AA%E5%8A%A0%E5%AF%86/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>WP BUUCTF 隐藏的钥匙</title>
-        <link>https://blog.lty520.ml/ctf/wp-buuctf-%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99/</link>
-        <pubDate>Sat, 14 Jan 2023 01:44:31 +0800</pubDate>
-        
-        <guid>https://blog.lty520.ml/ctf/wp-buuctf-%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99/</guid>
-        <description>Ling的博客 https://blog.lty520.ml/ctf/wp-buuctf-%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99/ -&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.lty520.ml/img/CTF/WP-BUUCTF-%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99/%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99.jpg&#34; alt=&#34;隐藏的钥匙&#34;&gt;&lt;/p&gt;
-&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
-&lt;p&gt;使用 Notepad++ 打开后搜索 &lt;strong&gt;flag&lt;/strong&gt; 即可找到被 Base64 编码后的信息 &lt;strong&gt;flag:base64:(Mzc3Y2JhZGRhMWVjYTJmMmY3M2QzNjI3Nzc4MWYwMGE=)&lt;/strong&gt;&lt;br&gt;
-使用 Base64 解码后即可得到 flag &lt;strong&gt;flag{377cbadda1eca2f2f73d36277781f00a}&lt;/strong&gt;&lt;/p&gt;
-- https://blog.lty520.ml/ctf/wp-buuctf-%E9%9A%90%E8%97%8F%E7%9A%84%E9%92%A5%E5%8C%99/ - </description>
         </item>
     
     

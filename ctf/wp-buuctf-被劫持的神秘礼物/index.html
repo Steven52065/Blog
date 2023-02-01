@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-<title>CTFs</title>
+<title>WP BUUCTF 被劫持的神秘礼物</title>
 
 
 
@@ -34,6 +34,8 @@
 
 
 
+      <script src="/js/toc.js"></script>
+    
     <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
 <link rel="stylesheet" href="/scss/journal.min.c5d92f380bf10f6849c7ac487c7df2b22c081e0851e5339224f1ae29210b20d2.css" integrity="sha256-xdkvOAvxD2hJx6xIfH3ysiwIHghR5TOSJPGuKSELINI=" media="screen">
 
@@ -59,6 +61,12 @@
 
 
 
+
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+  />
 
 
 
@@ -149,6 +157,60 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 </div><div id="extraContainer" class="extra-container">
     
     
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%a2%98%e7%9b%ae" onclick="onNavClick(`#题目-nav`)" id="题目-nav">
+									题目
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%80%9d%e8%b7%af" onclick="onNavClick(`#思路-nav`)" id="思路-nav">
+									思路
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+    
     <div class="pagination">
         <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
             <i class="material-icons pagination-action-icon">
@@ -161,24 +223,6 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 dark_mode
             </span>
         </a>
-        
-        
-        
-            <div class="pagination-indicator">
-                <span style="text-align: center">
-                    3<br><div style="display: inline-block; transform: rotate(-28deg)">-</div><br>3
-                </span>
-            </div>
-            
-            
-            <a class="pagination-action" href="/ctf/page/2/">
-                <i class="material-icons pagination-action-icon">
-                    chevron_left
-                </i>
-            </a>
-            
-
-            
         
         
     </div>
@@ -233,6 +277,60 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
             
             
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%a2%98%e7%9b%ae" onclick="onNavClick(`#题目-nav`)" id="题目-nav">
+									题目
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%80%9d%e8%b7%af" onclick="onNavClick(`#思路-nav`)" id="思路-nav">
+									思路
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
         </div>
     </div>
 </div>
@@ -272,190 +370,113 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 <div id="streamContainer" class="stream-container">
 
     <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    WP BUUCTF 被劫持的神秘礼物
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2023-02-02 01:33
+                        </time>
+                        
+
+                        
+
+                        
+                        
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            1 min
+                            
+                            10 s.
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <p>题目链接: <a href="https://buuoj.cn/challenges#%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9">https://buuoj.cn/challenges#%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9</a></p>
+<h1 id="题目">题目</h1>
+<p>某天小明收到了一件很特别的礼物，有奇怪的后缀，奇怪的名字和格式。小明找到了知心姐姐度娘，度娘好像知道这是啥，但是度娘也不知道里面是啥。。。你帮帮小明？找到帐号密码，串在一起，用32位小写MD5哈希一下得到的就是答案。 链接: <a href="https://pan.baidu.com/s/1pwVVpA5_WWY8Og6dhCcWRw">https://pan.baidu.com/s/1pwVVpA5_WWY8Og6dhCcWRw</a> 提取码: 31vk 注意：得到的 flag 请包上 flag{} 提交</p>
+<h1 id="思路">思路</h1>
+<p>下载后发现文件是 gift.pcapng<br>
+既然是 pcapng 文件，反手扔进 Wireshark 里<br>
+可以找到一条登录的 Post 请求</p>
+<pre tabindex="0"><code>4	0.003591	192.168.78.134	192.168.60.123	HTTP	704	POST /index.php?r=member/index/login HTTP/1.1  (application/x-www-form-urlencoded)
+</code></pre><p>可以发现这条请求发送的 name 是 <strong>admina</strong> ，word 是 <strong>adminb</strong><br>
+拼成 adminaadminb 后取小写 md5<br>
+可得 1d240aafe21a86afc11f38a45b541a49<br>
+即 flag 为 <strong>flag{1d240aafe21a86afc11f38a45b541a49}</strong></p>
+<hr>
+<p><em>貌似礼物是张图片？没找到看这张图片的方法（理论上应该能看到的&hellip;）</em></p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2023-02-02</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts">
+			下回<br>已经到头啦。
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/ctf/wp-buuctf-webshell%E5%90%8E%E9%97%A8/">
+			上回<br>WP BUUCTF Webshell后门
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+<div id="waline"></div>
+<script>
+    Waline.init({
+        el: '#waline',
         
-            <a class="a-block">
-                <div class="post-item-wrapper post-item-wrapper-no-hover">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title post-item-title-small year">
-                                2023
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="/ctf/wp-buucuf-password/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                WP BUUCUF Password
-                            </div>
-                            <div class="post-item-meta">
-    2023-01-10
-    &emsp;
+        serverURL: "https://blog-waline.lty520.ml/" ,
+    });
     
-    
-    <i class="material-icons" style="font-size:10px">schedule</i>
-    
+    </script>
 
-    
-    
 
-    
-    29 s
-    
-    
-    &emsp;
-    
-</div>
 
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-        
-            <a class="a-block">
-                <div class="post-item-wrapper post-item-wrapper-no-hover">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title post-item-title-small year">
-                                0001
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="/ctf/wp-buuctf-%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E7%A7%98%E5%AF%86/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                WP BUUCTF 文件中的秘密
-                            </div>
-                            <div class="post-item-meta">
-    0001-01-01
-    &emsp;
-    
-    
-    <i class="material-icons" style="font-size:10px">schedule</i>
-    
-
-    
-    
-
-    
-    17 s
-    
-    
-    &emsp;
-    
-</div>
-
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="/ctf/wp-buuctf-%E8%A2%AB%E5%97%85%E6%8E%A2%E7%9A%84%E6%B5%81%E9%87%8F/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                WP BUUCTF 被嗅探的流量
-                            </div>
-                            <div class="post-item-meta">
-    0001-01-01
-    &emsp;
-    
-    
-    <i class="material-icons" style="font-size:10px">schedule</i>
-    
-
-    
-    
-
-    
-    49 s
-    
-    
-    &emsp;
-    
-</div>
-
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="/ctf/wp-buuctf-%E7%AC%AC%E4%B8%80%E7%AB%A0web%E5%85%A5%E9%97%A8%E5%B8%B8%E8%A7%81%E7%9A%84%E6%90%9C%E9%9B%86/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-gaps">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                WP BUUCTF [第一章web入门]常见的搜集
-                            </div>
-                            <div class="post-item-meta">
-    0001-01-01
-    &emsp;
-    
-    
-    <i class="material-icons" style="font-size:10px">schedule</i>
-    
-
-    
-    
-
-    
-    1 min
-    
-    13 s
-    
-    
-    &emsp;
-    
-</div>
-
-                        </div>
-                    </div>
-                </div>
-            </a>
-            
-        
+            </div>
+        </div>
     </div>
 
 
-
                     </div>
-            </div>
-
-<div class="pagination">
-    
-    <a class="pagination-action" href="/ctf/page/2/" style="opacity:1">
-    
-        <i class="material-icons pagination-action-icon">
-            chevron_left
-        </i>
-    </a>
-
-        <div class="pagination-indicator">
-            <span>3/3</span>
-        </div>
-
-        
-            <a class="pagination-action" style="opacity:0">
-        
-                <i class="material-icons pagination-action-icon">
-                    chevron_right
-                </i>
-            </a>
-</div>
-
-
-<div id="single-column-footer">
+            </div><div id="single-column-footer">
 Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
 <br>
 移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
