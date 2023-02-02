@@ -1,0 +1,21 @@
+<?xml-stylesheet href="/rss.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ling的博客</title>
+    <link>https://blog.lty520.ml/</link>
+    <description>Recent content on Ling的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 02 Feb 2023 22:11:12 +0800</lastBuildDate>
+    
+        <atom:link href="https://blog.lty520.ml/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+    
+    
+    
+    
+    
+  </channel>
+</rss> 

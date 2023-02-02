@@ -6,7 +6,58 @@
     <description>Recent content in CTFs on Ling的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 02 Feb 2023 01:33:23 +0800</lastBuildDate><atom:link href="https://blog.lty520.ml/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Feb 2023 22:11:12 +0800</lastBuildDate><atom:link href="https://blog.lty520.ml/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WP BUUCTF [BJDCTF2020]藏藏藏</title>
+      <link>https://blog.lty520.ml/ctf/wp-buuctf-bjdctf2020%E8%97%8F%E8%97%8F%E8%97%8F/</link>
+      <pubDate>Thu, 02 Feb 2023 22:11:12 +0800</pubDate>
+      
+      <guid>https://blog.lty520.ml/ctf/wp-buuctf-bjdctf2020%E8%97%8F%E8%97%8F%E8%97%8F/</guid>
+      <description>题目链接: https://buuoj.cn/challenges#[BJDCTF2020]%E8%97%8F%E8%97%8F%E8%97%8F
+题目 思路 首先使用 binwalk ，可以看到这是一个压缩包
+以 JPG 开头，以 ZIP 结尾（怪） 用 Bandzip 打开图片后，可以解压出 福利.docx
+其中是一个二维码
+扫码即可得 flag
+flag{you are the best!}</description>
+    </item>
+    
+    <item>
+      <title>WP BUUCTF Snake</title>
+      <link>https://blog.lty520.ml/ctf/wp-buuctf-snake/</link>
+      <pubDate>Thu, 02 Feb 2023 21:41:20 +0800</pubDate>
+      
+      <guid>https://blog.lty520.ml/ctf/wp-buuctf-snake/</guid>
+      <description>题目链接: https://buuoj.cn/challenges#snake
+题目 思路 首先用 binwalk 可以得到三个文件
+├── 43EF4.zip ├── cipher └── key key 文件里是
+V2hhdCBpcyBOaWNraSBNaW5haidzIGZhdm9yaXRlIHNvbmcgdGhhdCByZWZlcnMgdG8gc25ha2VzPwo= 通过 base64 可以解得 What is Nicki Minaj&amp;rsquo;s favorite song that refers to snakes?
+Google 可得一个专辑的名字 Anaconda
+密钥是小写
+即为密钥
+同时，对于蛇这个名词，在英语中还有一个翻译：Serpent。而 Serpent 又是一种加密算法
+使用网站 Serpent – Symmetric Ciphers Online 可以解得 flag
+flag{who_knew_serpent_cipher_existed}
+参考文章
+BUUCTF snake（实验吧Snake） </description>
+    </item>
+    
+    <item>
+      <title>WP BUUCTF 刷新过的图片</title>
+      <link>https://blog.lty520.ml/ctf/wp-buuctf-%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87/</link>
+      <pubDate>Thu, 02 Feb 2023 19:58:22 +0800</pubDate>
+      
+      <guid>https://blog.lty520.ml/ctf/wp-buuctf-%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87/</guid>
+      <description>题目链接: https://buuoj.cn/challenges#%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87
+题目 浏览图片的时候刷新键有没有用呢
+思路 提到了刷新的图片，可以想到 F5 隐写
+使用工具 F5-steganography
+使用命令
+java Extract /图片的绝对路径 [-p 密码] [-e 输出文件] 可以解出一个伪加密的压缩包
+打开压缩包后即可得到 flag
+flag{96efd0a2037d06f34199e921079778ee}
+为什么死活运行不了呢&amp;hellip; Java 版本太新的问题？？？怪</description>
+    </item>
+    
     <item>
       <title>WP BUUCTF 被劫持的神秘礼物</title>
       <link>https://blog.lty520.ml/ctf/wp-buuctf-%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9/</link>
