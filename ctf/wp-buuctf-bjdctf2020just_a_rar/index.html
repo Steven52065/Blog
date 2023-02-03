@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-<title>WP BUUCTF [BJDCTF2020]藏藏藏</title>
+<title>WP BUUCTF [BJDCTF2020]just_a_rar</title>
 
 
 
@@ -379,12 +379,12 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
             >
                 <div class="post-title">
-                    WP BUUCTF [BJDCTF2020]藏藏藏
+                    WP BUUCTF [BJDCTF2020]just_a_rar
                     
                     <div class="post-meta">
                         
                         <time itemprop="datePublished">
-                            2023-02-02 22:11
+                            2023-02-04 00:30
                         </time>
                         
 
@@ -399,7 +399,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                             
 
                             
-                            21 s.
+                            15 s.
                         
                     </div>
                 </div>
@@ -409,21 +409,17 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
                 <div class="post-body" v-pre>
                 
-                    <p>题目链接: <a href="https://buuoj.cn/challenges#%5BBJDCTF2020%5D%E8%97%8F%E8%97%8F%E8%97%8F">https://buuoj.cn/challenges#[BJDCTF2020]%E8%97%8F%E8%97%8F%E8%97%8F</a></p>
+                    <p>题目链接: <a href="https://buuoj.cn/challenges#%5BBJDCTF2020%5Djust_a_rar">https://buuoj.cn/challenges#[BJDCTF2020]just_a_rar</a></p>
 <h1 id="题目">题目</h1>
-<p><img src="/img/CTF/WP-BUUCTF-%5BBJDCTF2020%5D%E8%97%8F%E8%97%8F%E8%97%8F/%E8%97%8F%E8%97%8F%E8%97%8F.jpg" alt="题图"></p>
+<p>加密的压缩包</p>
 <h1 id="思路">思路</h1>
-<p>首先使用 binwalk ，可以看到这是一个压缩包<br>
-<em>以 JPG 开头，以 ZIP 结尾（怪）</em>
-用 Bandzip 打开图片后，可以解压出 <strong>福利.docx</strong><br>
-其中是一个二维码<br>
-<img src="/img/CTF/WP-BUUCTF-%5BBJDCTF2020%5D%E8%97%8F%E8%97%8F%E8%97%8F/img1.png" alt="img1"><br>
-扫码即可得 flag<br>
-<strong>flag{you are the best!}</strong></p>
+<p>一个四位数密码的压缩包，暴力破解即可得密码为 <strong>2016</strong><br>
+解压得一张 jpg 图片，在备注处可以找到 flag<br>
+<strong>flag{Wadf_123}</strong></p>
 
                     
                     <HR width="100%" id="EOF">
-		    <p style="color:#777;">最后修改于 2023-02-02</p>
+		    <p style="color:#777;">最后修改于 2023-02-04</p>
                     
                 </div>
             </div>
@@ -432,14 +428,14 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
             <nav class="post-pagination">
 
                 
-                <a class="newer-posts" href="/ctf/wp-buuctf-gxyctf2019%E4%BD%9B%E7%B3%BB%E9%9D%92%E5%B9%B4/">
-			下回<br>WP BUUCTF [GXYCTF2019]佛系青年
+                <a class="newer-posts">
+			下回<br>已经到头啦。
                 </a>
                 
                 
                 
-                <a class="older-posts" href="/ctf/wp-buuctf-snake/">
-			上回<br>WP BUUCTF Snake
+                <a class="older-posts" href="/ctf/wp-buuctf-bjdctf2020%E9%B8%A1%E4%BD%A0%E5%A4%AA%E7%BE%8E/">
+			上回<br>WP BUUCTF [BJDCTF2020]鸡你太美
                 </a>
                 
             </nav>

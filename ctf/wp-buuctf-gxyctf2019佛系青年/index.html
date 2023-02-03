@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-<title>WP BUUCTF [BJDCTF2020]藏藏藏</title>
+<title>WP BUUCTF [GXYCTF2019]佛系青年</title>
 
 
 
@@ -379,12 +379,12 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
             >
                 <div class="post-title">
-                    WP BUUCTF [BJDCTF2020]藏藏藏
+                    WP BUUCTF [GXYCTF2019]佛系青年
                     
                     <div class="post-meta">
                         
                         <time itemprop="datePublished">
-                            2023-02-02 22:11
+                            2023-02-03 23:54
                         </time>
                         
 
@@ -399,7 +399,9 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                             
 
                             
-                            21 s.
+                            1 min
+                            
+                            36 s.
                         
                     </div>
                 </div>
@@ -409,21 +411,49 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
                 <div class="post-body" v-pre>
                 
-                    <p>题目链接: <a href="https://buuoj.cn/challenges#%5BBJDCTF2020%5D%E8%97%8F%E8%97%8F%E8%97%8F">https://buuoj.cn/challenges#[BJDCTF2020]%E8%97%8F%E8%97%8F%E8%97%8F</a></p>
+                    <p>题目链接: <a href="https://buuoj.cn/challenges#%5BGXYCTF2019%5D%E4%BD%9B%E7%B3%BB%E9%9D%92%E5%B9%B4">https://buuoj.cn/challenges#[GXYCTF2019]%E4%BD%9B%E7%B3%BB%E9%9D%92%E5%B9%B4</a></p>
 <h1 id="题目">题目</h1>
-<p><img src="/img/CTF/WP-BUUCTF-%5BBJDCTF2020%5D%E8%97%8F%E8%97%8F%E8%97%8F/%E8%97%8F%E8%97%8F%E8%97%8F.jpg" alt="题图"></p>
+<p>压缩包</p>
 <h1 id="思路">思路</h1>
-<p>首先使用 binwalk ，可以看到这是一个压缩包<br>
-<em>以 JPG 开头，以 ZIP 结尾（怪）</em>
-用 Bandzip 打开图片后，可以解压出 <strong>福利.docx</strong><br>
-其中是一个二维码<br>
-<img src="/img/CTF/WP-BUUCTF-%5BBJDCTF2020%5D%E8%97%8F%E8%97%8F%E8%97%8F/img1.png" alt="img1"><br>
-扫码即可得 flag<br>
-<strong>flag{you are the best!}</strong></p>
+<p>压缩包可以看出是采用了伪加密，解开后可得两个文件<br>
+fo.txt</p>
+<pre tabindex="0"><code>                                                                      _ooOoo_
+                                                                     o8888888o
+                                                                     88&#34; . &#34;88
+                                                                     (| -_- |)
+                                                                      O\ = /O
+                                                                  ____/`---&#39;\____
+                                                                .   &#39; \\| |// `.
+                                                                 / \\||| : |||// \
+                                                               / _||||| -:- |||||- \
+                                                                 | | \\\ - /// | |
+                                                               | \_| &#39;&#39;\---/&#39;&#39; | |
+                                                                \ .-\__ `-` ___/-. /
+                                                             ___`. .&#39; /--.--\ `. . __
+                                                          .&#34;&#34; &#39;&lt; `.___\_&lt;|&gt;_/___.&#39; &gt;&#39;&#34;&#34;.
+                                                         | | : `- \`.;`\ _ /`;.`/ - ` : | |
+                                                           \ \ `-. \_ __\ /__ _/ .-` / /
+                                                   ======`-.____`-.___\_____/___.-`____.-&#39;======
+                                                                      `=---=&#39;            
+
+                                                   .............................................
+                                                          佛祖保佑             永无BUG
+                                                          写字楼里写字间，写字间里程序员；
+                                                          程序人员写程序，又拿程序换酒钱。
+                                                          酒醒只在网上坐，酒醉还来网下眠；
+                                                          酒醉酒醒日复日，网上网下年复年。
+                                                          但愿老死电脑间，不愿鞠躬老板前；
+                                                          奔驰宝马贵者趣，公交自行程序员。
+                                                          别人笑我忒疯癫，我笑自己命太贱；
+                                                          不见满街漂亮妹，哪个归得程序员？
+
+佛曰：遮等諳勝能礙皤藐哆娑梵迦侄羅哆迦梵者梵楞蘇涅侄室實真缽朋能。奢怛俱道怯都諳怖梵尼怯一罰心缽謹缽薩苦奢夢怯帝梵遠朋陀諳陀穆諳所呐知涅侄以薩怯想夷奢醯數羅怯諸
+</code></pre><p>将最后一段扔进<a href="https://www.keyfc.net/bbs/tools/tudoucode.aspx">与佛论禅</a>即可解出flag<br>
+<strong>flag{w0_fo_ci_Be1}</strong></p>
 
                     
                     <HR width="100%" id="EOF">
-		    <p style="color:#777;">最后修改于 2023-02-02</p>
+		    <p style="color:#777;">最后修改于 2023-02-03</p>
                     
                 </div>
             </div>
@@ -432,14 +462,14 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
             <nav class="post-pagination">
 
                 
-                <a class="newer-posts" href="/ctf/wp-buuctf-gxyctf2019%E4%BD%9B%E7%B3%BB%E9%9D%92%E5%B9%B4/">
-			下回<br>WP BUUCTF [GXYCTF2019]佛系青年
+                <a class="newer-posts" href="/ctf/wp-buuctf-bjdctf2020%E4%BD%A0%E7%8C%9C%E6%88%91%E6%98%AF%E4%B8%AA%E5%95%A5/">
+			下回<br>WP BUUCTF [BJDCTF2020]你猜我是个啥
                 </a>
                 
                 
                 
-                <a class="older-posts" href="/ctf/wp-buuctf-snake/">
-			上回<br>WP BUUCTF Snake
+                <a class="older-posts" href="/ctf/wp-buuctf-bjdctf2020%E8%97%8F%E8%97%8F%E8%97%8F/">
+			上回<br>WP BUUCTF [BJDCTF2020]藏藏藏
                 </a>
                 
             </nav>

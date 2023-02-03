@@ -6,7 +6,62 @@
     <description>Recent content in CTFs on Ling的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 02 Feb 2023 22:11:12 +0800</lastBuildDate><atom:link href="https://blog.lty520.ml/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Feb 2023 00:30:28 +0800</lastBuildDate><atom:link href="https://blog.lty520.ml/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WP BUUCTF [BJDCTF2020]just_a_rar</title>
+      <link>https://blog.lty520.ml/ctf/wp-buuctf-bjdctf2020just_a_rar/</link>
+      <pubDate>Sat, 04 Feb 2023 00:30:28 +0800</pubDate>
+      
+      <guid>https://blog.lty520.ml/ctf/wp-buuctf-bjdctf2020just_a_rar/</guid>
+      <description>题目链接: https://buuoj.cn/challenges#[BJDCTF2020]just_a_rar
+题目 加密的压缩包
+思路 一个四位数密码的压缩包，暴力破解即可得密码为 2016
+解压得一张 jpg 图片，在备注处可以找到 flag
+flag{Wadf_123}</description>
+    </item>
+    
+    <item>
+      <title>WP BUUCTF [BJDCTF2020]鸡你太美</title>
+      <link>https://blog.lty520.ml/ctf/wp-buuctf-bjdctf2020%E9%B8%A1%E4%BD%A0%E5%A4%AA%E7%BE%8E/</link>
+      <pubDate>Sat, 04 Feb 2023 00:15:51 +0800</pubDate>
+      
+      <guid>https://blog.lty520.ml/ctf/wp-buuctf-bjdctf2020%E9%B8%A1%E4%BD%A0%E5%A4%AA%E7%BE%8E/</guid>
+      <description>题目链接: https://buuoj.cn/challenges#[BJDCTF2020]%E9%B8%A1%E4%BD%A0%E5%A4%AA%E7%BE%8E
+题目 篮球打坤坤的 gif 还有一个打不开的 gif
+思路 第一张图没什么价值
+第二张图缺少了 gif 的文件头
+加上即可正常打开 得到 flag
+flag{zhi_yin_you_are_beautiful}</description>
+    </item>
+    
+    <item>
+      <title>WP BUUCTF [BJDCTF2020]你猜我是个啥</title>
+      <link>https://blog.lty520.ml/ctf/wp-buuctf-bjdctf2020%E4%BD%A0%E7%8C%9C%E6%88%91%E6%98%AF%E4%B8%AA%E5%95%A5/</link>
+      <pubDate>Sat, 04 Feb 2023 00:08:25 +0800</pubDate>
+      
+      <guid>https://blog.lty520.ml/ctf/wp-buuctf-bjdctf2020%E4%BD%A0%E7%8C%9C%E6%88%91%E6%98%AF%E4%B8%AA%E5%95%A5/</guid>
+      <description>题目链接: https://buuoj.cn/challenges#[BJDCTF2020]%E4%BD%A0%E7%8C%9C%E6%88%91%E6%98%AF%E4%B8%AA%E5%95%A5
+题目 一个压缩包
+思路 作为压缩包打不开，尝试使用 binwalk 和 foremost 分离，使用 foremost 可以分出一张 png 图片，解码可得 flag祥婓涴
+但这不是 flag ！！！！！
+使用 notepad++ 打开压缩包，可以在文件末尾找到 flag
+flag{i_am_fl@g}
+所以这是让我猜啥啊？？</description>
+    </item>
+    
+    <item>
+      <title>WP BUUCTF [GXYCTF2019]佛系青年</title>
+      <link>https://blog.lty520.ml/ctf/wp-buuctf-gxyctf2019%E4%BD%9B%E7%B3%BB%E9%9D%92%E5%B9%B4/</link>
+      <pubDate>Fri, 03 Feb 2023 23:54:07 +0800</pubDate>
+      
+      <guid>https://blog.lty520.ml/ctf/wp-buuctf-gxyctf2019%E4%BD%9B%E7%B3%BB%E9%9D%92%E5%B9%B4/</guid>
+      <description>题目链接: https://buuoj.cn/challenges#[GXYCTF2019]%E4%BD%9B%E7%B3%BB%E9%9D%92%E5%B9%B4
+题目 压缩包
+思路 压缩包可以看出是采用了伪加密，解开后可得两个文件
+fo.txt
+_ooOoo_ o8888888o 88&amp;#34; . &amp;#34;88 (| -_- |) O\ = /O ____/`---&amp;#39;\____ . &amp;#39; \\| |// `. / \\||| : |||// \ / _||||| -:- |||||- \ | | \\\ - /// | | | \_| &amp;#39;&amp;#39;\---/&amp;#39;&amp;#39; | | \ .-\__ `-` ___/-. / ___`. .&amp;#39; /--.--\ `. . __ .&amp;#34;&amp;#34; &amp;#39;&amp;lt; `.___\_&amp;lt;|&amp;gt;_/___.&amp;#39; &amp;gt;&amp;#39;&amp;#34;&amp;#34;. | | : `- \`.;`\ _ /`;.`/ - ` : | | \ \ `-.</description>
+    </item>
+    
     <item>
       <title>WP BUUCTF [BJDCTF2020]藏藏藏</title>
       <link>https://blog.lty520.ml/ctf/wp-buuctf-bjdctf2020%E8%97%8F%E8%97%8F%E8%97%8F/</link>
