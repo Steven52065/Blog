@@ -37,11 +37,11 @@
       <script src="/js/toc.js"></script>
     
     <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
-<link rel="stylesheet" href="/scss/journal.min.c5d92f380bf10f6849c7ac487c7df2b22c081e0851e5339224f1ae29210b20d2.css" integrity="sha256-xdkvOAvxD2hJx6xIfH3ysiwIHghR5TOSJPGuKSELINI=" media="screen">
+<link rel="stylesheet" href="/scss/journal.min.e78ecf1f01bdd175a52616472d7f6c77fa0d72eb91b15a27ce24fb7d302a6aa2.css" integrity="sha256-547PHwG90XWlJhZHLX9sd/oNcuuRsVonziT7fTAqaqI=" media="screen">
 
 
 
-<link rel="stylesheet" href="/scss/dark-mode.min.9f8d8c2df9285089d141edd4a50cb7506c7948e6ab79a29968dced1bd0ab7d22.css" integrity="sha256-n42MLfkoUInRQe3UpQy3UGx5SOareaKZaNztG9CrfSI=" media="screen">
+<link rel="stylesheet" href="/scss/dark-mode.min.e96cc014086ea3bea59fb4923f8c19d6b203a7af229ee5f9599c0a4cb90e3bbd.css" integrity="sha256-6WzAFAhuo76ln7SSP4wZ1rIDp68inuX5WZwKTLkOO70=" media="screen">
 
 
 <link rel="stylesheet"
@@ -81,9 +81,638 @@
 
 </head>
 <body>
-    	<div id="app"><div id="sideContainer" class="side-container">
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/%E5%8D%9A%E6%96%87">
+                    博文
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/%E9%9A%8F%E8%AE%B0">
+                    随记
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/ctf">
+                    CTF
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS Feed
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%80%bb%e8%af%84" onclick="onNavClick(`#总评-nav`)" id="总评-nav">
+									总评
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%b3%bb%e7%bb%9f" onclick="onNavClick(`#系统-nav`)" id="系统-nav">
+									系统
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e8%b0%b7%e6%ad%8c%e6%9c%8d%e5%8a%a1" onclick="onNavClick(`#谷歌服务-nav`)" id="谷歌服务-nav">
+									谷歌服务
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#lspatchhttpsgithubcomlsposedlspatch" onclick="onNavClick(`#lspatchhttpsgithubcomlsposedlspatch-nav`)" id="lspatchhttpsgithubcomlsposedlspatch-nav">
+									LSPatch
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%ae%89%e8%a3%85-lspatch" onclick="onNavClick(`#安装-lspatch-nav`)" id="安装-lspatch-nav">
+									安装 LSPatch
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e4%bd%bf%e7%94%a8-shizuku-%e8%87%aa%e5%8a%a8%e5%ae%89%e8%a3%85%e4%bf%ae%e8%a1%a5%e5%90%8e%e7%9a%84-app" onclick="onNavClick(`#使用-shizuku-自动安装修补后的-app-nav`)" id="使用-shizuku-自动安装修补后的-app-nav">
+									使用 Shizuku ，自动安装修补后的 app
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e4%bd%bf%e7%94%a8%e5%88%b0%e7%9a%84%e6%a8%a1%e5%9d%97" onclick="onNavClick(`#使用到的模块-nav`)" id="使用到的模块-nav">
+									使用到的模块
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e6%a1%8c%e9%9d%a2" onclick="onNavClick(`#桌面-nav`)" id="桌面-nav">
+									桌面
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e7%ac%ac%e4%b8%89%e6%96%b9%e6%a1%8c%e9%9d%a2" onclick="onNavClick(`#第三方桌面-nav`)" id="第三方桌面-nav">
+									第三方桌面
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%9b%be%e6%a0%87" onclick="onNavClick(`#图标-nav`)" id="图标-nav">
+									图标
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e8%bd%af%e4%bb%b6%e4%b8%8b%e8%bd%bd" onclick="onNavClick(`#软件下载-nav`)" id="软件下载-nav">
+									软件下载
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8a%9f%e8%83%bd%e8%a1%a5%e5%85%a8%e6%9b%bf%e6%8d%a2" onclick="onNavClick(`#功能补全替换-nav`)" id="功能补全替换-nav">
+									功能补全/替换
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e8%b7%b3%e8%bf%87%e5%b9%bf%e5%91%8a" onclick="onNavClick(`#跳过广告-nav`)" id="跳过广告-nav">
+									跳过广告
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%be%93%e5%85%a5%e6%b3%95" onclick="onNavClick(`#输入法-nav`)" id="输入法-nav">
+									输入法
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%b5%8f%e8%a7%88%e5%99%a8" onclick="onNavClick(`#浏览器-nav`)" id="浏览器-nav">
+									浏览器
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%af%86%e7%a0%81%e7%ae%a1%e7%90%86" onclick="onNavClick(`#密码管理-nav`)" id="密码管理-nav">
+									密码管理
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://blog.lty520.faith/">
+            Ling的博客
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://blog.lty520.faith/">
+        <div class="single-column-header-title">Ling的博客</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    努比亚Z50的调教
+                    
+                    <div class="post-subtitle">
+                        换了个新手机——努比亚Z50，所以需要调教一下，让自己用的舒服一点（因为努比亚不能解 BL 锁刷机 ，所以这篇教程的内容的适用性还是比较强的）
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2023-02-01 13:30
+                        </time>
+                        
+
+                        
+
+                        
+                        
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            6 min
+                            
+                            51 s.
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <p>型号：黑礁 12+256</p>
+<h1 id="总评">总评</h1>
+<p>一部给了我不少惊喜的手机</p>
+<ol>
+<li>颜值<br>
+还不错，背板是类似与 Pixel3XL 的撞色设计，方形的镜头模组个人感觉比华为的圆环好看一些</li>
+<li>系统<br>
+因为买前就听说了 MyOS 抄了各大厂的系统以及算是小厂的系统，所以对系统的期望并不高（以及用惯了 Pixel 这种完全没有本地化适配的系统），上手用起来还是可以的，各大厂该有的功能基本都有</li>
+<li>相机<br>
+比 Pixel3XL 的单摄强，等效 35mm 比一般的手机更近一些，虚化挺好看的<br>
+微距用着感觉比 K50 至尊版 的要更近、更清晰 一点</li>
+<li>性能<br>
+8Gen2 ，实测雷兔兔跑分 1216748 分,比别家的要低几万，影响也不大（并非到手就测，或许是后台已经在运行一些软件的缘故？）<br>
+<a href="/img/%E5%8D%9A%E6%96%87/%E5%8A%AA%E6%AF%94%E4%BA%9AZ50%E7%9A%84%E8%B0%83%E6%95%99/%E9%9B%B7%E5%85%94%E5%85%94%E8%B7%91%E5%88%86.jpg">跑分截图</a></li>
+</ol>
+<h1 id="系统">系统</h1>
+<h2 id="谷歌服务">谷歌服务</h2>
+<p>因其自带谷歌服务，所以只需要在 <a href="https://apkpure.com/cn/google-play-store/com.android.vending">Apkpure</a> 下载一个 <strong>Google Play Store</strong> 安装上，就可以找到谷歌应用商店的图标了<br>
+<em>尝试过使用谷歌服务安装器（如 Go谷歌安装器 ），会显示谷歌框架完整，但哪怕重装谷歌框架也无法解决找不到谷歌应用商店的图标的问题。所以可能只能手动安装了</em></p>
+<h2 id="lspatchhttpsgithubcomlsposedlspatch"><a href="https://github.com/LSPosed/LSPatch">LSPatch</a></h2>
+<p>因为不能解 BL 锁刷机，所以只能选择这种方案了<br>
+<em>曾经在另一部同样不能解 BL 和 Root 的手机试过太极框架，或许是手机太老的缘故，体验并不好，所以这次换了这个</em></p>
+<h3 id="安装-lspatch">安装 LSPatch</h3>
+<p>在<a href="https://github.com/LSPosed/LSPatch/releases"> LSPosed/LSPatch/releases </a> 下载安装后即可</p>
+<h4 id="使用-shizuku-自动安装修补后的-app">使用 Shizuku ，自动安装修补后的 app</h4>
+<p>默认的 LSPatch 也可以用，但修补后的 app 必须手动安装，所以可以安装 <a href="https://shizuku.rikka.app/">Shizuku</a> ，给 LSPatch 权限后即可自动安装修补后的 app<br>
+<em>没有 Shizuku 也是完全可以的，只不过需要手动安装，麻烦一点</em><br>
+<em>Shizuku 安装教程 <a href="https://www.bilibili.com/video/BV1Ye411N7Av/">没有 Root 也能玩机？这是我讲过最强的APP！！！！</a></em></p>
+<h3 id="使用到的模块">使用到的模块</h3>
+<ul>
+<li>QQ
+<ul>
+<li><a href="https://github.com/fankes/TSBattery">TSBattery</a> 可以限制 QQ 的一些服务，省点电</li>
+<li><a href="https://github.com/cinit/QAuxiliary">QAuxiliary</a> 功能很多，主要用它去掉 QQ 的一些没用的功能（比如“一起听歌”、“群帖子”之类的）</li>
+<li><a href="https://github.com/Xposed-Modules-Repo/com.fkzhang.qqxposed">QX</a> 防撤回</li>
+<li><a href="https://github.com/Hicores/QTool">QTool</a> 可以显示<strong>合并转发</strong>的来源，有一些群管理辅助功能；净化功能与 <strong>QAuxiliary</strong> 重合</li>
+</ul>
+</li>
+<li>微信
+<ul>
+<li><a href="https://github.com/Xposed-Modules-Repo/com.fkzhang.wechatxposed">WX</a> 防撤回</li>
+</ul>
+</li>
+<li>哔哩哔哩
+<ul>
+<li><a href="https://github.com/WankkoRee/Portrait2Landscape">不要竖屏</a> 将竖屏视频变为横屏视频</li>
+<li><a href="https://github.com/yujincheng08/BiliRoaming">BiliRoaming</a> 解决哔哩哔哩区域限制的问题，隐藏功能可以净化 B 站（比如根据关键词屏蔽广告动态等）；可以替代 <strong>不要竖屏</strong></li>
+</ul>
+</li>
+</ul>
+<h1 id="桌面">桌面</h1>
+<h2 id="第三方桌面">第三方桌面</h2>
+<p>因为上一部手机是 Pixel3XL ，习惯了 Pixel Launcher 的风格（而且感觉谷歌的 Material You 风格真的比国内这些个魔改系统好看多了）<br>
+因此选择了类似于 Pixel Launcher 的 <a href="https://lawnchair.app/">Lawnchair</a> 直接下载安装即可<br>
+因为努比亚禁止了使用第三方桌面（真搞不懂明明这么小的市场份额还不愿意放开一点&hellip;），所以可以使用 hyperion ，安装后会让你选择 hyperion 的桌面，这时只要选择 <strong>Lawnchair</strong> 就可以了（怪）</p>
+<h2 id="图标">图标</h2>
+<p><a href="https://github.com/LawnchairLauncher/lawnicons"> lawnicons </a>和 <a href="https://www.coolapk.com/apk/app.lawnchair.lawnicons">cayicons</a><br>
+对比：</p>
+<ul>
+<li>lawnicons 在 github 上开源，可以直接提交自己的图标；但对国内软件兼容性差</li>
+<li>cayicons 由国内大佬在 lawnicons 基础上开发，（貌似）只能等大佬自行添加图标；但对国内软件兼容性更好</li>
+</ul>
+<p>最后选择了 lawnicons （有时间了自己把常用的图标提交上去吧）<br>
+<em>如果有一天兼容了自己常用的软件，这里会有一张桌面的截图的</em></p>
+<h1 id="软件下载">软件下载</h1>
+<p>不是很想用自带的应用商店（因为有开屏广告以及首页推荐的都是乱七八糟的东西），所以找了一些替代品<br>
+<em>用四个替代一个真的好么&hellip;</em></p>
+<ol>
+<li>Google play store<br>
+下载大部分应用（如果有的话），毕竟总所周知国内厂商做的应用，国际板通常都会比国内版干净、好用、要求权限少</li>
+<li><a href="https://f-droid.org/">F-Droid</a><br>
+可以用来下载一些免费开源软件，貌似更新比 Google play store 要快一些（比如 Trime ）<br>
+<em>下载太慢或打不开可以使用<a href="https://mirrors.tuna.tsinghua.edu.cn/help/fdroid/">清华大学开源软件镜像站</a></em></li>
+<li><a href="https://apkpure.com/cn/">APKPure</a><br>
+用以下载 Google play store 没有的软件</li>
+<li>酷安<br>
+用以下载以上平台没有的软件</li>
+</ol>
+<h1 id="功能补全替换">功能补全/替换</h1>
+<p>毕竟努比亚是个小厂（和国内的华米 OV 以及国外的三星苹果相比），系统功能没那么完善，还需要一些第三方 app 进行补充；以及将一些系统 app 换成更习惯的第三方 app <br>
+<em>说实话个人感觉这个系统给我的惊喜还是蛮多的（毕竟之前用的是 Pixel&hellip;）</em></p>
+<h2 id="跳过广告">跳过广告</h2>
+<p><a href="https://wpengapp.com/lightstart">轻启动</a> 跳过 app 的开屏广告</p>
+<h2 id="输入法">输入法</h2>
+<p><a href="../%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%BE%93%E5%85%A5%E6%B3%95rime">Rime</a> 毕竟都统一了是吧<em>目前还没有</em></p>
+<pre tabindex="0"><code>- 23年2月1日
+    安卓13无法正常显示候选框
+</code></pre><h2 id="浏览器">浏览器</h2>
+<p>Chrome 因为书签的同步被绑在了谷歌的服务下&hellip;（不过没有那些乱七八糟的资讯也还蛮好的）</p>
+<h2 id="密码管理">密码管理</h2>
+<p>Keepass
+<em>还有一篇“全平台统一密码管理——Keepass”的博文还没写呢&hellip;</em></p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2023-02-01</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/ctf/wp-buuctf-%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7/">
+			下回<br>WP BUUCTF 来首歌吧
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%BE%93%E5%85%A5%E6%B3%95rime/">
+			上回<br>全平台统一输入法——Rime
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+<div id="waline"></div>
+<script>
+    Waline.init({
+        el: '#waline',
+        
+        serverURL: "https://blog-waline.lty520.ml/" ,
+    });
     
-    <a class="a-block nav-head false" href="https://blog.lty520.ml/">
+    </script>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://blog.lty520.faith/">
     
         <div class="nav-title">
             Ling的博客
@@ -523,634 +1152,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
         
     </div>
 </div>
-<div class="single-column-drawer-container" id="drawer"
-     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
-    <div class="drawer-content">
-        <div class="drawer-menu">
-            
-            
-            
-                
-                
-                
-                    
-                
-                
-                
-                <a class="a-block drawer-menu-item active" href="/%E5%8D%9A%E6%96%87">
-                    博文
-                </a>
-                
-            
-                
-                
-                
-                
-                
-                <a class="a-block drawer-menu-item false" href="/%E9%9A%8F%E8%AE%B0">
-                    随记
-                </a>
-                
-            
-                
-                
-                
-                
-                
-                <a class="a-block drawer-menu-item false" href="/ctf">
-                    CTF
-                </a>
-                
-            
-                
-                
-                
-                
-                
-                <a class="a-block drawer-menu-item false" href="/index.xml">
-                    RSS Feed
-                </a>
-                
-            
-            
-            <div class="toc">
-
-
-	<div class="toc-content">
-	
-		
-		
-		
-		<center>- 目录 -</center>
-		
-		
-		<ul>
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#%e6%80%bb%e8%af%84" onclick="onNavClick(`#总评-nav`)" id="总评-nav">
-									总评
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#%e7%b3%bb%e7%bb%9f" onclick="onNavClick(`#系统-nav`)" id="系统-nav">
-									系统
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-							
-								
-									<ul>
-								
-							
-						
-						
-							<li>
-								<a href="#%e8%b0%b7%e6%ad%8c%e6%9c%8d%e5%8a%a1" onclick="onNavClick(`#谷歌服务-nav`)" id="谷歌服务-nav">
-									谷歌服务
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#lspatchhttpsgithubcomlsposedlspatch" onclick="onNavClick(`#lspatchhttpsgithubcomlsposedlspatch-nav`)" id="lspatchhttpsgithubcomlsposedlspatch-nav">
-									LSPatch
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-							
-								
-									<ul>
-								
-							
-						
-						
-							<li>
-								<a href="#%e5%ae%89%e8%a3%85-lspatch" onclick="onNavClick(`#安装-lspatch-nav`)" id="安装-lspatch-nav">
-									安装 LSPatch
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-							
-								
-									<ul>
-								
-							
-						
-						
-							<li>
-								<a href="#%e4%bd%bf%e7%94%a8-shizuku-%e8%87%aa%e5%8a%a8%e5%ae%89%e8%a3%85%e4%bf%ae%e8%a1%a5%e5%90%8e%e7%9a%84-app" onclick="onNavClick(`#使用-shizuku-自动安装修补后的-app-nav`)" id="使用-shizuku-自动安装修补后的-app-nav">
-									使用 Shizuku ，自动安装修补后的 app
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-							
-								</ul>
-							
-						
-						
-						
-							<li>
-								<a href="#%e4%bd%bf%e7%94%a8%e5%88%b0%e7%9a%84%e6%a8%a1%e5%9d%97" onclick="onNavClick(`#使用到的模块-nav`)" id="使用到的模块-nav">
-									使用到的模块
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-							
-								</ul>
-							
-								</ul>
-							
-						
-						
-						
-							<li>
-								<a href="#%e6%a1%8c%e9%9d%a2" onclick="onNavClick(`#桌面-nav`)" id="桌面-nav">
-									桌面
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-							
-								
-									<ul>
-								
-							
-						
-						
-							<li>
-								<a href="#%e7%ac%ac%e4%b8%89%e6%96%b9%e6%a1%8c%e9%9d%a2" onclick="onNavClick(`#第三方桌面-nav`)" id="第三方桌面-nav">
-									第三方桌面
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#%e5%9b%be%e6%a0%87" onclick="onNavClick(`#图标-nav`)" id="图标-nav">
-									图标
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-							
-								</ul>
-							
-						
-						
-						
-							<li>
-								<a href="#%e8%bd%af%e4%bb%b6%e4%b8%8b%e8%bd%bd" onclick="onNavClick(`#软件下载-nav`)" id="软件下载-nav">
-									软件下载
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#%e5%8a%9f%e8%83%bd%e8%a1%a5%e5%85%a8%e6%9b%bf%e6%8d%a2" onclick="onNavClick(`#功能补全替换-nav`)" id="功能补全替换-nav">
-									功能补全/替换
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-							
-								
-									<ul>
-								
-							
-						
-						
-							<li>
-								<a href="#%e8%b7%b3%e8%bf%87%e5%b9%bf%e5%91%8a" onclick="onNavClick(`#跳过广告-nav`)" id="跳过广告-nav">
-									跳过广告
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#%e8%be%93%e5%85%a5%e6%b3%95" onclick="onNavClick(`#输入法-nav`)" id="输入法-nav">
-									输入法
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#%e6%b5%8f%e8%a7%88%e5%99%a8" onclick="onNavClick(`#浏览器-nav`)" id="浏览器-nav">
-									浏览器
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#%e5%af%86%e7%a0%81%e7%ae%a1%e7%90%86" onclick="onNavClick(`#密码管理-nav`)" id="密码管理-nav">
-									密码管理
-								</a>
-							</li>
-						
-						
-					
-				
-			
-		</ul>
-	</div>
-
-</div>
-            
-        </div>
-    </div>
-</div>
-<transition name="fade">
-    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
-</transition>
-<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
-    <div id="navBackground" class="nav-background"></div>
-    <div class="container container-narrow nav-content">
-        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
-            <i class="material-icons">
-                menu
-            </i>
-        </button>
-        <a id="navTitle" class="navbar-brand" href="https://blog.lty520.ml/">
-            Ling的博客
-        </a>
-        
-        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
-            <i class="material-icons" id="darkModeToggleIcon2">
-                dark_mode
-            </i>
-        </button>
-        
-    </div>
-</nav>
-<div class="single-column-header-container" id="pageHead"
-     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
-    <a href="https://blog.lty520.ml/">
-        <div class="single-column-header-title">Ling的博客</div>
-        
-
-    </a>
-</div>
-
-            <div id="content">
-                <div id="streamContainer" class="stream-container">
-
-    <div class="post-list-container post-list-container-shadow">
-        <div class="post">
-            
-            
-            
-
-            <div class="post-head-wrapper-text-only"
-                
-            >
-                <div class="post-title">
-                    努比亚Z50的调教
-                    
-                    <div class="post-subtitle">
-                        换了个新手机——努比亚Z50，所以需要调教一下，让自己用的舒服一点（因为努比亚不能解 BL 锁刷机 ，所以这篇教程的内容的适用性还是比较强的）
-                    </div>
-                    
-                    <div class="post-meta">
-                        
-                        <time itemprop="datePublished">
-                            2023-02-01 13:30
-                        </time>
-                        
-
-                        
-
-                        
-                        
-                            <i class="material-icons" style="">schedule</i>
-                            
-
-                            
-                            
-
-                            
-                            6 min
-                            
-                            51 s.
-                        
-                    </div>
-                </div>
-            </div>
-            
-            <div class="post-body-wrapper">
-                
-                <div class="post-body" v-pre>
-                
-                    <p>型号：黑礁 12+256</p>
-<h1 id="总评">总评</h1>
-<p>一部给了我不少惊喜的手机</p>
-<ol>
-<li>颜值<br>
-还不错，背板是类似与 Pixel3XL 的撞色设计，方形的镜头模组个人感觉比华为的圆环好看一些</li>
-<li>系统<br>
-因为买前就听说了 MyOS 抄了各大厂的系统以及算是小厂的系统，所以对系统的期望并不高（以及用惯了 Pixel 这种完全没有本地化适配的系统），上手用起来还是可以的，各大厂该有的功能基本都有</li>
-<li>相机<br>
-比 Pixel3XL 的单摄强，等效 35mm 比一般的手机更近一些，虚化挺好看的<br>
-微距用着感觉比 K50 至尊版 的要更近、更清晰 一点</li>
-<li>性能<br>
-8Gen2 ，实测雷兔兔跑分 1216748 分,比别家的要低几万，影响也不大（并非到手就测，或许是后台已经在运行一些软件的缘故？）<br>
-<a href="/img/%E5%8D%9A%E6%96%87/%E5%8A%AA%E6%AF%94%E4%BA%9AZ50%E7%9A%84%E8%B0%83%E6%95%99/%E9%9B%B7%E5%85%94%E5%85%94%E8%B7%91%E5%88%86.jpg">跑分截图</a></li>
-</ol>
-<h1 id="系统">系统</h1>
-<h2 id="谷歌服务">谷歌服务</h2>
-<p>因其自带谷歌服务，所以只需要在 <a href="https://apkpure.com/cn/google-play-store/com.android.vending">Apkpure</a> 下载一个 <strong>Google Play Store</strong> 安装上，就可以找到谷歌应用商店的图标了<br>
-<em>尝试过使用谷歌服务安装器（如 Go谷歌安装器 ），会显示谷歌框架完整，但哪怕重装谷歌框架也无法解决找不到谷歌应用商店的图标的问题。所以可能只能手动安装了</em></p>
-<h2 id="lspatchhttpsgithubcomlsposedlspatch"><a href="https://github.com/LSPosed/LSPatch">LSPatch</a></h2>
-<p>因为不能解 BL 锁刷机，所以只能选择这种方案了<br>
-<em>曾经在另一部同样不能解 BL 和 Root 的手机试过太极框架，或许是手机太老的缘故，体验并不好，所以这次换了这个</em></p>
-<h3 id="安装-lspatch">安装 LSPatch</h3>
-<p>在<a href="https://github.com/LSPosed/LSPatch/releases"> LSPosed/LSPatch/releases </a> 下载安装后即可</p>
-<h4 id="使用-shizuku-自动安装修补后的-app">使用 Shizuku ，自动安装修补后的 app</h4>
-<p>默认的 LSPatch 也可以用，但修补后的 app 必须手动安装，所以可以安装 <a href="https://shizuku.rikka.app/">Shizuku</a> ，给 LSPatch 权限后即可自动安装修补后的 app<br>
-<em>没有 Shizuku 也是完全可以的，只不过需要手动安装，麻烦一点</em><br>
-<em>Shizuku 安装教程 <a href="https://www.bilibili.com/video/BV1Ye411N7Av/">没有 Root 也能玩机？这是我讲过最强的APP！！！！</a></em></p>
-<h3 id="使用到的模块">使用到的模块</h3>
-<ul>
-<li>QQ
-<ul>
-<li><a href="https://github.com/fankes/TSBattery">TSBattery</a> 可以限制 QQ 的一些服务，省点电</li>
-<li><a href="https://github.com/cinit/QAuxiliary">QAuxiliary</a> 功能很多，主要用它去掉 QQ 的一些没用的功能（比如“一起听歌”、“群帖子”之类的）</li>
-<li><a href="https://github.com/Xposed-Modules-Repo/com.fkzhang.qqxposed">QX</a> 防撤回</li>
-<li><a href="https://github.com/Hicores/QTool">QTool</a> 可以显示<strong>合并转发</strong>的来源，有一些群管理辅助功能；净化功能与 <strong>QAuxiliary</strong> 重合</li>
-</ul>
-</li>
-<li>微信
-<ul>
-<li><a href="https://github.com/Xposed-Modules-Repo/com.fkzhang.wechatxposed">WX</a> 防撤回</li>
-</ul>
-</li>
-<li>哔哩哔哩
-<ul>
-<li><a href="https://github.com/WankkoRee/Portrait2Landscape">不要竖屏</a> 将竖屏视频变为横屏视频</li>
-<li><a href="https://github.com/yujincheng08/BiliRoaming">BiliRoaming</a> 解决哔哩哔哩区域限制的问题，隐藏功能可以净化 B 站（比如根据关键词屏蔽广告动态等）；可以替代 <strong>不要竖屏</strong></li>
-</ul>
-</li>
-</ul>
-<h1 id="桌面">桌面</h1>
-<h2 id="第三方桌面">第三方桌面</h2>
-<p>因为上一部手机是 Pixel3XL ，习惯了 Pixel Launcher 的风格（而且感觉谷歌的 Material You 风格真的比国内这些个魔改系统好看多了）<br>
-因此选择了类似于 Pixel Launcher 的 <a href="https://lawnchair.app/">Lawnchair</a> 直接下载安装即可<br>
-因为努比亚禁止了使用第三方桌面（真搞不懂明明这么小的市场份额还不愿意放开一点&hellip;），所以可以使用 hyperion ，安装后会让你选择 hyperion 的桌面，这时只要选择 <strong>Lawnchair</strong> 就可以了（怪）</p>
-<h2 id="图标">图标</h2>
-<p><a href="https://github.com/LawnchairLauncher/lawnicons"> lawnicons </a>和 <a href="https://www.coolapk.com/apk/app.lawnchair.lawnicons">cayicons</a><br>
-对比：</p>
-<ul>
-<li>lawnicons 在 github 上开源，可以直接提交自己的图标；但对国内软件兼容性差</li>
-<li>cayicons 由国内大佬在 lawnicons 基础上开发，（貌似）只能等大佬自行添加图标；但对国内软件兼容性更好</li>
-</ul>
-<p>最后选择了 lawnicons （有时间了自己把常用的图标提交上去吧）<br>
-<em>如果有一天兼容了自己常用的软件，这里会有一张桌面的截图的</em></p>
-<h1 id="软件下载">软件下载</h1>
-<p>不是很想用自带的应用商店（因为有开屏广告以及首页推荐的都是乱七八糟的东西），所以找了一些替代品<br>
-<em>用四个替代一个真的好么&hellip;</em></p>
-<ol>
-<li>Google play store<br>
-下载大部分应用（如果有的话），毕竟总所周知国内厂商做的应用，国际板通常都会比国内版干净、好用、要求权限少</li>
-<li><a href="https://f-droid.org/">F-Droid</a><br>
-可以用来下载一些免费开源软件，貌似更新比 Google play store 要快一些（比如 Trime ）<br>
-<em>下载太慢或打不开可以使用<a href="https://mirrors.tuna.tsinghua.edu.cn/help/fdroid/">清华大学开源软件镜像站</a></em></li>
-<li><a href="https://apkpure.com/cn/">APKPure</a><br>
-用以下载 Google play store 没有的软件</li>
-<li>酷安<br>
-用以下载以上平台没有的软件</li>
-</ol>
-<h1 id="功能补全替换">功能补全/替换</h1>
-<p>毕竟努比亚是个小厂（和国内的华米 OV 以及国外的三星苹果相比），系统功能没那么完善，还需要一些第三方 app 进行补充；以及将一些系统 app 换成更习惯的第三方 app <br>
-<em>说实话个人感觉这个系统给我的惊喜还是蛮多的（毕竟之前用的是 Pixel&hellip;）</em></p>
-<h2 id="跳过广告">跳过广告</h2>
-<p><a href="https://wpengapp.com/lightstart">轻启动</a> 跳过 app 的开屏广告</p>
-<h2 id="输入法">输入法</h2>
-<p><a href="../%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%BE%93%E5%85%A5%E6%B3%95rime">Rime</a> 毕竟都统一了是吧<em>目前还没有</em></p>
-<pre tabindex="0"><code>- 23年2月1日
-    安卓13无法正常显示候选框
-</code></pre><h2 id="浏览器">浏览器</h2>
-<p>Chrome 因为书签的同步被绑在了谷歌的服务下&hellip;（不过没有那些乱七八糟的资讯也还蛮好的）</p>
-<h2 id="密码管理">密码管理</h2>
-<p>Keepass
-<em>还有一篇“全平台统一密码管理——Keepass”的博文还没写呢&hellip;</em></p>
-
-                    
-                    <HR width="100%" id="EOF">
-		    <p style="color:#777;">最后修改于 2023-02-01</p>
-                    
-                </div>
-            </div>
-            
-            
-            <nav class="post-pagination">
-
-                
-                <a class="newer-posts" href="/ctf/wp-buuctf-%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7/">
-			下回<br>WP BUUCTF 来首歌吧
-                </a>
-                
-                
-                
-                <a class="older-posts" href="/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%BE%93%E5%85%A5%E6%B3%95rime/">
-			上回<br>全平台统一输入法——Rime
-                </a>
-                
-            </nav>
-            <div class="post-comment-wrapper">
-                
-
-
-
-
-
-
-
-
-<div id="waline"></div>
-<script>
-    Waline.init({
-        el: '#waline',
-        
-        serverURL: "https://blog-waline.lty520.ml/" ,
-    });
-    
-    </script>
-
-
-
-            </div>
-        </div>
-    </div>
-
-
-                    </div>
-            </div><div id="single-column-footer">
+<div id="single-column-footer">
 Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
 <br>
 移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>

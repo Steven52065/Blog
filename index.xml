@@ -2,43 +2,43 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ling的博客</title>
-    <link>https://blog.lty520.ml/</link>
+    <link>https://blog.lty520.faith/</link>
     <description>Recent content on Ling的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 04 Feb 2023 00:30:28 +0800</lastBuildDate>
     
-        <atom:link href="https://blog.lty520.ml/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://blog.lty520.faith/index.xml" rel="self" type="application/rss+xml" />
     
     
     
         <item>
         <title>WP BUUCTF [BJDCTF2020]just_a_rar</title>
-        <link>https://blog.lty520.ml/ctf/wp-buuctf-bjdctf2020just_a_rar/</link>
+        <link>https://blog.lty520.faith/ctf/wp-buuctf-bjdctf2020just_a_rar/</link>
         <pubDate>Sat, 04 Feb 2023 00:30:28 +0800</pubDate>
         
-        <guid>https://blog.lty520.ml/ctf/wp-buuctf-bjdctf2020just_a_rar/</guid>
-        <description>Ling的博客 https://blog.lty520.ml/ctf/wp-buuctf-bjdctf2020just_a_rar/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%5BBJDCTF2020%5Djust_a_rar&#34;&gt;https://buuoj.cn/challenges#[BJDCTF2020]just_a_rar&lt;/a&gt;&lt;/p&gt;
+        <guid>https://blog.lty520.faith/ctf/wp-buuctf-bjdctf2020just_a_rar/</guid>
+        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-bjdctf2020just_a_rar/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%5BBJDCTF2020%5Djust_a_rar&#34;&gt;https://buuoj.cn/challenges#[BJDCTF2020]just_a_rar&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
 &lt;p&gt;加密的压缩包&lt;/p&gt;
 &lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
 &lt;p&gt;一个四位数密码的压缩包，暴力破解即可得密码为 &lt;strong&gt;2016&lt;/strong&gt;&lt;br&gt;
 解压得一张 jpg 图片，在备注处可以找到 flag&lt;br&gt;
 &lt;strong&gt;flag{Wadf_123}&lt;/strong&gt;&lt;/p&gt;
-- https://blog.lty520.ml/ctf/wp-buuctf-bjdctf2020just_a_rar/ - </description>
+- https://blog.lty520.faith/ctf/wp-buuctf-bjdctf2020just_a_rar/ - </description>
         </item>
     
     
     
         <item>
         <title>WP BUUCTF [BJDCTF2020]鸡你太美</title>
-        <link>https://blog.lty520.ml/ctf/wp-buuctf-bjdctf2020%E9%B8%A1%E4%BD%A0%E5%A4%AA%E7%BE%8E/</link>
+        <link>https://blog.lty520.faith/ctf/wp-buuctf-bjdctf2020%E9%B8%A1%E4%BD%A0%E5%A4%AA%E7%BE%8E/</link>
         <pubDate>Sat, 04 Feb 2023 00:15:51 +0800</pubDate>
         
-        <guid>https://blog.lty520.ml/ctf/wp-buuctf-bjdctf2020%E9%B8%A1%E4%BD%A0%E5%A4%AA%E7%BE%8E/</guid>
-        <description>Ling的博客 https://blog.lty520.ml/ctf/wp-buuctf-bjdctf2020%E9%B8%A1%E4%BD%A0%E5%A4%AA%E7%BE%8E/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%5BBJDCTF2020%5D%E9%B8%A1%E4%BD%A0%E5%A4%AA%E7%BE%8E&#34;&gt;https://buuoj.cn/challenges#[BJDCTF2020]%E9%B8%A1%E4%BD%A0%E5%A4%AA%E7%BE%8E&lt;/a&gt;&lt;/p&gt;
+        <guid>https://blog.lty520.faith/ctf/wp-buuctf-bjdctf2020%E9%B8%A1%E4%BD%A0%E5%A4%AA%E7%BE%8E/</guid>
+        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-bjdctf2020%E9%B8%A1%E4%BD%A0%E5%A4%AA%E7%BE%8E/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%5BBJDCTF2020%5D%E9%B8%A1%E4%BD%A0%E5%A4%AA%E7%BE%8E&#34;&gt;https://buuoj.cn/challenges#[BJDCTF2020]%E9%B8%A1%E4%BD%A0%E5%A4%AA%E7%BE%8E&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.lty520.ml/img/CTF/WP-BUUCTF-%5BBJDCTF2020%5D%E9%B8%A1%E4%BD%A0%E5%A4%AA%E7%BE%8E/%E7%AF%AE%E7%90%83.gif&#34;&gt;篮球打坤坤的 gif &lt;/a&gt;&lt;br&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.lty520.faith/img/CTF/WP-BUUCTF-%5BBJDCTF2020%5D%E9%B8%A1%E4%BD%A0%E5%A4%AA%E7%BE%8E/%E7%AF%AE%E7%90%83.gif&#34;&gt;篮球打坤坤的 gif &lt;/a&gt;&lt;br&gt;
 还有一个打不开的 gif&lt;/p&gt;
 &lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
 &lt;p&gt;第一张图没什么价值&lt;br&gt;
@@ -46,18 +46,18 @@
 加上即可正常打开 &lt;br&gt;
 得到 flag&lt;br&gt;
 &lt;strong&gt;flag{zhi_yin_you_are_beautiful}&lt;/strong&gt;&lt;/p&gt;
-- https://blog.lty520.ml/ctf/wp-buuctf-bjdctf2020%E9%B8%A1%E4%BD%A0%E5%A4%AA%E7%BE%8E/ - </description>
+- https://blog.lty520.faith/ctf/wp-buuctf-bjdctf2020%E9%B8%A1%E4%BD%A0%E5%A4%AA%E7%BE%8E/ - </description>
         </item>
     
     
     
         <item>
         <title>WP BUUCTF [BJDCTF2020]你猜我是个啥</title>
-        <link>https://blog.lty520.ml/ctf/wp-buuctf-bjdctf2020%E4%BD%A0%E7%8C%9C%E6%88%91%E6%98%AF%E4%B8%AA%E5%95%A5/</link>
+        <link>https://blog.lty520.faith/ctf/wp-buuctf-bjdctf2020%E4%BD%A0%E7%8C%9C%E6%88%91%E6%98%AF%E4%B8%AA%E5%95%A5/</link>
         <pubDate>Sat, 04 Feb 2023 00:08:25 +0800</pubDate>
         
-        <guid>https://blog.lty520.ml/ctf/wp-buuctf-bjdctf2020%E4%BD%A0%E7%8C%9C%E6%88%91%E6%98%AF%E4%B8%AA%E5%95%A5/</guid>
-        <description>Ling的博客 https://blog.lty520.ml/ctf/wp-buuctf-bjdctf2020%E4%BD%A0%E7%8C%9C%E6%88%91%E6%98%AF%E4%B8%AA%E5%95%A5/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%5BBJDCTF2020%5D%E4%BD%A0%E7%8C%9C%E6%88%91%E6%98%AF%E4%B8%AA%E5%95%A5&#34;&gt;https://buuoj.cn/challenges#[BJDCTF2020]%E4%BD%A0%E7%8C%9C%E6%88%91%E6%98%AF%E4%B8%AA%E5%95%A5&lt;/a&gt;&lt;/p&gt;
+        <guid>https://blog.lty520.faith/ctf/wp-buuctf-bjdctf2020%E4%BD%A0%E7%8C%9C%E6%88%91%E6%98%AF%E4%B8%AA%E5%95%A5/</guid>
+        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-bjdctf2020%E4%BD%A0%E7%8C%9C%E6%88%91%E6%98%AF%E4%B8%AA%E5%95%A5/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%5BBJDCTF2020%5D%E4%BD%A0%E7%8C%9C%E6%88%91%E6%98%AF%E4%B8%AA%E5%95%A5&#34;&gt;https://buuoj.cn/challenges#[BJDCTF2020]%E4%BD%A0%E7%8C%9C%E6%88%91%E6%98%AF%E4%B8%AA%E5%95%A5&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
 &lt;p&gt;一个压缩包&lt;/p&gt;
 &lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
@@ -67,18 +67,18 @@
 &lt;strong&gt;flag{i_am_fl@g}&lt;/strong&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;em&gt;所以这是让我猜啥啊？？&lt;/em&gt;&lt;/p&gt;
-- https://blog.lty520.ml/ctf/wp-buuctf-bjdctf2020%E4%BD%A0%E7%8C%9C%E6%88%91%E6%98%AF%E4%B8%AA%E5%95%A5/ - </description>
+- https://blog.lty520.faith/ctf/wp-buuctf-bjdctf2020%E4%BD%A0%E7%8C%9C%E6%88%91%E6%98%AF%E4%B8%AA%E5%95%A5/ - </description>
         </item>
     
     
     
         <item>
         <title>WP BUUCTF [GXYCTF2019]佛系青年</title>
-        <link>https://blog.lty520.ml/ctf/wp-buuctf-gxyctf2019%E4%BD%9B%E7%B3%BB%E9%9D%92%E5%B9%B4/</link>
+        <link>https://blog.lty520.faith/ctf/wp-buuctf-gxyctf2019%E4%BD%9B%E7%B3%BB%E9%9D%92%E5%B9%B4/</link>
         <pubDate>Fri, 03 Feb 2023 23:54:07 +0800</pubDate>
         
-        <guid>https://blog.lty520.ml/ctf/wp-buuctf-gxyctf2019%E4%BD%9B%E7%B3%BB%E9%9D%92%E5%B9%B4/</guid>
-        <description>Ling的博客 https://blog.lty520.ml/ctf/wp-buuctf-gxyctf2019%E4%BD%9B%E7%B3%BB%E9%9D%92%E5%B9%B4/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%5BGXYCTF2019%5D%E4%BD%9B%E7%B3%BB%E9%9D%92%E5%B9%B4&#34;&gt;https://buuoj.cn/challenges#[GXYCTF2019]%E4%BD%9B%E7%B3%BB%E9%9D%92%E5%B9%B4&lt;/a&gt;&lt;/p&gt;
+        <guid>https://blog.lty520.faith/ctf/wp-buuctf-gxyctf2019%E4%BD%9B%E7%B3%BB%E9%9D%92%E5%B9%B4/</guid>
+        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-gxyctf2019%E4%BD%9B%E7%B3%BB%E9%9D%92%E5%B9%B4/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%5BGXYCTF2019%5D%E4%BD%9B%E7%B3%BB%E9%9D%92%E5%B9%B4&#34;&gt;https://buuoj.cn/challenges#[GXYCTF2019]%E4%BD%9B%E7%B3%BB%E9%9D%92%E5%B9%B4&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
 &lt;p&gt;压缩包&lt;/p&gt;
 &lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
@@ -117,42 +117,42 @@ fo.txt&lt;/p&gt;
 佛曰：遮等諳勝能礙皤藐哆娑梵迦侄羅哆迦梵者梵楞蘇涅侄室實真缽朋能。奢怛俱道怯都諳怖梵尼怯一罰心缽謹缽薩苦奢夢怯帝梵遠朋陀諳陀穆諳所呐知涅侄以薩怯想夷奢醯數羅怯諸
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;将最后一段扔进&lt;a href=&#34;https://www.keyfc.net/bbs/tools/tudoucode.aspx&#34;&gt;与佛论禅&lt;/a&gt;即可解出flag&lt;br&gt;
 &lt;strong&gt;flag{w0_fo_ci_Be1}&lt;/strong&gt;&lt;/p&gt;
-- https://blog.lty520.ml/ctf/wp-buuctf-gxyctf2019%E4%BD%9B%E7%B3%BB%E9%9D%92%E5%B9%B4/ - </description>
+- https://blog.lty520.faith/ctf/wp-buuctf-gxyctf2019%E4%BD%9B%E7%B3%BB%E9%9D%92%E5%B9%B4/ - </description>
         </item>
     
     
     
         <item>
         <title>WP BUUCTF [BJDCTF2020]藏藏藏</title>
-        <link>https://blog.lty520.ml/ctf/wp-buuctf-bjdctf2020%E8%97%8F%E8%97%8F%E8%97%8F/</link>
+        <link>https://blog.lty520.faith/ctf/wp-buuctf-bjdctf2020%E8%97%8F%E8%97%8F%E8%97%8F/</link>
         <pubDate>Thu, 02 Feb 2023 22:11:12 +0800</pubDate>
         
-        <guid>https://blog.lty520.ml/ctf/wp-buuctf-bjdctf2020%E8%97%8F%E8%97%8F%E8%97%8F/</guid>
-        <description>Ling的博客 https://blog.lty520.ml/ctf/wp-buuctf-bjdctf2020%E8%97%8F%E8%97%8F%E8%97%8F/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%5BBJDCTF2020%5D%E8%97%8F%E8%97%8F%E8%97%8F&#34;&gt;https://buuoj.cn/challenges#[BJDCTF2020]%E8%97%8F%E8%97%8F%E8%97%8F&lt;/a&gt;&lt;/p&gt;
+        <guid>https://blog.lty520.faith/ctf/wp-buuctf-bjdctf2020%E8%97%8F%E8%97%8F%E8%97%8F/</guid>
+        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-bjdctf2020%E8%97%8F%E8%97%8F%E8%97%8F/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%5BBJDCTF2020%5D%E8%97%8F%E8%97%8F%E8%97%8F&#34;&gt;https://buuoj.cn/challenges#[BJDCTF2020]%E8%97%8F%E8%97%8F%E8%97%8F&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.lty520.ml/img/CTF/WP-BUUCTF-%5BBJDCTF2020%5D%E8%97%8F%E8%97%8F%E8%97%8F/%E8%97%8F%E8%97%8F%E8%97%8F.jpg&#34; alt=&#34;题图&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.lty520.faith/img/CTF/WP-BUUCTF-%5BBJDCTF2020%5D%E8%97%8F%E8%97%8F%E8%97%8F/%E8%97%8F%E8%97%8F%E8%97%8F.jpg&#34; alt=&#34;题图&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
 &lt;p&gt;首先使用 binwalk ，可以看到这是一个压缩包&lt;br&gt;
 &lt;em&gt;以 JPG 开头，以 ZIP 结尾（怪）&lt;/em&gt;
 用 Bandzip 打开图片后，可以解压出 &lt;strong&gt;福利.docx&lt;/strong&gt;&lt;br&gt;
 其中是一个二维码&lt;br&gt;
-&lt;img src=&#34;https://blog.lty520.ml/img/CTF/WP-BUUCTF-%5BBJDCTF2020%5D%E8%97%8F%E8%97%8F%E8%97%8F/img1.png&#34; alt=&#34;img1&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://blog.lty520.faith/img/CTF/WP-BUUCTF-%5BBJDCTF2020%5D%E8%97%8F%E8%97%8F%E8%97%8F/img1.png&#34; alt=&#34;img1&#34;&gt;&lt;br&gt;
 扫码即可得 flag&lt;br&gt;
 &lt;strong&gt;flag{you are the best!}&lt;/strong&gt;&lt;/p&gt;
-- https://blog.lty520.ml/ctf/wp-buuctf-bjdctf2020%E8%97%8F%E8%97%8F%E8%97%8F/ - </description>
+- https://blog.lty520.faith/ctf/wp-buuctf-bjdctf2020%E8%97%8F%E8%97%8F%E8%97%8F/ - </description>
         </item>
     
     
     
         <item>
         <title>WP BUUCTF Snake</title>
-        <link>https://blog.lty520.ml/ctf/wp-buuctf-snake/</link>
+        <link>https://blog.lty520.faith/ctf/wp-buuctf-snake/</link>
         <pubDate>Thu, 02 Feb 2023 21:41:20 +0800</pubDate>
         
-        <guid>https://blog.lty520.ml/ctf/wp-buuctf-snake/</guid>
-        <description>Ling的博客 https://blog.lty520.ml/ctf/wp-buuctf-snake/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#snake&#34;&gt;https://buuoj.cn/challenges#snake&lt;/a&gt;&lt;/p&gt;
+        <guid>https://blog.lty520.faith/ctf/wp-buuctf-snake/</guid>
+        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-snake/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#snake&#34;&gt;https://buuoj.cn/challenges#snake&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.lty520.ml/img/CTF/WP-BUUCTF-snake/snake.jpg&#34; alt=&#34;题图&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.lty520.faith/img/CTF/WP-BUUCTF-snake/snake.jpg&#34; alt=&#34;题图&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
 &lt;p&gt;首先用 binwalk 可以得到三个文件&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;├── 43EF4.zip
@@ -163,7 +163,7 @@ fo.txt&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;通过 base64 可以解得 &lt;strong&gt;What is Nicki Minaj&amp;rsquo;s favorite song that refers to snakes?&lt;/strong&gt;&lt;br&gt;
 Google 可得一个专辑的名字 &lt;strong&gt;Anaconda&lt;/strong&gt;&lt;br&gt;
 &lt;em&gt;密钥是小写&lt;/em&gt;&lt;br&gt;
-&lt;img src=&#34;https://blog.lty520.ml/img/CTF/WP-BUUCTF-snake/google.png&#34; alt=&#34;google&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://blog.lty520.faith/img/CTF/WP-BUUCTF-snake/google.png&#34; alt=&#34;google&#34;&gt;&lt;br&gt;
 即为密钥&lt;br&gt;
 同时，对于蛇这个名词，在英语中还有一个翻译：&lt;strong&gt;Serpent&lt;/strong&gt;。而 Serpent 又是一种加密算法&lt;br&gt;
 使用网站 &lt;a href=&#34;http://serpent.online-domain-tools.com/&#34;&gt;Serpent – Symmetric Ciphers Online&lt;/a&gt;  可以解得 flag&lt;br&gt;
@@ -173,21 +173,21 @@ Google 可得一个专辑的名字 &lt;strong&gt;Anaconda&lt;/strong&gt;&lt;br&g
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/ITmincherry/article/details/99417927&#34;&gt;BUUCTF snake（实验吧Snake）&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-- https://blog.lty520.ml/ctf/wp-buuctf-snake/ - </description>
+- https://blog.lty520.faith/ctf/wp-buuctf-snake/ - </description>
         </item>
     
     
     
         <item>
         <title>WP BUUCTF 刷新过的图片</title>
-        <link>https://blog.lty520.ml/ctf/wp-buuctf-%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87/</link>
+        <link>https://blog.lty520.faith/ctf/wp-buuctf-%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87/</link>
         <pubDate>Thu, 02 Feb 2023 19:58:22 +0800</pubDate>
         
-        <guid>https://blog.lty520.ml/ctf/wp-buuctf-%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87/</guid>
-        <description>Ling的博客 https://blog.lty520.ml/ctf/wp-buuctf-%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87&#34;&gt;https://buuoj.cn/challenges#%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87&lt;/a&gt;&lt;/p&gt;
+        <guid>https://blog.lty520.faith/ctf/wp-buuctf-%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87/</guid>
+        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87&#34;&gt;https://buuoj.cn/challenges#%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
 &lt;p&gt;浏览图片的时候刷新键有没有用呢&lt;br&gt;
-&lt;img src=&#34;https://blog.lty520.ml/img/CTF/WP-BUUCTF-%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87/Misc.jpg&#34; alt=&#34;题图&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://blog.lty520.faith/img/CTF/WP-BUUCTF-%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87/Misc.jpg&#34; alt=&#34;题图&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
 &lt;p&gt;提到了刷新的图片，可以想到 F5 隐写&lt;br&gt;
 使用工具 &lt;a href=&#34;https://github.com/matthewgao/F5-steganography&#34;&gt;F5-steganography&lt;/a&gt;&lt;br&gt;
@@ -198,19 +198,19 @@ Google 可得一个专辑的名字 &lt;strong&gt;Anaconda&lt;/strong&gt;&lt;br&g
 &lt;strong&gt;flag{96efd0a2037d06f34199e921079778ee}&lt;/strong&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;em&gt;为什么死活运行不了呢&amp;hellip; Java 版本太新的问题？？？怪&lt;/em&gt;&lt;br&gt;
-&lt;img src=&#34;https://blog.lty520.ml/img/CTF/WP-BUUCTF-%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87/img1.png&#34; alt=&#34;img1&#34;&gt;&lt;/p&gt;
-- https://blog.lty520.ml/ctf/wp-buuctf-%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87/ - </description>
+&lt;img src=&#34;https://blog.lty520.faith/img/CTF/WP-BUUCTF-%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87/img1.png&#34; alt=&#34;img1&#34;&gt;&lt;/p&gt;
+- https://blog.lty520.faith/ctf/wp-buuctf-%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87/ - </description>
         </item>
     
     
     
         <item>
         <title>WP BUUCTF 被劫持的神秘礼物</title>
-        <link>https://blog.lty520.ml/ctf/wp-buuctf-%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9/</link>
+        <link>https://blog.lty520.faith/ctf/wp-buuctf-%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9/</link>
         <pubDate>Thu, 02 Feb 2023 01:33:23 +0800</pubDate>
         
-        <guid>https://blog.lty520.ml/ctf/wp-buuctf-%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9/</guid>
-        <description>Ling的博客 https://blog.lty520.ml/ctf/wp-buuctf-%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9&#34;&gt;https://buuoj.cn/challenges#%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9&lt;/a&gt;&lt;/p&gt;
+        <guid>https://blog.lty520.faith/ctf/wp-buuctf-%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9/</guid>
+        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9&#34;&gt;https://buuoj.cn/challenges#%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
 &lt;p&gt;某天小明收到了一件很特别的礼物，有奇怪的后缀，奇怪的名字和格式。小明找到了知心姐姐度娘，度娘好像知道这是啥，但是度娘也不知道里面是啥。。。你帮帮小明？找到帐号密码，串在一起，用32位小写MD5哈希一下得到的就是答案。 链接: &lt;a href=&#34;https://pan.baidu.com/s/1pwVVpA5_WWY8Og6dhCcWRw&#34;&gt;https://pan.baidu.com/s/1pwVVpA5_WWY8Og6dhCcWRw&lt;/a&gt; 提取码: 31vk 注意：得到的 flag 请包上 flag{} 提交&lt;/p&gt;
 &lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
@@ -224,18 +224,18 @@ Google 可得一个专辑的名字 &lt;strong&gt;Anaconda&lt;/strong&gt;&lt;br&g
 即 flag 为 &lt;strong&gt;flag{1d240aafe21a86afc11f38a45b541a49}&lt;/strong&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;em&gt;貌似礼物是张图片？没找到看这张图片的方法（理论上应该能看到的&amp;hellip;）&lt;/em&gt;&lt;/p&gt;
-- https://blog.lty520.ml/ctf/wp-buuctf-%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9/ - </description>
+- https://blog.lty520.faith/ctf/wp-buuctf-%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9/ - </description>
         </item>
     
     
     
         <item>
         <title>WP BUUCTF Webshell后门</title>
-        <link>https://blog.lty520.ml/ctf/wp-buuctf-webshell%E5%90%8E%E9%97%A8/</link>
+        <link>https://blog.lty520.faith/ctf/wp-buuctf-webshell%E5%90%8E%E9%97%A8/</link>
         <pubDate>Thu, 02 Feb 2023 01:15:01 +0800</pubDate>
         
-        <guid>https://blog.lty520.ml/ctf/wp-buuctf-webshell%E5%90%8E%E9%97%A8/</guid>
-        <description>Ling的博客 https://blog.lty520.ml/ctf/wp-buuctf-webshell%E5%90%8E%E9%97%A8/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#webshell%E5%90%8E%E9%97%A8&#34;&gt;https://buuoj.cn/challenges#webshell%E5%90%8E%E9%97%A8&lt;/a&gt;&lt;/p&gt;
+        <guid>https://blog.lty520.faith/ctf/wp-buuctf-webshell%E5%90%8E%E9%97%A8/</guid>
+        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-webshell%E5%90%8E%E9%97%A8/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#webshell%E5%90%8E%E9%97%A8&#34;&gt;https://buuoj.cn/challenges#webshell%E5%90%8E%E9%97%A8&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
 &lt;p&gt;朋友的网站被黑客上传了webshell后门，他把网站打包备份了，你能帮忙找到黑客的webshell在哪吗？(Webshell中的密码(md5)即为答案)。&lt;/p&gt;
 &lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
@@ -243,29 +243,29 @@ Google 可得一个专辑的名字 &lt;strong&gt;Anaconda&lt;/strong&gt;&lt;br&g
 打开文件后即可得到 flag&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;em&gt;最初以为后门是上传到了那一堆图片里，找了老久&amp;hellip;&lt;/em&gt;&lt;/p&gt;
-- https://blog.lty520.ml/ctf/wp-buuctf-webshell%E5%90%8E%E9%97%A8/ - </description>
+- https://blog.lty520.faith/ctf/wp-buuctf-webshell%E5%90%8E%E9%97%A8/ - </description>
         </item>
     
     
     
         <item>
         <title>WP BUUCTF 来首歌吧</title>
-        <link>https://blog.lty520.ml/ctf/wp-buuctf-%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7/</link>
+        <link>https://blog.lty520.faith/ctf/wp-buuctf-%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7/</link>
         <pubDate>Thu, 02 Feb 2023 00:49:47 +0800</pubDate>
         
-        <guid>https://blog.lty520.ml/ctf/wp-buuctf-%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7/</guid>
-        <description>Ling的博客 https://blog.lty520.ml/ctf/wp-buuctf-%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7&#34;&gt;https://buuoj.cn/challenges#%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7&lt;/a&gt;&lt;/p&gt;
+        <guid>https://blog.lty520.faith/ctf/wp-buuctf-%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7/</guid>
+        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7&#34;&gt;https://buuoj.cn/challenges#%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
 &lt;p&gt;一首音乐&lt;/p&gt;
 &lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
 &lt;p&gt;看到是一首音乐，先听一下&lt;br&gt;
 右声道是彩虹猫，左声道是一段摩斯密码&lt;br&gt;
 扔进 Au 里手动翻译即可&lt;br&gt;
-&lt;img src=&#34;https://blog.lty520.ml/img/CTF/WP-BUUCTF-%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7/img1.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://blog.lty520.faith/img/CTF/WP-BUUCTF-%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7/img1.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;em&gt;不查不知道，这首彩虹猫居然可以追溯到2010年7月25日上传到油管的《喵喵喵喵喵喵喵！》（还是 Miku 唱的）&lt;/em&gt;&lt;br&gt;
 &lt;a href=&#34;https://www.nicovideo.jp/watch/sm11509720&#34;&gt;【初音ミク】Nyanyanyanyanyanyanya!【オリジナループ】&lt;/a&gt;&lt;/p&gt;
-- https://blog.lty520.ml/ctf/wp-buuctf-%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7/ - </description>
+- https://blog.lty520.faith/ctf/wp-buuctf-%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7/ - </description>
         </item>
     
     

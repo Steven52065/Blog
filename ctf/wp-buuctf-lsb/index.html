@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-<title>WP BUUCTF 丢失的MD5</title>
+<title>WP BUUCTF LSB</title>
 
 
 
@@ -233,12 +233,12 @@
                 
             >
                 <div class="post-title">
-                    WP BUUCTF 丢失的MD5
+                    WP BUUCTF LSB
                     
                     <div class="post-meta">
                         
                         <time itemprop="datePublished">
-                            2023-01-13 00:32
+                            2023-01-10 20:45
                         </time>
                         
 
@@ -253,7 +253,7 @@
                             
 
                             
-                            39 s.
+                            49 s.
                         
                     </div>
                 </div>
@@ -263,29 +263,20 @@
                 
                 <div class="post-body" v-pre>
                 
-                    <p>题目链接: <a href="https://buuoj.cn/challenges#%E4%B8%A2%E5%A4%B1%E7%9A%84MD5">https://buuoj.cn/challenges#%E4%B8%A2%E5%A4%B1%E7%9A%84MD5</a></p>
+                    <p>题目链接: <a href="https://buuoj.cn/challenges#LSB">https://buuoj.cn/challenges#LSB</a></p>
 <h1 id="题目">题目</h1>
-<pre tabindex="0"><code>import hashlib   
-for i in range(32,127):
-    for j in range(32,127):
-        for k in range(32,127):
-            m=hashlib.md5()
-            m.update(&#39;TASC&#39;+chr(i)+&#39;O3RJMV&#39;+chr(j)+&#39;WDJKX&#39;+chr(k)+&#39;ZM&#39;)
-            des=m.hexdigest()
-            if &#39;e9032&#39; in des and &#39;da&#39; in des and &#39;911513&#39; in des:
-                print des
-</code></pre><h1 id="思路">思路</h1>
-<p>遇到 python 题目，当然是要先运行一下啦<br>
-报错<br>
-仔细研究后发现这 TM 居然是 python2 的题目&hellip;<br>
-只要装上 python2 环境，运行一下，可以得到一串字符串，包上 <strong>flag{}</strong> 即可<br>
-所以 flag 就为 <strong>flag{e9032994dabac08080091151380478a2}</strong></p>
+<p><img src="/img/CTF/WP-BUUCTF-LSB1/flag11.png" alt="题图"></p>
+<h1 id="思路">思路</h1>
+<p>因为题目名为 LSB ，并且给了张图，使用工具 Stegsolve 可以看到 在 R、G、B 三个通道的第0位的图片上方有一些马赛克（和图片肉眼看到的白色不符），使用 Data Extract 功能，分别选择 R、G、B 三个通道的第0位、Row、LSB First、RGB 排列方式，保存为一张图片<img src="/img/CTF/WP-BUUCTF-LSB1/img1.png" alt="一张二维码">。<br>
+扫码即可得 <strong>cumtctf{1sb_i4_s0_Ea4y}</strong><br>
+但是，这不是 flag ！（被坑了）<br>
+flag 为 <strong>flag{1sb_i4_s0_Ea4y}</strong></p>
 <hr>
-<p><em>结果这题的大部分时间都用在了装 python2 环境上了&hellip;</em></p>
+<p><em>发现了个名为 LSB_hide 的软件，好像很好用的样子，但是7G内存不够它用的 QAQ</em></p>
 
                     
                     <HR width="100%" id="EOF">
-		    <p style="color:#777;">最后修改于 2023-01-13</p>
+		    <p style="color:#777;">最后修改于 2023-01-10</p>
                     
                 </div>
             </div>
@@ -294,14 +285,14 @@ for i in range(32,127):
             <nav class="post-pagination">
 
                 
-                <a class="newer-posts" href="/ctf/wp-buuctf-alice%E4%B8%8Ebob/">
-			下回<br>WP BUUCTF Alice与Bob
+                <a class="newer-posts" href="/ctf/wp-buuctf-quoted-printable/">
+			下回<br>WP BUUCTF Quoted Printable
                 </a>
                 
                 
                 
-                <a class="older-posts" href="/ctf/wp-buuctf-%E7%AF%B1%E7%AC%86%E5%A2%99%E7%9A%84%E5%BD%B1%E5%AD%90/">
-			上回<br>WP BUUCTF 篱笆墙的影子
+                <a class="older-posts" href="/ctf/wp-buuctf-rabbit/">
+			上回<br>WP BUUCTF Rabbit
                 </a>
                 
             </nav>

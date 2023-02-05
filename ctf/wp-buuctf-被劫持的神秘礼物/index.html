@@ -37,11 +37,11 @@
       <script src="/js/toc.js"></script>
     
     <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
-<link rel="stylesheet" href="/scss/journal.min.c5d92f380bf10f6849c7ac487c7df2b22c081e0851e5339224f1ae29210b20d2.css" integrity="sha256-xdkvOAvxD2hJx6xIfH3ysiwIHghR5TOSJPGuKSELINI=" media="screen">
+<link rel="stylesheet" href="/scss/journal.min.e78ecf1f01bdd175a52616472d7f6c77fa0d72eb91b15a27ce24fb7d302a6aa2.css" integrity="sha256-547PHwG90XWlJhZHLX9sd/oNcuuRsVonziT7fTAqaqI=" media="screen">
 
 
 
-<link rel="stylesheet" href="/scss/dark-mode.min.9f8d8c2df9285089d141edd4a50cb7506c7948e6ab79a29968dced1bd0ab7d22.css" integrity="sha256-n42MLfkoUInRQe3UpQy3UGx5SOareaKZaNztG9CrfSI=" media="screen">
+<link rel="stylesheet" href="/scss/dark-mode.min.e96cc014086ea3bea59fb4923f8c19d6b203a7af229ee5f9599c0a4cb90e3bbd.css" integrity="sha256-6WzAFAhuo76ln7SSP4wZ1rIDp68inuX5WZwKTLkOO70=" media="screen">
 
 
 <link rel="stylesheet"
@@ -81,9 +81,260 @@
 
 </head>
 <body>
-    	<div id="app"><div id="sideContainer" class="side-container">
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/%E5%8D%9A%E6%96%87">
+                    博文
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/%E9%9A%8F%E8%AE%B0">
+                    随记
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/ctf">
+                    CTF
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS Feed
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%a2%98%e7%9b%ae" onclick="onNavClick(`#题目-nav`)" id="题目-nav">
+									题目
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%80%9d%e8%b7%af" onclick="onNavClick(`#思路-nav`)" id="思路-nav">
+									思路
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://blog.lty520.faith/">
+            Ling的博客
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://blog.lty520.faith/">
+        <div class="single-column-header-title">Ling的博客</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    WP BUUCTF 被劫持的神秘礼物
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2023-02-02 01:33
+                        </time>
+                        
+
+                        
+
+                        
+                        
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            1 min
+                            
+                            10 s.
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <p>题目链接: <a href="https://buuoj.cn/challenges#%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9">https://buuoj.cn/challenges#%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9</a></p>
+<h1 id="题目">题目</h1>
+<p>某天小明收到了一件很特别的礼物，有奇怪的后缀，奇怪的名字和格式。小明找到了知心姐姐度娘，度娘好像知道这是啥，但是度娘也不知道里面是啥。。。你帮帮小明？找到帐号密码，串在一起，用32位小写MD5哈希一下得到的就是答案。 链接: <a href="https://pan.baidu.com/s/1pwVVpA5_WWY8Og6dhCcWRw">https://pan.baidu.com/s/1pwVVpA5_WWY8Og6dhCcWRw</a> 提取码: 31vk 注意：得到的 flag 请包上 flag{} 提交</p>
+<h1 id="思路">思路</h1>
+<p>下载后发现文件是 gift.pcapng<br>
+既然是 pcapng 文件，反手扔进 Wireshark 里<br>
+可以找到一条登录的 Post 请求</p>
+<pre tabindex="0"><code>4	0.003591	192.168.78.134	192.168.60.123	HTTP	704	POST /index.php?r=member/index/login HTTP/1.1  (application/x-www-form-urlencoded)
+</code></pre><p>可以发现这条请求发送的 name 是 <strong>admina</strong> ，word 是 <strong>adminb</strong><br>
+拼成 adminaadminb 后取小写 md5<br>
+可得 1d240aafe21a86afc11f38a45b541a49<br>
+即 flag 为 <strong>flag{1d240aafe21a86afc11f38a45b541a49}</strong></p>
+<hr>
+<p><em>貌似礼物是张图片？没找到看这张图片的方法（理论上应该能看到的&hellip;）</em></p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2023-02-02</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/ctf/wp-buuctf-%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87/">
+			下回<br>WP BUUCTF 刷新过的图片
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/ctf/wp-buuctf-webshell%E5%90%8E%E9%97%A8/">
+			上回<br>WP BUUCTF Webshell后门
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+<div id="waline"></div>
+<script>
+    Waline.init({
+        el: '#waline',
+        
+        serverURL: "https://blog-waline.lty520.ml/" ,
+    });
     
-    <a class="a-block nav-head false" href="https://blog.lty520.ml/">
+    </script>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://blog.lty520.faith/">
     
         <div class="nav-title">
             Ling的博客
@@ -227,256 +478,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
         
     </div>
 </div>
-<div class="single-column-drawer-container" id="drawer"
-     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
-    <div class="drawer-content">
-        <div class="drawer-menu">
-            
-            
-            
-                
-                
-                
-                
-                
-                <a class="a-block drawer-menu-item false" href="/%E5%8D%9A%E6%96%87">
-                    博文
-                </a>
-                
-            
-                
-                
-                
-                
-                
-                <a class="a-block drawer-menu-item false" href="/%E9%9A%8F%E8%AE%B0">
-                    随记
-                </a>
-                
-            
-                
-                
-                
-                    
-                
-                
-                
-                <a class="a-block drawer-menu-item active" href="/ctf">
-                    CTF
-                </a>
-                
-            
-                
-                
-                
-                
-                
-                <a class="a-block drawer-menu-item false" href="/index.xml">
-                    RSS Feed
-                </a>
-                
-            
-            
-            <div class="toc">
-
-
-	<div class="toc-content">
-	
-		
-		
-		
-		<center>- 目录 -</center>
-		
-		
-		<ul>
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#%e9%a2%98%e7%9b%ae" onclick="onNavClick(`#题目-nav`)" id="题目-nav">
-									题目
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#%e6%80%9d%e8%b7%af" onclick="onNavClick(`#思路-nav`)" id="思路-nav">
-									思路
-								</a>
-							</li>
-						
-						
-					
-				
-			
-		</ul>
-	</div>
-
-</div>
-            
-        </div>
-    </div>
-</div>
-<transition name="fade">
-    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
-</transition>
-<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
-    <div id="navBackground" class="nav-background"></div>
-    <div class="container container-narrow nav-content">
-        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
-            <i class="material-icons">
-                menu
-            </i>
-        </button>
-        <a id="navTitle" class="navbar-brand" href="https://blog.lty520.ml/">
-            Ling的博客
-        </a>
-        
-        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
-            <i class="material-icons" id="darkModeToggleIcon2">
-                dark_mode
-            </i>
-        </button>
-        
-    </div>
-</nav>
-<div class="single-column-header-container" id="pageHead"
-     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
-    <a href="https://blog.lty520.ml/">
-        <div class="single-column-header-title">Ling的博客</div>
-        
-
-    </a>
-</div>
-
-            <div id="content">
-                <div id="streamContainer" class="stream-container">
-
-    <div class="post-list-container post-list-container-shadow">
-        <div class="post">
-            
-            
-            
-
-            <div class="post-head-wrapper-text-only"
-                
-            >
-                <div class="post-title">
-                    WP BUUCTF 被劫持的神秘礼物
-                    
-                    <div class="post-meta">
-                        
-                        <time itemprop="datePublished">
-                            2023-02-02 01:33
-                        </time>
-                        
-
-                        
-
-                        
-                        
-                            <i class="material-icons" style="">schedule</i>
-                            
-
-                            
-                            
-
-                            
-                            1 min
-                            
-                            10 s.
-                        
-                    </div>
-                </div>
-            </div>
-            
-            <div class="post-body-wrapper">
-                
-                <div class="post-body" v-pre>
-                
-                    <p>题目链接: <a href="https://buuoj.cn/challenges#%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9">https://buuoj.cn/challenges#%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9</a></p>
-<h1 id="题目">题目</h1>
-<p>某天小明收到了一件很特别的礼物，有奇怪的后缀，奇怪的名字和格式。小明找到了知心姐姐度娘，度娘好像知道这是啥，但是度娘也不知道里面是啥。。。你帮帮小明？找到帐号密码，串在一起，用32位小写MD5哈希一下得到的就是答案。 链接: <a href="https://pan.baidu.com/s/1pwVVpA5_WWY8Og6dhCcWRw">https://pan.baidu.com/s/1pwVVpA5_WWY8Og6dhCcWRw</a> 提取码: 31vk 注意：得到的 flag 请包上 flag{} 提交</p>
-<h1 id="思路">思路</h1>
-<p>下载后发现文件是 gift.pcapng<br>
-既然是 pcapng 文件，反手扔进 Wireshark 里<br>
-可以找到一条登录的 Post 请求</p>
-<pre tabindex="0"><code>4	0.003591	192.168.78.134	192.168.60.123	HTTP	704	POST /index.php?r=member/index/login HTTP/1.1  (application/x-www-form-urlencoded)
-</code></pre><p>可以发现这条请求发送的 name 是 <strong>admina</strong> ，word 是 <strong>adminb</strong><br>
-拼成 adminaadminb 后取小写 md5<br>
-可得 1d240aafe21a86afc11f38a45b541a49<br>
-即 flag 为 <strong>flag{1d240aafe21a86afc11f38a45b541a49}</strong></p>
-<hr>
-<p><em>貌似礼物是张图片？没找到看这张图片的方法（理论上应该能看到的&hellip;）</em></p>
-
-                    
-                    <HR width="100%" id="EOF">
-		    <p style="color:#777;">最后修改于 2023-02-02</p>
-                    
-                </div>
-            </div>
-            
-            
-            <nav class="post-pagination">
-
-                
-                <a class="newer-posts" href="/ctf/wp-buuctf-%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87/">
-			下回<br>WP BUUCTF 刷新过的图片
-                </a>
-                
-                
-                
-                <a class="older-posts" href="/ctf/wp-buuctf-webshell%E5%90%8E%E9%97%A8/">
-			上回<br>WP BUUCTF Webshell后门
-                </a>
-                
-            </nav>
-            <div class="post-comment-wrapper">
-                
-
-
-
-
-
-
-
-
-<div id="waline"></div>
-<script>
-    Waline.init({
-        el: '#waline',
-        
-        serverURL: "https://blog-waline.lty520.ml/" ,
-    });
-    
-    </script>
-
-
-
-            </div>
-        </div>
-    </div>
-
-
-                    </div>
-            </div><div id="single-column-footer">
+<div id="single-column-footer">
 Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
 <br>
 移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>

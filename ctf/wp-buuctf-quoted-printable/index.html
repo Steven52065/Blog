@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-<title>WP BUUCTF 丢失的MD5</title>
+<title>WP BUUCTF Quoted Printable</title>
 
 
 
@@ -233,12 +233,12 @@
                 
             >
                 <div class="post-title">
-                    WP BUUCTF 丢失的MD5
+                    WP BUUCTF Quoted Printable
                     
                     <div class="post-meta">
                         
                         <time itemprop="datePublished">
-                            2023-01-13 00:32
+                            2023-01-12 00:03
                         </time>
                         
 
@@ -253,7 +253,7 @@
                             
 
                             
-                            39 s.
+                            47 s.
                         
                     </div>
                 </div>
@@ -263,29 +263,22 @@
                 
                 <div class="post-body" v-pre>
                 
-                    <p>题目链接: <a href="https://buuoj.cn/challenges#%E4%B8%A2%E5%A4%B1%E7%9A%84MD5">https://buuoj.cn/challenges#%E4%B8%A2%E5%A4%B1%E7%9A%84MD5</a></p>
+                    <p>题目链接: <a href="https://buuoj.cn/challenges#Quoted-printable">https://buuoj.cn/challenges#Quoted-printable</a></p>
 <h1 id="题目">题目</h1>
-<pre tabindex="0"><code>import hashlib   
-for i in range(32,127):
-    for j in range(32,127):
-        for k in range(32,127):
-            m=hashlib.md5()
-            m.update(&#39;TASC&#39;+chr(i)+&#39;O3RJMV&#39;+chr(j)+&#39;WDJKX&#39;+chr(k)+&#39;ZM&#39;)
-            des=m.hexdigest()
-            if &#39;e9032&#39; in des and &#39;da&#39; in des and &#39;911513&#39; in des:
-                print des
-</code></pre><h1 id="思路">思路</h1>
-<p>遇到 python 题目，当然是要先运行一下啦<br>
-报错<br>
-仔细研究后发现这 TM 居然是 python2 的题目&hellip;<br>
-只要装上 python2 环境，运行一下，可以得到一串字符串，包上 <strong>flag{}</strong> 即可<br>
-所以 flag 就为 <strong>flag{e9032994dabac08080091151380478a2}</strong></p>
+<p>=E9=82=A3=E4=BD=A0=E4=B9=9F=E5=BE=88=E6=A3=92=E5=93=A6</p>
+<h1 id="思路">思路</h1>
+<p>没啥思路，尝试了一下，并不是16进制<br>
+尝试扔到 CyberChef 里，居然解出来了<br>
+flag 为 <strong>flag{那你也很棒哦}</strong><br>
+查了一下，这东西叫 Quoted-printable ，可译为<strong>可打印字符引用编码</strong>或<strong>使用可打印字符的编码</strong><br>
+将8-bit字节值可编码为3个字符：一个等号“=”后跟随两个十六进制数字（0–9或A–F）表示该字节的数值。
+<em>所以还是16进制&hellip;这点并没有猜错 2333</em></p>
 <hr>
-<p><em>结果这题的大部分时间都用在了装 python2 环境上了&hellip;</em></p>
+<p><a href="https://zh.wikipedia.org/wiki/Quoted-printable">Quoted-printable 维基百科</a></p>
 
                     
                     <HR width="100%" id="EOF">
-		    <p style="color:#777;">最后修改于 2023-01-13</p>
+		    <p style="color:#777;">最后修改于 2023-01-12</p>
                     
                 </div>
             </div>
@@ -294,14 +287,14 @@ for i in range(32,127):
             <nav class="post-pagination">
 
                 
-                <a class="newer-posts" href="/ctf/wp-buuctf-alice%E4%B8%8Ebob/">
-			下回<br>WP BUUCTF Alice与Bob
+                <a class="newer-posts" href="/ctf/wp-buuctf-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019knife/">
+			下回<br>WP BUUCTF [极客大挑战2019]Knife
                 </a>
                 
                 
                 
-                <a class="older-posts" href="/ctf/wp-buuctf-%E7%AF%B1%E7%AC%86%E5%A2%99%E7%9A%84%E5%BD%B1%E5%AD%90/">
-			上回<br>WP BUUCTF 篱笆墙的影子
+                <a class="older-posts" href="/ctf/wp-buuctf-lsb/">
+			上回<br>WP BUUCTF LSB
                 </a>
                 
             </nav>

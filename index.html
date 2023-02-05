@@ -38,11 +38,11 @@
 
 
     <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
-<link rel="stylesheet" href="/scss/journal.min.c5d92f380bf10f6849c7ac487c7df2b22c081e0851e5339224f1ae29210b20d2.css" integrity="sha256-xdkvOAvxD2hJx6xIfH3ysiwIHghR5TOSJPGuKSELINI=" media="screen">
+<link rel="stylesheet" href="/scss/journal.min.e78ecf1f01bdd175a52616472d7f6c77fa0d72eb91b15a27ce24fb7d302a6aa2.css" integrity="sha256-547PHwG90XWlJhZHLX9sd/oNcuuRsVonziT7fTAqaqI=" media="screen">
 
 
 
-<link rel="stylesheet" href="/scss/dark-mode.min.9f8d8c2df9285089d141edd4a50cb7506c7948e6ab79a29968dced1bd0ab7d22.css" integrity="sha256-n42MLfkoUInRQe3UpQy3UGx5SOareaKZaNztG9CrfSI=" media="screen">
+<link rel="stylesheet" href="/scss/dark-mode.min.e96cc014086ea3bea59fb4923f8c19d6b203a7af229ee5f9599c0a4cb90e3bbd.css" integrity="sha256-6WzAFAhuo76ln7SSP4wZ1rIDp68inuX5WZwKTLkOO70=" media="screen">
 
 
 <link rel="stylesheet"
@@ -76,9 +76,321 @@
 
 </head>
 <body>
-    	<div id="app"><div id="sideContainer" class="side-container">
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/%E5%8D%9A%E6%96%87">
+                    博文
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/%E9%9A%8F%E8%AE%B0">
+                    随记
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/ctf">
+                    CTF
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS Feed
+                </a>
+                
+            
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://blog.lty520.faith/">
+            Ling的博客
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://blog.lty520.faith/">
+        <div class="single-column-header-title">Ling的博客</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-no-background">
+        
+        
+            <a href="/%E5%8D%9A%E6%96%87/%E5%8A%AA%E6%AF%94%E4%BA%9Az50%E7%9A%84%E8%B0%83%E6%95%99/" class="a-block">
+                <div class="post-item-wrapper">
+                    <div class="post-item post-item-no-divider">
+                        <div class="post-item-info-wrapper">
+                            <div class="post-item-title">
+                                努比亚Z50的调教
+                            </div>
+                            <div class="post-item-summary">
+                                换了个新手机——努比亚Z50，所以需要调教一下，让自己用的舒服一点（因为努比亚不能解 BL 锁刷机 ，所以这篇教程的内容的适用性还是比较强的）
+                            </div>
+                            <div class="post-item-meta">
+    2023-02-01
+    &emsp;
     
-    <a class="a-block nav-head active" href="https://blog.lty520.ml/">
+    
+    <i class="material-icons" style="font-size:10px">schedule</i>
+    
+
+    
+    
+
+    
+    6 min
+    
+    51 s
+    
+    
+    &emsp;
+    
+</div>
+
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+        
+            <a href="/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%BE%93%E5%85%A5%E6%B3%95rime/" class="a-block">
+                <div class="post-item-wrapper">
+                    <div class="post-item post-item-no-divider">
+                        <div class="post-item-info-wrapper">
+                            <div class="post-item-title">
+                                全平台统一输入法——Rime
+                            </div>
+                            <div class="post-item-summary">
+                                全平台换用 Rime 的调教及添加拆字功能
+                            </div>
+                            <div class="post-item-meta">
+    2023-01-25
+    &emsp;
+    
+    
+    <i class="material-icons" style="font-size:10px">schedule</i>
+    
+
+    
+    
+
+    
+    4 min
+    
+    33 s
+    
+    
+    &emsp;
+    
+</div>
+
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+        
+            <a href="/%E9%9A%8F%E8%AE%B0/%E7%99%BD%E5%AB%96%E8%8A%82%E7%82%B9%E7%9A%84%E4%BD%BF%E7%94%A8/" class="a-block">
+                <div class="post-item-wrapper">
+                    <div class="post-item post-item-no-divider">
+                        <div class="post-item-info-wrapper">
+                            <div class="post-item-title">
+                                白嫖节点的使用
+                            </div>
+                            <div class="post-item-summary">
+                                脑子一热就买了个服务器，为了不浪费，搭了个梯子
+                            </div>
+                            <div class="post-item-meta">
+    2022-12-23
+    &emsp;
+    
+    
+    <i class="material-icons" style="font-size:10px">schedule</i>
+    
+
+    
+    
+
+    
+    2 min
+    
+    47 s
+    
+    
+    &emsp;
+    
+</div>
+
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+        
+            <a href="/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/" class="a-block">
+                <div class="post-item-wrapper">
+                    <div class="post-item post-item-no-divider">
+                        <div class="post-item-info-wrapper">
+                            <div class="post-item-title">
+                                全平台统一代理——Clash
+                            </div>
+                            <div class="post-item-summary">
+                                subconverter合并多个订阅及自定义规则和策略组
+                            </div>
+                            <div class="post-item-meta">
+    2022-12-22
+    &emsp;
+    
+    
+    <i class="material-icons" style="font-size:10px">schedule</i>
+    
+
+    
+    
+
+    
+    3 min
+    
+    30 s
+    
+    
+    &emsp;
+    
+</div>
+
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+        
+            <a href="/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E7%B3%BB%E5%88%97/" class="a-block">
+                <div class="post-item-wrapper">
+                    <div class="post-item post-item-no-divider">
+                        <div class="post-item-info-wrapper">
+                            <div class="post-item-title">
+                                全平台统一系列
+                            </div>
+                            <div class="post-item-summary">
+                                统一多个平台的输入法、代理工具等等
+                            </div>
+                            <div class="post-item-meta">
+    2022-12-22
+    &emsp;
+    
+    
+    <i class="material-icons" style="font-size:10px">schedule</i>
+    
+
+    
+    
+
+    
+    32 s
+    
+    
+    &emsp;
+    
+</div>
+
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+        
+            <a href="/%E5%8D%9A%E6%96%87/hello-world/" class="a-block">
+                <div class="post-item-wrapper">
+                    <div class="post-item post-item-no-divider">
+                        <div class="post-item-info-wrapper">
+                            <div class="post-item-title">
+                                Hello World
+                            </div>
+                            <div class="post-item-summary">
+                                再一次的搭建好了博客
+                            </div>
+                            <div class="post-item-meta">
+    2022-12-21
+    &emsp;
+    
+    
+    <i class="material-icons" style="font-size:10px">schedule</i>
+    
+
+    
+    
+
+    
+    53 s
+    
+    
+    &emsp;
+    
+</div>
+
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+        
+        </a>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head active" href="https://blog.lty520.faith/">
     
         <div class="nav-title">
             Ling的博客
@@ -165,537 +477,10 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
         
         
         
-            <div class="pagination-indicator">
-                <span style="text-align: center">
-                    1<br><div style="display: inline-block; transform: rotate(-28deg)">-</div><br>4
-                </span>
-            </div>
-            
-            
-
-            
-            <a class="pagination-action" href="/page/2/">
-                <i class="material-icons pagination-action-icon">
-                    chevron_right
-                </i>
-            </a>
-            
-        
         
     </div>
 </div>
-<div class="single-column-drawer-container" id="drawer"
-     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
-    <div class="drawer-content">
-        <div class="drawer-menu">
-            
-            
-            
-                
-                
-                
-                
-                
-                <a class="a-block drawer-menu-item false" href="/%E5%8D%9A%E6%96%87">
-                    博文
-                </a>
-                
-            
-                
-                
-                
-                
-                
-                <a class="a-block drawer-menu-item false" href="/%E9%9A%8F%E8%AE%B0">
-                    随记
-                </a>
-                
-            
-                
-                
-                
-                
-                
-                <a class="a-block drawer-menu-item false" href="/ctf">
-                    CTF
-                </a>
-                
-            
-                
-                
-                
-                
-                
-                <a class="a-block drawer-menu-item false" href="/index.xml">
-                    RSS Feed
-                </a>
-                
-            
-            
-        </div>
-    </div>
-</div>
-<transition name="fade">
-    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
-</transition>
-<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
-    <div id="navBackground" class="nav-background"></div>
-    <div class="container container-narrow nav-content">
-        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
-            <i class="material-icons">
-                menu
-            </i>
-        </button>
-        <a id="navTitle" class="navbar-brand" href="https://blog.lty520.ml/">
-            Ling的博客
-        </a>
-        
-        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
-            <i class="material-icons" id="darkModeToggleIcon2">
-                dark_mode
-            </i>
-        </button>
-        
-    </div>
-</nav>
-<div class="single-column-header-container" id="pageHead"
-     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
-    <a href="https://blog.lty520.ml/">
-        <div class="single-column-header-title">Ling的博客</div>
-        
 
-    </a>
-</div>
-
-            <div id="content">
-                <div id="streamContainer" class="stream-container">
-
-
-    <div class="post-list-container post-list-container-no-background">
-        
-            
-                
-                    <a href="/ctf/wp-buuctf-bjdctf2020just_a_rar/" class="a-block">
-                        <div class="post-item-wrapper">
-                            <div class="post-item post-item-no-divider">
-                                <div class="post-item-info-wrapper">
-                                    <div class="post-item-title">
-                                        WP BUUCTF [BJDCTF2020]just_a_rar
-                                    </div>
-                                    <div class="post-item-summary">
-                                        
-                                    </div>
-                                    <div class="post-item-meta">
-    2023-02-04
-    &emsp;
-    
-    
-    <i class="material-icons" style="font-size:10px">schedule</i>
-    
-
-    
-    
-
-    
-    15 s
-    
-    
-    &emsp;
-    
-</div>
-
-                                </div>
-                                
-                                
-                            </div>
-                        </div>
-                    
-                
-        
-            
-                
-                    <a href="/ctf/wp-buuctf-bjdctf2020%E9%B8%A1%E4%BD%A0%E5%A4%AA%E7%BE%8E/" class="a-block">
-                        <div class="post-item-wrapper">
-                            <div class="post-item post-item-no-divider">
-                                <div class="post-item-info-wrapper">
-                                    <div class="post-item-title">
-                                        WP BUUCTF [BJDCTF2020]鸡你太美
-                                    </div>
-                                    <div class="post-item-summary">
-                                        
-                                    </div>
-                                    <div class="post-item-meta">
-    2023-02-04
-    &emsp;
-    
-    
-    <i class="material-icons" style="font-size:10px">schedule</i>
-    
-
-    
-    
-
-    
-    16 s
-    
-    
-    &emsp;
-    
-</div>
-
-                                </div>
-                                
-                                
-                            </div>
-                        </div>
-                    
-                
-        
-            
-                
-                    <a href="/ctf/wp-buuctf-bjdctf2020%E4%BD%A0%E7%8C%9C%E6%88%91%E6%98%AF%E4%B8%AA%E5%95%A5/" class="a-block">
-                        <div class="post-item-wrapper">
-                            <div class="post-item post-item-no-divider">
-                                <div class="post-item-info-wrapper">
-                                    <div class="post-item-title">
-                                        WP BUUCTF [BJDCTF2020]你猜我是个啥
-                                    </div>
-                                    <div class="post-item-summary">
-                                        
-                                    </div>
-                                    <div class="post-item-meta">
-    2023-02-04
-    &emsp;
-    
-    
-    <i class="material-icons" style="font-size:10px">schedule</i>
-    
-
-    
-    
-
-    
-    27 s
-    
-    
-    &emsp;
-    
-</div>
-
-                                </div>
-                                
-                                
-                            </div>
-                        </div>
-                    
-                
-        
-            
-                
-                    <a href="/ctf/wp-buuctf-gxyctf2019%E4%BD%9B%E7%B3%BB%E9%9D%92%E5%B9%B4/" class="a-block">
-                        <div class="post-item-wrapper">
-                            <div class="post-item post-item-no-divider">
-                                <div class="post-item-info-wrapper">
-                                    <div class="post-item-title">
-                                        WP BUUCTF [GXYCTF2019]佛系青年
-                                    </div>
-                                    <div class="post-item-summary">
-                                        
-                                    </div>
-                                    <div class="post-item-meta">
-    2023-02-03
-    &emsp;
-    
-    
-    <i class="material-icons" style="font-size:10px">schedule</i>
-    
-
-    
-    
-
-    
-    1 min
-    
-    36 s
-    
-    
-    &emsp;
-    
-</div>
-
-                                </div>
-                                
-                                
-                            </div>
-                        </div>
-                    
-                
-        
-            
-                
-                    <a href="/ctf/wp-buuctf-bjdctf2020%E8%97%8F%E8%97%8F%E8%97%8F/" class="a-block">
-                        <div class="post-item-wrapper">
-                            <div class="post-item post-item-no-divider">
-                                <div class="post-item-info-wrapper">
-                                    <div class="post-item-title">
-                                        WP BUUCTF [BJDCTF2020]藏藏藏
-                                    </div>
-                                    <div class="post-item-summary">
-                                        
-                                    </div>
-                                    <div class="post-item-meta">
-    2023-02-02
-    &emsp;
-    
-    
-    <i class="material-icons" style="font-size:10px">schedule</i>
-    
-
-    
-    
-
-    
-    21 s
-    
-    
-    &emsp;
-    
-</div>
-
-                                </div>
-                                
-                                
-                            </div>
-                        </div>
-                    
-                
-        
-            
-                
-                    <a href="/ctf/wp-buuctf-snake/" class="a-block">
-                        <div class="post-item-wrapper">
-                            <div class="post-item post-item-no-divider">
-                                <div class="post-item-info-wrapper">
-                                    <div class="post-item-title">
-                                        WP BUUCTF Snake
-                                    </div>
-                                    <div class="post-item-summary">
-                                        
-                                    </div>
-                                    <div class="post-item-meta">
-    2023-02-02
-    &emsp;
-    
-    
-    <i class="material-icons" style="font-size:10px">schedule</i>
-    
-
-    
-    
-
-    
-    41 s
-    
-    
-    &emsp;
-    
-</div>
-
-                                </div>
-                                
-                                
-                            </div>
-                        </div>
-                    
-                
-        
-            
-                
-                    <a href="/ctf/wp-buuctf-%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87/" class="a-block">
-                        <div class="post-item-wrapper">
-                            <div class="post-item post-item-no-divider">
-                                <div class="post-item-info-wrapper">
-                                    <div class="post-item-title">
-                                        WP BUUCTF 刷新过的图片
-                                    </div>
-                                    <div class="post-item-summary">
-                                        
-                                    </div>
-                                    <div class="post-item-meta">
-    2023-02-02
-    &emsp;
-    
-    
-    <i class="material-icons" style="font-size:10px">schedule</i>
-    
-
-    
-    
-
-    
-    34 s
-    
-    
-    &emsp;
-    
-</div>
-
-                                </div>
-                                
-                                
-                            </div>
-                        </div>
-                    
-                
-        
-            
-                
-                    <a href="/ctf/wp-buuctf-%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9/" class="a-block">
-                        <div class="post-item-wrapper">
-                            <div class="post-item post-item-no-divider">
-                                <div class="post-item-info-wrapper">
-                                    <div class="post-item-title">
-                                        WP BUUCTF 被劫持的神秘礼物
-                                    </div>
-                                    <div class="post-item-summary">
-                                        
-                                    </div>
-                                    <div class="post-item-meta">
-    2023-02-02
-    &emsp;
-    
-    
-    <i class="material-icons" style="font-size:10px">schedule</i>
-    
-
-    
-    
-
-    
-    1 min
-    
-    10 s
-    
-    
-    &emsp;
-    
-</div>
-
-                                </div>
-                                
-                                
-                            </div>
-                        </div>
-                    
-                
-        
-            
-                
-                    <a href="/ctf/wp-buuctf-webshell%E5%90%8E%E9%97%A8/" class="a-block">
-                        <div class="post-item-wrapper">
-                            <div class="post-item post-item-no-divider">
-                                <div class="post-item-info-wrapper">
-                                    <div class="post-item-title">
-                                        WP BUUCTF Webshell后门
-                                    </div>
-                                    <div class="post-item-summary">
-                                        
-                                    </div>
-                                    <div class="post-item-meta">
-    2023-02-02
-    &emsp;
-    
-    
-    <i class="material-icons" style="font-size:10px">schedule</i>
-    
-
-    
-    
-
-    
-    42 s
-    
-    
-    &emsp;
-    
-</div>
-
-                                </div>
-                                
-                                
-                            </div>
-                        </div>
-                    
-                
-        
-            
-                
-                    <a href="/ctf/wp-buuctf-%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7/" class="a-block">
-                        <div class="post-item-wrapper">
-                            <div class="post-item post-item-no-divider">
-                                <div class="post-item-info-wrapper">
-                                    <div class="post-item-title">
-                                        WP BUUCTF 来首歌吧
-                                    </div>
-                                    <div class="post-item-summary">
-                                        
-                                    </div>
-                                    <div class="post-item-meta">
-    2023-02-02
-    &emsp;
-    
-    
-    <i class="material-icons" style="font-size:10px">schedule</i>
-    
-
-    
-    
-
-    
-    38 s
-    
-    
-    &emsp;
-    
-</div>
-
-                                </div>
-                                
-                                
-                            </div>
-                        </div>
-                    
-                
-        
-        </a>
-    </div>
-
-
-                    </div>
-            </div>
-
-<div class="pagination">
-    
-    <a class="pagination-action" style="opacity:0">
-    
-        <i class="material-icons pagination-action-icon">
-            chevron_left
-        </i>
-    </a>
-
-        <div class="pagination-indicator">
-            <span>1/4</span>
-        </div>
-
-        
-        <a class="pagination-action" href="/page/2/"
-           style="opacity:1">
-        
-                <i class="material-icons pagination-action-icon">
-                    chevron_right
-                </i>
-            </a>
-</div>
 
 
 <div id="single-column-footer">

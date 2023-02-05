@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>博文s on Ling的博客</title>
-    <link>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/</link>
+    <link>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/</link>
     <description>Recent content in 博文s on Ling的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 01 Feb 2023 13:30:03 +0800</lastBuildDate><atom:link href="https://blog.lty520.ml/%E5%8D%9A%E6%96%87/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Feb 2023 13:30:03 +0800</lastBuildDate><atom:link href="https://blog.lty520.faith/%E5%8D%9A%E6%96%87/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>努比亚Z50的调教</title>
-      <link>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%8A%AA%E6%AF%94%E4%BA%9Az50%E7%9A%84%E8%B0%83%E6%95%99/</link>
+      <link>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%8A%AA%E6%AF%94%E4%BA%9Az50%E7%9A%84%E8%B0%83%E6%95%99/</link>
       <pubDate>Wed, 01 Feb 2023 13:30:03 +0800</pubDate>
       
-      <guid>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%8A%AA%E6%AF%94%E4%BA%9Az50%E7%9A%84%E8%B0%83%E6%95%99/</guid>
+      <guid>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%8A%AA%E6%AF%94%E4%BA%9Az50%E7%9A%84%E8%B0%83%E6%95%99/</guid>
       <description>型号：黑礁 12+256
 总评 一部给了我不少惊喜的手机
 颜值
@@ -31,10 +31,10 @@ LSPatch 因为不能解 BL 锁刷机，所以只能选择这种方案了
     
     <item>
       <title>全平台统一输入法——Rime</title>
-      <link>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%BE%93%E5%85%A5%E6%B3%95rime/</link>
+      <link>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%BE%93%E5%85%A5%E6%B3%95rime/</link>
       <pubDate>Wed, 25 Jan 2023 15:17:09 +0800</pubDate>
       
-      <guid>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%BE%93%E5%85%A5%E6%B3%95rime/</guid>
+      <guid>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%BE%93%E5%85%A5%E6%B3%95rime/</guid>
       <description>输入法的使用历程 PC 安卓使用原版搜狗输入法，ios 使用原装输入法 习惯驱使 PC 使用禁止联网的搜狗输入法 考虑到隐私问题及不断爆出的输入法上传用户打字内容的新闻 安卓使用 Gboard 隐私问题及换用了 Pixel 手机 PC 使用 Win11 自带输入法 换电脑，找不到禁止联网的搜狗输入法的安装包了 决定全平台使用 Rime 希望去除输入法的隐私暴露问题和解决多平台输入法的词库统一问题 全平台 Rime 的调教过程 基本配置 使用 SivanLaai/rime-pure 【rime 小狼毫\trime 同文】手机/PC一站式配置【简约皮肤\拼音搜狗词库\原创trime同文 四叶草九宫格拼音\四叶草拼音\小鹤双拼\极品五笔\QQ五笔\徐码\郑码】 的配置
 使用 studyzy/imewlconverter 深蓝词库转换 将搜狗输入法的细胞词库转换为 Rime 支持的词库
 添加的词库
@@ -47,10 +47,10 @@ Win 添加拆字词库 思路 由于长期使用搜狗输入法，习惯了拆�
     
     <item>
       <title>全平台统一代理——Clash</title>
-      <link>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/</link>
+      <link>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/</link>
       <pubDate>Thu, 22 Dec 2022 21:22:33 +0800</pubDate>
       
-      <guid>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/</guid>
+      <guid>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/</guid>
       <description>代理软件的使用历程 使用赛风VPN 听人提及到 SSR ，转用 SSR 每个设备分别使用 SSR 由于 SSR 封锁严重，跟随购买的机场换为 V2ray 每个设备分别使用 V2ray 困扰于每个平台都要运行代理软件 + V2ray 客户端不怎么好使+ Linux 运行代理程序需要命令行+手中刚好有树莓派，决定换用 Openwrt Openwrt 单臂路由 + SSRPlus 因为是单臂路由，有的设备不能自定义网关 + SSRPlus 自定义程度不够+ PassWall 莫名其妙的不能用+住校+主流机场换用了 Clash ，决定每个平台分别使用 Clash 决定全平台使用 Clash 全平台 Clash 的调教过程 (其实是 subconverter 的调教过程)
 虽然用了 Clash ，但机场提供的配置方案不是很符合个人需求(而且主用的机场没有 ipv6 的配置)，且手中有多个机场(主用机场 + 便宜的备用机场 + 按流量付费，使用特殊节点的机场)，于是使用了 subconverter 来制作 Clash 配置文件。
 目的 将多个机场的订阅合并为一个 国内直连( ipv4 + ipv6 )，游戏平台自选直连和代理，哔哩哔哩自选直连和代理， Netflix 自选直连和代理，其他国外一律代理 有一个单独的文件用以手动添加一些直连的域名(用于DDNS NAS的域名) 使用 Doh 进行域名解析 配置 以默认为主，修改部分条目</description>
@@ -58,20 +58,20 @@ Win 添加拆字词库 思路 由于长期使用搜狗输入法，习惯了拆�
     
     <item>
       <title>全平台统一系列</title>
-      <link>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E7%B3%BB%E5%88%97/</link>
+      <link>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E7%B3%BB%E5%88%97/</link>
       <pubDate>Thu, 22 Dec 2022 17:28:48 +0800</pubDate>
       
-      <guid>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E7%B3%BB%E5%88%97/</guid>
+      <guid>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E7%B3%BB%E5%88%97/</guid>
       <description>因为一直苦恼于手中多个平台的软件各不相同，数据难以同步且不便于使用。因此有了这个系列，希望将Win､Android､IpadOS(或许还会包括Linux､Ios)等平台的软件进行统一。
 全平台统一代理——Clash 全平台统一输入法——Rime </description>
     </item>
     
     <item>
       <title>Hello World</title>
-      <link>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/hello-world/</link>
+      <link>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/hello-world/</link>
       <pubDate>Wed, 21 Dec 2022 22:55:49 +0800</pubDate>
       
-      <guid>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/hello-world/</guid>
+      <guid>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/hello-world/</guid>
       <description>尝试过很多种博客框架，比如: WordPress ､ Hexo
 然后因为各种原因，博客一直没用起来。有的原因是用了一段时间，搭博客的服务器跑路了(白嫖的服务器)，有的是莫名其妙就不能用了(Github Pages)
 现在终于又搭了起来，希望可以用下去(希望吧)

@@ -2,23 +2,62 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ling的博客</title>
-    <link>https://blog.lty520.ml/</link>
+    <link>https://blog.lty520.faith/</link>
     <description>Recent content on Ling的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 04 Feb 2023 00:30:28 +0800</lastBuildDate>
     
-        <atom:link href="https://blog.lty520.ml/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://blog.lty520.faith/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>WP BUUCTF Rabbit</title>
+        <link>https://blog.lty520.faith/ctf/wp-buuctf-rabbit/</link>
+        <pubDate>Tue, 10 Jan 2023 20:26:12 +0800</pubDate>
+        
+        <guid>https://blog.lty520.faith/ctf/wp-buuctf-rabbit/</guid>
+        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-rabbit/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#Rabbit&#34;&gt;https://buuoj.cn/challenges#Rabbit&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
+&lt;p&gt;U2FsdGVkX1/+ydnDPowGbjjJXhZxm2MP2AgI&lt;/p&gt;
+&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
+&lt;p&gt;因为题目名为 Rabbit ，以及给到的密文是 U2 开头，使用工具 &lt;a href=&#34;https://www.sojson.com/encrypt_rabbit.html&#34;&gt;https://www.sojson.com/encrypt_rabbit.html&lt;/a&gt; 可以解得 Cute_Rabbit ，所以 flag 即为 &lt;strong&gt;flag{Cute_Rabbit}&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;没搞明白 CyberChef 咋用，还要 Key ，lv 啥的，明明别的直接就可以，怪&lt;/em&gt;&lt;/p&gt;
+- https://blog.lty520.faith/ctf/wp-buuctf-rabbit/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>WP BUUCUF Password</title>
+        <link>https://blog.lty520.faith/ctf/wp-buucuf-password/</link>
+        <pubDate>Tue, 10 Jan 2023 20:13:06 +0800</pubDate>
+        
+        <guid>https://blog.lty520.faith/ctf/wp-buucuf-password/</guid>
+        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buucuf-password/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#password&#34;&gt;https://buuoj.cn/challenges#password&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
+&lt;p&gt;姓名：张三
+生日：19900315&lt;/p&gt;
+&lt;p&gt;key 格式为 key{xxxxxxxxxx}&lt;/p&gt;
+&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
+&lt;p&gt;因为 x 为10位，张三为两个字的名字，生日占8位，因此可以猜到 flag&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;为 &lt;strong&gt;key{zs19900315}&lt;/strong&gt;&lt;br&gt;
+&lt;em&gt;所以&amp;quot;注意：得到的 flag 请包上 flag{} 提交&amp;quot;是闹那样&amp;hellip;&amp;quot;&lt;/em&gt;&lt;/p&gt;
+- https://blog.lty520.faith/ctf/wp-buucuf-password/ - </description>
+        </item>
     
     
     
         <item>
         <title>白嫖节点的使用</title>
-        <link>https://blog.lty520.ml/%E9%9A%8F%E8%AE%B0/%E7%99%BD%E5%AB%96%E8%8A%82%E7%82%B9%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+        <link>https://blog.lty520.faith/%E9%9A%8F%E8%AE%B0/%E7%99%BD%E5%AB%96%E8%8A%82%E7%82%B9%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
         <pubDate>Fri, 23 Dec 2022 22:15:42 +0800</pubDate>
         
-        <guid>https://blog.lty520.ml/%E9%9A%8F%E8%AE%B0/%E7%99%BD%E5%AB%96%E8%8A%82%E7%82%B9%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
-        <description>Ling的博客 https://blog.lty520.ml/%E9%9A%8F%E8%AE%B0/%E7%99%BD%E5%AB%96%E8%8A%82%E7%82%B9%E7%9A%84%E4%BD%BF%E7%94%A8/ -&lt;p&gt;因为是 Vless 的节点，所以本文只会介绍 V2ray 相关软件的使用方法。其他客户端( Clash、Openwrt 等)就不写了&lt;/p&gt;
+        <guid>https://blog.lty520.faith/%E9%9A%8F%E8%AE%B0/%E7%99%BD%E5%AB%96%E8%8A%82%E7%82%B9%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+        <description>Ling的博客 https://blog.lty520.faith/%E9%9A%8F%E8%AE%B0/%E7%99%BD%E5%AB%96%E8%8A%82%E7%82%B9%E7%9A%84%E4%BD%BF%E7%94%A8/ -&lt;p&gt;因为是 Vless 的节点，所以本文只会介绍 V2ray 相关软件的使用方法。其他客户端( Clash、Openwrt 等)就不写了&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id=&#34;使用教程&#34;&gt;使用教程&lt;/h1&gt;
 &lt;h2 id=&#34;windows&#34;&gt;Windows&lt;/h2&gt;
@@ -65,18 +104,18 @@
 &lt;h2 id=&#34;优选-ip-的使用&#34;&gt;优选 IP 的使用&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;&lt;strong&gt;这个 IP 的测试结果仅在当前网络环境下有效，换了不一定好使&lt;/strong&gt;&lt;/em&gt;&lt;br&gt;
 编辑节点，用优选到的 IP 替换到“地址”栏内的内容&lt;/p&gt;
-- https://blog.lty520.ml/%E9%9A%8F%E8%AE%B0/%E7%99%BD%E5%AB%96%E8%8A%82%E7%82%B9%E7%9A%84%E4%BD%BF%E7%94%A8/ - </description>
+- https://blog.lty520.faith/%E9%9A%8F%E8%AE%B0/%E7%99%BD%E5%AB%96%E8%8A%82%E7%82%B9%E7%9A%84%E4%BD%BF%E7%94%A8/ - </description>
         </item>
     
     
     
         <item>
         <title>全平台统一代理——Clash</title>
-        <link>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/</link>
+        <link>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/</link>
         <pubDate>Thu, 22 Dec 2022 21:22:33 +0800</pubDate>
         
-        <guid>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/</guid>
-        <description>Ling的博客 https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/ -&lt;h1 id=&#34;代理软件的使用历程&#34;&gt;代理软件的使用历程&lt;/h1&gt;
+        <guid>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/</guid>
+        <description>Ling的博客 https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/ -&lt;h1 id=&#34;代理软件的使用历程&#34;&gt;代理软件的使用历程&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;使用赛风VPN
 &lt;ul&gt;
@@ -188,34 +227,34 @@
 &lt;li&gt;&lt;a href=&#34;https://blog.xianyu.one/2021/05/12/Linux/tutorial/subconverter/&#34;&gt;subconverter 订阅转换及搭配 clash 使用教程&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.cfw.lbyczf.com/&#34;&gt;Clash for Windows&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-- https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/ - </description>
+- https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/ - </description>
         </item>
     
     
     
         <item>
         <title>全平台统一系列</title>
-        <link>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E7%B3%BB%E5%88%97/</link>
+        <link>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E7%B3%BB%E5%88%97/</link>
         <pubDate>Thu, 22 Dec 2022 17:28:48 +0800</pubDate>
         
-        <guid>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E7%B3%BB%E5%88%97/</guid>
-        <description>Ling的博客 https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E7%B3%BB%E5%88%97/ -&lt;p&gt;因为一直苦恼于手中多个平台的软件各不相同，数据难以同步且不便于使用。因此有了这个系列，希望将Win､Android､IpadOS(或许还会包括Linux､Ios)等平台的软件进行统一。&lt;/p&gt;
+        <guid>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E7%B3%BB%E5%88%97/</guid>
+        <description>Ling的博客 https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E7%B3%BB%E5%88%97/ -&lt;p&gt;因为一直苦恼于手中多个平台的软件各不相同，数据难以同步且不便于使用。因此有了这个系列，希望将Win､Android､IpadOS(或许还会包括Linux､Ios)等平台的软件进行统一。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;../%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash&#34;&gt;全平台统一代理——Clash&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;../%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%BE%93%E5%85%A5%E6%B3%95rime&#34;&gt;全平台统一输入法——Rime&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-- https://blog.lty520.ml/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E7%B3%BB%E5%88%97/ - </description>
+- https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E7%B3%BB%E5%88%97/ - </description>
         </item>
     
     
     
         <item>
         <title>Hello World</title>
-        <link>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/hello-world/</link>
+        <link>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/hello-world/</link>
         <pubDate>Wed, 21 Dec 2022 22:55:49 +0800</pubDate>
         
-        <guid>https://blog.lty520.ml/%E5%8D%9A%E6%96%87/hello-world/</guid>
-        <description>Ling的博客 https://blog.lty520.ml/%E5%8D%9A%E6%96%87/hello-world/ -&lt;p&gt;尝试过很多种博客框架，比如: WordPress ､ Hexo&lt;br&gt;
+        <guid>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/hello-world/</guid>
+        <description>Ling的博客 https://blog.lty520.faith/%E5%8D%9A%E6%96%87/hello-world/ -&lt;p&gt;尝试过很多种博客框架，比如: WordPress ､ Hexo&lt;br&gt;
 然后因为各种原因，博客一直没用起来。有的原因是用了一段时间，搭博客的服务器跑路了(白嫖的服务器)，有的是莫名其妙就不能用了(Github Pages)&lt;br&gt;
 现在终于又搭了起来，希望可以用下去(希望吧)&lt;/p&gt;
 &lt;hr&gt;
@@ -229,12 +268,8 @@
 &lt;li&gt;&lt;a href=&#34;https://gohugo.io/getting-started/quick-start/&#34;&gt;官方文档&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://waline.js.org/&#34;&gt;waline 评论系统&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-- https://blog.lty520.ml/%E5%8D%9A%E6%96%87/hello-world/ - </description>
+- https://blog.lty520.faith/%E5%8D%9A%E6%96%87/hello-world/ - </description>
         </item>
-    
-    
-    
-    
     
     
     

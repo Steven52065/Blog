@@ -37,11 +37,11 @@
       <script src="/js/toc.js"></script>
     
     <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
-<link rel="stylesheet" href="/scss/journal.min.c5d92f380bf10f6849c7ac487c7df2b22c081e0851e5339224f1ae29210b20d2.css" integrity="sha256-xdkvOAvxD2hJx6xIfH3ysiwIHghR5TOSJPGuKSELINI=" media="screen">
+<link rel="stylesheet" href="/scss/journal.min.e78ecf1f01bdd175a52616472d7f6c77fa0d72eb91b15a27ce24fb7d302a6aa2.css" integrity="sha256-547PHwG90XWlJhZHLX9sd/oNcuuRsVonziT7fTAqaqI=" media="screen">
 
 
 
-<link rel="stylesheet" href="/scss/dark-mode.min.9f8d8c2df9285089d141edd4a50cb7506c7948e6ab79a29968dced1bd0ab7d22.css" integrity="sha256-n42MLfkoUInRQe3UpQy3UGx5SOareaKZaNztG9CrfSI=" media="screen">
+<link rel="stylesheet" href="/scss/dark-mode.min.e96cc014086ea3bea59fb4923f8c19d6b203a7af229ee5f9599c0a4cb90e3bbd.css" integrity="sha256-6WzAFAhuo76ln7SSP4wZ1rIDp68inuX5WZwKTLkOO70=" media="screen">
 
 
 <link rel="stylesheet"
@@ -81,9 +81,467 @@
 
 </head>
 <body>
-    	<div id="app"><div id="sideContainer" class="side-container">
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/%E5%8D%9A%E6%96%87">
+                    博文
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/%E9%9A%8F%E8%AE%B0">
+                    随记
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/ctf">
+                    CTF
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS Feed
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%bd%bf%e7%94%a8%e6%95%99%e7%a8%8b" onclick="onNavClick(`#使用教程-nav`)" id="使用教程-nav">
+									使用教程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#windows" onclick="onNavClick(`#windows-nav`)" id="windows-nav">
+									Windows
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#android" onclick="onNavClick(`#android-nav`)" id="android-nav">
+									Android
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#ios" onclick="onNavClick(`#ios-nav`)" id="ios-nav">
+									Ios
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e6%9c%89%e6%b5%8b%e8%af%95%e7%bb%93%e6%9e%9c%e4%bd%86%e8%8a%82%e7%82%b9%e6%97%a0%e6%b3%95%e4%bd%bf%e7%94%a8" onclick="onNavClick(`#有测试结果但节点无法使用-nav`)" id="有测试结果但节点无法使用-nav">
+									有测试结果但节点无法使用
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#windows-1" onclick="onNavClick(`#windows-1-nav`)" id="windows-1-nav">
+									Windows
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#android-1" onclick="onNavClick(`#android-1-nav`)" id="android-1-nav">
+									Android
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#ios-1" onclick="onNavClick(`#ios-1-nav`)" id="ios-1-nav">
+									Ios
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e8%8a%82%e7%82%b9%e5%8f%af%e7%94%a8%e4%bd%86%e9%80%9f%e5%ba%a6%e6%85%a2" onclick="onNavClick(`#节点可用但速度慢-nav`)" id="节点可用但速度慢-nav">
+									节点可用但速度慢
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e4%bc%98%e9%80%89-ip-%e7%9a%84%e4%bd%bf%e7%94%a8" onclick="onNavClick(`#优选-ip-的使用-nav`)" id="优选-ip-的使用-nav">
+									优选 IP 的使用
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://blog.lty520.faith/">
+            Ling的博客
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://blog.lty520.faith/">
+        <div class="single-column-header-title">Ling的博客</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    白嫖节点的使用
+                    
+                    <div class="post-subtitle">
+                        脑子一热就买了个服务器，为了不浪费，搭了个梯子
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2022-12-23 22:15
+                        </time>
+                        
+
+                        
+
+                        
+                        
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            2 min
+                            
+                            47 s.
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <p>因为是 Vless 的节点，所以本文只会介绍 V2ray 相关软件的使用方法。其他客户端( Clash、Openwrt 等)就不写了</p>
+<hr>
+<h1 id="使用教程">使用教程</h1>
+<h2 id="windows">Windows</h2>
+<ol>
+<li>下载 <a href="https://github.com/2dust/v2rayN/releases">V2rayN 客户端</a> ，选择最新版本，下载 v2rayN.zip 文件，并解压</li>
+<li>下载 <a href="https://github.com/XTLS/Xray-core/releases">Xray-core</a> ,选择对应的系统、架构下载（如果不知道，那就是 Xray-windows-64.zip ），将解压出的文件放到 V2rayN 客户端 的文件目录下（即和 v2rayN.exe 文件在一起）。</li>
+<li>启动 V2rayN ，复制节点信息后在 V2rayN 中右键，并选择“从剪贴板批量导入URL”，若出现“成功”二字，导入成功</li>
+<li>右键节点，选择“测试服务器真连接延迟”若测试结果中出现延时，说明节点正常（用不了是你的问题）</li>
+<li>开始使用吧</li>
+</ol>
+<h2 id="android">Android</h2>
+<ol>
+<li>下载 V2rayNG 客户端, <a href="https://github.com/2dust/v2rayNG/releases/tag/1.7.23">github</a> 或 <a href="https://play.google.com/store/apps/details?id=com.v2ray.ang">Google play</a> 选一。</li>
+<li>复制节点信息后点击 V2rayNG 上方“+”，“从剪贴板导入”</li>
+<li>点击右上角三个点，“测试全部配置真连接”，若出现测试结果，说明节点没问题（用不了是你的问题）</li>
+<li>点击右下角的圆形图标，开始使用吧</li>
+</ol>
+<h2 id="ios">Ios</h2>
+<ol>
+<li>搞个非国区帐号，并下载 Shadowrocket <strong>（国区里的是假的）</strong></li>
+<li>复制节点信息后打开 Shadowrocket 即可自动导入</li>
+<li>打开上方开关，开始使用吧</li>
+</ol>
+<h1 id="有测试结果但节点无法使用">有测试结果但节点无法使用</h1>
+<h2 id="windows-1">Windows</h2>
+<ul>
+<li>点击“重启服务”试试</li>
+<li>关闭除 V2rayN 以外的代理软件和浏览器的代理插件并重启 V2rayN</li>
+<li>重启电脑</li>
+<li>换手机</li>
+</ul>
+<h2 id="android-1">Android</h2>
+<ul>
+<li>重启手机</li>
+<li>换苹果</li>
+</ul>
+<h2 id="ios-1">Ios</h2>
+<ul>
+<li>重启手机</li>
+<li>换安卓</li>
+</ul>
+<h1 id="节点可用但速度慢">节点可用但速度慢</h1>
+<p>因为使用了 Cloudflare CDN ，默认分配的节点可能比较慢（通常比较慢），可以在 Windows 下下载 <a href="https://github.com/XIU2/CloudflareSpeedTest/releases">CloudflareSpeedTest</a> ,关闭所有代理软件后解压并双击运行 CloudflareST.exe 文件，等待测速完成。测速结果第一行就是既下载速度最快、又平均延迟最低的最快 IP</p>
+<h2 id="优选-ip-的使用">优选 IP 的使用</h2>
+<p><em><strong>这个 IP 的测试结果仅在当前网络环境下有效，换了不一定好使</strong></em><br>
+编辑节点，用优选到的 IP 替换到“地址”栏内的内容</p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2022-12-23</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/ctf/wp-buucuf-password/">
+			下回<br>WP BUUCUF Password
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/">
+			上回<br>全平台统一代理——Clash
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+<div id="waline"></div>
+<script>
+    Waline.init({
+        el: '#waline',
+        
+        serverURL: "https://blog-waline.lty520.ml/" ,
+    });
     
-    <a class="a-block nav-head false" href="https://blog.lty520.ml/">
+    </script>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://blog.lty520.faith/">
     
         <div class="nav-title">
             Ling的博客
@@ -397,463 +855,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
         
     </div>
 </div>
-<div class="single-column-drawer-container" id="drawer"
-     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
-    <div class="drawer-content">
-        <div class="drawer-menu">
-            
-            
-            
-                
-                
-                
-                
-                
-                <a class="a-block drawer-menu-item false" href="/%E5%8D%9A%E6%96%87">
-                    博文
-                </a>
-                
-            
-                
-                
-                
-                    
-                
-                
-                
-                <a class="a-block drawer-menu-item active" href="/%E9%9A%8F%E8%AE%B0">
-                    随记
-                </a>
-                
-            
-                
-                
-                
-                
-                
-                <a class="a-block drawer-menu-item false" href="/ctf">
-                    CTF
-                </a>
-                
-            
-                
-                
-                
-                
-                
-                <a class="a-block drawer-menu-item false" href="/index.xml">
-                    RSS Feed
-                </a>
-                
-            
-            
-            <div class="toc">
-
-
-	<div class="toc-content">
-	
-		
-		
-		
-		<center>- 目录 -</center>
-		
-		
-		<ul>
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#%e4%bd%bf%e7%94%a8%e6%95%99%e7%a8%8b" onclick="onNavClick(`#使用教程-nav`)" id="使用教程-nav">
-									使用教程
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-							
-								
-									<ul>
-								
-							
-						
-						
-							<li>
-								<a href="#windows" onclick="onNavClick(`#windows-nav`)" id="windows-nav">
-									Windows
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#android" onclick="onNavClick(`#android-nav`)" id="android-nav">
-									Android
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#ios" onclick="onNavClick(`#ios-nav`)" id="ios-nav">
-									Ios
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-							
-								</ul>
-							
-						
-						
-						
-							<li>
-								<a href="#%e6%9c%89%e6%b5%8b%e8%af%95%e7%bb%93%e6%9e%9c%e4%bd%86%e8%8a%82%e7%82%b9%e6%97%a0%e6%b3%95%e4%bd%bf%e7%94%a8" onclick="onNavClick(`#有测试结果但节点无法使用-nav`)" id="有测试结果但节点无法使用-nav">
-									有测试结果但节点无法使用
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-							
-								
-									<ul>
-								
-							
-						
-						
-							<li>
-								<a href="#windows-1" onclick="onNavClick(`#windows-1-nav`)" id="windows-1-nav">
-									Windows
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#android-1" onclick="onNavClick(`#android-1-nav`)" id="android-1-nav">
-									Android
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#ios-1" onclick="onNavClick(`#ios-1-nav`)" id="ios-1-nav">
-									Ios
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-							
-								</ul>
-							
-						
-						
-						
-							<li>
-								<a href="#%e8%8a%82%e7%82%b9%e5%8f%af%e7%94%a8%e4%bd%86%e9%80%9f%e5%ba%a6%e6%85%a2" onclick="onNavClick(`#节点可用但速度慢-nav`)" id="节点可用但速度慢-nav">
-									节点可用但速度慢
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-							
-								
-									<ul>
-								
-							
-						
-						
-							<li>
-								<a href="#%e4%bc%98%e9%80%89-ip-%e7%9a%84%e4%bd%bf%e7%94%a8" onclick="onNavClick(`#优选-ip-的使用-nav`)" id="优选-ip-的使用-nav">
-									优选 IP 的使用
-								</a>
-							</li>
-						
-						
-					
-				
-			
-		</ul>
-	</div>
-
-</div>
-            
-        </div>
-    </div>
-</div>
-<transition name="fade">
-    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
-</transition>
-<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
-    <div id="navBackground" class="nav-background"></div>
-    <div class="container container-narrow nav-content">
-        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
-            <i class="material-icons">
-                menu
-            </i>
-        </button>
-        <a id="navTitle" class="navbar-brand" href="https://blog.lty520.ml/">
-            Ling的博客
-        </a>
-        
-        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
-            <i class="material-icons" id="darkModeToggleIcon2">
-                dark_mode
-            </i>
-        </button>
-        
-    </div>
-</nav>
-<div class="single-column-header-container" id="pageHead"
-     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
-    <a href="https://blog.lty520.ml/">
-        <div class="single-column-header-title">Ling的博客</div>
-        
-
-    </a>
-</div>
-
-            <div id="content">
-                <div id="streamContainer" class="stream-container">
-
-    <div class="post-list-container post-list-container-shadow">
-        <div class="post">
-            
-            
-            
-
-            <div class="post-head-wrapper-text-only"
-                
-            >
-                <div class="post-title">
-                    白嫖节点的使用
-                    
-                    <div class="post-subtitle">
-                        脑子一热就买了个服务器，为了不浪费，搭了个梯子
-                    </div>
-                    
-                    <div class="post-meta">
-                        
-                        <time itemprop="datePublished">
-                            2022-12-23 22:15
-                        </time>
-                        
-
-                        
-
-                        
-                        
-                            <i class="material-icons" style="">schedule</i>
-                            
-
-                            
-                            
-
-                            
-                            2 min
-                            
-                            47 s.
-                        
-                    </div>
-                </div>
-            </div>
-            
-            <div class="post-body-wrapper">
-                
-                <div class="post-body" v-pre>
-                
-                    <p>因为是 Vless 的节点，所以本文只会介绍 V2ray 相关软件的使用方法。其他客户端( Clash、Openwrt 等)就不写了</p>
-<hr>
-<h1 id="使用教程">使用教程</h1>
-<h2 id="windows">Windows</h2>
-<ol>
-<li>下载 <a href="https://github.com/2dust/v2rayN/releases">V2rayN 客户端</a> ，选择最新版本，下载 v2rayN.zip 文件，并解压</li>
-<li>下载 <a href="https://github.com/XTLS/Xray-core/releases">Xray-core</a> ,选择对应的系统、架构下载（如果不知道，那就是 Xray-windows-64.zip ），将解压出的文件放到 V2rayN 客户端 的文件目录下（即和 v2rayN.exe 文件在一起）。</li>
-<li>启动 V2rayN ，复制节点信息后在 V2rayN 中右键，并选择“从剪贴板批量导入URL”，若出现“成功”二字，导入成功</li>
-<li>右键节点，选择“测试服务器真连接延迟”若测试结果中出现延时，说明节点正常（用不了是你的问题）</li>
-<li>开始使用吧</li>
-</ol>
-<h2 id="android">Android</h2>
-<ol>
-<li>下载 V2rayNG 客户端, <a href="https://github.com/2dust/v2rayNG/releases/tag/1.7.23">github</a> 或 <a href="https://play.google.com/store/apps/details?id=com.v2ray.ang">Google play</a> 选一。</li>
-<li>复制节点信息后点击 V2rayNG 上方“+”，“从剪贴板导入”</li>
-<li>点击右上角三个点，“测试全部配置真连接”，若出现测试结果，说明节点没问题（用不了是你的问题）</li>
-<li>点击右下角的圆形图标，开始使用吧</li>
-</ol>
-<h2 id="ios">Ios</h2>
-<ol>
-<li>搞个非国区帐号，并下载 Shadowrocket <strong>（国区里的是假的）</strong></li>
-<li>复制节点信息后打开 Shadowrocket 即可自动导入</li>
-<li>打开上方开关，开始使用吧</li>
-</ol>
-<h1 id="有测试结果但节点无法使用">有测试结果但节点无法使用</h1>
-<h2 id="windows-1">Windows</h2>
-<ul>
-<li>点击“重启服务”试试</li>
-<li>关闭除 V2rayN 以外的代理软件和浏览器的代理插件并重启 V2rayN</li>
-<li>重启电脑</li>
-<li>换手机</li>
-</ul>
-<h2 id="android-1">Android</h2>
-<ul>
-<li>重启手机</li>
-<li>换苹果</li>
-</ul>
-<h2 id="ios-1">Ios</h2>
-<ul>
-<li>重启手机</li>
-<li>换安卓</li>
-</ul>
-<h1 id="节点可用但速度慢">节点可用但速度慢</h1>
-<p>因为使用了 Cloudflare CDN ，默认分配的节点可能比较慢（通常比较慢），可以在 Windows 下下载 <a href="https://github.com/XIU2/CloudflareSpeedTest/releases">CloudflareSpeedTest</a> ,关闭所有代理软件后解压并双击运行 CloudflareST.exe 文件，等待测速完成。测速结果第一行就是既下载速度最快、又平均延迟最低的最快 IP</p>
-<h2 id="优选-ip-的使用">优选 IP 的使用</h2>
-<p><em><strong>这个 IP 的测试结果仅在当前网络环境下有效，换了不一定好使</strong></em><br>
-编辑节点，用优选到的 IP 替换到“地址”栏内的内容</p>
-
-                    
-                    <HR width="100%" id="EOF">
-		    <p style="color:#777;">最后修改于 2022-12-23</p>
-                    
-                </div>
-            </div>
-            
-            
-            <nav class="post-pagination">
-
-                
-                <a class="newer-posts" href="/ctf/wp-buucuf-password/">
-			下回<br>WP BUUCUF Password
-                </a>
-                
-                
-                
-                <a class="older-posts" href="/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/">
-			上回<br>全平台统一代理——Clash
-                </a>
-                
-            </nav>
-            <div class="post-comment-wrapper">
-                
-
-
-
-
-
-
-
-
-<div id="waline"></div>
-<script>
-    Waline.init({
-        el: '#waline',
-        
-        serverURL: "https://blog-waline.lty520.ml/" ,
-    });
-    
-    </script>
-
-
-
-            </div>
-        </div>
-    </div>
-
-
-                    </div>
-            </div><div id="single-column-footer">
+<div id="single-column-footer">
 Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
 <br>
 移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
