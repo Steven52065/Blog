@@ -59,6 +59,11 @@
         <guid>https://blog.lty520.faith/%E9%9A%8F%E8%AE%B0/%E7%99%BD%E5%AB%96%E8%8A%82%E7%82%B9%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
         <description>Ling的博客 https://blog.lty520.faith/%E9%9A%8F%E8%AE%B0/%E7%99%BD%E5%AB%96%E8%8A%82%E7%82%B9%E7%9A%84%E4%BD%BF%E7%94%A8/ -&lt;p&gt;因为是 Vless 的节点，所以本文只会介绍 V2ray 相关软件的使用方法。其他客户端( Clash、Openwrt 等)就不写了&lt;/p&gt;
 &lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;节点仅保证最低限度的访问外网，即使用 Google、Youtube、Github 等，无法保证可以使用 New Bing、ChatGPT、Netflix 等对节点要求较高的网站。&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;晚八点前后的网络高峰期速度慢是正常现象，可以通过使用优选 IP 来缓解&lt;/strong&gt;&lt;/em&gt;
+&lt;img src=&#34;https://blog.lty520.faith/img/%E9%9A%8F%E8%AE%B0/%E7%99%BD%E5%AB%96%E8%8A%82%E7%82%B9%E7%9A%84%E4%BD%BF%E7%94%A8/gun.jpg&#34; alt=&#34;gun&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h1 id=&#34;使用教程&#34;&gt;使用教程&lt;/h1&gt;
 &lt;h2 id=&#34;windows&#34;&gt;Windows&lt;/h2&gt;
 &lt;ol&gt;
@@ -100,10 +105,16 @@
 &lt;li&gt;换安卓&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;节点可用但速度慢&#34;&gt;节点可用但速度慢&lt;/h1&gt;
+&lt;h2 id=&#34;寻找优选-ip&#34;&gt;寻找优选 IP&lt;/h2&gt;
+&lt;h3 id=&#34;1自己找&#34;&gt;1.自己找&lt;/h3&gt;
 &lt;p&gt;因为使用了 Cloudflare CDN ，默认分配的节点可能比较慢（通常比较慢），可以在 Windows 下下载 &lt;a href=&#34;https://github.com/XIU2/CloudflareSpeedTest/releases&#34;&gt;CloudflareSpeedTest&lt;/a&gt; ,关闭所有代理软件后解压并双击运行 CloudflareST.exe 文件，等待测速完成。测速结果第一行就是既下载速度最快、又平均延迟最低的最快 IP&lt;/p&gt;
+&lt;h3 id=&#34;2用现成的&#34;&gt;2.用现成的&lt;/h3&gt;
+&lt;p&gt;在 &lt;a href=&#34;https://stock.hostmonit.com/CloudFlareYes&#34;&gt;在线成品优选ip网站&lt;/a&gt; 中根据你的运营商选择一个速度较快且延迟较低的 IP&lt;br&gt;
+&lt;em&gt;注：延迟低不代表速度一定快，通常速度快比延迟低更重要&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id=&#34;优选-ip-的使用&#34;&gt;优选 IP 的使用&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;这个 IP 的测试结果仅在当前网络环境下有效，换了不一定好使&lt;/strong&gt;&lt;/em&gt;&lt;br&gt;
-编辑节点，用优选到的 IP 替换到“地址”栏内的内容&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;这个 IP 的测试结果仅在当前网络环境下有效，换了不一定好。优选 IP 可能会失效，若使用优选 IP 后无法连接节点，请去掉优选 IP 尝试或更换优选 IP&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;双击编辑节点，用优选到的 IP 替换到“地址”栏内的内容&lt;/p&gt;
 - https://blog.lty520.faith/%E9%9A%8F%E8%AE%B0/%E7%99%BD%E5%AB%96%E8%8A%82%E7%82%B9%E7%9A%84%E4%BD%BF%E7%94%A8/ - </description>
         </item>
     
