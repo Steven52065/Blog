@@ -317,9 +317,9 @@
                             
 
                             
-                            3 min
+                            5 min
                             
-                            30 s.
+                            26 s.
                         
                     </div>
                 </div>
@@ -373,36 +373,59 @@
 </code></pre><p>从 url 获取规则片段，并分成几个策略组</p>
 <pre tabindex="0"><code>[rulesets]
     ruleset=DIRECT,rules/DirectDomain.list
-    ;手动添加的直连域名
+    ;DirectDomain.list  手动添加的直连域名
 
-    ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list,86400
-    ;局域网IP段 直连
+    ruleset=Proxy,rules/ProxyDomain.list
+    ;ProxyDomain.list  手动添加的代理域名
+
+    ruleset=拦截,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/BanAD.list,86400
+    ruleset=拦截,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/BanProgramAD.list,86400
+    ;广告域名
 
     ruleset=Bilibili,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Ruleset/Bilibili.list,86400
     ;Bilibili域名
     ruleset=Netflix,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Netflix.list,86400
     ;Netflix域名 IP段
-
-    ruleset=Game,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Providers/Ruleset/Steam.yaml,86400
+    ruleset=OpenAI,https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/OpenAI/OpenAI.list,86400
+    ;openai域名
+    ruleset=微软服务,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list,86400
+    ;微软服务
+    ruleset=PT Trackers,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Ruleset/PrivateTracker.list,86400
+    ;PT Trackers
+    ruleset=Game,https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Steam/Steam.list,86400
     ;steam域名
-    ruleset=Game,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Providers/Ruleset/Epic.yaml,86400
+    ruleset=Game,https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Epic/Epic.list,86400
     ;epic域名
-    ruleset=Game,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Providers/Ruleset/Xbox.yaml,86400
+    ruleset=Game,https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Xbox/Xbox.list,86400
     ;Xbox域名
+    ruleset=Game,https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/EA/EA.list,86400
+    ;EA域名
+
+    ruleset=Proxy,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/ProxyGFWlist.list,86400
+    ;已墙域名
+
+    ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list,86400
+    ;直连域名
+
+
+    ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list,86400
+    ;局域网IP段
 
     ruleset=DIRECT,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPs/ChinaIPs.list,86400
     ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list,86400
     ruleset=DIRECT,[]GEOIP,CN
     ;中国IP段
-    ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list,86400
-    ;中国域名
     ruleset=Proxy,[]FINAL
 </code></pre><p>为策略组添加节点</p>
 <pre tabindex="0"><code>[proxy_groups]
     custom_proxy_group=Proxy`select`.*
-    custom_proxy_group=Netflix`select`Proxy`.*
-    custom_proxy_group=Game`select`[]DIRECT`.*
-    custom_proxy_group=Bilibili`select`[]DIRECT`.*
+    custom_proxy_group=Game`select`[]DIRECT`[]Proxy`.*
+    custom_proxy_group=微软服务`select`.*
+    custom_proxy_group=PT Trackers`select`[]DIRECT`[]Proxy`.*
+    custom_proxy_group=Bilibili`select`[]DIRECT`[]Proxy`.*
+    custom_proxy_group=OpenAI`select`[]DIRECT`[]Proxy`.*
+    custom_proxy_group=Netflix`select`[]Proxy`.*
+    custom_proxy_group=拦截`select`[]REJECT`[]DIRECT`[]Proxy
 </code></pre><p>/base/all_base.tpl</p>
 <pre tabindex="0"><code>{% if request.target == &#34;clash&#34; or request.target == &#34;clashr&#34; %}
     dns:
@@ -425,7 +448,11 @@
             geoip: true
             ipcidr:
             - 240.0.0.0/4
-</code></pre><p>最后将其部署在了服务器上，并用 Nginx 配置了反向代理和 SSL 加密，得益于 Clash 的在多个平台上都有其客户端，将每个客户端的订阅地址修改为 subconverter 提供的配置文件地址，就可以实现了全平台的代理统一</p>
+</code></pre><p>最后将其部署在了服务器上，并用 Nginx 配置了反向代理和 SSL 加密，得益于 Clash 的在多个平台上都有其客户端，将每个客户端的订阅地址修改为 subconverter 提供的配置文件地址，就可以实现了全平台的代理统一<br>
+使用 docker 部署，避免<a href="https://www.youtube.com/watch?v=FclVhxp1g0Y&amp;ab_channel=%E4%B8%8D%E8%89%AF%E6%9E%97">subconverter</a> 的漏洞</p>
+<ul>
+<li><a href="https://hub.docker.com/r/tindy2013/subconverter">docker hub 镜像</a></li>
+</ul>
 <h2 id="可用于-subconverter-的规则片段">可用于 subconverter 的规则片段</h2>
 <ul>
 <li><a href="https://github.com/Loyalsoldier/clash-rules/blob/master/README.md">github.com/Loyalsoldier/clash-rules</a></li>

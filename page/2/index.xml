@@ -27,11 +27,11 @@
 &lt;li&gt;系统&lt;br&gt;
 因为买前就听说了 MyOS 抄了各大厂的系统以及算是小厂的系统，所以对系统的期望并不高（以及用惯了 Pixel 这种完全没有本地化适配的系统），上手用起来还是可以的，各大厂该有的功能基本都有&lt;/li&gt;
 &lt;li&gt;相机&lt;br&gt;
-比 Pixel3XL 的单摄强，等效 35mm 比一般的手机更近一些，虚化挺好看的&lt;br&gt;
+比 Pixel3XL 的单摄强，等效 35mm 比一般的手机更近一些，虚化挺好看&lt;br&gt;
 微距用着感觉比 K50 至尊版 的要更近、更清晰 一点&lt;/li&gt;
 &lt;li&gt;性能&lt;br&gt;
 8Gen2 ，实测雷兔兔跑分 1216748 分,比别家的要低几万，影响也不大（并非到手就测，或许是后台已经在运行一些软件的缘故？）&lt;br&gt;
-&lt;a href=&#34;https://blog.lty520.faith/img/%E5%8D%9A%E6%96%87/%E5%8A%AA%E6%AF%94%E4%BA%9AZ50%E7%9A%84%E8%B0%83%E6%95%99/%E9%9B%B7%E5%85%94%E5%85%94%E8%B7%91%E5%88%86.jpg&#34;&gt;跑分截图&lt;/a&gt;&lt;/li&gt;
+&lt;img src=&#34;https://blog.lty520.faith/img/%E5%8D%9A%E6%96%87/%E5%8A%AA%E6%AF%94%E4%BA%9AZ50%E7%9A%84%E8%B0%83%E6%95%99/%E9%9B%B7%E5%85%94%E5%85%94%E8%B7%91%E5%88%86.jpg&#34; alt=&#34;跑分截图&#34;&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1 id=&#34;系统&#34;&gt;系统&lt;/h1&gt;
 &lt;h2 id=&#34;谷歌服务&#34;&gt;谷歌服务&lt;/h2&gt;
@@ -53,7 +53,11 @@
 &lt;li&gt;&lt;a href=&#34;https://github.com/fankes/TSBattery&#34;&gt;TSBattery&lt;/a&gt; 可以限制 QQ 的一些服务，省点电&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/cinit/QAuxiliary&#34;&gt;QAuxiliary&lt;/a&gt; 功能很多，主要用它去掉 QQ 的一些没用的功能（比如“一起听歌”、“群帖子”之类的）&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Xposed-Modules-Repo/com.fkzhang.qqxposed&#34;&gt;QX&lt;/a&gt; 防撤回&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Hicores/QTool&#34;&gt;QTool&lt;/a&gt; 可以显示&lt;strong&gt;合并转发&lt;/strong&gt;的来源，有一些群管理辅助功能；净化功能与 &lt;strong&gt;QAuxiliary&lt;/strong&gt; 重合&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Hicores/QTool&#34;&gt;QTool&lt;/a&gt; 可以显示&lt;strong&gt;合并转发&lt;/strong&gt;的来源，有一些群管理辅助功能；净化功能与 &lt;strong&gt;QAuxiliary&lt;/strong&gt; 重合
+&lt;ul&gt;
+&lt;li&gt;2023年10月 合并转发来源已经被腾讯限制，无法查看到了&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;微信
@@ -104,12 +108,53 @@
 &lt;h2 id=&#34;输入法&#34;&gt;输入法&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;../%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%BE%93%E5%85%A5%E6%B3%95rime&#34;&gt;Rime&lt;/a&gt; 毕竟都统一了是吧&lt;em&gt;目前还没有&lt;/em&gt;&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;- 23年2月1日
-    安卓13无法正常显示候选框
+   安卓13无法正常显示候选框
+      3.2.7 可以正常使用
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;浏览器&#34;&gt;浏览器&lt;/h2&gt;
 &lt;p&gt;Chrome 因为书签的同步被绑在了谷歌的服务下&amp;hellip;（不过没有那些乱七八糟的资讯也还蛮好的）&lt;/p&gt;
 &lt;h2 id=&#34;密码管理&#34;&gt;密码管理&lt;/h2&gt;
 &lt;p&gt;Keepass
 &lt;em&gt;还有一篇“全平台统一密码管理——Keepass”的博文还没写呢&amp;hellip;&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;权限管理&#34;&gt;权限管理&lt;/h2&gt;
+&lt;p&gt;APP Ops 在 MyOS 的权限管理还不如 MIUI 等其他系统的现状下，使用第三方权限管理软件无疑是比较合适的选择。&lt;/p&gt;
+&lt;h2 id=&#34;后台限制&#34;&gt;后台限制&lt;/h2&gt;
+&lt;p&gt;黑阈 把大部分后台压制住，大概能做到待机每小时一个电左右（还没有严格统计）&lt;/p&gt;
+&lt;h2 id=&#34;第三方相机&#34;&gt;第三方相机&lt;/h2&gt;
+&lt;p&gt;日文大佬的 谷歌相机
+日常使用徕卡灵动&lt;/p&gt;
+&lt;h1 id=&#34;问题&#34;&gt;问题&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;截止到2023年10月30日&lt;/em&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;充电功率虚标
+&lt;ul&gt;
+&lt;li&gt;标称的80W，实际大概最高30-40W。&lt;/li&gt;
+&lt;li&gt;充电实测&lt;/li&gt;
+&lt;li&gt;环境温度26度左右，无手机壳，手机背面架起，熄屏。
+[努比亚z50 13.0.18系统 开急速闪充](/img/博文/努比亚Z50的调教/努比亚z50 13.0.18系统 开急速闪充.png)
+[努比亚z50 13.0.19系统 开急速闪充](/img/博文/努比亚Z50的调教/努比亚z50 13.0.19系统 开急速闪充.png)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;后台限制不够严格
+&lt;ul&gt;
+&lt;li&gt;（偶然发生）在待机情况下依然会有部分应用一直运行，并严重耗电。 使用 黑阈 缓解
+&lt;ul&gt;
+&lt;li&gt;&lt;img src=&#34;https://blog.lty520.faith/img/%E5%8D%9A%E6%96%87/%E5%8A%AA%E6%AF%94%E4%BA%9AZ50%E7%9A%84%E8%B0%83%E6%95%99/%E8%80%97%E7%94%B5%E6%83%85%E5%86%B5.png&#34; alt=&#34;未使用黑阈的耗电情况&#34;&gt;
+十分离谱的耗电情况，好在目前只发生了一次。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;对部分应用的限制有问题
+&lt;ol&gt;
+&lt;li&gt;TTS Server 只要启用了他作为系统TTS，就会一次保持运行，并且保持在每小时2.7毫安时左右的耗电量&lt;/li&gt;
+&lt;li&gt;熄屏状态下的媒体播放
+时而会发生“播放暂停”的现象，只能通过手动点亮屏幕来继续播放&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;相机家族 的 月亮 模式疑似 AI 合成&lt;br&gt;
+没有证据，仅为疑似
+&lt;img src=&#34;https://blog.lty520.faith/img/%E5%8D%9A%E6%96%87/%E5%8A%AA%E6%AF%94%E4%BA%9AZ50%E7%9A%84%E8%B0%83%E6%95%99/%E6%9C%88%E4%BA%AE.jpg&#34; alt=&#34;月亮&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;
 - https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%8A%AA%E6%AF%94%E4%BA%9Az50%E7%9A%84%E8%B0%83%E6%95%99/ - </description>
         </item>
     
