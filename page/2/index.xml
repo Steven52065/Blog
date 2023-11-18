@@ -6,9 +6,50 @@
     <description>Recent content on Ling的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 04 Feb 2023 00:30:28 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 18 Nov 2023 21:59:58 +0800</lastBuildDate>
     
         <atom:link href="https://blog.lty520.faith/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>WP BUUCTF Webshell后门</title>
+        <link>https://blog.lty520.faith/ctf/wp-buuctf-webshell%E5%90%8E%E9%97%A8/</link>
+        <pubDate>Thu, 02 Feb 2023 01:15:01 +0800</pubDate>
+        
+        <guid>https://blog.lty520.faith/ctf/wp-buuctf-webshell%E5%90%8E%E9%97%A8/</guid>
+        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-webshell%E5%90%8E%E9%97%A8/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#webshell%E5%90%8E%E9%97%A8&#34;&gt;https://buuoj.cn/challenges#webshell%E5%90%8E%E9%97%A8&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
+&lt;p&gt;朋友的网站被黑客上传了webshell后门，他把网站打包备份了，你能帮忙找到黑客的webshell在哪吗？(Webshell中的密码(md5)即为答案)。&lt;/p&gt;
+&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
+&lt;p&gt;下载打开后是一整个网站的源码，用火绒病毒查杀即可找到风险文件&lt;br&gt;
+打开文件后即可得到 flag&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;最初以为后门是上传到了那一堆图片里，找了老久&amp;hellip;&lt;/em&gt;&lt;/p&gt;
+- https://blog.lty520.faith/ctf/wp-buuctf-webshell%E5%90%8E%E9%97%A8/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>WP BUUCTF 来首歌吧</title>
+        <link>https://blog.lty520.faith/ctf/wp-buuctf-%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7/</link>
+        <pubDate>Thu, 02 Feb 2023 00:49:47 +0800</pubDate>
+        
+        <guid>https://blog.lty520.faith/ctf/wp-buuctf-%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7/</guid>
+        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7&#34;&gt;https://buuoj.cn/challenges#%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
+&lt;p&gt;一首音乐&lt;/p&gt;
+&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
+&lt;p&gt;看到是一首音乐，先听一下&lt;br&gt;
+右声道是彩虹猫，左声道是一段摩斯密码&lt;br&gt;
+扔进 Au 里手动翻译即可&lt;br&gt;
+&lt;img src=&#34;https://blog.lty520.faith/img/CTF/WP-BUUCTF-%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7/img1.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;不查不知道，这首彩虹猫居然可以追溯到2010年7月25日上传到油管的《喵喵喵喵喵喵喵！》（还是 Miku 唱的）&lt;/em&gt;&lt;br&gt;
+&lt;a href=&#34;https://www.nicovideo.jp/watch/sm11509720&#34;&gt;【初音ミク】Nyanyanyanyanyanyanya!【オリジナループ】&lt;/a&gt;&lt;/p&gt;
+- https://blog.lty520.faith/ctf/wp-buuctf-%E6%9D%A5%E9%A6%96%E6%AD%8C%E5%90%A7/ - </description>
+        </item>
     
     
     
@@ -199,7 +240,7 @@
 &lt;h2 id=&#34;基本配置&#34;&gt;基本配置&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;使用 &lt;a href=&#34;https://github.com/SivanLaai/rime-pure&#34;&gt;SivanLaai/rime-pure 【rime 小狼毫\trime 同文】手机/PC一站式配置【简约皮肤\拼音搜狗词库\原创trime同文 四叶草九宫格拼音\四叶草拼音\小鹤双拼\极品五笔\QQ五笔\徐码\郑码】&lt;/a&gt; 的配置&lt;/p&gt;
+&lt;p&gt;使用 &lt;a href=&#34;https://github.com/SivanLaai/rime-pure&#34;&gt;SivanLaai/rime-pure 【rime 小狼毫\trime 同文】手机/PC 一站式配置【简约皮肤\拼音搜狗词库\原创 trime 同文 四叶草九宫格拼音\四叶草拼音\小鹤双拼\极品五笔\QQ 五笔\徐码\郑码】&lt;/a&gt; 的配置&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;使用 &lt;a href=&#34;https://github.com/studyzy/imewlconverter&#34;&gt;studyzy/imewlconverter 深蓝词库转换&lt;/a&gt; 将搜狗输入法的细胞词库转换为 Rime 支持的词库&lt;/p&gt;
@@ -213,72 +254,63 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;使用&lt;strong&gt;坚果云&lt;/strong&gt;同步多个平台的个人词典&lt;/p&gt;
+&lt;p&gt;使用 &lt;strong&gt;坚果云&lt;/strong&gt; 同步多个平台的个人词典&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;win&#34;&gt;Win&lt;/h2&gt;
 &lt;h3 id=&#34;添加拆字词库&#34;&gt;添加拆字词库&lt;/h3&gt;
 &lt;h4 id=&#34;思路&#34;&gt;思路&lt;/h4&gt;
 &lt;p&gt;由于长期使用搜狗输入法，习惯了拆字输入一些不认识的字(如: henian = 稔；huohuohuo = 焱)&lt;br&gt;
-参考文章&lt;a href=&#34;http://gerry.lamost.org/blog/?p=296003&#34;&gt;rime拆字词库&lt;/a&gt; 给 Rime 添加了 拆字词库后也出现了评论区里提到的卡顿问题，使用体验不是很好&lt;br&gt;
-参考 Issue &lt;a href=&#34;https://github.com/rime/home/issues/762&#34;&gt;rime导入拆字词库后在输入拼音中包含u的词语的时候会卡一下才弹出候选词列表&lt;/a&gt; 决定尝试用拆字词库替换原装的五笔反查词库&lt;/p&gt;
+参考文章 &lt;a href=&#34;http://gerry.lamost.org/blog/?p=296003&#34;&gt;rime 拆字词库&lt;/a&gt; 给 Rime 添加了 拆字词库后也出现了评论区里提到的卡顿问题，使用体验不是很好&lt;br&gt;
+参考 Issue &lt;a href=&#34;https://github.com/rime/home/issues/762&#34;&gt;rime 导入拆字词库后在输入拼音中包含 u 的词语的时候会卡一下才弹出候选词列表&lt;/a&gt; 决定尝试用拆字词库替换原装的五笔反查词库&lt;/p&gt;
 &lt;h4 id=&#34;过程&#34;&gt;过程&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;使用脚本将拆字词库的 &amp;lsquo;u&amp;rsquo; 去掉&lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;with open(&amp;#39;chaizi.dict.yaml&amp;#39;,&amp;#39;a&amp;#39;,encoding=&amp;#39;UTF-8&amp;#39;) as ff:
-    for line in open(&amp;#39;luna_pinyin_simp.chaizi.dict.yaml&amp;#39;,&amp;#39;r&amp;#39;,encoding=&amp;#39;UTF-8&amp;#39;):
-        a = line.replace(&amp;#39;	u&amp;#39;,&amp;#39;	&amp;#39;)
-        ff.write(a)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;注意：其格式爲以製表符分隔的值（TSV），每行定義一條「文字－編碼」的對應關係（不是空格！！！）&lt;/strong&gt; &lt;em&gt;复制自&lt;a href=&#34;https://github.com/rime/home/wiki/RimeWithSchemata#%E7%A2%BC%E8%A1%A8%E8%88%87%E8%A9%9E%E5%85%B8&#34;&gt;RimeWithSchemata&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;luna_pinyin_simp.chaizi.dict.yaml 来自&lt;a href=&#34;http://gerry.lamost.org/blog/?p=296003&#34;&gt;rime拆字词库&lt;/a&gt;&lt;/em&gt;&lt;br&gt;
-2. 使用处理后得到的 chaizi.dict.yaml 内容替换 Rime 安装目录 \weasel-0.14.3\data\stroke.dict.yaml 的内容&lt;br&gt;
-3. 将 RimeData\clover.schema.yaml 的 reverse_lookup 字段替换为&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;reverse_lookup:
-  dictionary: stroke
-  enable_completion: false
-  prefix: &amp;#34;`&amp;#34;
-  suffix: &amp;#34;&amp;#39;&amp;#34;
-  tips: 〔拆字〕
-  # preedit_format:
-  #   - xlit/hspnz/一丨丿丶乙/
-  # comment_format:
-  #   - xform/([nl])v/$1ü/
-&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;重新部署&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&#34;多平台个人词库的同步&#34;&gt;多平台个人词库的同步&lt;/h1&gt;
-&lt;h2 id=&#34;思路-1&#34;&gt;思路&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;将 Android 、 ios 的个人词库上传到 PC
-&lt;ul&gt;
-&lt;li&gt;将 PC 的同步文件夹（默认为RimeData\sync\设备ID）同步到坚果云&lt;/li&gt;
-&lt;li&gt;Android 使用 FolderSync 手动上传 同步文件夹&lt;/li&gt;
-&lt;li&gt;ios 使用&lt;strong&gt;电脑快传&lt;/strong&gt;功能，将 iPad/sync/设备ID 上传到电脑&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;PC 将各个平台的个人词库混合
-&lt;ul&gt;
-&lt;li&gt;使用 Rime 的&lt;strong&gt;用户资料同步&lt;/strong&gt;功能即可&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Android 、 ios 分别拉取 PC 的个人词库
-&lt;ul&gt;
-&lt;li&gt;Android 使用 FolderSync 将坚果云上的 PC 同步文件 同步到本地&lt;/li&gt;
-&lt;li&gt;ios 使用&lt;strong&gt;电脑快传&lt;/strong&gt;功能 将 PC 上的 PC 同步文件 同步到本地&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Android 、 ios 分别同步个人资料&lt;/li&gt;
-&lt;/ol&gt;
 &lt;hr&gt;
-&lt;p&gt;参考文章&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/rime/home/wiki&#34;&gt;rime/home/wiki&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://gerry.lamost.org/blog/?p=296003&#34;&gt;rime拆字词库&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/rime/home/issues/762&#34;&gt;rime导入拆字词库后在输入拼音中包含u的词语的时候会卡一下才弹出候选词列表&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/471412208&#34;&gt;Rime输入法词库扩充（搜狗词库，QQ拼音词库，清华词库，拆字词库……）&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-- https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%BE%93%E5%85%A5%E6%B3%95rime/ - </description>
+&lt;p&gt;with open(&amp;lsquo;chaizi.dict.yaml&amp;rsquo;,&amp;lsquo;a&amp;rsquo;,encoding=&amp;lsquo;UTF-8&amp;rsquo;) as ff:
+for line in open(&amp;rsquo;luna_pinyin_simp.chaizi.dict.yaml&amp;rsquo;,&amp;lsquo;r&amp;rsquo;,encoding=&amp;lsquo;UTF-8&amp;rsquo;):
+a = line.replace(&amp;rsquo;	u&amp;rsquo;,&amp;rsquo;	&amp;lsquo;)
+ff.write(a)&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;**注意：其格式爲以製表符分隔的值（TSV），每行定義一條「文字－編碼」的對應關係（不是空格！！！）** *复制自[RimeWithSchemata](https://github.com/rime/home/wiki/RimeWithSchemata#%E7%A2%BC%E8%A1%A8%E8%88%87%E8%A9%9E%E5%85%B8)*  
+
+*luna_pinyin_simp.chaizi.dict.yaml 来自[rime拆字词库](http://gerry.lamost.org/blog/?p=296003)*  
+2. 使用处理后得到的 chaizi.dict.yaml 内容替换 Rime 安装目录 \weasel-0.14.3\data\stroke.dict.yaml 的内容  
+3. 将 RimeData\clover.schema.yaml 的 reverse_lookup 字段替换为  
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;reverse_lookup:
+dictionary: stroke
+enable_completion: false
+prefix: &amp;ldquo;`&amp;rdquo;
+suffix: &amp;ldquo;&amp;rsquo;&amp;rdquo;
+tips: 〔拆字〕&lt;/p&gt;
+&lt;h1 id=&#34;preedit_format&#34;&gt;preedit_format:&lt;/h1&gt;
+&lt;h1 id=&#34;--xlithspnz一丨丿丶乙&#34;&gt;- xlit/hspnz/一丨丿丶乙/&lt;/h1&gt;
+&lt;h1 id=&#34;comment_format&#34;&gt;comment_format:&lt;/h1&gt;
+&lt;h1 id=&#34;--xformnlv1ü&#34;&gt;- xform/([nl])v/$1ü/&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;4. 重新部署  
+
+
+# 多平台个人词库的同步  
+## 思路  
+1. 将 Android 、 ios 的个人词库上传到 PC
+   - 将 PC 的同步文件夹（默认为RimeData\sync\设备ID）同步到坚果云
+   - Android 使用 FolderSync 手动上传 同步文件夹
+   - ios 使用**电脑快传**功能，将 iPad/sync/设备ID 上传到电脑
+2. PC 将各个平台的个人词库混合
+   - 使用 Rime 的**用户资料同步**功能即可
+3. Android 、 ios 分别拉取 PC 的个人词库
+   - Android 使用 FolderSync 将坚果云上的 PC 同步文件 同步到本地
+   - ios 使用**电脑快传**功能 将 PC 上的 PC 同步文件 同步到本地
+4.  Android 、 ios 分别同步个人资料
+
+---
+
+参考文章  
+- [rime/home/wiki](https://github.com/rime/home/wiki)
+- [rime 拆字词库](http://gerry.lamost.org/blog/?p=296003)
+- [rime 导入拆字词库后在输入拼音中包含 u 的词语的时候会卡一下才弹出候选词列表](https://github.com/rime/home/issues/762)
+- [Rime 输入法词库扩充（搜狗词库，QQ 拼音词库，清华词库，拆字词库……）](https://zhuanlan.zhihu.com/p/471412208)
+&lt;/code&gt;&lt;/pre&gt;- https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%BE%93%E5%85%A5%E6%B3%95rime/ - </description>
         </item>
     
     
@@ -431,58 +463,6 @@ Hello, CTFer!
 &lt;hr&gt;
 &lt;p&gt;&lt;em&gt;又是用 binwalk，又是用 stegsolve，结果这么简单&amp;hellip;&lt;/em&gt;&lt;/p&gt;
 - https://blog.lty520.faith/ctf/wp-buuctf-%E4%B9%8C%E9%95%87%E5%B3%B0%E4%BC%9A%E7%A7%8D%E5%9B%BE/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>WP BUUCTF 信息化时代的步伐</title>
-        <link>https://blog.lty520.faith/ctf/wp-buuctf-%E4%BF%A1%E6%81%AF%E5%8C%96%E6%97%B6%E4%BB%A3%E7%9A%84%E6%AD%A5%E4%BC%90/</link>
-        <pubDate>Sat, 14 Jan 2023 22:05:38 +0800</pubDate>
-        
-        <guid>https://blog.lty520.faith/ctf/wp-buuctf-%E4%BF%A1%E6%81%AF%E5%8C%96%E6%97%B6%E4%BB%A3%E7%9A%84%E6%AD%A5%E4%BC%90/</guid>
-        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-%E4%BF%A1%E6%81%AF%E5%8C%96%E6%97%B6%E4%BB%A3%E7%9A%84%E6%AD%A5%E4%BC%90/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%E4%BF%A1%E6%81%AF%E5%8C%96%E6%97%B6%E4%BB%A3%E7%9A%84%E6%AD%A5%E4%BC%90&#34;&gt;https://buuoj.cn/challenges#%E4%BF%A1%E6%81%AF%E5%8C%96%E6%97%B6%E4%BB%A3%E7%9A%84%E6%AD%A5%E4%BC%90&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
-&lt;p&gt;也许中国可以早早进入信息化时代，但是被清政府拒绝了。附件中是数十年后一位伟人说的话的密文。请翻译出明文(答案为一串中文！) 注意：得到的 flag 请包上 flag{} 提交&lt;br&gt;
-606046152623600817831216121621196386&lt;/p&gt;
-&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
-&lt;h2 id=&#34;相关知识&#34;&gt;相关知识&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://baike.baidu.com/item/%E4%B8%AD%E6%96%87%E7%94%B5%E7%A0%81/2667759?fr=aladdin&#34;&gt;中文电码&lt;/a&gt;&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;中文电码，又称标准中文电码、中文商用电码、中文电报码或中文电报明码，原本是于电报之中传送中文信息的方法。它是第一个把汉字化作电子讯号的编码表。
-中文电码表采用了四位阿拉伯数字作代号，从0001到9999按四位数顺序排列，用四位数字表示最多一万个汉字、字母和符号。汉字先按部首，后按笔划排列。字母和符号放到电码表的最尾。
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;所以使用工具 &lt;a href=&#34;https://www.qqxiuzi.cn/bianma/dianbao.php&#34;&gt;电报码在线翻译&lt;/a&gt; 很容易可以将 &lt;strong&gt;606046152623600817831216121621196386&lt;/strong&gt; 翻译为&lt;strong&gt;计算机要从娃娃抓起&lt;/strong&gt;&lt;br&gt;
-即可得 flag &lt;strong&gt;flag{计算机要从娃娃抓起}&lt;/strong&gt;&lt;/p&gt;
-- https://blog.lty520.faith/ctf/wp-buuctf-%E4%BF%A1%E6%81%AF%E5%8C%96%E6%97%B6%E4%BB%A3%E7%9A%84%E6%AD%A5%E4%BC%90/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>WP BUUCTF RSA</title>
-        <link>https://blog.lty520.faith/ctf/wp-buuctf-rsa/</link>
-        <pubDate>Sat, 14 Jan 2023 21:56:08 +0800</pubDate>
-        
-        <guid>https://blog.lty520.faith/ctf/wp-buuctf-rsa/</guid>
-        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-rsa/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#RSA&#34;&gt;https://buuoj.cn/challenges#RSA&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
-&lt;p&gt;在一次RSA密钥对生成中，假设p=473398607161，q=4511491，e=17
-求解出d作为flga提交&lt;/p&gt;
-&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
-&lt;p&gt;给 python3 环境安装上 libnum 包，然后运行脚本即可&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;import libnum
-p = 473398607161
-q = 4511491
-e = 17
-phi = (p-1)*(q-1)
-d = libnum.invmod(e,phi)
-print(d)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;可得 d 为 125631357777427553&lt;br&gt;
-即 flag 为 &lt;strong&gt;flag{125631357777427553}&lt;/strong&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;ul&gt;
-&lt;li&gt;脚本来源 &lt;a href=&#34;https://www.freebuf.com/articles/web/287854.html&#34;&gt;『CTF』史上最全 RSA 题目总结&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-- https://blog.lty520.faith/ctf/wp-buuctf-rsa/ - </description>
         </item>
     
     

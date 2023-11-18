@@ -80,6 +80,7 @@
 
   gtag('config', 'G-3MGTDD77JD');
 </script>
+<meta http-equiv ='content-language' content ='zh-cmn-Hans'>
 
 </head>
 <body>
@@ -307,8 +308,8 @@
 						
 						
 							<li>
-								<a href="#%e5%a4%9a%e5%b9%b3%e5%8f%b0%e4%b8%aa%e4%ba%ba%e8%af%8d%e5%ba%93%e7%9a%84%e5%90%8c%e6%ad%a5" onclick="onNavClick(`#多平台个人词库的同步-nav`)" id="多平台个人词库的同步-nav">
-									多平台个人词库的同步
+								<a href="#preedit_format" onclick="onNavClick(`#preedit_format-nav`)" id="preedit_format-nav">
+									preedit_format:
 								</a>
 							</li>
 						
@@ -323,16 +324,46 @@
 						
 						
 						
-							
-								
-									<ul>
-								
-							
+						
+							<li>
+								<a href="#--xlithspnz%e4%b8%80%e4%b8%a8%e4%b8%bf%e4%b8%b6%e4%b9%99" onclick="onNavClick(`#--xlithspnz一丨丿丶乙-nav`)" id="--xlithspnz一丨丿丶乙-nav">
+									- xlit/hspnz/一丨丿丶乙/
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
 						
 						
 							<li>
-								<a href="#%e6%80%9d%e8%b7%af-1" onclick="onNavClick(`#思路-1-nav`)" id="思路-1-nav">
-									思路
+								<a href="#comment_format" onclick="onNavClick(`#comment_format-nav`)" id="comment_format-nav">
+									comment_format:
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#--xformnlv1%c3%bc" onclick="onNavClick(`#--xformnlv1ü-nav`)" id="--xformnlv1ü-nav">
+									- xform/([nl])v/$1ü/
 								</a>
 							</li>
 						
@@ -393,7 +424,8 @@
                 
             >
                 <div class="post-title">
-                    全平台统一输入法——Rime
+                    <h1 class="post-title">全平台统一输入法——Rime</h1>
+                    
                     
                     <div class="post-subtitle">
                         全平台换用 Rime 的调教及添加拆字功能
@@ -417,9 +449,9 @@
                             
 
                             
-                            4 min
+                            5 min
                             
-                            33 s.
+                            49 s.
                         
                     </div>
                 </div>
@@ -462,7 +494,7 @@
 <h2 id="基本配置">基本配置</h2>
 <ul>
 <li>
-<p>使用 <a href="https://github.com/SivanLaai/rime-pure">SivanLaai/rime-pure 【rime 小狼毫\trime 同文】手机/PC一站式配置【简约皮肤\拼音搜狗词库\原创trime同文 四叶草九宫格拼音\四叶草拼音\小鹤双拼\极品五笔\QQ五笔\徐码\郑码】</a> 的配置</p>
+<p>使用 <a href="https://github.com/SivanLaai/rime-pure">SivanLaai/rime-pure 【rime 小狼毫\trime 同文】手机/PC 一站式配置【简约皮肤\拼音搜狗词库\原创 trime 同文 四叶草九宫格拼音\四叶草拼音\小鹤双拼\极品五笔\QQ 五笔\徐码\郑码】</a> 的配置</p>
 </li>
 <li>
 <p>使用 <a href="https://github.com/studyzy/imewlconverter">studyzy/imewlconverter 深蓝词库转换</a> 将搜狗输入法的细胞词库转换为 Rime 支持的词库</p>
@@ -476,72 +508,63 @@
 </ul>
 </li>
 <li>
-<p>使用<strong>坚果云</strong>同步多个平台的个人词典</p>
+<p>使用 <strong>坚果云</strong> 同步多个平台的个人词典</p>
 </li>
 </ul>
 <h2 id="win">Win</h2>
 <h3 id="添加拆字词库">添加拆字词库</h3>
 <h4 id="思路">思路</h4>
 <p>由于长期使用搜狗输入法，习惯了拆字输入一些不认识的字(如: henian = 稔；huohuohuo = 焱)<br>
-参考文章<a href="http://gerry.lamost.org/blog/?p=296003">rime拆字词库</a> 给 Rime 添加了 拆字词库后也出现了评论区里提到的卡顿问题，使用体验不是很好<br>
-参考 Issue <a href="https://github.com/rime/home/issues/762">rime导入拆字词库后在输入拼音中包含u的词语的时候会卡一下才弹出候选词列表</a> 决定尝试用拆字词库替换原装的五笔反查词库</p>
+参考文章 <a href="http://gerry.lamost.org/blog/?p=296003">rime 拆字词库</a> 给 Rime 添加了 拆字词库后也出现了评论区里提到的卡顿问题，使用体验不是很好<br>
+参考 Issue <a href="https://github.com/rime/home/issues/762">rime 导入拆字词库后在输入拼音中包含 u 的词语的时候会卡一下才弹出候选词列表</a> 决定尝试用拆字词库替换原装的五笔反查词库</p>
 <h4 id="过程">过程</h4>
 <ol>
 <li>使用脚本将拆字词库的 &lsquo;u&rsquo; 去掉</li>
 </ol>
-<pre tabindex="0"><code>with open(&#39;chaizi.dict.yaml&#39;,&#39;a&#39;,encoding=&#39;UTF-8&#39;) as ff:
-    for line in open(&#39;luna_pinyin_simp.chaizi.dict.yaml&#39;,&#39;r&#39;,encoding=&#39;UTF-8&#39;):
-        a = line.replace(&#39;	u&#39;,&#39;	&#39;)
-        ff.write(a)
-</code></pre><p><strong>注意：其格式爲以製表符分隔的值（TSV），每行定義一條「文字－編碼」的對應關係（不是空格！！！）</strong> <em>复制自<a href="https://github.com/rime/home/wiki/RimeWithSchemata#%E7%A2%BC%E8%A1%A8%E8%88%87%E8%A9%9E%E5%85%B8">RimeWithSchemata</a></em></p>
-<p><em>luna_pinyin_simp.chaizi.dict.yaml 来自<a href="http://gerry.lamost.org/blog/?p=296003">rime拆字词库</a></em><br>
-2. 使用处理后得到的 chaizi.dict.yaml 内容替换 Rime 安装目录 \weasel-0.14.3\data\stroke.dict.yaml 的内容<br>
-3. 将 RimeData\clover.schema.yaml 的 reverse_lookup 字段替换为</p>
-<pre tabindex="0"><code>reverse_lookup:
-  dictionary: stroke
-  enable_completion: false
-  prefix: &#34;`&#34;
-  suffix: &#34;&#39;&#34;
-  tips: 〔拆字〕
-  # preedit_format:
-  #   - xlit/hspnz/一丨丿丶乙/
-  # comment_format:
-  #   - xform/([nl])v/$1ü/
-</code></pre><ol start="4">
-<li>重新部署</li>
-</ol>
-<h1 id="多平台个人词库的同步">多平台个人词库的同步</h1>
-<h2 id="思路-1">思路</h2>
-<ol>
-<li>将 Android 、 ios 的个人词库上传到 PC
-<ul>
-<li>将 PC 的同步文件夹（默认为RimeData\sync\设备ID）同步到坚果云</li>
-<li>Android 使用 FolderSync 手动上传 同步文件夹</li>
-<li>ios 使用<strong>电脑快传</strong>功能，将 iPad/sync/设备ID 上传到电脑</li>
-</ul>
-</li>
-<li>PC 将各个平台的个人词库混合
-<ul>
-<li>使用 Rime 的<strong>用户资料同步</strong>功能即可</li>
-</ul>
-</li>
-<li>Android 、 ios 分别拉取 PC 的个人词库
-<ul>
-<li>Android 使用 FolderSync 将坚果云上的 PC 同步文件 同步到本地</li>
-<li>ios 使用<strong>电脑快传</strong>功能 将 PC 上的 PC 同步文件 同步到本地</li>
-</ul>
-</li>
-<li>Android 、 ios 分别同步个人资料</li>
-</ol>
 <hr>
-<p>参考文章</p>
-<ul>
-<li><a href="https://github.com/rime/home/wiki">rime/home/wiki</a></li>
-<li><a href="http://gerry.lamost.org/blog/?p=296003">rime拆字词库</a></li>
-<li><a href="https://github.com/rime/home/issues/762">rime导入拆字词库后在输入拼音中包含u的词语的时候会卡一下才弹出候选词列表</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/471412208">Rime输入法词库扩充（搜狗词库，QQ拼音词库，清华词库，拆字词库……）</a></li>
-</ul>
+<p>with open(&lsquo;chaizi.dict.yaml&rsquo;,&lsquo;a&rsquo;,encoding=&lsquo;UTF-8&rsquo;) as ff:
+for line in open(&rsquo;luna_pinyin_simp.chaizi.dict.yaml&rsquo;,&lsquo;r&rsquo;,encoding=&lsquo;UTF-8&rsquo;):
+a = line.replace(&rsquo;	u&rsquo;,&rsquo;	&lsquo;)
+ff.write(a)</p>
+<pre tabindex="0"><code>**注意：其格式爲以製表符分隔的值（TSV），每行定義一條「文字－編碼」的對應關係（不是空格！！！）** *复制自[RimeWithSchemata](https://github.com/rime/home/wiki/RimeWithSchemata#%E7%A2%BC%E8%A1%A8%E8%88%87%E8%A9%9E%E5%85%B8)*  
 
+*luna_pinyin_simp.chaizi.dict.yaml 来自[rime拆字词库](http://gerry.lamost.org/blog/?p=296003)*  
+2. 使用处理后得到的 chaizi.dict.yaml 内容替换 Rime 安装目录 \weasel-0.14.3\data\stroke.dict.yaml 的内容  
+3. 将 RimeData\clover.schema.yaml 的 reverse_lookup 字段替换为  
+</code></pre><p>reverse_lookup:
+dictionary: stroke
+enable_completion: false
+prefix: &ldquo;`&rdquo;
+suffix: &ldquo;&rsquo;&rdquo;
+tips: 〔拆字〕</p>
+<h1 id="preedit_format">preedit_format:</h1>
+<h1 id="--xlithspnz一丨丿丶乙">- xlit/hspnz/一丨丿丶乙/</h1>
+<h1 id="comment_format">comment_format:</h1>
+<h1 id="--xformnlv1ü">- xform/([nl])v/$1ü/</h1>
+<pre tabindex="0"><code>4. 重新部署  
+
+
+# 多平台个人词库的同步  
+## 思路  
+1. 将 Android 、 ios 的个人词库上传到 PC
+   - 将 PC 的同步文件夹（默认为RimeData\sync\设备ID）同步到坚果云
+   - Android 使用 FolderSync 手动上传 同步文件夹
+   - ios 使用**电脑快传**功能，将 iPad/sync/设备ID 上传到电脑
+2. PC 将各个平台的个人词库混合
+   - 使用 Rime 的**用户资料同步**功能即可
+3. Android 、 ios 分别拉取 PC 的个人词库
+   - Android 使用 FolderSync 将坚果云上的 PC 同步文件 同步到本地
+   - ios 使用**电脑快传**功能 将 PC 上的 PC 同步文件 同步到本地
+4.  Android 、 ios 分别同步个人资料
+
+---
+
+参考文章  
+- [rime/home/wiki](https://github.com/rime/home/wiki)
+- [rime 拆字词库](http://gerry.lamost.org/blog/?p=296003)
+- [rime 导入拆字词库后在输入拼音中包含 u 的词语的时候会卡一下才弹出候选词列表](https://github.com/rime/home/issues/762)
+- [Rime 输入法词库扩充（搜狗词库，QQ 拼音词库，清华词库，拆字词库……）](https://zhuanlan.zhihu.com/p/471412208)
+</code></pre>
                     
                     <HR width="100%" id="EOF">
 		    <p style="color:#777;">最后修改于 2023-01-25</p>
@@ -844,8 +867,8 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e5%a4%9a%e5%b9%b3%e5%8f%b0%e4%b8%aa%e4%ba%ba%e8%af%8d%e5%ba%93%e7%9a%84%e5%90%8c%e6%ad%a5" onclick="onNavClick(`#多平台个人词库的同步-nav`)" id="多平台个人词库的同步-nav">
-									多平台个人词库的同步
+								<a href="#preedit_format" onclick="onNavClick(`#preedit_format-nav`)" id="preedit_format-nav">
+									preedit_format:
 								</a>
 							</li>
 						
@@ -860,16 +883,46 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 						
-							
-								
-									<ul>
-								
-							
+						
+							<li>
+								<a href="#--xlithspnz%e4%b8%80%e4%b8%a8%e4%b8%bf%e4%b8%b6%e4%b9%99" onclick="onNavClick(`#--xlithspnz一丨丿丶乙-nav`)" id="--xlithspnz一丨丿丶乙-nav">
+									- xlit/hspnz/一丨丿丶乙/
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
 						
 						
 							<li>
-								<a href="#%e6%80%9d%e8%b7%af-1" onclick="onNavClick(`#思路-1-nav`)" id="思路-1-nav">
-									思路
+								<a href="#comment_format" onclick="onNavClick(`#comment_format-nav`)" id="comment_format-nav">
+									comment_format:
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#--xformnlv1%c3%bc" onclick="onNavClick(`#--xformnlv1ü-nav`)" id="--xformnlv1ü-nav">
+									- xform/([nl])v/$1ü/
 								</a>
 							</li>
 						
