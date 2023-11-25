@@ -267,50 +267,65 @@
 &lt;ol&gt;
 &lt;li&gt;使用脚本将拆字词库的 &amp;lsquo;u&amp;rsquo; 去掉&lt;/li&gt;
 &lt;/ol&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;with open(&amp;#39;chaizi.dict.yaml&amp;#39;,&amp;#39;a&amp;#39;,encoding=&amp;#39;UTF-8&amp;#39;) as ff:
+    for line in open(&amp;#39;luna_pinyin_simp.chaizi.dict.yaml&amp;#39;,&amp;#39;r&amp;#39;,encoding=&amp;#39;UTF-8&amp;#39;):
+        a = line.replace(&amp;#39;	u&amp;#39;,&amp;#39;	&amp;#39;)
+        ff.write(a)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;注意：其格式爲以製表符分隔的值（TSV），每行定義一條「文字－編碼」的對應關係（不是空格！！！）&lt;/strong&gt; &lt;em&gt;复制自&lt;a href=&#34;https://github.com/rime/home/wiki/RimeWithSchemata#%E7%A2%BC%E8%A1%A8%E8%88%87%E8%A9%9E%E5%85%B8&#34;&gt;RimeWithSchemata&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;luna_pinyin_simp.chaizi.dict.yaml 来自&lt;a href=&#34;http://gerry.lamost.org/blog/?p=296003&#34;&gt;rime拆字词库&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;使用处理后得到的 chaizi.dict.yaml 内容替换 Rime 安装目录 \weasel-0.14.3\data\stroke.dict.yaml 的内容&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;将 RimeData\clover.schema.yaml 的 reverse_lookup 字段替换为&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;reverse_lookup:
+  dictionary: stroke
+  enable_completion: false
+  prefix: &amp;#34;`&amp;#34;
+  suffix: &amp;#34;&amp;#39;&amp;#34;
+  tips: 〔拆字〕
+  # preedit_format:
+  #   - xlit/hspnz/一丨丿丶乙/
+  # comment_format:
+  #   - xform/([nl])v/$1ü/
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;重新部署&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;多平台个人词库的同步&#34;&gt;多平台个人词库的同步&lt;/h1&gt;
+&lt;h2 id=&#34;思路-1&#34;&gt;思路&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;将 Android 、 ios 的个人词库上传到 PC
+&lt;ul&gt;
+&lt;li&gt;将 PC 的同步文件夹（默认为RimeData\sync\设备ID）同步到坚果云&lt;/li&gt;
+&lt;li&gt;Android 使用 FolderSync 手动上传 同步文件夹&lt;/li&gt;
+&lt;li&gt;ios 使用&lt;strong&gt;电脑快传&lt;/strong&gt;功能，将 iPad/sync/设备ID 上传到电脑&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;PC 将各个平台的个人词库混合
+&lt;ul&gt;
+&lt;li&gt;使用 Rime 的&lt;strong&gt;用户资料同步&lt;/strong&gt;功能即可&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Android 、 ios 分别拉取 PC 的个人词库
+&lt;ul&gt;
+&lt;li&gt;Android 使用 FolderSync 将坚果云上的 PC 同步文件 同步到本地&lt;/li&gt;
+&lt;li&gt;ios 使用&lt;strong&gt;电脑快传&lt;/strong&gt;功能 将 PC 上的 PC 同步文件 同步到本地&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Android 、 ios 分别同步个人资料&lt;/li&gt;
+&lt;/ol&gt;
 &lt;hr&gt;
-&lt;p&gt;with open(&amp;lsquo;chaizi.dict.yaml&amp;rsquo;,&amp;lsquo;a&amp;rsquo;,encoding=&amp;lsquo;UTF-8&amp;rsquo;) as ff:
-for line in open(&amp;rsquo;luna_pinyin_simp.chaizi.dict.yaml&amp;rsquo;,&amp;lsquo;r&amp;rsquo;,encoding=&amp;lsquo;UTF-8&amp;rsquo;):
-a = line.replace(&amp;rsquo;	u&amp;rsquo;,&amp;rsquo;	&amp;lsquo;)
-ff.write(a)&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;**注意：其格式爲以製表符分隔的值（TSV），每行定義一條「文字－編碼」的對應關係（不是空格！！！）** *复制自[RimeWithSchemata](https://github.com/rime/home/wiki/RimeWithSchemata#%E7%A2%BC%E8%A1%A8%E8%88%87%E8%A9%9E%E5%85%B8)*  
-
-*luna_pinyin_simp.chaizi.dict.yaml 来自[rime拆字词库](http://gerry.lamost.org/blog/?p=296003)*  
-2. 使用处理后得到的 chaizi.dict.yaml 内容替换 Rime 安装目录 \weasel-0.14.3\data\stroke.dict.yaml 的内容  
-3. 将 RimeData\clover.schema.yaml 的 reverse_lookup 字段替换为  
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;reverse_lookup:
-dictionary: stroke
-enable_completion: false
-prefix: &amp;ldquo;`&amp;rdquo;
-suffix: &amp;ldquo;&amp;rsquo;&amp;rdquo;
-tips: 〔拆字〕&lt;/p&gt;
-&lt;h1 id=&#34;preedit_format&#34;&gt;preedit_format:&lt;/h1&gt;
-&lt;h1 id=&#34;--xlithspnz一丨丿丶乙&#34;&gt;- xlit/hspnz/一丨丿丶乙/&lt;/h1&gt;
-&lt;h1 id=&#34;comment_format&#34;&gt;comment_format:&lt;/h1&gt;
-&lt;h1 id=&#34;--xformnlv1ü&#34;&gt;- xform/([nl])v/$1ü/&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;4. 重新部署  
-
-
-# 多平台个人词库的同步  
-## 思路  
-1. 将 Android 、 ios 的个人词库上传到 PC
-   - 将 PC 的同步文件夹（默认为RimeData\sync\设备ID）同步到坚果云
-   - Android 使用 FolderSync 手动上传 同步文件夹
-   - ios 使用**电脑快传**功能，将 iPad/sync/设备ID 上传到电脑
-2. PC 将各个平台的个人词库混合
-   - 使用 Rime 的**用户资料同步**功能即可
-3. Android 、 ios 分别拉取 PC 的个人词库
-   - Android 使用 FolderSync 将坚果云上的 PC 同步文件 同步到本地
-   - ios 使用**电脑快传**功能 将 PC 上的 PC 同步文件 同步到本地
-4.  Android 、 ios 分别同步个人资料
-
----
-
-参考文章  
-- [rime/home/wiki](https://github.com/rime/home/wiki)
-- [rime 拆字词库](http://gerry.lamost.org/blog/?p=296003)
-- [rime 导入拆字词库后在输入拼音中包含 u 的词语的时候会卡一下才弹出候选词列表](https://github.com/rime/home/issues/762)
-- [Rime 输入法词库扩充（搜狗词库，QQ 拼音词库，清华词库，拆字词库……）](https://zhuanlan.zhihu.com/p/471412208)
-&lt;/code&gt;&lt;/pre&gt;- https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%BE%93%E5%85%A5%E6%B3%95rime/ - </description>
+&lt;p&gt;参考文章&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/rime/home/wiki&#34;&gt;rime/home/wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://gerry.lamost.org/blog/?p=296003&#34;&gt;rime 拆字词库&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/rime/home/issues/762&#34;&gt;rime 导入拆字词库后在输入拼音中包含 u 的词语的时候会卡一下才弹出候选词列表&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/471412208&#34;&gt;Rime 输入法词库扩充（搜狗词库，QQ 拼音词库，清华词库，拆字词库……）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+- https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%BE%93%E5%85%A5%E6%B3%95rime/ - </description>
         </item>
     
     

@@ -225,6 +225,46 @@
 					
 				
 			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%af%e7%94%a8%e4%ba%8e-subconverter-%e7%9a%84%e8%a7%84%e5%88%99%e7%89%87%e6%ae%b5" onclick="onNavClick(`#可用于-subconverter-的规则片段-nav`)" id="可用于-subconverter-的规则片段-nav">
+									可用于 subconverter 的规则片段
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e8%80%83%e6%96%87%e7%ab%a0" onclick="onNavClick(`#参考文章-nav`)" id="参考文章-nav">
+									参考文章
+								</a>
+							</li>
+						
+						
+					
+				
+			
 		</ul>
 	</div>
 
@@ -303,9 +343,9 @@
                             
 
                             
-                            6 min
+                            5 min
                             
-                            33 s.
+                            24 s.
                         
                     </div>
                 </div>
@@ -351,106 +391,110 @@
 <li>使用 Doh 进行域名解析</li>
 </ol>
 <h2 id="配置">配置</h2>
-<h2 id="用于添加多条机场订阅"><strong>以默认为主，修改部分条目</strong><br>
+<p><strong>以默认为主，修改部分条目</strong><br>
 /pref.ini<br>
-用于添加多条机场订阅</h2>
-<p>[common]
-default_url=机场订阅地址1|机场订阅地址2|机场订阅地址3</p>
-<pre tabindex="0"><code>从 url 获取规则片段，并分成几个策略组
-</code></pre><p>[rulesets]
-ruleset=DIRECT,rules/DirectDomain.list
-;DirectDomain.list  手动添加的直连域名</p>
-<pre><code>ruleset=Proxy,rules/ProxyDomain.list
-;ProxyDomain.list  手动添加的代理域名
+用于添加多条机场订阅</p>
+<pre tabindex="0"><code>[common]
+    default_url=机场订阅地址1|机场订阅地址2|机场订阅地址3
+</code></pre><p>从 url 获取规则片段，并分成几个策略组</p>
+<pre tabindex="0"><code>[rulesets]
+    ruleset=DIRECT,rules/DirectDomain.list
+    ;DirectDomain.list  手动添加的直连域名
 
-ruleset=拦截,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/BanAD.list,86400
-ruleset=拦截,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/BanProgramAD.list,86400
-;广告域名
+    ruleset=Proxy,rules/ProxyDomain.list
+    ;ProxyDomain.list  手动添加的代理域名
 
-ruleset=Bilibili,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Ruleset/Bilibili.list,86400
-;Bilibili域名
-ruleset=Netflix,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Netflix.list,86400
-;Netflix域名 IP段
-ruleset=OpenAI,https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/OpenAI/OpenAI.list,86400
-;openai域名
-ruleset=微软服务,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list,86400
-;微软服务
-ruleset=PT Trackers,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Ruleset/PrivateTracker.list,86400
-;PT Trackers
-ruleset=Game,https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Steam/Steam.list,86400
-;steam域名
-ruleset=Game,https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Epic/Epic.list,86400
-;epic域名
-ruleset=Game,https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Xbox/Xbox.list,86400
-;Xbox域名
-ruleset=Game,https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/EA/EA.list,86400
-;EA域名
+    ruleset=拦截,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/BanAD.list,86400
+    ruleset=拦截,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/BanProgramAD.list,86400
+    ;广告域名
 
-ruleset=Proxy,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/ProxyGFWlist.list,86400
-;已墙域名
+    ruleset=Bilibili,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Ruleset/Bilibili.list,86400
+    ;Bilibili域名
+    ruleset=Netflix,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Netflix.list,86400
+    ;Netflix域名 IP段
+    ruleset=OpenAI,https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/OpenAI/OpenAI.list,86400
+    ;openai域名
+    ruleset=微软服务,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list,86400
+    ;微软服务
+    ruleset=PT Trackers,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Ruleset/PrivateTracker.list,86400
+    ;PT Trackers
+    ruleset=Game,https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Steam/Steam.list,86400
+    ;steam域名
+    ruleset=Game,https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Epic/Epic.list,86400
+    ;epic域名
+    ruleset=Game,https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Xbox/Xbox.list,86400
+    ;Xbox域名
+    ruleset=Game,https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/EA/EA.list,86400
+    ;EA域名
 
-ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list,86400
-;直连域名
+    ruleset=Proxy,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/ProxyGFWlist.list,86400
+    ;已墙域名
+
+    ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list,86400
+    ;直连域名
 
 
-ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list,86400
-;局域网IP段
+    ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list,86400
+    ;局域网IP段
 
-ruleset=DIRECT,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPs/ChinaIPs.list,86400
-ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list,86400
-ruleset=DIRECT,[]GEOIP,CN
-;中国IP段
-ruleset=Proxy,[]FINAL
-</code></pre>
-<pre tabindex="0"><code>为策略组添加节点
-</code></pre><p>[proxy_groups]
-custom_proxy_group=Proxy<code>select</code>.*
-custom_proxy_group=Game<code>select</code>[]DIRECT<code>[]Proxy</code>.*
-custom_proxy_group=微软服务<code>select</code>.*
-custom_proxy_group=PT Trackers<code>select</code>[]DIRECT<code>[]Proxy</code>.*
-custom_proxy_group=Bilibili<code>select</code>[]DIRECT<code>[]Proxy</code>.*
-custom_proxy_group=OpenAI<code>select</code>[]DIRECT<code>[]Proxy</code>.*
-custom_proxy_group=Netflix<code>select</code>[]Proxy<code>.* custom_proxy_group=拦截</code>select<code>[]REJECT</code>[]DIRECT`[]Proxy</p>
-<pre tabindex="0"><code>/base/all_base.tpl
-</code></pre><p>{% if request.target == &ldquo;clash&rdquo; or request.target == &ldquo;clashr&rdquo; %}
-dns:
-enable: true
-ipv6: false
-listen: 0.0.0.0:53
-enhanced-mode: fake-ip
-fake-ip-range: 198.18.0.1/16
-fake-ip-filter:
-- &lsquo;*.lan&rsquo;
-- &rsquo;localhost.ptlogin2.qq.com'
-- &lsquo;dns.msftncsi.com&rsquo;
-- &lsquo;<a href="https://www.msftncsi.com">www.msftncsi.com</a>&rsquo;
-- &lsquo;<a href="https://www.msftconnecttest.com">www.msftconnecttest.com</a>&rsquo;
-nameserver:
-- https://223.5.5.5/dns-query
-fallback:
-- https://223.5.5.5/dns-query
-fallback-filter:
-geoip: true
-ipcidr:
-- 240.0.0.0/4</p>
-<pre tabindex="0"><code>
-最后将其部署在了服务器上，并用 Nginx 配置了反向代理和 SSL 加密，得益于 Clash 的在多个平台上都有其客户端，将每个客户端的订阅地址修改为 subconverter 提供的配置文件地址，就可以实现了全平台的代理统一  
-使用 docker 部署，避免[subconverter](https://www.youtube.com/watch?v=FclVhxp1g0Y&amp;ab_channel=%E4%B8%8D%E8%89%AF%E6%9E%97) 的漏洞  
-- [docker hub 镜像](https://hub.docker.com/r/tindy2013/subconverter)
-## 可用于 subconverter 的规则片段
-- [github.com/Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules/blob/master/README.md)
-- [github.com/ACL4SSR/ACL4SSR](https://github.com/ACL4SSR/ACL4SSR/tree/master/Clash)
-- [github.com/blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash)
-- [github.com/DivineEngine/Profiles](https://github.com/DivineEngine/Profiles/tree/master/Clash/RuleSet)
+    ruleset=DIRECT,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPs/ChinaIPs.list,86400
+    ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list,86400
+    ruleset=DIRECT,[]GEOIP,CN
+    ;中国IP段
+    ruleset=Proxy,[]FINAL
+</code></pre><p>为策略组添加节点</p>
+<pre tabindex="0"><code>[proxy_groups]
+    custom_proxy_group=Proxy`select`.*
+    custom_proxy_group=Game`select`[]DIRECT`[]Proxy`.*
+    custom_proxy_group=微软服务`select`.*
+    custom_proxy_group=PT Trackers`select`[]DIRECT`[]Proxy`.*
+    custom_proxy_group=Bilibili`select`[]DIRECT`[]Proxy`.*
+    custom_proxy_group=OpenAI`select`[]DIRECT`[]Proxy`.*
+    custom_proxy_group=Netflix`select`[]Proxy`.*
+    custom_proxy_group=拦截`select`[]REJECT`[]DIRECT`[]Proxy
+</code></pre><p>/base/all_base.tpl</p>
+<pre tabindex="0"><code>{% if request.target == &#34;clash&#34; or request.target == &#34;clashr&#34; %}
+    dns:
+        enable: true
+        ipv6: false
+        listen: 0.0.0.0:53
+        enhanced-mode: fake-ip
+        fake-ip-range: 198.18.0.1/16
+        fake-ip-filter:
+            - &#39;*.lan&#39;
+            - &#39;localhost.ptlogin2.qq.com&#39;
+            - &#39;dns.msftncsi.com&#39;
+            - &#39;www.msftncsi.com&#39;
+            - &#39;www.msftconnecttest.com&#39;
+        nameserver:
+            - https://223.5.5.5/dns-query
+        fallback:
+            - https://223.5.5.5/dns-query
+        fallback-filter:
+            geoip: true
+            ipcidr:
+            - 240.0.0.0/4
+</code></pre><p>最后将其部署在了服务器上，并用 Nginx 配置了反向代理和 SSL 加密，得益于 Clash 的在多个平台上都有其客户端，将每个客户端的订阅地址修改为 subconverter 提供的配置文件地址，就可以实现了全平台的代理统一<br>
+使用 docker 部署，避免<a href="https://www.youtube.com/watch?v=FclVhxp1g0Y&amp;ab_channel=%E4%B8%8D%E8%89%AF%E6%9E%97">subconverter</a> 的漏洞</p>
+<ul>
+<li><a href="https://hub.docker.com/r/tindy2013/subconverter">docker hub 镜像</a></li>
+</ul>
+<h2 id="可用于-subconverter-的规则片段">可用于 subconverter 的规则片段</h2>
+<ul>
+<li><a href="https://github.com/Loyalsoldier/clash-rules/blob/master/README.md">github.com/Loyalsoldier/clash-rules</a></li>
+<li><a href="https://github.com/ACL4SSR/ACL4SSR/tree/master/Clash">github.com/ACL4SSR/ACL4SSR</a></li>
+<li><a href="https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash">github.com/blackmatrix7/ios_rule_script</a></li>
+<li><a href="https://github.com/DivineEngine/Profiles/tree/master/Clash/RuleSet">github.com/DivineEngine/Profiles</a></li>
+</ul>
+<hr>
+<h1 id="参考文章">参考文章</h1>
+<ul>
+<li><a href="https://mybj.org/2021/09/subconverter/">利用 subconverter 实现订阅合并与转换</a></li>
+<li><a href="https://github.com/tindy2013/subconverter">github.com/tindy2013/subconverter</a></li>
+<li><a href="https://blog.xianyu.one/2021/05/12/Linux/tutorial/subconverter/">subconverter 订阅转换及搭配 clash 使用教程</a></li>
+<li><a href="https://docs.cfw.lbyczf.com/">Clash for Windows</a></li>
+</ul>
 
----
-
-参考文章
-- [利用 subconverter 实现订阅合并与转换](https://mybj.org/2021/09/subconverter/)
-- [github.com/tindy2013/subconverter](https://github.com/tindy2013/subconverter)
-- [subconverter 订阅转换及搭配 clash 使用教程](https://blog.xianyu.one/2021/05/12/Linux/tutorial/subconverter/)
-- [Clash for Windows](https://docs.cfw.lbyczf.com/)
-</code></pre>
                     
                     <HR width="100%" id="EOF">
 		    <p style="color:#777;">最后修改于 2022-12-22</p>
@@ -663,6 +707,46 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 							<li>
 								<a href="#%e9%85%8d%e7%bd%ae" onclick="onNavClick(`#配置-nav`)" id="配置-nav">
 									配置
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%af%e7%94%a8%e4%ba%8e-subconverter-%e7%9a%84%e8%a7%84%e5%88%99%e7%89%87%e6%ae%b5" onclick="onNavClick(`#可用于-subconverter-的规则片段-nav`)" id="可用于-subconverter-的规则片段-nav">
+									可用于 subconverter 的规则片段
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e8%80%83%e6%96%87%e7%ab%a0" onclick="onNavClick(`#参考文章-nav`)" id="参考文章-nav">
+									参考文章
 								</a>
 							</li>
 						
