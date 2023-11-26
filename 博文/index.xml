@@ -6,7 +6,21 @@
     <description>Recent content in 博文s on Ling的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 18 Nov 2023 21:59:58 +0800</lastBuildDate><atom:link href="https://blog.lty520.faith/%E5%8D%9A%E6%96%87/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Nov 2023 22:24:29 +0800</lastBuildDate><atom:link href="https://blog.lty520.faith/%E5%8D%9A%E6%96%87/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>自动下载Youtube视频并上传</title>
+      <link>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BDyoutube%E8%A7%86%E9%A2%91%E5%B9%B6%E4%B8%8A%E4%BC%A0/</link>
+      <pubDate>Sat, 25 Nov 2023 22:24:29 +0800</pubDate>
+      
+      <guid>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BDyoutube%E8%A7%86%E9%A2%91%E5%B9%B6%E4%B8%8A%E4%BC%A0/</guid>
+      <description>软件选择 yt-dlp 用来下载 Youtube 频道的视频 rclone 用于将下载好的视频上传到网盘里 Onedrive 借助 Microsoft E5 账号，可以获得 5TB 的空间，并且下载上传的速度也比较快 依赖安装 安装 yt-dle 从 GitHub 存储库下载最新版本的 yt-dlp sudo wget -qO /usr/local/bin/yt-dlp https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp 设置文件的读取和执行权限 sudo chmod a+rx /usr/local/bin/yt-dlp 现在yt-dlp可以作为系统的命令用于所有用户。 测试 yt-dlp --version 可以使用以下命令将 yt-dlp 更新到最新版本： sudo yt-dlp -U 安装 ffmpeg 这个不用太追求新版，所以直接
+sudo apt install ffmpeg 可以使用
+ffmpeg -version 就说明安装成功了
+安装 rclone 使用官方提供的脚本即可
+sudo -v ; curl https://rclone.org/install.sh | sudo bash 添加网盘 这部分由 瓦力箱子 Rclone安装配置教程: 挂载OneDrive同步文件 稍加修改而来
+获取OneDrive授权 这一步是在本地电脑Windows系统操作，进入Rclone下载页面，点击下载Windows版本的Rclone软件，选择Intel/AMD-64Bit即可。如果是32位操作系统，那么选择32Bit的。</description>
+    </item>
+    
     <item>
       <title>关于2008年汶川地震因美国关闭GPS导致飞机失事事件存疑的资料</title>
       <link>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%B3%E4%BA%8E2008%E5%B9%B4%E6%B1%B6%E5%B7%9D%E5%9C%B0%E9%9C%87%E7%BE%8E%E5%9B%BD%E5%85%B3%E9%97%ADgps%E5%AF%BC%E8%87%B4%E9%A3%9E%E6%9C%BA%E5%A4%B1%E4%BA%8B%E7%9A%84%E8%B5%84%E6%96%99/</link>

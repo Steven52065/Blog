@@ -6,9 +6,251 @@
     <description>Recent content on Ling的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 18 Nov 2023 21:59:58 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 25 Nov 2023 22:24:29 +0800</lastBuildDate>
     
         <atom:link href="https://blog.lty520.faith/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>自动下载Youtube视频并上传</title>
+        <link>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BDyoutube%E8%A7%86%E9%A2%91%E5%B9%B6%E4%B8%8A%E4%BC%A0/</link>
+        <pubDate>Sat, 25 Nov 2023 22:24:29 +0800</pubDate>
+        
+        <guid>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BDyoutube%E8%A7%86%E9%A2%91%E5%B9%B6%E4%B8%8A%E4%BC%A0/</guid>
+        <description>Ling的博客 https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BDyoutube%E8%A7%86%E9%A2%91%E5%B9%B6%E4%B8%8A%E4%BC%A0/ -&lt;h1 id=&#34;软件选择&#34;&gt;软件选择&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/yt-dlp/yt-dlp#release-files&#34;&gt;yt-dlp&lt;/a&gt; 用来下载 Youtube 频道的视频&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://rclone.org/&#34;&gt;rclone&lt;/a&gt; 用于将下载好的视频上传到网盘里&lt;/li&gt;
+&lt;li&gt;Onedrive 借助 Microsoft E5 账号，可以获得 5TB 的空间，并且下载上传的速度也比较快&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;依赖安装&#34;&gt;依赖安装&lt;/h1&gt;
+&lt;h2 id=&#34;安装-yt-dle&#34;&gt;安装 yt-dle&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;从 GitHub 存储库下载最新版本的 yt-dlp
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo wget -qO /usr/local/bin/yt-dlp https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;设置文件的读取和执行权限
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo chmod a+rx /usr/local/bin/yt-dlp
+&lt;/code&gt;&lt;/pre&gt;现在yt-dlp可以作为系统的命令用于所有用户。&lt;/li&gt;
+&lt;li&gt;测试
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;yt-dlp --version
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;可以使用以下命令将 yt-dlp 更新到最新版本：
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo yt-dlp -U
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;安装-ffmpeg&#34;&gt;安装 ffmpeg&lt;/h2&gt;
+&lt;p&gt;这个不用太追求新版，所以直接&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo apt install ffmpeg
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;可以使用&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ffmpeg -version
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;就说明安装成功了&lt;/p&gt;
+&lt;h2 id=&#34;安装-rclone&#34;&gt;安装 rclone&lt;/h2&gt;
+&lt;p&gt;使用官方提供的脚本即可&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo -v ; curl https://rclone.org/install.sh | sudo bash
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;添加网盘&#34;&gt;添加网盘&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;这部分由 &lt;a href=&#34;https://walixz.com/rclone-sync-onedrive.html&#34;&gt;瓦力箱子 Rclone安装配置教程: 挂载OneDrive同步文件&lt;/a&gt; 稍加修改而来&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;获取onedrive授权&#34;&gt;获取OneDrive授权&lt;/h2&gt;
+&lt;p&gt;这一步是在本地电脑Windows系统操作，进入&lt;a href=&#34;https://rclone.org/downloads/&#34;&gt;Rclone下载页面&lt;/a&gt;，点击下载Windows版本的Rclone软件，选择Intel/AMD-64Bit即可。如果是32位操作系统，那么选择32Bit的。&lt;/p&gt;
+&lt;p&gt;下载后将全部文件解压到文件夹，在文件夹处打开CMD，输入下面的命令。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.\rclone.exe authorize &amp;#34;onedrive&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;命令输入完回车后会自动打开浏览器，登录你的OneDrive账号，点击“是”按钮同意授权。成功后返回到命令窗口就能看到长串授权码，即花括号以及里面的内容。&lt;/p&gt;
+&lt;p&gt;将花括号内的内容复制下来保存备用，有效期1个小时。&lt;/p&gt;
+&lt;h2 id=&#34;配置rclone&#34;&gt;配置Rclone&lt;/h2&gt;
+&lt;p&gt;和安装相同，Rclone配置也只需要一条命令。不同的是后续操作比较繁琐，需要有耐心哈。在配置过程中如果输错字母，可以按Ctrl+Backspace删除。&lt;/p&gt;
+&lt;p&gt;我们首先在VPS远程登录窗口输入下面命令：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;rclone config
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;新建远程网盘连接，输入字母n回车。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;No remotes found - make a new one
+n) New remote
+s) Set configuration password
+q) Quit config
+n/s/q&amp;gt; n
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;给远程网盘随便起个名字，我这里就叫onedrive了&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;name&amp;gt; onedrive
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;接着会出现一系列网盘名字列表，我输入26选择OneDrive网盘。需要注意的是这个序号以后可能会有变动，填写的时候再次确认下。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Storage&amp;gt; 26
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Client ID无需设置，直接回车使用默认的。&lt;br&gt;
+Client Secret也不用填写，回车使用默认值。&lt;/p&gt;
+&lt;p&gt;选择OneDrive网盘服务器的区域，我用的是国际版输入1，如果你用的是世纪互联，那就输入4&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Choose national cloud region for OneDrive.
+Choose a number from below, or type in your own value
+ 1 / Microsoft Cloud Global
+   \ &amp;#34;global&amp;#34;
+ 2 / Microsoft Cloud for US Government
+   \ &amp;#34;us&amp;#34;
+ 3 / Microsoft Cloud Germany
+   \ &amp;#34;de&amp;#34;
+ 4 / Azure and Office 365 operated by 21Vianet in China
+   \ &amp;#34;cn&amp;#34;
+region&amp;gt; 1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;不需要设置高级配置，输入n后回车&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Edit advanced config? (y/n)
+y) Yes
+n) No (default)
+y/n&amp;gt; n
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;因为我们是远程连接VPS主机，不能自动配置，填写n回车。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Use auto config?
+ * Say Y if not sure
+ * Say N if you are working on a remote or headless machine
+y) Yes (default)
+n) No
+y/n&amp;gt; n
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这时候将第二步获取的OneDrive授权码粘贴到config_token&amp;gt;后面，回车。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Enter a string value. Press Enter for the default (&amp;#34;&amp;#34;).
+config_token&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;选择OneDrive网盘，输入1&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Choose a number from below, or type in an existing value
+ 1 / OneDrive Personal or Business
+   \ &amp;#34;onedrive&amp;#34;
+ 2 / Root Sharepoint site
+   \ &amp;#34;sharepoint&amp;#34;
+ 3 / Sharepoint site name or URL (e.g. mysite or https://contoso.sharepoint.com/sites/mysite)
+   \ &amp;#34;url&amp;#34;
+ 4 / Search for a Sharepoint site
+   \ &amp;#34;search&amp;#34;
+ 5 / Type in driveID (advanced)
+   \ &amp;#34;driveid&amp;#34;
+config_type&amp;gt; 1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Rclone找到一个OneDrive盘，输入y确定回车。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Drive OK?
+...
+y) Yes (default)
+n) No
+y/n&amp;gt; y
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;确认OneDrive网盘的所有信息，输入y回车。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[onedrive]
+type = onedrive
+...
+drive_type = personal
+--------------------
+y) Yes this is OK (default)
+e) Edit this remote
+d) Delete this remote
+y/e/d &amp;gt; y
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;配置完成后 Rclone 显示远程网盘列表，至此配置结束，输入 q 退出。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Current remotes:
+Name                 Type
+====                 ====
+onedrive             onedrive
+e) Edit existing remote
+n) New remote
+d) Delete remote
+r) Rename remote
+c) Copy remote
+s) Set configuration password
+q) Quit config
+e/n/d/r/c/s/q &amp;gt; q
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;经过上面的设置后，我们就成功地将 Rclone 连接挂载到 OneDrive 网盘啦。&lt;/p&gt;
+&lt;h1 id=&#34;编写脚本&#34;&gt;编写脚本&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;脚本由 &lt;a href=&#34;https://www.yetpage.com/archives/229&#34;&gt;使用 yt-dlp 定时下载 youtube 频道视频并且上传到 onedrive&lt;/a&gt; 修改而来&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;main.sh&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#!/bin/bash
+
+# ------------------------------
+# 用户可配置的变量
+# ------------------------------
+
+# 网盘的上传目录（请确保这个路径在您的网盘中是有效的）
+REMOTE_PATH = &amp;#34;网盘: 路径&amp;#34;
+YT_DLP_PATH = &amp;#34;yt-dlp&amp;#34;
+RCLONE_PATH = &amp;#34;rclone&amp;#34;
+
+# 指定下载频道的链接数组
+channels =(
+    &amp;#39;https://www.youtube.com/@aaa/videos&amp;#39;
+    &amp;#39;https://www.youtube.com/@bbb/videos&amp;#39;
+)
+
+# 每下载多少个视频后上传
+VIDEOS_PER_BATCH = 5
+
+# 下载视频数量(从最新的视频往后算)
+END = 10
+
+# ------------------------------
+# 脚本逻辑（一般无需修改）
+# ------------------------------
+
+# 获取脚本所在目录的路径
+SCRIPT_DIR = &amp;#34;$( cd &amp;#34;$( dirname &amp;#34;${BASH_SOURCE[0]}&amp;#34; )&amp;#34; &amp;amp;&amp;gt; /dev/null &amp;amp;&amp;amp; pwd )&amp;#34;
+
+# 在脚本所在目录中创建必要的目录
+mkdir -p &amp;#34;${SCRIPT_DIR}/yetpage &amp;#34;
+mkdir -p &amp;#34;${SCRIPT_DIR}/log &amp;#34;
+mkdir -p &amp;#34;${SCRIPT_DIR}/yetpage/videotxt &amp;#34;
+
+# 进入下载目录
+cd &amp;#34;${SCRIPT_DIR}/yetpage &amp;#34;
+
+# 下载视频并上传
+for channel in &amp;#34;${channels[@]}&amp;#34;; do
+    # 定义计数器
+    download_count = 0
+    processed_count = 0
+
+    # 使用 yt-dlp 获取频道视频列表
+    video_list = $(&amp;#34;$ YT_DLP_PATH &amp;#34; --flat-playlist -J --playlist-end &amp;#34; $END&amp;#34; -- &amp;#34;$ channel &amp;#34; | jq -r &amp;#39;.entries [] | &amp;#34;\(.url) \(.id)&amp;#34;&amp;#39;)
+    total_videos = $(echo &amp;#34;$ video_list &amp;#34; | wc -l)
+    echo &amp;#34;频道：$channel, 总视频数：$ total_videos&amp;#34;
+
+    # 遍历视频列表
+    while IFS = read -r line; do
+        video_url = $(echo &amp;#34;$ line &amp;#34; | awk &amp;#39;{print $1}&amp;#39;)
+        video_id = $(echo &amp;#34;$ line &amp;#34; | awk &amp;#39;{print $2}&amp;#39;)
+        echo &amp;#34; 处理视频 ID：$video_id, 进度：$((++processed_count)) / $total_videos &amp;#34;
+
+        # 下载单个视频
+        if &amp;#34;$YT_DLP_PATH &amp;#34; -f &amp;#39;bv*+ba&amp;#39; \
+        --download-archive videos.txt \
+        --write-auto-sub --sub-format srt \
+        --sub-lang zh-Hans --embed-sub \
+        -o &amp;#39;%(channel)s/%(upload_date)s-%(title).200Bs.%(ext)s&amp;#39; \
+        -- &amp;#34;$video_url &amp;#34;; then
+            # 成功下载视频后递增下载计数器
+            ((download_count++))
+        fi
+
+        # 检查是否达到上传阈值
+        if [ $download_count -eq $VIDEOS_PER_BATCH ]; then
+            # 上传视频并重置下载计数器
+            &amp;#34;$RCLONE_PATH&amp;#34; move . &amp;#34;$ REMOTE_PATH&amp;#34; -v --onedrive-chunk-size 100M --exclude &amp;#34;videos.txt&amp;#34; -P &amp;gt;&amp;gt; &amp;#34;${SCRIPT_DIR}/log/yt-rclone.log &amp;#34; 2 &amp;gt;&amp;amp;1
+            download_count = 0
+        fi
+    done &amp;lt;&amp;lt;&amp;lt; &amp;#34;$video_list &amp;#34;
+done
+
+# 将下载视频 id 的记录保存到视频文本目录
+cat videos.txt &amp;gt; &amp;#34;${SCRIPT_DIR}/videotxt/videois.txt &amp;#34;
+
+# 上传剩余的视频文件
+&amp;#34;$RCLONE_PATH&amp;#34; move . &amp;#34;$ REMOTE_PATH&amp;#34; \
+-v --exclude &amp;#34;videos.txt&amp;#34; \
+-P &amp;gt;&amp;gt; &amp;#34;${SCRIPT_DIR}/log/yt-rclone.log &amp;#34; 2 &amp;gt;&amp;amp;1
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;添加到定时任务&#34;&gt;添加到定时任务&lt;/h1&gt;
+&lt;p&gt;定时任务使用 crontab 就好了&lt;br&gt;
+使用下面命令进行编辑，如果是第一次使用，会让你选择使用的编辑器，选择一个自己习惯的就好（如果都没用过&amp;hellip;就先去研究 一下怎么用吧&amp;hellip;来自可以让新手随机字符的 Vim）&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;crontab -e
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;接下来，在最后一行添加上一句即可&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;0 1 * * * bash 脚本路径/main.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;0 1 * * * 分别代表分钟、小时、日、月、周。所以这句就表示脚本会在每天的一点执行一次。&lt;/p&gt;
+&lt;h2 id=&#34;修改时区&#34;&gt;修改时区&lt;/h2&gt;
+&lt;p&gt;如果发现脚本没有在自己设置的时间执行，很有可能是系统时区的原因。&lt;br&gt;
+可以使用下面命令来看到当前的系统时间。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;date
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果时区不对，可以使用下面命令来修改为东八区&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo timedatectl set-timezone Asia/Shanghai
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;参考文章&#34;&gt;参考文章&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.xiaotucao.com/index.php/archives/24/&#34;&gt;在 Ubuntu 20.04 安装 yt-dlp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://walixz.com/rclone-sync-onedrive.html&#34;&gt;瓦力箱子 Rclone安装配置教程: 挂载OneDrive同步文件&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ahau.fun/articles/rclone-tutorial.html&#34;&gt;AhauFun 挂载神器：Rclone使用教程&lt;/a&gt; 这篇文章的标题好难复制嗷&amp;hellip;（小声）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.rapidseedbox.com/zh/blog/yt-dlp-complete-guide&#34;&gt;YT-DLP: 2023年最完整指南— RapidSeedbox&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.yetpage.com/archives/229&#34;&gt;使用 yt-dlp 定时下载 youtube 频道视频并且上传到 onedrive&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+- https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BDyoutube%E8%A7%86%E9%A2%91%E5%B9%B6%E4%B8%8A%E4%BC%A0/ - </description>
+        </item>
     
     
     
@@ -412,31 +654,6 @@ Google 可得一个专辑的名字 &lt;strong&gt;Anaconda&lt;/strong&gt;&lt;br&g
 &lt;p&gt;&lt;em&gt;为什么死活运行不了呢&amp;hellip; Java 版本太新的问题？？？怪&lt;/em&gt;&lt;br&gt;
 &lt;img src=&#34;https://blog.lty520.faith/img/CTF/WP-BUUCTF-%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87/img1.png&#34; alt=&#34;img1&#34;&gt;&lt;/p&gt;
 - https://blog.lty520.faith/ctf/wp-buuctf-%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>WP BUUCTF 被劫持的神秘礼物</title>
-        <link>https://blog.lty520.faith/ctf/wp-buuctf-%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9/</link>
-        <pubDate>Thu, 02 Feb 2023 01:33:23 +0800</pubDate>
-        
-        <guid>https://blog.lty520.faith/ctf/wp-buuctf-%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9/</guid>
-        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9&#34;&gt;https://buuoj.cn/challenges#%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
-&lt;p&gt;某天小明收到了一件很特别的礼物，有奇怪的后缀，奇怪的名字和格式。小明找到了知心姐姐度娘，度娘好像知道这是啥，但是度娘也不知道里面是啥。。。你帮帮小明？找到帐号密码，串在一起，用32位小写MD5哈希一下得到的就是答案。 链接: &lt;a href=&#34;https://pan.baidu.com/s/1pwVVpA5_WWY8Og6dhCcWRw&#34;&gt;https://pan.baidu.com/s/1pwVVpA5_WWY8Og6dhCcWRw&lt;/a&gt; 提取码: 31vk 注意：得到的 flag 请包上 flag{} 提交&lt;/p&gt;
-&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
-&lt;p&gt;下载后发现文件是 gift.pcapng&lt;br&gt;
-既然是 pcapng 文件，反手扔进 Wireshark 里&lt;br&gt;
-可以找到一条登录的 Post 请求&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;4	0.003591	192.168.78.134	192.168.60.123	HTTP	704	POST /index.php?r=member/index/login HTTP/1.1  (application/x-www-form-urlencoded)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;可以发现这条请求发送的 name 是 &lt;strong&gt;admina&lt;/strong&gt; ，word 是 &lt;strong&gt;adminb&lt;/strong&gt;&lt;br&gt;
-拼成 adminaadminb 后取小写 md5&lt;br&gt;
-可得 1d240aafe21a86afc11f38a45b541a49&lt;br&gt;
-即 flag 为 &lt;strong&gt;flag{1d240aafe21a86afc11f38a45b541a49}&lt;/strong&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;em&gt;貌似礼物是张图片？没找到看这张图片的方法（理论上应该能看到的&amp;hellip;）&lt;/em&gt;&lt;/p&gt;
-- https://blog.lty520.faith/ctf/wp-buuctf-%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9/ - </description>
         </item>
     
     

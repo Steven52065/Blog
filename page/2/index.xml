@@ -6,9 +6,34 @@
     <description>Recent content on Ling的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 18 Nov 2023 21:59:58 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 25 Nov 2023 22:24:29 +0800</lastBuildDate>
     
         <atom:link href="https://blog.lty520.faith/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>WP BUUCTF 被劫持的神秘礼物</title>
+        <link>https://blog.lty520.faith/ctf/wp-buuctf-%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9/</link>
+        <pubDate>Thu, 02 Feb 2023 01:33:23 +0800</pubDate>
+        
+        <guid>https://blog.lty520.faith/ctf/wp-buuctf-%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9/</guid>
+        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9&#34;&gt;https://buuoj.cn/challenges#%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
+&lt;p&gt;某天小明收到了一件很特别的礼物，有奇怪的后缀，奇怪的名字和格式。小明找到了知心姐姐度娘，度娘好像知道这是啥，但是度娘也不知道里面是啥。。。你帮帮小明？找到帐号密码，串在一起，用32位小写MD5哈希一下得到的就是答案。 链接: &lt;a href=&#34;https://pan.baidu.com/s/1pwVVpA5_WWY8Og6dhCcWRw&#34;&gt;https://pan.baidu.com/s/1pwVVpA5_WWY8Og6dhCcWRw&lt;/a&gt; 提取码: 31vk 注意：得到的 flag 请包上 flag{} 提交&lt;/p&gt;
+&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
+&lt;p&gt;下载后发现文件是 gift.pcapng&lt;br&gt;
+既然是 pcapng 文件，反手扔进 Wireshark 里&lt;br&gt;
+可以找到一条登录的 Post 请求&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;4	0.003591	192.168.78.134	192.168.60.123	HTTP	704	POST /index.php?r=member/index/login HTTP/1.1  (application/x-www-form-urlencoded)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;可以发现这条请求发送的 name 是 &lt;strong&gt;admina&lt;/strong&gt; ，word 是 &lt;strong&gt;adminb&lt;/strong&gt;&lt;br&gt;
+拼成 adminaadminb 后取小写 md5&lt;br&gt;
+可得 1d240aafe21a86afc11f38a45b541a49&lt;br&gt;
+即 flag 为 &lt;strong&gt;flag{1d240aafe21a86afc11f38a45b541a49}&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;貌似礼物是张图片？没找到看这张图片的方法（理论上应该能看到的&amp;hellip;）&lt;/em&gt;&lt;/p&gt;
+- https://blog.lty520.faith/ctf/wp-buuctf-%E8%A2%AB%E5%8A%AB%E6%8C%81%E7%9A%84%E7%A5%9E%E7%A7%98%E7%A4%BC%E7%89%A9/ - </description>
+        </item>
     
     
     
@@ -460,24 +485,6 @@ Hello, CTFer!
 &lt;p&gt;使用 Notepad++ 打开图片后即可在末尾找到一串特立独行的 &lt;strong&gt;01101011011011110110010101101011011010100011001101110011&lt;/strong&gt;  使用工具 &lt;a href=&#34;http://xiaoniutxt.com/binaryToString.html&#34;&gt;二进制与字符串互转&lt;/a&gt; 即可得到 &lt;strong&gt;koekj3s&lt;/strong&gt;&lt;br&gt;
 可得 flag 为 &lt;strong&gt;flag{97314e7864a8f62627b26f3f998c37f1}&lt;/strong&gt;&lt;/p&gt;
 - https://blog.lty520.faith/ctf/wp-buuctf-%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E4%B8%96%E7%95%8C/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>WP BUUCTF 乌镇峰会种图</title>
-        <link>https://blog.lty520.faith/ctf/wp-buuctf-%E4%B9%8C%E9%95%87%E5%B3%B0%E4%BC%9A%E7%A7%8D%E5%9B%BE/</link>
-        <pubDate>Sun, 15 Jan 2023 01:23:24 +0800</pubDate>
-        
-        <guid>https://blog.lty520.faith/ctf/wp-buuctf-%E4%B9%8C%E9%95%87%E5%B3%B0%E4%BC%9A%E7%A7%8D%E5%9B%BE/</guid>
-        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-%E4%B9%8C%E9%95%87%E5%B3%B0%E4%BC%9A%E7%A7%8D%E5%9B%BE/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%E4%B9%8C%E9%95%87%E5%B3%B0%E4%BC%9A%E7%A7%8D%E5%9B%BE&#34;&gt;https://buuoj.cn/challenges#%E4%B9%8C%E9%95%87%E5%B3%B0%E4%BC%9A%E7%A7%8D%E5%9B%BE&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.lty520.faith/img/CTF/WP-BUUCTF-%E4%B9%8C%E9%95%87%E5%B3%B0%E4%BC%9A%E7%A7%8D%E5%9B%BE/img1.jpg&#34; alt=&#34;题图&#34;&gt;&lt;/p&gt;
-&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
-&lt;p&gt;使用 Notepad++ 打开图片后即可在末尾找到 flag &lt;strong&gt;flag{97314e7864a8f62627b26f3f998c37f1}&lt;/strong&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;em&gt;又是用 binwalk，又是用 stegsolve，结果这么简单&amp;hellip;&lt;/em&gt;&lt;/p&gt;
-- https://blog.lty520.faith/ctf/wp-buuctf-%E4%B9%8C%E9%95%87%E5%B3%B0%E4%BC%9A%E7%A7%8D%E5%9B%BE/ - </description>
         </item>
     
     

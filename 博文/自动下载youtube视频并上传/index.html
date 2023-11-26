@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html><head>
+<title>自动下载Youtube视频并上传</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="在23年11月23日，马督工又放寒假了...并且有一些视频被封掉了，不只是在B站，连油管的视频都会删除。所以决定写一个脚本，自动下载Youtube的视频并上传到网盘上去。马督工说的不一定对，但至少是唯一一个敢说的，所以备份一下还是有价值的。">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+<link rel="icon" href="https://blog.lty520.faith/img/favicon.svg">
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<link rel="stylesheet" href="/scss/journal.min.e78ecf1f01bdd175a52616472d7f6c77fa0d72eb91b15a27ce24fb7d302a6aa2.css" integrity="sha256-547PHwG90XWlJhZHLX9sd/oNcuuRsVonziT7fTAqaqI=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.e96cc014086ea3bea59fb4923f8c19d6b203a7af229ee5f9599c0a4cb90e3bbd.css" integrity="sha256-6WzAFAhuo76ln7SSP4wZ1rIDp68inuX5WZwKTLkOO70=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+  />
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3MGTDD77JD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3MGTDD77JD');
+</script>
+<meta http-equiv ='content-language' content ='zh-cmn-Hans'>
+
+</head>
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/%E5%8D%9A%E6%96%87">
+                    博文
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/%E9%9A%8F%E8%AE%B0">
+                    随记
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/ctf">
+                    CTF
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS Feed
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%bd%af%e4%bb%b6%e9%80%89%e6%8b%a9" onclick="onNavClick(`#软件选择-nav`)" id="软件选择-nav">
+									软件选择
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%be%9d%e8%b5%96%e5%ae%89%e8%a3%85" onclick="onNavClick(`#依赖安装-nav`)" id="依赖安装-nav">
+									依赖安装
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%ae%89%e8%a3%85-yt-dle" onclick="onNavClick(`#安装-yt-dle-nav`)" id="安装-yt-dle-nav">
+									安装 yt-dle
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%ae%89%e8%a3%85-ffmpeg" onclick="onNavClick(`#安装-ffmpeg-nav`)" id="安装-ffmpeg-nav">
+									安装 ffmpeg
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%ae%89%e8%a3%85-rclone" onclick="onNavClick(`#安装-rclone-nav`)" id="安装-rclone-nav">
+									安装 rclone
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e6%b7%bb%e5%8a%a0%e7%bd%91%e7%9b%98" onclick="onNavClick(`#添加网盘-nav`)" id="添加网盘-nav">
+									添加网盘
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e8%8e%b7%e5%8f%96onedrive%e6%8e%88%e6%9d%83" onclick="onNavClick(`#获取onedrive授权-nav`)" id="获取onedrive授权-nav">
+									获取OneDrive授权
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%85%8d%e7%bd%aerclone" onclick="onNavClick(`#配置rclone-nav`)" id="配置rclone-nav">
+									配置Rclone
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e7%bc%96%e5%86%99%e8%84%9a%e6%9c%ac" onclick="onNavClick(`#编写脚本-nav`)" id="编写脚本-nav">
+									编写脚本
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%b7%bb%e5%8a%a0%e5%88%b0%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1" onclick="onNavClick(`#添加到定时任务-nav`)" id="添加到定时任务-nav">
+									添加到定时任务
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e4%bf%ae%e6%94%b9%e6%97%b6%e5%8c%ba" onclick="onNavClick(`#修改时区-nav`)" id="修改时区-nav">
+									修改时区
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e8%80%83%e6%96%87%e7%ab%a0" onclick="onNavClick(`#参考文章-nav`)" id="参考文章-nav">
+									参考文章
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://blog.lty520.faith/">
+            Ling的博客
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://blog.lty520.faith/">
+        <div class="single-column-header-title">Ling的博客</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    <h1 class="post-title">自动下载Youtube视频并上传</h1>
+                    
+                    
+                    <div class="post-subtitle">
+                        在23年11月23日，马督工又放寒假了...并且有一些视频被封掉了，不只是在B站，连油管的视频都会删除。所以决定写一个脚本，自动下载Youtube的视频并上传到网盘上去。马督工说的不一定对，但至少是唯一一个敢说的，所以备份一下还是有价值的。
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2023-11-25 22:24
+                        </time>
+                        
+
+                        
+
+                        
+                        
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            10 min
+                            
+                            2 s.
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h1 id="软件选择">软件选择</h1>
+<ol>
+<li><a href="https://github.com/yt-dlp/yt-dlp#release-files">yt-dlp</a> 用来下载 Youtube 频道的视频</li>
+<li><a href="https://rclone.org/">rclone</a> 用于将下载好的视频上传到网盘里</li>
+<li>Onedrive 借助 Microsoft E5 账号，可以获得 5TB 的空间，并且下载上传的速度也比较快</li>
+</ol>
+<h1 id="依赖安装">依赖安装</h1>
+<h2 id="安装-yt-dle">安装 yt-dle</h2>
+<ol>
+<li>从 GitHub 存储库下载最新版本的 yt-dlp
+<pre tabindex="0"><code>sudo wget -qO /usr/local/bin/yt-dlp https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp
+</code></pre></li>
+<li>设置文件的读取和执行权限
+<pre tabindex="0"><code>sudo chmod a+rx /usr/local/bin/yt-dlp
+</code></pre>现在yt-dlp可以作为系统的命令用于所有用户。</li>
+<li>测试
+<pre tabindex="0"><code>yt-dlp --version
+</code></pre></li>
+<li>可以使用以下命令将 yt-dlp 更新到最新版本：
+<pre tabindex="0"><code>sudo yt-dlp -U
+</code></pre></li>
+</ol>
+<h2 id="安装-ffmpeg">安装 ffmpeg</h2>
+<p>这个不用太追求新版，所以直接</p>
+<pre tabindex="0"><code>sudo apt install ffmpeg
+</code></pre><p>可以使用</p>
+<pre tabindex="0"><code>ffmpeg -version
+</code></pre><p>就说明安装成功了</p>
+<h2 id="安装-rclone">安装 rclone</h2>
+<p>使用官方提供的脚本即可</p>
+<pre tabindex="0"><code>sudo -v ; curl https://rclone.org/install.sh | sudo bash
+</code></pre><h1 id="添加网盘">添加网盘</h1>
+<p><em>这部分由 <a href="https://walixz.com/rclone-sync-onedrive.html">瓦力箱子 Rclone安装配置教程: 挂载OneDrive同步文件</a> 稍加修改而来</em></p>
+<h2 id="获取onedrive授权">获取OneDrive授权</h2>
+<p>这一步是在本地电脑Windows系统操作，进入<a href="https://rclone.org/downloads/">Rclone下载页面</a>，点击下载Windows版本的Rclone软件，选择Intel/AMD-64Bit即可。如果是32位操作系统，那么选择32Bit的。</p>
+<p>下载后将全部文件解压到文件夹，在文件夹处打开CMD，输入下面的命令。</p>
+<pre tabindex="0"><code>.\rclone.exe authorize &#34;onedrive&#34;
+</code></pre><p>命令输入完回车后会自动打开浏览器，登录你的OneDrive账号，点击“是”按钮同意授权。成功后返回到命令窗口就能看到长串授权码，即花括号以及里面的内容。</p>
+<p>将花括号内的内容复制下来保存备用，有效期1个小时。</p>
+<h2 id="配置rclone">配置Rclone</h2>
+<p>和安装相同，Rclone配置也只需要一条命令。不同的是后续操作比较繁琐，需要有耐心哈。在配置过程中如果输错字母，可以按Ctrl+Backspace删除。</p>
+<p>我们首先在VPS远程登录窗口输入下面命令：</p>
+<pre tabindex="0"><code>rclone config
+</code></pre><p>新建远程网盘连接，输入字母n回车。</p>
+<pre tabindex="0"><code>No remotes found - make a new one
+n) New remote
+s) Set configuration password
+q) Quit config
+n/s/q&gt; n
+</code></pre><p>给远程网盘随便起个名字，我这里就叫onedrive了</p>
+<pre tabindex="0"><code>name&gt; onedrive
+</code></pre><p>接着会出现一系列网盘名字列表，我输入26选择OneDrive网盘。需要注意的是这个序号以后可能会有变动，填写的时候再次确认下。</p>
+<pre tabindex="0"><code>Storage&gt; 26
+</code></pre><p>Client ID无需设置，直接回车使用默认的。<br>
+Client Secret也不用填写，回车使用默认值。</p>
+<p>选择OneDrive网盘服务器的区域，我用的是国际版输入1，如果你用的是世纪互联，那就输入4</p>
+<pre tabindex="0"><code>Choose national cloud region for OneDrive.
+Choose a number from below, or type in your own value
+ 1 / Microsoft Cloud Global
+   \ &#34;global&#34;
+ 2 / Microsoft Cloud for US Government
+   \ &#34;us&#34;
+ 3 / Microsoft Cloud Germany
+   \ &#34;de&#34;
+ 4 / Azure and Office 365 operated by 21Vianet in China
+   \ &#34;cn&#34;
+region&gt; 1
+</code></pre><p>不需要设置高级配置，输入n后回车</p>
+<pre tabindex="0"><code>Edit advanced config? (y/n)
+y) Yes
+n) No (default)
+y/n&gt; n
+</code></pre><p>因为我们是远程连接VPS主机，不能自动配置，填写n回车。</p>
+<pre tabindex="0"><code>Use auto config?
+ * Say Y if not sure
+ * Say N if you are working on a remote or headless machine
+y) Yes (default)
+n) No
+y/n&gt; n
+</code></pre><p>这时候将第二步获取的OneDrive授权码粘贴到config_token&gt;后面，回车。</p>
+<pre tabindex="0"><code>Enter a string value. Press Enter for the default (&#34;&#34;).
+config_token&gt; 
+</code></pre><p>选择OneDrive网盘，输入1</p>
+<pre tabindex="0"><code>Choose a number from below, or type in an existing value
+ 1 / OneDrive Personal or Business
+   \ &#34;onedrive&#34;
+ 2 / Root Sharepoint site
+   \ &#34;sharepoint&#34;
+ 3 / Sharepoint site name or URL (e.g. mysite or https://contoso.sharepoint.com/sites/mysite)
+   \ &#34;url&#34;
+ 4 / Search for a Sharepoint site
+   \ &#34;search&#34;
+ 5 / Type in driveID (advanced)
+   \ &#34;driveid&#34;
+config_type&gt; 1
+</code></pre><p>Rclone找到一个OneDrive盘，输入y确定回车。</p>
+<pre tabindex="0"><code>Drive OK?
+...
+y) Yes (default)
+n) No
+y/n&gt; y
+</code></pre><p>确认OneDrive网盘的所有信息，输入y回车。</p>
+<pre tabindex="0"><code>[onedrive]
+type = onedrive
+...
+drive_type = personal
+--------------------
+y) Yes this is OK (default)
+e) Edit this remote
+d) Delete this remote
+y/e/d &gt; y
+</code></pre><p>配置完成后 Rclone 显示远程网盘列表，至此配置结束，输入 q 退出。</p>
+<pre tabindex="0"><code>Current remotes:
+Name                 Type
+====                 ====
+onedrive             onedrive
+e) Edit existing remote
+n) New remote
+d) Delete remote
+r) Rename remote
+c) Copy remote
+s) Set configuration password
+q) Quit config
+e/n/d/r/c/s/q &gt; q
+</code></pre><p>经过上面的设置后，我们就成功地将 Rclone 连接挂载到 OneDrive 网盘啦。</p>
+<h1 id="编写脚本">编写脚本</h1>
+<p><em>脚本由 <a href="https://www.yetpage.com/archives/229">使用 yt-dlp 定时下载 youtube 频道视频并且上传到 onedrive</a> 修改而来</em></p>
+<p>main.sh</p>
+<pre tabindex="0"><code>#!/bin/bash
+
+# ------------------------------
+# 用户可配置的变量
+# ------------------------------
+
+# 网盘的上传目录（请确保这个路径在您的网盘中是有效的）
+REMOTE_PATH = &#34;网盘: 路径&#34;
+YT_DLP_PATH = &#34;yt-dlp&#34;
+RCLONE_PATH = &#34;rclone&#34;
+
+# 指定下载频道的链接数组
+channels =(
+    &#39;https://www.youtube.com/@aaa/videos&#39;
+    &#39;https://www.youtube.com/@bbb/videos&#39;
+)
+
+# 每下载多少个视频后上传
+VIDEOS_PER_BATCH = 5
+
+# 下载视频数量(从最新的视频往后算)
+END = 10
+
+# ------------------------------
+# 脚本逻辑（一般无需修改）
+# ------------------------------
+
+# 获取脚本所在目录的路径
+SCRIPT_DIR = &#34;$( cd &#34;$( dirname &#34;${BASH_SOURCE[0]}&#34; )&#34; &amp;&gt; /dev/null &amp;&amp; pwd )&#34;
+
+# 在脚本所在目录中创建必要的目录
+mkdir -p &#34;${SCRIPT_DIR}/yetpage &#34;
+mkdir -p &#34;${SCRIPT_DIR}/log &#34;
+mkdir -p &#34;${SCRIPT_DIR}/yetpage/videotxt &#34;
+
+# 进入下载目录
+cd &#34;${SCRIPT_DIR}/yetpage &#34;
+
+# 下载视频并上传
+for channel in &#34;${channels[@]}&#34;; do
+    # 定义计数器
+    download_count = 0
+    processed_count = 0
+
+    # 使用 yt-dlp 获取频道视频列表
+    video_list = $(&#34;$ YT_DLP_PATH &#34; --flat-playlist -J --playlist-end &#34; $END&#34; -- &#34;$ channel &#34; | jq -r &#39;.entries [] | &#34;\(.url) \(.id)&#34;&#39;)
+    total_videos = $(echo &#34;$ video_list &#34; | wc -l)
+    echo &#34;频道：$channel, 总视频数：$ total_videos&#34;
+
+    # 遍历视频列表
+    while IFS = read -r line; do
+        video_url = $(echo &#34;$ line &#34; | awk &#39;{print $1}&#39;)
+        video_id = $(echo &#34;$ line &#34; | awk &#39;{print $2}&#39;)
+        echo &#34; 处理视频 ID：$video_id, 进度：$((++processed_count)) / $total_videos &#34;
+
+        # 下载单个视频
+        if &#34;$YT_DLP_PATH &#34; -f &#39;bv*+ba&#39; \
+        --download-archive videos.txt \
+        --write-auto-sub --sub-format srt \
+        --sub-lang zh-Hans --embed-sub \
+        -o &#39;%(channel)s/%(upload_date)s-%(title).200Bs.%(ext)s&#39; \
+        -- &#34;$video_url &#34;; then
+            # 成功下载视频后递增下载计数器
+            ((download_count++))
+        fi
+
+        # 检查是否达到上传阈值
+        if [ $download_count -eq $VIDEOS_PER_BATCH ]; then
+            # 上传视频并重置下载计数器
+            &#34;$RCLONE_PATH&#34; move . &#34;$ REMOTE_PATH&#34; -v --onedrive-chunk-size 100M --exclude &#34;videos.txt&#34; -P &gt;&gt; &#34;${SCRIPT_DIR}/log/yt-rclone.log &#34; 2 &gt;&amp;1
+            download_count = 0
+        fi
+    done &lt;&lt;&lt; &#34;$video_list &#34;
+done
+
+# 将下载视频 id 的记录保存到视频文本目录
+cat videos.txt &gt; &#34;${SCRIPT_DIR}/videotxt/videois.txt &#34;
+
+# 上传剩余的视频文件
+&#34;$RCLONE_PATH&#34; move . &#34;$ REMOTE_PATH&#34; \
+-v --exclude &#34;videos.txt&#34; \
+-P &gt;&gt; &#34;${SCRIPT_DIR}/log/yt-rclone.log &#34; 2 &gt;&amp;1
+</code></pre><h1 id="添加到定时任务">添加到定时任务</h1>
+<p>定时任务使用 crontab 就好了<br>
+使用下面命令进行编辑，如果是第一次使用，会让你选择使用的编辑器，选择一个自己习惯的就好（如果都没用过&hellip;就先去研究 一下怎么用吧&hellip;来自可以让新手随机字符的 Vim）</p>
+<pre tabindex="0"><code>crontab -e
+</code></pre><p>接下来，在最后一行添加上一句即可</p>
+<pre tabindex="0"><code>0 1 * * * bash 脚本路径/main.sh
+</code></pre><p>0 1 * * * 分别代表分钟、小时、日、月、周。所以这句就表示脚本会在每天的一点执行一次。</p>
+<h2 id="修改时区">修改时区</h2>
+<p>如果发现脚本没有在自己设置的时间执行，很有可能是系统时区的原因。<br>
+可以使用下面命令来看到当前的系统时间。</p>
+<pre tabindex="0"><code>date
+</code></pre><p>如果时区不对，可以使用下面命令来修改为东八区</p>
+<pre tabindex="0"><code>sudo timedatectl set-timezone Asia/Shanghai
+</code></pre><h1 id="参考文章">参考文章</h1>
+<ul>
+<li><a href="http://www.xiaotucao.com/index.php/archives/24/">在 Ubuntu 20.04 安装 yt-dlp</a></li>
+<li><a href="https://walixz.com/rclone-sync-onedrive.html">瓦力箱子 Rclone安装配置教程: 挂载OneDrive同步文件</a></li>
+<li><a href="https://ahau.fun/articles/rclone-tutorial.html">AhauFun 挂载神器：Rclone使用教程</a> 这篇文章的标题好难复制嗷&hellip;（小声）</li>
+<li><a href="https://www.rapidseedbox.com/zh/blog/yt-dlp-complete-guide">YT-DLP: 2023年最完整指南— RapidSeedbox</a></li>
+<li><a href="https://www.yetpage.com/archives/229">使用 yt-dlp 定时下载 youtube 频道视频并且上传到 onedrive</a></li>
+</ul>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2023-11-25</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts">
+			下回<br>已经到头啦。
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/%E5%8D%9A%E6%96%87/%E5%85%B3%E4%BA%8E2008%E5%B9%B4%E6%B1%B6%E5%B7%9D%E5%9C%B0%E9%9C%87%E7%BE%8E%E5%9B%BD%E5%85%B3%E9%97%ADgps%E5%AF%BC%E8%87%B4%E9%A3%9E%E6%9C%BA%E5%A4%B1%E4%BA%8B%E7%9A%84%E8%B5%84%E6%96%99/">
+			上回<br>关于2008年汶川地震因美国关闭GPS导致飞机失事事件存疑的资料
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+<div id="waline"></div>
+<script>
+    Waline.init({
+        el: '#waline',
+        
+        serverURL: "https://waline.lty520.faith/" ,
+    });
+    
+    </script>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://blog.lty520.faith/">
+    
+        <div class="nav-title">
+            Ling的博客
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/%E5%8D%9A%E6%96%87">
+                博文
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/%E9%9A%8F%E8%AE%B0">
+                随记
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/ctf">
+                CTF
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS Feed
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2023 Ling的博客
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%bd%af%e4%bb%b6%e9%80%89%e6%8b%a9" onclick="onNavClick(`#软件选择-nav`)" id="软件选择-nav">
+									软件选择
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%be%9d%e8%b5%96%e5%ae%89%e8%a3%85" onclick="onNavClick(`#依赖安装-nav`)" id="依赖安装-nav">
+									依赖安装
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%ae%89%e8%a3%85-yt-dle" onclick="onNavClick(`#安装-yt-dle-nav`)" id="安装-yt-dle-nav">
+									安装 yt-dle
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%ae%89%e8%a3%85-ffmpeg" onclick="onNavClick(`#安装-ffmpeg-nav`)" id="安装-ffmpeg-nav">
+									安装 ffmpeg
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%ae%89%e8%a3%85-rclone" onclick="onNavClick(`#安装-rclone-nav`)" id="安装-rclone-nav">
+									安装 rclone
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e6%b7%bb%e5%8a%a0%e7%bd%91%e7%9b%98" onclick="onNavClick(`#添加网盘-nav`)" id="添加网盘-nav">
+									添加网盘
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e8%8e%b7%e5%8f%96onedrive%e6%8e%88%e6%9d%83" onclick="onNavClick(`#获取onedrive授权-nav`)" id="获取onedrive授权-nav">
+									获取OneDrive授权
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%85%8d%e7%bd%aerclone" onclick="onNavClick(`#配置rclone-nav`)" id="配置rclone-nav">
+									配置Rclone
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e7%bc%96%e5%86%99%e8%84%9a%e6%9c%ac" onclick="onNavClick(`#编写脚本-nav`)" id="编写脚本-nav">
+									编写脚本
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%b7%bb%e5%8a%a0%e5%88%b0%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1" onclick="onNavClick(`#添加到定时任务-nav`)" id="添加到定时任务-nav">
+									添加到定时任务
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e4%bf%ae%e6%94%b9%e6%97%b6%e5%8c%ba" onclick="onNavClick(`#修改时区-nav`)" id="修改时区-nav">
+									修改时区
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e8%80%83%e6%96%87%e7%ab%a0" onclick="onNavClick(`#参考文章-nav`)" id="参考文章-nav">
+									参考文章
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+<div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2023 Ling的博客
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>

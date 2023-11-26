@@ -6,9 +6,30 @@
     <description>Recent content on Ling的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 18 Nov 2023 21:59:58 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 25 Nov 2023 22:24:29 +0800</lastBuildDate>
     
         <atom:link href="https://blog.lty520.faith/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>WP BUUCTF [极客大挑战2019]Knife</title>
+        <link>https://blog.lty520.faith/ctf/wp-buuctf-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019knife/</link>
+        <pubDate>Thu, 12 Jan 2023 00:38:56 +0800</pubDate>
+        
+        <guid>https://blog.lty520.faith/ctf/wp-buuctf-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019knife/</guid>
+        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019knife/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%5B%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98%202019%5DKnife&#34;&gt;https://buuoj.cn/challenges#[%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98%202019]Knife&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
+&lt;p&gt;打开靶机，给了两句话&lt;br&gt;
+&lt;strong&gt;我家菜刀丢了，你能帮我找一下么&lt;br&gt;
+eval($_POST[&amp;ldquo;Syc&amp;rdquo;]);&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
+&lt;p&gt;题目提到了&lt;strong&gt;菜刀&lt;/strong&gt;,所以选择&lt;strong&gt;蚁剑&lt;/strong&gt;（主要是电脑上没有菜刀2333）&lt;br&gt;
+很简单，一步到位&lt;br&gt;
+&lt;img src=&#34;https://blog.lty520.faith/img/CTF/WP-BUUCTF-%5B%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019%5DKnife1/img1.png&#34; alt=&#34;蚁剑&#34;&gt;&lt;br&gt;
+在网站根目录下可以找到名为 flag 的文件，可得 flag 为 &lt;strong&gt;flag{20d3c2b8-71fa-41fa-a8f6-fc7bcd5f8137}&lt;/strong&gt;&lt;/p&gt;
+- https://blog.lty520.faith/ctf/wp-buuctf-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019knife/ - </description>
+        </item>
     
     
     
