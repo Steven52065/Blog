@@ -174,8 +174,8 @@
 						
 						
 							<li>
-								<a href="#%e5%85%a8%e5%b9%b3%e5%8f%b0-clash-%e7%9a%84%e8%b0%83%e6%95%99%e8%bf%87%e7%a8%8b" onclick="onNavClick(`#全平台-clash-的调教过程-nav`)" id="全平台-clash-的调教过程-nav">
-									全平台 Clash 的调教过程
+								<a href="#subconverter-%e7%9a%84%e8%b0%83%e6%95%99%e8%bf%87%e7%a8%8b" onclick="onNavClick(`#subconverter-的调教过程-nav`)" id="subconverter-的调教过程-nav">
+									Subconverter 的调教过程
 								</a>
 							</li>
 						
@@ -249,6 +249,114 @@
 						
 						
 						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#linux-%e5%b9%b3%e5%8f%b0%e7%9a%84%e8%b0%83%e6%95%99%e8%bf%87%e7%a8%8b" onclick="onNavClick(`#linux-平台的调教过程-nav`)" id="linux-平台的调教过程-nav">
+									Linux 平台的调教过程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%b0%86clash-meta%e8%ae%be%e7%bd%ae%e4%b8%ba%e6%9c%8d%e5%8a%a1%e5%b9%b6%e5%bc%80%e6%9c%ba%e8%87%aa%e5%90%af" onclick="onNavClick(`#将clash-meta设置为服务并开机自启-nav`)" id="将clash-meta设置为服务并开机自启-nav">
+									将Clash Meta设置为服务，并开机自启
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%87%aa%e5%8a%a8%e6%9b%b4%e6%96%b0%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6" onclick="onNavClick(`#自动更新配置文件-nav`)" id="自动更新配置文件-nav">
+									自动更新配置文件
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e8%84%9a%e6%9c%ac" onclick="onNavClick(`#脚本-nav`)" id="脚本-nav">
+									脚本
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%b7%bb%e5%8a%a0%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1" onclick="onNavClick(`#添加定时任务-nav`)" id="添加定时任务-nav">
+									添加定时任务
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
 							
 								</ul>
 							
@@ -343,9 +451,9 @@
                             
 
                             
-                            5 min
+                            10 min
                             
-                            24 s.
+                            4 s.
                         
                     </div>
                 </div>
@@ -380,9 +488,8 @@
 <li>决定全平台使用 Clash</li>
 </ul>
 <hr>
-<h1 id="全平台-clash-的调教过程">全平台 Clash 的调教过程</h1>
-<p><em>(其实是 subconverter 的调教过程)</em><br>
-虽然用了 Clash ，但机场提供的配置方案不是很符合个人需求(而且主用的机场没有 ipv6 的配置)，且手中有多个机场(主用机场 + 便宜的备用机场 + 按流量付费，使用特殊节点的机场)，于是使用了 <a href="https://github.com/tindy2013/subconverter">subconverter</a> 来制作 Clash 配置文件。</p>
+<h1 id="subconverter-的调教过程">Subconverter 的调教过程</h1>
+<p>虽然用了 Clash ，但机场提供的配置方案不是很符合个人需求(而且主用的机场没有 ipv6 的配置)，且手中有多个机场(主用机场 + 便宜的备用机场 + 按流量付费，使用特殊节点的机场)，于是使用了 <a href="https://github.com/tindy2013/subconverter">subconverter</a> 来制作 Clash 配置文件。</p>
 <h2 id="目的">目的</h2>
 <ol>
 <li>将 <strong>多个</strong> 机场的订阅合并为一个</li>
@@ -393,13 +500,21 @@
 <h2 id="配置">配置</h2>
 <p><strong>以默认为主，修改部分条目</strong><br>
 /pref.ini<br>
-用于添加多条机场订阅</p>
+添加多条机场订阅并设置API密钥</p>
 <pre tabindex="0"><code>[common]
-    default_url=机场订阅地址1|机场订阅地址2|机场订阅地址3
-</code></pre><p>从 url 获取规则片段，并分成几个策略组</p>
+  api_mode=true
+  api_access_token=API密钥 
+  default_url=机场订阅地址1|机场订阅地址2|机场订阅地址3
+  enable_insert=false
+  insert_url=如果需要在上面几个订阅地址外额外添加节点，可以将enable_insert设置为true并把配置地址放在这里，同样以“|”分隔
+</code></pre><p>从 url 获取规则片段，并分成几个策略组<br>
+这里需要注意的是：<br>
+<strong>因为clash匹配规则是自上而下匹配，当匹配上一条规则后，后面的规则就不再进行匹配了，所以需要将一些匹配范围小的放在上面，匹配范围大的放在下面</strong><br>
+曾经犯的错误：仅有部分节点可以使用22端口（平时是专门用一个节点代理ssh流量的），而匹配22端口的“SSHRules.list”放在了“已墙域名”（已墙域名里面有 Github 的域名）的后面，导致了无法通过ssh连接上 Github 。</p>
 <pre tabindex="0"><code>[rulesets]
     ruleset=DIRECT,rules/DirectDomain.list
     ;DirectDomain.list  手动添加的直连域名
+
 
     ruleset=Proxy,rules/ProxyDomain.list
     ;ProxyDomain.list  手动添加的代理域名
@@ -407,6 +522,20 @@
     ruleset=拦截,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/BanAD.list,86400
     ruleset=拦截,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/BanProgramAD.list,86400
     ;广告域名
+
+    ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list,86400
+    ;直连域名
+
+    ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list,86400
+    ;局域网IP段
+
+    ruleset=DIRECT,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPs/ChinaIPs.list,86400
+    ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list,86400
+    ruleset=DIRECT,[]GEOIP,CN
+    ;中国IP段
+
+    ruleset=SSH,rules/SSHRules.list
+    ;针对22端口的分流
 
     ruleset=Bilibili,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Ruleset/Bilibili.list,86400
     ;Bilibili域名
@@ -427,24 +556,15 @@
     ruleset=Game,https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/EA/EA.list,86400
     ;EA域名
 
+
     ruleset=Proxy,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/ProxyGFWlist.list,86400
     ;已墙域名
 
-    ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list,86400
-    ;直连域名
-
-
-    ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list,86400
-    ;局域网IP段
-
-    ruleset=DIRECT,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPs/ChinaIPs.list,86400
-    ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list,86400
-    ruleset=DIRECT,[]GEOIP,CN
-    ;中国IP段
     ruleset=Proxy,[]FINAL
 </code></pre><p>为策略组添加节点</p>
 <pre tabindex="0"><code>[proxy_groups]
     custom_proxy_group=Proxy`select`.*
+    custom_proxy_group=SSH`select`[]DIRECT`[]Proxy`.*
     custom_proxy_group=Game`select`[]DIRECT`[]Proxy`.*
     custom_proxy_group=微软服务`select`.*
     custom_proxy_group=PT Trackers`select`[]DIRECT`[]Proxy`.*
@@ -486,6 +606,60 @@
 <li><a href="https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash">github.com/blackmatrix7/ios_rule_script</a></li>
 <li><a href="https://github.com/DivineEngine/Profiles/tree/master/Clash/RuleSet">github.com/DivineEngine/Profiles</a></li>
 </ul>
+<h1 id="linux-平台的调教过程">Linux 平台的调教过程</h1>
+<p><em>系统为 Debian 12，X86架构</em></p>
+<p>因为我的主力机是 Windows，Linux主要是作为服务器使用，故而并没有安装图形化桌面，使用的是命令行，所以这部分教程也会是命令行的版本<br>
+首先，下载<a href="https://github.com/MetaCubeX/mihomo/releases">Clash Meta 核心</a>，并解压<br>
+<em>参考命令，文件名要根据实际替换</em></p>
+<pre tabindex="0"><code>wget https://github.com/MetaCubeX/mihomo/releases/download/v1.18.3/mihomo-linux-amd64-v1.18.3.gz &amp;&amp; gunzip mihomo-linux-amd64-v1.18.3.gz
+chmod +x mihomo-linux-amd64-v1.18.3
+</code></pre><p><em>写这一部分的时间是2024-04-10，已经经历过了Clash生态的全面封杀，原本的Clash内核已经不再更新了，所以这里选择了Clash Meta内核</em><br>
+接下来，下载<a href="https://github.com/Loyalsoldier/geoip/releases">Country.mmdb</a> ，并放到mihomo-linux-amd64的同一目录下<br>
+然后下载配置文件</p>
+<pre tabindex="0"><code>wget https://域名或IP:端口/sub?target=clash&amp;token=API密钥
+</code></pre><p>最后，就可以启动了</p>
+<pre tabindex="0"><code>./mihomo-linux-amd64-v1.18.3 -d ./
+</code></pre><p>到了这一步就可以正常使用了，默认的端口应该是7890（央视,7890.jpg）<br>
+可以到其他程序中指定，也可以使用命令设置环境变量</p>
+<pre tabindex="0"><code>export https_proxy=&#34;http://127.0.0.1:7890&#34;
+export http_proxy=&#34;http://127.0.0.1:7890&#34;
+</code></pre><h2 id="将clash-meta设置为服务并开机自启">将Clash Meta设置为服务，并开机自启</h2>
+<p>参考下面的配置文件在 <strong>/etc/systemd/system</strong> 创建文件<br>
+clash_meta.service</p>
+<pre tabindex="0"><code>[Unit]
+Description=Clash_Meta
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=/home/debian/clash_meta/mihomo-linux-amd64-v1.18.3 -d /home/debian/clash_meta
+User=debian
+
+[Install]
+WantedBy=multi-user.target
+</code></pre><p>重载并启动</p>
+<pre tabindex="0"><code>sudo systemctl daemon-reload
+sudo systemctl start clash_meta
+sudo systemctl enable clash_meta # 开机自启
+</code></pre><h2 id="自动更新配置文件">自动更新配置文件</h2>
+<h3 id="脚本">脚本</h3>
+<p>随便找个地方，放更新脚本（这里是和mihomo-linux-amd64-v1.18.3放在了一起<br>
+update_config.sh</p>
+<pre tabindex="0"><code>#!/bin/bash
+cd /home/debian/clash_meta
+mv config.yaml config.yaml.back # 备份原有的配置文件
+wget &#34;https://域名或IP:端口/sub?target=clash&amp;token=API密钥&#34; -O config.yaml # 下载新的配置文件
+sudo systemctl restart clash_meta.service # 重启 Clash Meta
+</code></pre><p>设置执行权限</p>
+<pre tabindex="0"><code>chmod +x update_config.sh
+</code></pre><h3 id="添加定时任务">添加定时任务</h3>
+<p>使用命令编辑定时任务</p>
+<pre tabindex="0"><code>crontab -e
+</code></pre><p>在最后面新加一行</p>
+<pre tabindex="0"><code>0 3 * * *   &#34;/home/debian/clash_meta/update_config.sh&#34; &gt; /dev/null
+</code></pre><p>其中前面的时间格式为 <strong>m h  dom mon dow</strong> 即 分，时，日，月，周（可以参考<a href="https://zh.wikipedia.org/wiki/Cron">Wiki</a>）</p>
+<p>像上面的写法，就是每天的凌晨三点会执行一次（最好是选在没有人用的凌晨执行，毕竟需要重启Clash）</p>
 <hr>
 <h1 id="参考文章">参考文章</h1>
 <ul>
@@ -663,8 +837,8 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e5%85%a8%e5%b9%b3%e5%8f%b0-clash-%e7%9a%84%e8%b0%83%e6%95%99%e8%bf%87%e7%a8%8b" onclick="onNavClick(`#全平台-clash-的调教过程-nav`)" id="全平台-clash-的调教过程-nav">
-									全平台 Clash 的调教过程
+								<a href="#subconverter-%e7%9a%84%e8%b0%83%e6%95%99%e8%bf%87%e7%a8%8b" onclick="onNavClick(`#subconverter-的调教过程-nav`)" id="subconverter-的调教过程-nav">
+									Subconverter 的调教过程
 								</a>
 							</li>
 						
@@ -738,6 +912,114 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#linux-%e5%b9%b3%e5%8f%b0%e7%9a%84%e8%b0%83%e6%95%99%e8%bf%87%e7%a8%8b" onclick="onNavClick(`#linux-平台的调教过程-nav`)" id="linux-平台的调教过程-nav">
+									Linux 平台的调教过程
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%b0%86clash-meta%e8%ae%be%e7%bd%ae%e4%b8%ba%e6%9c%8d%e5%8a%a1%e5%b9%b6%e5%bc%80%e6%9c%ba%e8%87%aa%e5%90%af" onclick="onNavClick(`#将clash-meta设置为服务并开机自启-nav`)" id="将clash-meta设置为服务并开机自启-nav">
+									将Clash Meta设置为服务，并开机自启
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%87%aa%e5%8a%a8%e6%9b%b4%e6%96%b0%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6" onclick="onNavClick(`#自动更新配置文件-nav`)" id="自动更新配置文件-nav">
+									自动更新配置文件
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e8%84%9a%e6%9c%ac" onclick="onNavClick(`#脚本-nav`)" id="脚本-nav">
+									脚本
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%b7%bb%e5%8a%a0%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1" onclick="onNavClick(`#添加定时任务-nav`)" id="添加定时任务-nav">
+									添加定时任务
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
 							
 								</ul>
 							

@@ -216,9 +216,8 @@ flag 为 &lt;strong&gt;flag{1sb_i4_s0_Ea4y}&lt;/strong&gt;&lt;/p&gt;
 &lt;li&gt;决定全平台使用 Clash&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;全平台-clash-的调教过程&#34;&gt;全平台 Clash 的调教过程&lt;/h1&gt;
-&lt;p&gt;&lt;em&gt;(其实是 subconverter 的调教过程)&lt;/em&gt;&lt;br&gt;
-虽然用了 Clash ，但机场提供的配置方案不是很符合个人需求(而且主用的机场没有 ipv6 的配置)，且手中有多个机场(主用机场 + 便宜的备用机场 + 按流量付费，使用特殊节点的机场)，于是使用了 &lt;a href=&#34;https://github.com/tindy2013/subconverter&#34;&gt;subconverter&lt;/a&gt; 来制作 Clash 配置文件。&lt;/p&gt;
+&lt;h1 id=&#34;subconverter-的调教过程&#34;&gt;Subconverter 的调教过程&lt;/h1&gt;
+&lt;p&gt;虽然用了 Clash ，但机场提供的配置方案不是很符合个人需求(而且主用的机场没有 ipv6 的配置)，且手中有多个机场(主用机场 + 便宜的备用机场 + 按流量付费，使用特殊节点的机场)，于是使用了 &lt;a href=&#34;https://github.com/tindy2013/subconverter&#34;&gt;subconverter&lt;/a&gt; 来制作 Clash 配置文件。&lt;/p&gt;
 &lt;h2 id=&#34;目的&#34;&gt;目的&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;将 &lt;strong&gt;多个&lt;/strong&gt; 机场的订阅合并为一个&lt;/li&gt;
@@ -229,13 +228,21 @@ flag 为 &lt;strong&gt;flag{1sb_i4_s0_Ea4y}&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;以默认为主，修改部分条目&lt;/strong&gt;&lt;br&gt;
 /pref.ini&lt;br&gt;
-用于添加多条机场订阅&lt;/p&gt;
+添加多条机场订阅并设置API密钥&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[common]
-    default_url=机场订阅地址1|机场订阅地址2|机场订阅地址3
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;从 url 获取规则片段，并分成几个策略组&lt;/p&gt;
+  api_mode=true
+  api_access_token=API密钥 
+  default_url=机场订阅地址1|机场订阅地址2|机场订阅地址3
+  enable_insert=false
+  insert_url=如果需要在上面几个订阅地址外额外添加节点，可以将enable_insert设置为true并把配置地址放在这里，同样以“|”分隔
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;从 url 获取规则片段，并分成几个策略组&lt;br&gt;
+这里需要注意的是：&lt;br&gt;
+&lt;strong&gt;因为clash匹配规则是自上而下匹配，当匹配上一条规则后，后面的规则就不再进行匹配了，所以需要将一些匹配范围小的放在上面，匹配范围大的放在下面&lt;/strong&gt;&lt;br&gt;
+曾经犯的错误：仅有部分节点可以使用22端口（平时是专门用一个节点代理ssh流量的），而匹配22端口的“SSHRules.list”放在了“已墙域名”（已墙域名里面有 Github 的域名）的后面，导致了无法通过ssh连接上 Github 。&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[rulesets]
     ruleset=DIRECT,rules/DirectDomain.list
     ;DirectDomain.list  手动添加的直连域名
+
 
     ruleset=Proxy,rules/ProxyDomain.list
     ;ProxyDomain.list  手动添加的代理域名
@@ -243,6 +250,20 @@ flag 为 &lt;strong&gt;flag{1sb_i4_s0_Ea4y}&lt;/strong&gt;&lt;/p&gt;
     ruleset=拦截,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/BanAD.list,86400
     ruleset=拦截,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/BanProgramAD.list,86400
     ;广告域名
+
+    ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list,86400
+    ;直连域名
+
+    ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list,86400
+    ;局域网IP段
+
+    ruleset=DIRECT,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPs/ChinaIPs.list,86400
+    ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list,86400
+    ruleset=DIRECT,[]GEOIP,CN
+    ;中国IP段
+
+    ruleset=SSH,rules/SSHRules.list
+    ;针对22端口的分流
 
     ruleset=Bilibili,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Ruleset/Bilibili.list,86400
     ;Bilibili域名
@@ -263,24 +284,15 @@ flag 为 &lt;strong&gt;flag{1sb_i4_s0_Ea4y}&lt;/strong&gt;&lt;/p&gt;
     ruleset=Game,https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/EA/EA.list,86400
     ;EA域名
 
+
     ruleset=Proxy,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/ProxyGFWlist.list,86400
     ;已墙域名
 
-    ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list,86400
-    ;直连域名
-
-
-    ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list,86400
-    ;局域网IP段
-
-    ruleset=DIRECT,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPs/ChinaIPs.list,86400
-    ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list,86400
-    ruleset=DIRECT,[]GEOIP,CN
-    ;中国IP段
     ruleset=Proxy,[]FINAL
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;为策略组添加节点&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[proxy_groups]
     custom_proxy_group=Proxy`select`.*
+    custom_proxy_group=SSH`select`[]DIRECT`[]Proxy`.*
     custom_proxy_group=Game`select`[]DIRECT`[]Proxy`.*
     custom_proxy_group=微软服务`select`.*
     custom_proxy_group=PT Trackers`select`[]DIRECT`[]Proxy`.*
@@ -322,6 +334,60 @@ flag 为 &lt;strong&gt;flag{1sb_i4_s0_Ea4y}&lt;/strong&gt;&lt;/p&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash&#34;&gt;github.com/blackmatrix7/ios_rule_script&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/DivineEngine/Profiles/tree/master/Clash/RuleSet&#34;&gt;github.com/DivineEngine/Profiles&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h1 id=&#34;linux-平台的调教过程&#34;&gt;Linux 平台的调教过程&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;系统为 Debian 12，X86架构&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;因为我的主力机是 Windows，Linux主要是作为服务器使用，故而并没有安装图形化桌面，使用的是命令行，所以这部分教程也会是命令行的版本&lt;br&gt;
+首先，下载&lt;a href=&#34;https://github.com/MetaCubeX/mihomo/releases&#34;&gt;Clash Meta 核心&lt;/a&gt;，并解压&lt;br&gt;
+&lt;em&gt;参考命令，文件名要根据实际替换&lt;/em&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;wget https://github.com/MetaCubeX/mihomo/releases/download/v1.18.3/mihomo-linux-amd64-v1.18.3.gz &amp;amp;&amp;amp; gunzip mihomo-linux-amd64-v1.18.3.gz
+chmod +x mihomo-linux-amd64-v1.18.3
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;写这一部分的时间是2024-04-10，已经经历过了Clash生态的全面封杀，原本的Clash内核已经不再更新了，所以这里选择了Clash Meta内核&lt;/em&gt;&lt;br&gt;
+接下来，下载&lt;a href=&#34;https://github.com/Loyalsoldier/geoip/releases&#34;&gt;Country.mmdb&lt;/a&gt; ，并放到mihomo-linux-amd64的同一目录下&lt;br&gt;
+然后下载配置文件&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;wget https://域名或IP:端口/sub?target=clash&amp;amp;token=API密钥
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;最后，就可以启动了&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;./mihomo-linux-amd64-v1.18.3 -d ./
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;到了这一步就可以正常使用了，默认的端口应该是7890（央视,7890.jpg）&lt;br&gt;
+可以到其他程序中指定，也可以使用命令设置环境变量&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;export https_proxy=&amp;#34;http://127.0.0.1:7890&amp;#34;
+export http_proxy=&amp;#34;http://127.0.0.1:7890&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;将clash-meta设置为服务并开机自启&#34;&gt;将Clash Meta设置为服务，并开机自启&lt;/h2&gt;
+&lt;p&gt;参考下面的配置文件在 &lt;strong&gt;/etc/systemd/system&lt;/strong&gt; 创建文件&lt;br&gt;
+clash_meta.service&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[Unit]
+Description=Clash_Meta
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=/home/debian/clash_meta/mihomo-linux-amd64-v1.18.3 -d /home/debian/clash_meta
+User=debian
+
+[Install]
+WantedBy=multi-user.target
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;重载并启动&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo systemctl daemon-reload
+sudo systemctl start clash_meta
+sudo systemctl enable clash_meta # 开机自启
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;自动更新配置文件&#34;&gt;自动更新配置文件&lt;/h2&gt;
+&lt;h3 id=&#34;脚本&#34;&gt;脚本&lt;/h3&gt;
+&lt;p&gt;随便找个地方，放更新脚本（这里是和mihomo-linux-amd64-v1.18.3放在了一起&lt;br&gt;
+update_config.sh&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#!/bin/bash
+cd /home/debian/clash_meta
+mv config.yaml config.yaml.back # 备份原有的配置文件
+wget &amp;#34;https://域名或IP:端口/sub?target=clash&amp;amp;token=API密钥&amp;#34; -O config.yaml # 下载新的配置文件
+sudo systemctl restart clash_meta.service # 重启 Clash Meta
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;设置执行权限&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;chmod +x update_config.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;添加定时任务&#34;&gt;添加定时任务&lt;/h3&gt;
+&lt;p&gt;使用命令编辑定时任务&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;crontab -e
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在最后面新加一行&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;0 3 * * *   &amp;#34;/home/debian/clash_meta/update_config.sh&amp;#34; &amp;gt; /dev/null
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;其中前面的时间格式为 &lt;strong&gt;m h  dom mon dow&lt;/strong&gt; 即 分，时，日，月，周（可以参考&lt;a href=&#34;https://zh.wikipedia.org/wiki/Cron&#34;&gt;Wiki&lt;/a&gt;）&lt;/p&gt;
+&lt;p&gt;像上面的写法，就是每天的凌晨三点会执行一次（最好是选在没有人用的凌晨执行，毕竟需要重启Clash）&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id=&#34;参考文章&#34;&gt;参考文章&lt;/h1&gt;
 &lt;ul&gt;

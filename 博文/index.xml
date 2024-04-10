@@ -98,8 +98,7 @@ Win 添加拆字词库 思路 由于长期使用搜狗输入法，习惯了拆�
       <pubDate>Thu, 22 Dec 2022 21:22:33 +0800</pubDate>
       
       <guid>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/</guid>
-      <description>代理软件的使用历程 使用赛风 VPN 听人提及到 SSR ，转用 SSR 每个设备分别使用 SSR 由于 SSR 封锁严重，跟随购买的机场换为 V2ray 每个设备分别使用 V2ray 困扰于每个平台都要运行代理软件 + V2ray 客户端不怎么好使+ Linux 运行代理程序需要命令行+手中刚好有树莓派，决定换用 Openwrt Openwrt 单臂路由 + SSRPlus 因为是单臂路由，有的设备不能自定义网关 + SSRPlus 自定义程度不够+ PassWall 莫名其妙的不能用+住校+主流机场换用了 Clash ，决定每个平台分别使用 Clash 决定全平台使用 Clash 全平台 Clash 的调教过程 (其实是 subconverter 的调教过程)
-虽然用了 Clash ，但机场提供的配置方案不是很符合个人需求(而且主用的机场没有 ipv6 的配置)，且手中有多个机场(主用机场 + 便宜的备用机场 + 按流量付费，使用特殊节点的机场)，于是使用了 subconverter 来制作 Clash 配置文件。
+      <description>代理软件的使用历程 使用赛风 VPN 听人提及到 SSR ，转用 SSR 每个设备分别使用 SSR 由于 SSR 封锁严重，跟随购买的机场换为 V2ray 每个设备分别使用 V2ray 困扰于每个平台都要运行代理软件 + V2ray 客户端不怎么好使+ Linux 运行代理程序需要命令行+手中刚好有树莓派，决定换用 Openwrt Openwrt 单臂路由 + SSRPlus 因为是单臂路由，有的设备不能自定义网关 + SSRPlus 自定义程度不够+ PassWall 莫名其妙的不能用+住校+主流机场换用了 Clash ，决定每个平台分别使用 Clash 决定全平台使用 Clash Subconverter 的调教过程 虽然用了 Clash ，但机场提供的配置方案不是很符合个人需求(而且主用的机场没有 ipv6 的配置)，且手中有多个机场(主用机场 + 便宜的备用机场 + 按流量付费，使用特殊节点的机场)，于是使用了 subconverter 来制作 Clash 配置文件。
 目的 将 多个 机场的订阅合并为一个 国内直连( ipv4 + ipv6 )，游戏平台自选直连和代理，哔哩哔哩自选直连和代理， Netflix 自选直连和代理，其他国外一律代理 有一个单独的文件用以手动添加一些直连的域名(用于 DDNS NAS 的域名) 使用 Doh 进行域名解析 配置 以默认为主，修改部分条目</description>
     </item>
     
