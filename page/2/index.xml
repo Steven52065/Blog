@@ -6,9 +6,35 @@
     <description>Recent content on Ling的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 25 Nov 2023 22:24:29 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 10 Apr 2024 23:08:06 +0800</lastBuildDate>
     
         <atom:link href="https://blog.lty520.faith/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>WP BUUCTF 刷新过的图片</title>
+        <link>https://blog.lty520.faith/ctf/wp-buuctf-%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87/</link>
+        <pubDate>Thu, 02 Feb 2023 19:58:22 +0800</pubDate>
+        
+        <guid>https://blog.lty520.faith/ctf/wp-buuctf-%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87/</guid>
+        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87&#34;&gt;https://buuoj.cn/challenges#%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
+&lt;p&gt;浏览图片的时候刷新键有没有用呢&lt;br&gt;
+&lt;img src=&#34;https://blog.lty520.faith/img/CTF/WP-BUUCTF-%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87/Misc.jpg&#34; alt=&#34;题图&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
+&lt;p&gt;提到了刷新的图片，可以想到 F5 隐写&lt;br&gt;
+使用工具 &lt;a href=&#34;https://github.com/matthewgao/F5-steganography&#34;&gt;F5-steganography&lt;/a&gt;&lt;br&gt;
+使用命令&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;java Extract /图片的绝对路径 [-p 密码] [-e 输出文件]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;可以解出一个伪加密的压缩包&lt;br&gt;
+打开压缩包后即可得到 flag&lt;br&gt;
+&lt;strong&gt;flag{96efd0a2037d06f34199e921079778ee}&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;为什么死活运行不了呢&amp;hellip; Java 版本太新的问题？？？怪&lt;/em&gt;&lt;br&gt;
+&lt;img src=&#34;https://blog.lty520.faith/img/CTF/WP-BUUCTF-%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87/img1.png&#34; alt=&#34;img1&#34;&gt;&lt;/p&gt;
+- https://blog.lty520.faith/ctf/wp-buuctf-%E5%88%B7%E6%96%B0%E8%BF%87%E7%9A%84%E5%9B%BE%E7%89%87/ - </description>
+        </item>
     
     
     
@@ -468,23 +494,6 @@ Hello, CTFer!
     └── $Volume
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在 &lt;strong&gt;NUL&lt;/strong&gt; 文件和 &lt;strong&gt;where_is_flag_part_two.txt:flag_part_two_is_here.txt&lt;/strong&gt; 里可以分别找到两段代码，使用工具 &lt;a href=&#34;https://www.splitbrain.org/services/ook&#34;&gt;Brainfuck/Ook! Obfuscation/Encoding&lt;/a&gt; 可以解出前后两半flag，拼在一起即可得 flag 为 &lt;strong&gt;flag{N7F5_AD5_i5_funny!}&lt;/strong&gt;&lt;/p&gt;
 - https://blog.lty520.faith/ctf/wp-buuctf-%E9%9D%A2%E5%85%B7%E4%B8%8B%E7%9A%84flag/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>WP BUUCTF 另外一个世界</title>
-        <link>https://blog.lty520.faith/ctf/wp-buuctf-%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E4%B8%96%E7%95%8C/</link>
-        <pubDate>Mon, 16 Jan 2023 22:36:08 +0800</pubDate>
-        
-        <guid>https://blog.lty520.faith/ctf/wp-buuctf-%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E4%B8%96%E7%95%8C/</guid>
-        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E4%B8%96%E7%95%8C/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E4%B8%96%E7%95%8C&#34;&gt;https://buuoj.cn/challenges#%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E4%B8%96%E7%95%8C&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.lty520.faith/img/CTF/WP-BUUCTF-%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E4%B8%96%E7%95%8C/monster.jpg&#34; alt=&#34;题图&#34;&gt;&lt;/p&gt;
-&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
-&lt;p&gt;使用 Notepad++ 打开图片后即可在末尾找到一串特立独行的 &lt;strong&gt;01101011011011110110010101101011011010100011001101110011&lt;/strong&gt;  使用工具 &lt;a href=&#34;http://xiaoniutxt.com/binaryToString.html&#34;&gt;二进制与字符串互转&lt;/a&gt; 即可得到 &lt;strong&gt;koekj3s&lt;/strong&gt;&lt;br&gt;
-可得 flag 为 &lt;strong&gt;flag{97314e7864a8f62627b26f3f998c37f1}&lt;/strong&gt;&lt;/p&gt;
-- https://blog.lty520.faith/ctf/wp-buuctf-%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E4%B8%96%E7%95%8C/ - </description>
         </item>
     
     

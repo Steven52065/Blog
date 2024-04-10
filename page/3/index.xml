@@ -6,9 +6,26 @@
     <description>Recent content on Ling的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 25 Nov 2023 22:24:29 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 10 Apr 2024 23:08:06 +0800</lastBuildDate>
     
         <atom:link href="https://blog.lty520.faith/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>WP BUUCTF 另外一个世界</title>
+        <link>https://blog.lty520.faith/ctf/wp-buuctf-%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E4%B8%96%E7%95%8C/</link>
+        <pubDate>Mon, 16 Jan 2023 22:36:08 +0800</pubDate>
+        
+        <guid>https://blog.lty520.faith/ctf/wp-buuctf-%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E4%B8%96%E7%95%8C/</guid>
+        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E4%B8%96%E7%95%8C/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E4%B8%96%E7%95%8C&#34;&gt;https://buuoj.cn/challenges#%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E4%B8%96%E7%95%8C&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.lty520.faith/img/CTF/WP-BUUCTF-%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E4%B8%96%E7%95%8C/monster.jpg&#34; alt=&#34;题图&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
+&lt;p&gt;使用 Notepad++ 打开图片后即可在末尾找到一串特立独行的 &lt;strong&gt;01101011011011110110010101101011011010100011001101110011&lt;/strong&gt;  使用工具 &lt;a href=&#34;http://xiaoniutxt.com/binaryToString.html&#34;&gt;二进制与字符串互转&lt;/a&gt; 即可得到 &lt;strong&gt;koekj3s&lt;/strong&gt;&lt;br&gt;
+可得 flag 为 &lt;strong&gt;flag{97314e7864a8f62627b26f3f998c37f1}&lt;/strong&gt;&lt;/p&gt;
+- https://blog.lty520.faith/ctf/wp-buuctf-%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E4%B8%96%E7%95%8C/ - </description>
+        </item>
     
     
     
@@ -281,38 +298,6 @@ for i in range(32,127):
 &lt;hr&gt;
 &lt;p&gt;&lt;em&gt;做到一半发现 ubuntu 的 python 环境炸了&amp;hellip;头秃&lt;/em&gt;&lt;/p&gt;
 - https://blog.lty520.faith/ctf/wp-buuctf-%E7%AF%B1%E7%AC%86%E5%A2%99%E7%9A%84%E5%BD%B1%E5%AD%90/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>WP BUUCTF [极客大挑战2019]Http</title>
-        <link>https://blog.lty520.faith/ctf/wp-buuctf-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019http/</link>
-        <pubDate>Thu, 12 Jan 2023 01:05:28 +0800</pubDate>
-        
-        <guid>https://blog.lty520.faith/ctf/wp-buuctf-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019http/</guid>
-        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019http/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%5B%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98%202019%5DHttp&#34;&gt;https://buuoj.cn/challenges#[%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98%202019]Http&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
-&lt;p&gt;一个网站&lt;/p&gt;
-&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
-&lt;p&gt;题目给了一个网站，在网页源码里可以找到一句&lt;br&gt;
-&lt;strong&gt;&amp;lt;a style=&amp;ldquo;border:none;cursor:default;&amp;rdquo; onclick=&amp;ldquo;return false&amp;rdquo; href=&amp;ldquo;Secret.php&amp;rdquo;&amp;gt;&lt;/strong&gt;&lt;br&gt;
-可以猜到题目和 Secret.php 有关&lt;br&gt;
-打开后即可按照题目提示分别加上三个请求头:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Referer:https://Sycsecret.buuoj.cn&lt;/li&gt;
-&lt;li&gt;User-Agent:Syclover&lt;/li&gt;
-&lt;li&gt;X-Forwarded-For:127.0.0.1&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;    import httpx
-    url = &amp;#39;http://node4.buuoj.cn:27094/Secret.php&amp;#39;
-    headers = {&amp;#34;Referer&amp;#34;:&amp;#34;https://Sycsecret.buuoj.cn&amp;#34;,&amp;#34;User-Agent&amp;#34;:&amp;#34;Syclover&amp;#34;,&amp;#34;X-Forwarded-For&amp;#34;:&amp;#34;127.0.0.1&amp;#34;}
-    r = httpx.get(url,headers=headers)
-    print(r.text)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;可得 flag 为 &lt;strong&gt;flag{10b601e9-9ce4-4abc-b69d-32123353d17e}&lt;/strong&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;em&gt;见了鬼了，用 Postman 死活不行&amp;hellip;&lt;img src=&#34;https://blog.lty520.faith/img/CTF/WP-BUUCTF-%5B%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019%5DHttp1/img1.png&#34; alt=&#34;不好使的Postman&#34;&gt;还得是 Python&lt;/em&gt;&lt;/p&gt;
-- https://blog.lty520.faith/ctf/wp-buuctf-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019http/ - </description>
         </item>
     
     

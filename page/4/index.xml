@@ -6,9 +6,41 @@
     <description>Recent content on Ling的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 25 Nov 2023 22:24:29 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 10 Apr 2024 23:08:06 +0800</lastBuildDate>
     
         <atom:link href="https://blog.lty520.faith/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>WP BUUCTF [极客大挑战2019]Http</title>
+        <link>https://blog.lty520.faith/ctf/wp-buuctf-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019http/</link>
+        <pubDate>Thu, 12 Jan 2023 01:05:28 +0800</pubDate>
+        
+        <guid>https://blog.lty520.faith/ctf/wp-buuctf-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019http/</guid>
+        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019http/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%5B%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98%202019%5DHttp&#34;&gt;https://buuoj.cn/challenges#[%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98%202019]Http&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
+&lt;p&gt;一个网站&lt;/p&gt;
+&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
+&lt;p&gt;题目给了一个网站，在网页源码里可以找到一句&lt;br&gt;
+&lt;strong&gt;&amp;lt;a style=&amp;ldquo;border:none;cursor:default;&amp;rdquo; onclick=&amp;ldquo;return false&amp;rdquo; href=&amp;ldquo;Secret.php&amp;rdquo;&amp;gt;&lt;/strong&gt;&lt;br&gt;
+可以猜到题目和 Secret.php 有关&lt;br&gt;
+打开后即可按照题目提示分别加上三个请求头:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Referer:https://Sycsecret.buuoj.cn&lt;/li&gt;
+&lt;li&gt;User-Agent:Syclover&lt;/li&gt;
+&lt;li&gt;X-Forwarded-For:127.0.0.1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;    import httpx
+    url = &amp;#39;http://node4.buuoj.cn:27094/Secret.php&amp;#39;
+    headers = {&amp;#34;Referer&amp;#34;:&amp;#34;https://Sycsecret.buuoj.cn&amp;#34;,&amp;#34;User-Agent&amp;#34;:&amp;#34;Syclover&amp;#34;,&amp;#34;X-Forwarded-For&amp;#34;:&amp;#34;127.0.0.1&amp;#34;}
+    r = httpx.get(url,headers=headers)
+    print(r.text)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;可得 flag 为 &lt;strong&gt;flag{10b601e9-9ce4-4abc-b69d-32123353d17e}&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;见了鬼了，用 Postman 死活不行&amp;hellip;&lt;img src=&#34;https://blog.lty520.faith/img/CTF/WP-BUUCTF-%5B%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019%5DHttp1/img1.png&#34; alt=&#34;不好使的Postman&#34;&gt;还得是 Python&lt;/em&gt;&lt;/p&gt;
+- https://blog.lty520.faith/ctf/wp-buuctf-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019http/ - </description>
+        </item>
     
     
     
@@ -226,8 +258,8 @@ flag 为 &lt;strong&gt;flag{1sb_i4_s0_Ea4y}&lt;/strong&gt;&lt;/p&gt;
 &lt;li&gt;使用 Doh 进行域名解析&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;以默认为主，修改部分条目&lt;/strong&gt;&lt;br&gt;
-/pref.ini&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;以默认为主，修改部分条目&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;/pref.ini&lt;br&gt;
 添加多条机场订阅并设置API密钥&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[common]
   api_mode=true
@@ -337,12 +369,12 @@ flag 为 &lt;strong&gt;flag{1sb_i4_s0_Ea4y}&lt;/strong&gt;&lt;/p&gt;
 &lt;h1 id=&#34;linux-平台的调教过程&#34;&gt;Linux 平台的调教过程&lt;/h1&gt;
 &lt;p&gt;&lt;em&gt;系统为 Debian 12，X86架构&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;因为我的主力机是 Windows，Linux主要是作为服务器使用，故而并没有安装图形化桌面，使用的是命令行，所以这部分教程也会是命令行的版本&lt;br&gt;
-首先，下载&lt;a href=&#34;https://github.com/MetaCubeX/mihomo/releases&#34;&gt;Clash Meta 核心&lt;/a&gt;，并解压&lt;br&gt;
-&lt;em&gt;参考命令，文件名要根据实际替换&lt;/em&gt;&lt;/p&gt;
+首先，下载&lt;a href=&#34;https://github.com/MetaCubeX/mihomo/releases&#34;&gt;Clash Meta 核心&lt;/a&gt;，并解压&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;参考命令，文件名要根据实际替换&lt;/em&gt;&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;wget https://github.com/MetaCubeX/mihomo/releases/download/v1.18.3/mihomo-linux-amd64-v1.18.3.gz &amp;amp;&amp;amp; gunzip mihomo-linux-amd64-v1.18.3.gz
 chmod +x mihomo-linux-amd64-v1.18.3
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;写这一部分的时间是2024-04-10，已经经历过了Clash生态的全面封杀，原本的Clash内核已经不再更新了，所以这里选择了Clash Meta内核&lt;/em&gt;&lt;br&gt;
-接下来，下载&lt;a href=&#34;https://github.com/Loyalsoldier/geoip/releases&#34;&gt;Country.mmdb&lt;/a&gt; ，并放到mihomo-linux-amd64的同一目录下&lt;br&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;写这一部分的时间是2024-04-10，已经经历过了Clash生态的全面封杀，原本的Clash内核已经不再更新了，所以这里选择了Clash Meta内核&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;接下来，下载&lt;a href=&#34;https://github.com/Loyalsoldier/geoip/releases&#34;&gt;Country.mmdb&lt;/a&gt; ，并放到mihomo-linux-amd64的同一目录下&lt;br&gt;
 然后下载配置文件&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;wget https://域名或IP:端口/sub?target=clash&amp;amp;token=API密钥
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;最后，就可以启动了&lt;/p&gt;
@@ -439,8 +471,6 @@ sudo systemctl restart clash_meta.service # 重启 Clash Meta
 &lt;/ul&gt;
 - https://blog.lty520.faith/%E5%8D%9A%E6%96%87/hello-world/ - </description>
         </item>
-    
-    
     
     
   </channel>

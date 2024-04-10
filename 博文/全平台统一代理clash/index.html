@@ -10,7 +10,7 @@
 <meta name="google-site-verification" content="">
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
 <meta content="telephone=no" name="format-detection">
-<meta name="description" content="subconverter合并多个订阅及自定义规则和策略组">
+<meta name="description" content="subconverter合并多个订阅及自定义规则和策略组以及配置多个平台的客户端">
 <meta name="renderer" content="webkit">
 <meta name="theme-color" content="#ffffff">
 
@@ -430,7 +430,7 @@
                     
                     
                     <div class="post-subtitle">
-                        subconverter合并多个订阅及自定义规则和策略组
+                        subconverter合并多个订阅及自定义规则和策略组以及配置多个平台的客户端
                     </div>
                     
                     <div class="post-meta">
@@ -498,8 +498,8 @@
 <li>使用 Doh 进行域名解析</li>
 </ol>
 <h2 id="配置">配置</h2>
-<p><strong>以默认为主，修改部分条目</strong><br>
-/pref.ini<br>
+<p><strong>以默认为主，修改部分条目</strong></p>
+<p>/pref.ini<br>
 添加多条机场订阅并设置API密钥</p>
 <pre tabindex="0"><code>[common]
   api_mode=true
@@ -609,12 +609,12 @@
 <h1 id="linux-平台的调教过程">Linux 平台的调教过程</h1>
 <p><em>系统为 Debian 12，X86架构</em></p>
 <p>因为我的主力机是 Windows，Linux主要是作为服务器使用，故而并没有安装图形化桌面，使用的是命令行，所以这部分教程也会是命令行的版本<br>
-首先，下载<a href="https://github.com/MetaCubeX/mihomo/releases">Clash Meta 核心</a>，并解压<br>
-<em>参考命令，文件名要根据实际替换</em></p>
+首先，下载<a href="https://github.com/MetaCubeX/mihomo/releases">Clash Meta 核心</a>，并解压</p>
+<p><em>参考命令，文件名要根据实际替换</em></p>
 <pre tabindex="0"><code>wget https://github.com/MetaCubeX/mihomo/releases/download/v1.18.3/mihomo-linux-amd64-v1.18.3.gz &amp;&amp; gunzip mihomo-linux-amd64-v1.18.3.gz
 chmod +x mihomo-linux-amd64-v1.18.3
-</code></pre><p><em>写这一部分的时间是2024-04-10，已经经历过了Clash生态的全面封杀，原本的Clash内核已经不再更新了，所以这里选择了Clash Meta内核</em><br>
-接下来，下载<a href="https://github.com/Loyalsoldier/geoip/releases">Country.mmdb</a> ，并放到mihomo-linux-amd64的同一目录下<br>
+</code></pre><p><em>写这一部分的时间是2024-04-10，已经经历过了Clash生态的全面封杀，原本的Clash内核已经不再更新了，所以这里选择了Clash Meta内核</em></p>
+<p>接下来，下载<a href="https://github.com/Loyalsoldier/geoip/releases">Country.mmdb</a> ，并放到mihomo-linux-amd64的同一目录下<br>
 然后下载配置文件</p>
 <pre tabindex="0"><code>wget https://域名或IP:端口/sub?target=clash&amp;token=API密钥
 </code></pre><p>最后，就可以启动了</p>
@@ -789,7 +789,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 
 &copy;
 	
-	2023 Ling的博客
+	2024 Ling的博客
 	
 
     </div>
@@ -1065,7 +1065,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 
 &copy;
 	
-	2023 Ling的博客
+	2024 Ling的博客
 	
 </div>
             </div>

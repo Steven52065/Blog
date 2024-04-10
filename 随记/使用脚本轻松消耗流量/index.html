@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-<title>WP BUUCTF [BJDCTF2020]藏藏藏</title>
+<title>使用脚本轻松消耗流量</title>
 
 
 
@@ -10,7 +10,7 @@
 <meta name="google-site-verification" content="">
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
 <meta content="telephone=no" name="format-detection">
-<meta name="description" content="">
+<meta name="description" content="这两年来，国内各大运营商打击PCDN的力度越来越大了，虽然我没搞PCDN，但是因为玩PT已经在外面使用家里的NAS，也被误伤了一锤。在自行限制了上传速度后，还是不太放心，听闻会检测上下行流量的比例来判断是否为PCDN，于是写了这个脚本来浪费一些下载流量">
 <meta name="renderer" content="webkit">
 <meta name="theme-color" content="#ffffff">
 
@@ -104,9 +104,11 @@
                 
                 
                 
+                    
                 
                 
-                <a class="a-block drawer-menu-item false" href="/%E9%9A%8F%E8%AE%B0">
+                
+                <a class="a-block drawer-menu-item active" href="/%E9%9A%8F%E8%AE%B0">
                     随记
                 </a>
                 
@@ -114,11 +116,9 @@
                 
                 
                 
-                    
                 
                 
-                
-                <a class="a-block drawer-menu-item active" href="/ctf">
+                <a class="a-block drawer-menu-item false" href="/ctf">
                     CTF
                 </a>
                 
@@ -156,8 +156,8 @@
 						
 						
 							<li>
-								<a href="#%e9%a2%98%e7%9b%ae" onclick="onNavClick(`#题目-nav`)" id="题目-nav">
-									题目
+								<a href="#%e8%84%9a%e6%9c%ac%e5%86%85%e5%ae%b9" onclick="onNavClick(`#脚本内容-nav`)" id="脚本内容-nav">
+									脚本内容
 								</a>
 							</li>
 						
@@ -172,10 +172,38 @@
 						
 						
 						
+							
+								
+									<ul>
+								
+							
+						
 						
 							<li>
-								<a href="#%e6%80%9d%e8%b7%af" onclick="onNavClick(`#思路-nav`)" id="思路-nav">
-									思路
+								<a href="#%e8%ae%be%e7%bd%ae%e5%8f%af%e6%89%a7%e8%a1%8c%e6%9d%83%e9%99%90" onclick="onNavClick(`#设置可执行权限-nav`)" id="设置可执行权限-nav">
+									设置可执行权限
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%ae%9a%e6%97%b6%e6%89%a7%e8%a1%8c" onclick="onNavClick(`#定时执行-nav`)" id="定时执行-nav">
+									定时执行
 								</a>
 							</li>
 						
@@ -236,13 +264,17 @@
                 
             >
                 <div class="post-title">
-                    <h1 class="post-title">WP BUUCTF [BJDCTF2020]藏藏藏</h1>
+                    <h1 class="post-title">使用脚本轻松消耗流量</h1>
                     
+                    
+                    <div class="post-subtitle">
+                        这两年来，国内各大运营商打击PCDN的力度越来越大了，虽然我没搞PCDN，但是因为玩PT已经在外面使用家里的NAS，也被误伤了一锤。在自行限制了上传速度后，还是不太放心，听闻会检测上下行流量的比例来判断是否为PCDN，于是写了这个脚本来浪费一些下载流量
+                    </div>
                     
                     <div class="post-meta">
                         
                         <time itemprop="datePublished">
-                            2023-02-02 22:11
+                            2024-04-10 23:08
                         </time>
                         
 
@@ -257,7 +289,9 @@
                             
 
                             
-                            21 s.
+                            2 min
+                            
+                            52 s.
                         
                     </div>
                 </div>
@@ -267,21 +301,63 @@
                 
                 <div class="post-body" v-pre>
                 
-                    <p>题目链接: <a href="https://buuoj.cn/challenges#%5BBJDCTF2020%5D%E8%97%8F%E8%97%8F%E8%97%8F">https://buuoj.cn/challenges#[BJDCTF2020]%E8%97%8F%E8%97%8F%E8%97%8F</a></p>
-<h1 id="题目">题目</h1>
-<p><img src="/img/CTF/WP-BUUCTF-%5BBJDCTF2020%5D%E8%97%8F%E8%97%8F%E8%97%8F/%E8%97%8F%E8%97%8F%E8%97%8F.jpg" alt="题图"></p>
-<h1 id="思路">思路</h1>
-<p>首先使用 binwalk ，可以看到这是一个压缩包<br>
-<em>以 JPG 开头，以 ZIP 结尾（怪）</em>
-用 Bandzip 打开图片后，可以解压出 <strong>福利.docx</strong><br>
-其中是一个二维码<br>
-<img src="/img/CTF/WP-BUUCTF-%5BBJDCTF2020%5D%E8%97%8F%E8%97%8F%E8%97%8F/img1.png" alt="img1"><br>
-扫码即可得 flag<br>
-<strong>flag{you are the best!}</strong></p>
+                    <p>系统：Debian12<br>
+最初是想使用Speedtest测速来消耗流量的，但是发现官方的Speedtest-cli无法只测下载不测上传，所以就自己写了个脚本下载文件来消耗流量<br>
+想到有什么大文件能随便下载，就突然想到了“原神”，虽然没玩过，但是这个游戏体积贼大还是知道的。最后，就有了这个脚本</p>
+<h1 id="脚本内容">脚本内容</h1>
+<p>mian.sh</p>
+<pre tabindex="0"><code>#!/bin/bash
+
+# 定义日志文件的路径
+log_file=&#34;download_log.txt&#34;
+
+# 定义要下载的文件的URL列表，会依次下载，可以自行添加或删除
+urls=(
+  &#34;https://autopatchcn.yuanshen.com/client_app/download/pc_zip/20230804185703_R1La3H9xIH1hBiHJ/YuanShen_4.0.0.zip&#34; # 原神4.0游戏本体（56.15G）
+  &#34;https://autopatchcn.yuanshen.com/client_app/download/pc_zip/20230804185703_R1La3H9xIH1hBiHJ/Audio_Chinese_4.0.0.zip&#34; # 原神中文语音包（10.45G）
+  &#34;https://autopatchcn.yuanshen.com/client_app/download/launcher/20240314153152_0AZRlFRox2kHeTKf/mihoyo/yuanshen_setup_20240313190827.exe&#34; # 原神PC启动器（140M）
+)
+
+# 记录脚本开始运行的时间
+start_time=$(date +&#34;%Y-%m-%d %H:%M:%S&#34;)
+echo &#34;下载开始时间: $start_time&#34; &gt;&gt; &#34;$log_file&#34;
+
+# 遍历URL列表，下载每个文件并记录相关信息
+for url in &#34;${urls[@]}&#34;; do
+  echo &#34;正在下载 $url...&#34; &gt;&gt; &#34;$log_file&#34;
+
+  # 使用curl下载文件并获取文件大小（字节），同时检查是否成功执行
+  size_bytes=$(curl -s -w &#34;%{size_download}&#34; -o /dev/null &#34;$url&#34;)
+
+  # 检查是否成功获取到文件大小
+  if [[ $size_bytes -eq 0 ]]; then
+    echo &#34;下载失败或文件为空 $url &#34; &gt;&gt; &#34;$log_file&#34;
+  else
+    # 将文件大小从字节转换为GB并保留6位小数
+    size_gb=$(awk &#34;BEGIN {print $size_bytes / 1024 / 1024 / 1024}&#34;)
+
+    echo &#34;已下载 $url 文件大小: ${size_gb} GB&#34; &gt;&gt; &#34;$log_file&#34;
+  fi
+done
+
+# 记录脚本结束运行的时间
+end_time=$(date +&#34;%Y-%m-%d %H:%M:%S&#34;)
+echo &#34;下载完成时间: $end_time&#34; &gt;&gt; &#34;$log_file&#34;
+
+echo &#34;===============================================&#34;
+</code></pre><h2 id="设置可执行权限">设置可执行权限</h2>
+<pre tabindex="0"><code>chmod +x main.sh
+</code></pre><h1 id="定时执行">定时执行</h1>
+<p>使用命令编辑定时任务</p>
+<pre tabindex="0"><code>crontab -e
+</code></pre><p>在最后面新加一行</p>
+<pre tabindex="0"><code>0 */12 * * * cd &#34;/home/debian/waste_downstream_traffic&#34; &amp;&amp; ./main.sh &gt; /dev/null
+</code></pre><p>其中前面的时间格式为 <strong>m h  dom mon dow</strong> 即 分，时，日，月，周（可以参考 <a href="https://zh.wikipedia.org/wiki/Cron">Wiki</a>）</p>
+<p>像上面的写法，就是每十二小时会执行一次（本来打算是设置在凌晨的，但是试了试下载速度并不算很快，一千兆的带宽只能跑到三百多Mbps，所以也就没挑时间）</p>
 
                     
                     <HR width="100%" id="EOF">
-		    <p style="color:#777;">最后修改于 2023-02-02</p>
+		    <p style="color:#777;">最后修改于 2024-04-10</p>
                     
                 </div>
             </div>
@@ -290,14 +366,14 @@
             <nav class="post-pagination">
 
                 
-                <a class="newer-posts" href="/ctf/wp-buuctf-gxyctf2019%E4%BD%9B%E7%B3%BB%E9%9D%92%E5%B9%B4/">
-			下回<br>WP BUUCTF [GXYCTF2019]佛系青年
+                <a class="newer-posts">
+			下回<br>已经到头啦。
                 </a>
                 
                 
                 
-                <a class="older-posts" href="/ctf/wp-buuctf-snake/">
-			上回<br>WP BUUCTF Snake
+                <a class="older-posts" href="/%E5%8D%9A%E6%96%87/%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BDyoutube%E8%A7%86%E9%A2%91%E5%B9%B6%E4%B8%8A%E4%BC%A0/">
+			上回<br>自动下载Youtube视频并上传
                 </a>
                 
             </nav>
@@ -357,9 +433,11 @@
             
             
             
+                
             
             
-            <a class="a-block nav-link-item false" href="/%E9%9A%8F%E8%AE%B0">
+            
+            <a class="a-block nav-link-item active" href="/%E9%9A%8F%E8%AE%B0">
                 随记
             </a>
             
@@ -367,11 +445,9 @@
             
             
             
-                
             
             
-            
-            <a class="a-block nav-link-item active" href="/ctf">
+            <a class="a-block nav-link-item false" href="/ctf">
                 CTF
             </a>
             
@@ -429,8 +505,8 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e9%a2%98%e7%9b%ae" onclick="onNavClick(`#题目-nav`)" id="题目-nav">
-									题目
+								<a href="#%e8%84%9a%e6%9c%ac%e5%86%85%e5%ae%b9" onclick="onNavClick(`#脚本内容-nav`)" id="脚本内容-nav">
+									脚本内容
 								</a>
 							</li>
 						
@@ -445,10 +521,38 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 						
+							
+								
+									<ul>
+								
+							
+						
 						
 							<li>
-								<a href="#%e6%80%9d%e8%b7%af" onclick="onNavClick(`#思路-nav`)" id="思路-nav">
-									思路
+								<a href="#%e8%ae%be%e7%bd%ae%e5%8f%af%e6%89%a7%e8%a1%8c%e6%9d%83%e9%99%90" onclick="onNavClick(`#设置可执行权限-nav`)" id="设置可执行权限-nav">
+									设置可执行权限
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%ae%9a%e6%97%b6%e6%89%a7%e8%a1%8c" onclick="onNavClick(`#定时执行-nav`)" id="定时执行-nav">
+									定时执行
 								</a>
 							</li>
 						

@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html><head>
+<title>记一次给电脑添加硬盘</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="趁着硬盘价格还没有涨上去太多买了一块新硬盘，但在安装硬盘后出现了游戏闪退、浏览器卡顿及油管部分视频封面无法加载的问题，使用硬盘修复解决">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+<link rel="icon" href="https://blog.lty520.faith/img/favicon.svg">
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<link rel="stylesheet" href="/scss/journal.min.e78ecf1f01bdd175a52616472d7f6c77fa0d72eb91b15a27ce24fb7d302a6aa2.css" integrity="sha256-547PHwG90XWlJhZHLX9sd/oNcuuRsVonziT7fTAqaqI=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.e96cc014086ea3bea59fb4923f8c19d6b203a7af229ee5f9599c0a4cb90e3bbd.css" integrity="sha256-6WzAFAhuo76ln7SSP4wZ1rIDp68inuX5WZwKTLkOO70=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+  />
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3MGTDD77JD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3MGTDD77JD');
+</script>
+<meta http-equiv ='content-language' content ='zh-cmn-Hans'>
+
+</head>
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/%E5%8D%9A%E6%96%87">
+                    博文
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/%E9%9A%8F%E8%AE%B0">
+                    随记
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/ctf">
+                    CTF
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS Feed
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%89%8d%e8%a8%80" onclick="onNavClick(`#前言-nav`)" id="前言-nav">
+									前言
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%80%89%e6%8b%a9" onclick="onNavClick(`#选择-nav`)" id="选择-nav">
+									选择
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%ae%89%e8%a3%85" onclick="onNavClick(`#安装-nav`)" id="安装-nav">
+									安装
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%97%ae%e9%a2%98" onclick="onNavClick(`#问题-nav`)" id="问题-nav">
+									问题
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%bf%ae%e5%a4%8d" onclick="onNavClick(`#修复-nav`)" id="修复-nav">
+									修复
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%a4%8d%e7%9b%98" onclick="onNavClick(`#复盘-nav`)" id="复盘-nav">
+									复盘
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://blog.lty520.faith/">
+            Ling的博客
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://blog.lty520.faith/">
+        <div class="single-column-header-title">Ling的博客</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    <h1 class="post-title">记一次给电脑添加硬盘</h1>
+                    
+                    
+                    <div class="post-subtitle">
+                        趁着硬盘价格还没有涨上去太多买了一块新硬盘，但在安装硬盘后出现了游戏闪退、浏览器卡顿及油管部分视频封面无法加载的问题，使用硬盘修复解决
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2023-11-15 17:00
+                        </time>
+                        
+
+                        
+
+                        
+                        
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            9 min
+                            
+                            9 s.
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h1 id="前言">前言</h1>
+<p>电脑的第一块系统盘是 22 年 7 月买的三星 PM9A1 1TB ，花了 774 元，之后一直嫌硬盘价格贵就没加硬盘。在 23 年固态硬盘降价后，以及下了不少模型后导致硬盘空间严重不足，终于在 23 年双十一期间决定新增一块硬盘（然而已经过了硬盘的最低价格时间了 QAQ ）</p>
+<h1 id="选择">选择</h1>
+<p>在考虑了主要用途为玩游戏以及存储文件 且没有大文件传输需求的前提下，对速度的要求并不大，反而稳定更重要一点。决定买一块 2TB 的 Pcie3.0*4 的硬盘来扩容一下我的电脑。
+之后就是选硬盘了，主要考虑了</p>
+<ol>
+<li>致态 tiplus5000</li>
+<li>西数 sn570</li>
+<li>雷克沙 战神</li>
+<li>爱国者固态 p7000z</li>
+<li>宏碁 gm7</li>
+<li>铠侠 rc20<br>
+以及一些梵想等小品牌的硬盘</li>
+</ol>
+<p>在查询了一些资料后，发现致态 tiplus5000 和宏碁 gm7 有许多掉盘的事故发生，至于梵想等一些小品牌，出现事故的可能性就更大了&hellip;考虑到 1TB 的主盘可能不够虚拟机、存文件的使用，以后可能还是需要使用这块新硬盘来存文件的，所以还是只能排除掉这些风险相对大一些的硬盘了。<br>
+在剩下的几块硬盘之间，最后选择了 铠侠 rc20 2TB ，速度不快，但听说很稳，再加上是在台式机里使用，基本没有散热的问题。<br>
+双十一期间购买，非京东自营，花费了 609.04 元，比历史最低高了一些，但还能接受。</p>
+<h1 id="安装">安装</h1>
+<p>安装理论上没有什么难度，但是在小主板（M-ATX）和大显卡（310*131.5* 56mm）（小主板是为了节省空间，大显卡是因为这个显卡好看&hellip;.）的限制下，必须拆掉显卡才能看到硬盘位。</p>
+<p>第一次装上后，电脑没有画面，主板亮灯。（开始慌了）（没有核显的坏处啊..）<br>
+怀疑可能是加硬盘的时候把原有的硬盘拆开了后没装好（因为不知道哪个是空硬盘位），或者可能是显卡没插好。<br>
+然后再重新拆开，重新装显卡，重新装硬盘，插拔内存（有枣没枣打三杆）
+装显卡又出毛病了..可能是因为显卡长时间悬空的缘故，导致其有些变形，两个固定螺丝死活拧不上去&hellip;还是得大力出奇迹啊&hellip;
+插电，开机，轻松..蓝屏。（至少有画面了啊）
+重启，终于可以进系统了，然后又识别不到新硬盘。
+再重启，终于可以识别到了..选择 GPT 分区，新建分区，终于可以用了（一个剩余 1.8TB 的超大硬盘）</p>
+<h1 id="问题">问题</h1>
+<p>把 Steam 的游戏都转到新的 F 硬盘里，E 盘终于空下来了。<br>
+接下来就是离谱的《雨中冒险: 回归》疯狂闪退，玩几分钟就闪退&hellip;转移到老硬盘里就没事，校验文件也没有问题，重装也没用&hellip;就离谱&hellip;<br>
+看了看社区，好多抱怨闪退的&hellip;看来之前玩没有闪退过还是运气好&hellip;<br>
+尝试玩了一段时间后基本上不怎么闪退了，可以玩了。<br>
+但是 Chrome 浏览器又莫名的卡起来了&hellip;不知道是不是因为移出去了大量文件，硬盘开始整理空间了，总之就是莫名的好卡&hellip;个别页面很卡，油管很多视频封面和 F12 很多标签加载不出来&hellip;</p>
+<p>问题：</p>
+<ol>
+<li>游戏闪退</li>
+<li>部分油管视频封面无法显示</li>
+<li>F12 内标签无法显示</li>
+<li>在开启 F12 后网页会奇卡无比，且滚轮在网页内无法使用</li>
+<li>Chrome 经常出现类似“刷新”的现象，瞬间的消失后再次出现</li>
+</ol>
+<h1 id="修复">修复</h1>
+<p>在两天后的 15 日尝试使用 Windows 的硬盘修复工具，修复后，就没有出现 Chrome 卡顿以及 封面加载不出来和 F12 标签无法显示的问题了。</p>
+<p>修复日志：</p>
+<pre tabindex="0"><code>在卷快照上以扫描模式执行了 Chkdsk。  
+
+检查 D: 上的文件系统
+卷标是 软件。
+
+阶段 1: 检查基本文件系统结构...
+  已处理 607232 个文件记录。                                                          文件验证完成。
+ 阶段持续时间 (文件记录验证): 2.34 秒。
+  已处理 418 个大型文件记录。                                     阶段持续时间 (孤立文件记录恢复): 1.12 毫秒。
+  已处理 0 个错误的文件记录。                                       阶段持续时间 (文件记录检查错误): 0.88 毫秒。
+
+阶段 2: 检查文件名链接...
+  已处理 613 个重新解析记录。                                         已处理 979980 个索引项。                                                        索引验证完成。
+ 阶段持续时间 (索引验证): 6.03 秒。
+
+ 阶段持续时间 (孤立文件重新连接): 916.74 毫秒。
+
+    发现目录“$I30”的索引“\??\D:\found.000”中丢失了文件“\QQ messages\.......”的索引项
+        ... 已联机修复。
+ 阶段持续时间 (孤立文件恢复到回收箱): 7.33 毫秒。
+  已处理 613 个重新解析记录。                                        阶段持续时间 (重分析点和对象 ID 验证): 5.52 毫秒。
+
+阶段 3: 检查安全描述符...
+安全描述符验证完成。
+ 阶段持续时间 (安全描述符验证): 1.32 毫秒。
+  已处理 186375 个数据文件。                                             阶段持续时间 (数据属性验证): 1.36 毫秒。
+CHKDSK 正在验证 Usn 日志...
+Usn 日志验证完成。
+Windows 已发现问题并联机修复了所有问题。
+无需采取进一步操作。
+
+总共有  209715199 KB 磁盘空间。
+410925 个文件中有  165248532 KB。
+186377 个索引     261528 KB。
+系统正在使用     679763 KB。
+日志文件占用了      65536 KB。
+磁盘上   43525376 KB 可用。
+
+每个分配单元中有       4096 字节。
+磁盘上共有   52428799 个分配单元。
+磁盘上有   10881344 个可用的分配单元。
+总持续时间: 9.31 秒 (9318 毫秒)。
+
+----------------------------------------------------------------------
+
+
+阶段 1: 检查基本文件系统结构...
+
+阶段 2: 检查文件名链接...
+CHKDSK 正在扫描未编制索引的文件以便重新连接到其原始目录。
+  已将 0 个未编制索引的文件恢复到原始目录。
+CHKDSK 正在恢复剩余的未索引文件。
+    回收箱位于 \found.000
+
+
+阶段 3: 检查安全描述符...
+</code></pre><h1 id="复盘">复盘</h1>
+<p>怀疑可能是第一次在硬盘没有装好的情况下启动电脑（当时电脑处于休眠状态，应该关机后再安装硬盘）导致了一些数据的错误。<br>
+因而在修复硬盘后就恢复了正常</p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2023-11-15</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/%E5%8D%9A%E6%96%87/%E5%85%B3%E4%BA%8E2008%E5%B9%B4%E6%B1%B6%E5%B7%9D%E5%9C%B0%E9%9C%87%E7%BE%8E%E5%9B%BD%E5%85%B3%E9%97%ADgps%E5%AF%BC%E8%87%B4%E9%A3%9E%E6%9C%BA%E5%A4%B1%E4%BA%8B%E7%9A%84%E8%B5%84%E6%96%99/">
+			下回<br>关于2008年汶川地震因美国关闭GPS导致飞机失事事件存疑的资料
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/ctf/wp-buuctf-bjdctf2020just_a_rar/">
+			上回<br>WP BUUCTF [BJDCTF2020]just_a_rar
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+<div id="waline"></div>
+<script>
+    Waline.init({
+        el: '#waline',
+        
+        serverURL: "https://waline.lty520.faith/" ,
+    });
+    
+    </script>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://blog.lty520.faith/">
+    
+        <div class="nav-title">
+            Ling的博客
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/%E5%8D%9A%E6%96%87">
+                博文
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/%E9%9A%8F%E8%AE%B0">
+                随记
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/ctf">
+                CTF
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS Feed
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2024 Ling的博客
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%89%8d%e8%a8%80" onclick="onNavClick(`#前言-nav`)" id="前言-nav">
+									前言
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%80%89%e6%8b%a9" onclick="onNavClick(`#选择-nav`)" id="选择-nav">
+									选择
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%ae%89%e8%a3%85" onclick="onNavClick(`#安装-nav`)" id="安装-nav">
+									安装
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%97%ae%e9%a2%98" onclick="onNavClick(`#问题-nav`)" id="问题-nav">
+									问题
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%bf%ae%e5%a4%8d" onclick="onNavClick(`#修复-nav`)" id="修复-nav">
+									修复
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%a4%8d%e7%9b%98" onclick="onNavClick(`#复盘-nav`)" id="复盘-nav">
+									复盘
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+<div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2024 Ling的博客
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>
