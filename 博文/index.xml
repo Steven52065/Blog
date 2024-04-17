@@ -6,7 +6,24 @@
     <description>Recent content in 博文s on Ling的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 25 Nov 2023 22:24:29 +0800</lastBuildDate><atom:link href="https://blog.lty520.faith/%E5%8D%9A%E6%96%87/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Apr 2024 20:21:05 +0800</lastBuildDate><atom:link href="https://blog.lty520.faith/%E5%8D%9A%E6%96%87/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>自建Docker Hub加速镜像</title>
+      <link>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E8%87%AA%E5%BB%BAdocker-hub%E5%8A%A0%E9%80%9F%E9%95%9C%E5%83%8F/</link>
+      <pubDate>Tue, 16 Apr 2024 20:21:05 +0800</pubDate>
+      
+      <guid>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E8%87%AA%E5%BB%BAdocker-hub%E5%8A%A0%E9%80%9F%E9%95%9C%E5%83%8F/</guid>
+      <description>可选的加速方案 使用公共的加速镜像 国内的 Docker Hub 镜像加速器，由国内教育机构与各大云服务商提供的镜像加速服务 速度通常不错，但由于 Docker hub 限制了未注册用户的拉取频率，可能会导致加速镜像无法及时同步最新的镜像（例如 阿里云镜像源） 由于很高的成本，可能会导致一些原本提供了镜像源的厂商、机构停止提供（如 163、七牛云等）或转向仅为内网内的设备和用户提供服务（如腾讯云、中国科学技术大学开源软件镜像 等） 使用代理拉取镜像 如何配置 docker 通过代理服务器拉取镜像。简单来说就是通过设置由 systemd 管理的 docker daemon 的环境变量来实现利用代理拉取镜像 优点自然就是带宽几乎没有限制，并且镜像不会缓存，不会下载到未更新的镜像 缺点是需要设备上或局域网内有现成的代理且一些特殊设备（例如威联通、群晖）经过了厂商魔改难以手动设置环境变量，没有加速镜像的通用型强，需要每个设备单独设置 间接拉取镜像。在境外机器已经配置了代理的设备上拉取镜像，再将镜像导出、传输到需要使用镜像的设备上、最后导入。 优点&amp;hellip;能用 缺点自然就是很麻烦，需要提前准备好传输文件的方案 最后整合上面我使用过的几个拉取镜像的方案，最后的选择是自建一个加速镜像，免得以后的到处找能用的加速镜像源
+自建加速镜像 在尝试搭建之前找了挺多资料，主流的方式有：使用官方提供的 registry，第三方的 Nexus、Harbor。但是使用 registry 搭建一直没有成功，客户端一直报找不到指定镜像；使用 Nexus 搭建又有些太复杂。最后自己总结出来了这两个比较方便的方案。
+一点小发现：
+在使用 Nginx 搭建时，发现服务器的流量很小，经过检查 Nginx 的日志后发现，Docker hub 镜像仓库返回的下载地址是需要 307 跳转的，而跳转后的地址依然下载很慢，所以需要在服务端处理这个跳转，将跳转后的数据返回客户端。
+方案一：使用 Nginx 搭建 系统：Ububtu 22.04 服务器：Zgocloud 洛杉矶 9929+CMIN2
+提到要加速一个网站，自然就能想到使用 Nginx 反代一下了。接下来是具体的配置方案
+安装 Nginx
+sudo apt update sudo apt install nginx 防火墙放行指定端口
+我这里使用的防火墙是系统自带的 UFW，并且没有开厂商提供的防火墙（忘记是关掉了还是本来就没有，反正没开），所以只需要 sudo ufw allow &amp;lsquo;Nginx Full&amp;rsquo; 一条命令即可，这样就会放行 IPv4 和 IPv6 的 80 和 443 端口（当然也可以手动 sudo ufw allow 443 这样只开放 443 端口）</description>
+    </item>
+    
     <item>
       <title>自动下载Youtube视频并上传</title>
       <link>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BDyoutube%E8%A7%86%E9%A2%91%E5%B9%B6%E4%B8%8A%E4%BC%A0/</link>
@@ -89,8 +106,11 @@ Win 添加拆字词库 思路 由于长期使用搜狗输入法，习惯了拆�
       <pubDate>Thu, 22 Dec 2022 17:28:48 +0800</pubDate>
       
       <guid>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E7%B3%BB%E5%88%97/</guid>
-      <description>因为一直苦恼于手中多个平台的软件各不相同，数据难以同步且不便于使用。因此有了这个系列，希望将Win､Android､IpadOS(或许还会包括Linux､Ios)等平台的软件进行统一。
-全平台统一代理——Clash 全平台统一输入法——Rime </description>
+      <description>因为一直苦恼于手中多个平台的软件各不相同，数据难以同步且不便于使用。因此有了这个系列，希望将 Win ､ Android ､ IpadOS(或许还会包括 Linux ､ Ios)等平台的软件进行统一。
+全平台统一代理——Clash
+全平台使用 Clash 作为代理软件，避免了之前的多个平台的配置无法通用的乱象。 全平台统一输入法——Rime
+全平台使用 Rime 作为输入法，避免了之前的多个平台的词库无法统一和同步的乱象。 自建 Docker Hub 加速镜像
+自建 Docker Hub 加速镜像，免得到处找公共的加速镜像，时不时还要检查之前设置的还能不能用。 </description>
     </item>
     
     <item>

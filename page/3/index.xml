@@ -6,9 +6,59 @@
     <description>Recent content on Ling的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 10 Apr 2024 23:08:06 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 16 Apr 2024 20:21:05 +0800</lastBuildDate>
     
         <atom:link href="https://blog.lty520.faith/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>WP BUUCTF 面具下的flag</title>
+        <link>https://blog.lty520.faith/ctf/wp-buuctf-%E9%9D%A2%E5%85%B7%E4%B8%8B%E7%9A%84flag/</link>
+        <pubDate>Mon, 16 Jan 2023 23:21:11 +0800</pubDate>
+        
+        <guid>https://blog.lty520.faith/ctf/wp-buuctf-%E9%9D%A2%E5%85%B7%E4%B8%8B%E7%9A%84flag/</guid>
+        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-%E9%9D%A2%E5%85%B7%E4%B8%8B%E7%9A%84flag/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%E9%9D%A2%E5%85%B7%E4%B8%8B%E7%9A%84flag&#34;&gt;https://buuoj.cn/challenges#%E9%9D%A2%E5%85%B7%E4%B8%8B%E7%9A%84flag&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.lty520.faith/img/CTF/WP-BUUCTF-%E9%9D%A2%E5%85%B7%E4%B8%8B%E7%9A%84flag/mianju.jpg&#34; alt=&#34;题图&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
+&lt;p&gt;首先将文件用 binwalk 分解,可以分解出一个压缩包，通过伪加密的方式可以解开，解开后得到名为 &lt;strong&gt;flag.vmdk&lt;/strong&gt; 的文件&lt;br&gt;
+在 kali 下使用 &lt;strong&gt;7z x 文件路径&lt;/strong&gt; 可以解出&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;├── $RECYCLE.BIN
+│   └── S-1-5-21-2200156829-3544857562-508093875-1001
+│       └── desktop.ini
+├── key_part_one
+│   └── NUL
+├── key_part_two
+│   ├── where_is_flag_part_two.txt
+│   └── where_is_flag_part_two.txt:flag_part_two_is_here.txt
+└── [SYSTEM]
+    ├── $AttrDef
+    ├── $BadClus
+    ├── $Bitmap
+    ├── $Boot
+    ├── $Extend
+    │   ├── $ObjId
+    │   ├── $Quota
+    │   ├── $Reparse
+    │   └── $RmMetadata
+    │       ├── $Repair
+    │       ├── $Repair:$Config
+    │       ├── $Txf
+    │       └── $TxfLog
+    │           ├── $Tops
+    │           ├── $Tops:$T
+    │           └── $TxfLog.blf
+    ├── $LogFile
+    ├── $MFT
+    ├── $MFTMirr
+    ├── $Secure
+    ├── $Secure:$SDS
+    ├── $UpCase
+    └── $Volume
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在 &lt;strong&gt;NUL&lt;/strong&gt; 文件和 &lt;strong&gt;where_is_flag_part_two.txt:flag_part_two_is_here.txt&lt;/strong&gt; 里可以分别找到两段代码，使用工具 &lt;a href=&#34;https://www.splitbrain.org/services/ook&#34;&gt;Brainfuck/Ook! Obfuscation/Encoding&lt;/a&gt; 可以解出前后两半flag，拼在一起即可得 flag 为 &lt;strong&gt;flag{N7F5_AD5_i5_funny!}&lt;/strong&gt;&lt;/p&gt;
+- https://blog.lty520.faith/ctf/wp-buuctf-%E9%9D%A2%E5%85%B7%E4%B8%8B%E7%9A%84flag/ - </description>
+        </item>
     
     
     
@@ -277,27 +327,6 @@ for i in range(32,127):
 &lt;hr&gt;
 &lt;p&gt;&lt;em&gt;结果这题的大部分时间都用在了装 python2 环境上了&amp;hellip;&lt;/em&gt;&lt;/p&gt;
 - https://blog.lty520.faith/ctf/wp-buuctf-%E4%B8%A2%E5%A4%B1%E7%9A%84md5/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>WP BUUCTF 篱笆墙的影子</title>
-        <link>https://blog.lty520.faith/ctf/wp-buuctf-%E7%AF%B1%E7%AC%86%E5%A2%99%E7%9A%84%E5%BD%B1%E5%AD%90/</link>
-        <pubDate>Fri, 13 Jan 2023 00:09:44 +0800</pubDate>
-        
-        <guid>https://blog.lty520.faith/ctf/wp-buuctf-%E7%AF%B1%E7%AC%86%E5%A2%99%E7%9A%84%E5%BD%B1%E5%AD%90/</guid>
-        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-%E7%AF%B1%E7%AC%86%E5%A2%99%E7%9A%84%E5%BD%B1%E5%AD%90/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%E7%AF%B1%E7%AC%86%E5%A2%99%E7%9A%84%E5%BD%B1%E5%AD%90&#34;&gt;https://buuoj.cn/challenges#%E7%AF%B1%E7%AC%86%E5%A2%99%E7%9A%84%E5%BD%B1%E5%AD%90&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
-&lt;p&gt;felhaagv{ewtehtehfilnakgw}&lt;/p&gt;
-&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
-&lt;p&gt;题目提到了篱笆墙，这篱笆不就是栅栏嘛&lt;br&gt;
-尝试一下栅栏密码，成功&lt;br&gt;
-每两个为一组&lt;br&gt;
-可得 flag 为 &lt;strong&gt;flag{wethinkwehavetheflag}&lt;/strong&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;em&gt;做到一半发现 ubuntu 的 python 环境炸了&amp;hellip;头秃&lt;/em&gt;&lt;/p&gt;
-- https://blog.lty520.faith/ctf/wp-buuctf-%E7%AF%B1%E7%AC%86%E5%A2%99%E7%9A%84%E5%BD%B1%E5%AD%90/ - </description>
         </item>
     
     

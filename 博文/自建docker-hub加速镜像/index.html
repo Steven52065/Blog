@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html><head>
+<title>自建Docker Hub加速镜像</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="在使用Docker的过程中会大量的涉及Pull镜像的操作，但是由于官方的镜像服务器在国外再加上某个防火墙的阻拦，导致直接拉取镜像非常困难（看脸）。所以通常的操作是设置一个由国内厂商、机构提供的加速镜像，来提高拉取镜像的速度。但是随着Docker hub限制了未注册用户的拉取频率、各大厂商、机构开始将加速镜像转为内部使用，个人用户拉取镜像变得越来越困难。在长期拉取镜像速度看脸的头疼之下，尝试通过 Nginx 和 Cloudflare Worker 两种方案以及两种方案的组合方案自建Docker hub加速镜像来解决这个问题">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+<link rel="icon" href="https://blog.lty520.faith/img/favicon.svg">
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<link rel="stylesheet" href="/scss/journal.min.e78ecf1f01bdd175a52616472d7f6c77fa0d72eb91b15a27ce24fb7d302a6aa2.css" integrity="sha256-547PHwG90XWlJhZHLX9sd/oNcuuRsVonziT7fTAqaqI=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.e96cc014086ea3bea59fb4923f8c19d6b203a7af229ee5f9599c0a4cb90e3bbd.css" integrity="sha256-6WzAFAhuo76ln7SSP4wZ1rIDp68inuX5WZwKTLkOO70=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+  />
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3MGTDD77JD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3MGTDD77JD');
+</script>
+<meta http-equiv ='content-language' content ='zh-cmn-Hans'>
+
+</head>
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/%E5%8D%9A%E6%96%87">
+                    博文
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/%E9%9A%8F%E8%AE%B0">
+                    随记
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/ctf">
+                    CTF
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS Feed
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%af%e9%80%89%e7%9a%84%e5%8a%a0%e9%80%9f%e6%96%b9%e6%a1%88" onclick="onNavClick(`#可选的加速方案-nav`)" id="可选的加速方案-nav">
+									可选的加速方案
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%87%aa%e5%bb%ba%e5%8a%a0%e9%80%9f%e9%95%9c%e5%83%8f" onclick="onNavClick(`#自建加速镜像-nav`)" id="自建加速镜像-nav">
+									自建加速镜像
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e6%96%b9%e6%a1%88%e4%b8%80%e4%bd%bf%e7%94%a8-nginx-%e6%90%ad%e5%bb%ba" onclick="onNavClick(`#方案一使用-nginx-搭建-nav`)" id="方案一使用-nginx-搭建-nav">
+									方案一：使用 Nginx 搭建
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%96%b9%e6%a1%88%e4%ba%8c%e4%bd%bf%e7%94%a8-cloudflare-worker-%e6%90%ad%e5%bb%ba" onclick="onNavClick(`#方案二使用-cloudflare-worker-搭建-nav`)" id="方案二使用-cloudflare-worker-搭建-nav">
+									方案二：使用 CloudFlare Worker 搭建
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%96%b9%e6%a1%88%e4%b8%80%e4%ba%8c%e6%95%b4%e5%90%88" onclick="onNavClick(`#方案一二整合-nav`)" id="方案一二整合-nav">
+									方案一、二整合
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%90%84%e7%a7%8d%e5%8a%a0%e9%80%9f%e9%95%9c%e5%83%8f%e5%ae%9e%e6%b5%8b" onclick="onNavClick(`#各种加速镜像实测-nav`)" id="各种加速镜像实测-nav">
+									各种加速镜像实测
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%80%bb%e7%bb%93" onclick="onNavClick(`#总结-nav`)" id="总结-nav">
+									总结
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e8%80%83%e6%96%87%e7%ab%a0" onclick="onNavClick(`#参考文章-nav`)" id="参考文章-nav">
+									参考文章
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://blog.lty520.faith/">
+            Ling的博客
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://blog.lty520.faith/">
+        <div class="single-column-header-title">Ling的博客</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    <h1 class="post-title">自建Docker Hub加速镜像</h1>
+                    
+                    
+                    <div class="post-subtitle">
+                        在使用Docker的过程中会大量的涉及Pull镜像的操作，但是由于官方的镜像服务器在国外再加上某个防火墙的阻拦，导致直接拉取镜像非常困难（看脸）。所以通常的操作是设置一个由国内厂商、机构提供的加速镜像，来提高拉取镜像的速度。但是随着Docker hub限制了未注册用户的拉取频率、各大厂商、机构开始将加速镜像转为内部使用，个人用户拉取镜像变得越来越困难。在长期拉取镜像速度看脸的头疼之下，尝试通过 Nginx 和 Cloudflare Worker 两种方案以及两种方案的组合方案自建Docker hub加速镜像来解决这个问题
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2024-04-16 20:21
+                        </time>
+                        
+
+                        
+
+                        
+                        
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            15 min
+                            
+                            39 s.
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h1 id="可选的加速方案">可选的加速方案</h1>
+<ol>
+<li>使用公共的加速镜像 <a href="https://gist.github.com/y0ngb1n/7e8f16af3242c7815e7ca2f0833d3ea6">国内的 Docker Hub 镜像加速器，由国内教育机构与各大云服务商提供的镜像加速服务</a>
+<ul>
+<li>速度通常不错，但由于 Docker hub 限制了未注册用户的拉取频率，可能会导致加速镜像无法及时同步最新的镜像（例如 <a href="https://help.aliyun.com/zh/acr/user-guide/accelerate-the-pulls-of-docker-official-images">阿里云镜像源</a>）</li>
+<li>由于很高的成本，可能会导致一些原本提供了镜像源的厂商、机构停止提供（如 163、七牛云等）或转向仅为内网内的设备和用户提供服务（如腾讯云、<a href="https://mirrors.ustc.edu.cn/help/dockerhub.html">中国科学技术大学开源软件镜像</a> 等）</li>
+</ul>
+</li>
+<li>使用代理拉取镜像 <a href="https://www.lfhacks.com/tech/pull-docker-images-behind-proxy/">如何配置 docker 通过代理服务器拉取镜像</a>。简单来说就是通过设置由 systemd 管理的 docker daemon 的环境变量来实现利用代理拉取镜像
+<ul>
+<li>优点自然就是带宽几乎没有限制，并且镜像不会缓存，不会下载到未更新的镜像</li>
+<li>缺点是需要设备上或局域网内有现成的代理且一些特殊设备（例如威联通、群晖）经过了厂商魔改难以手动设置环境变量，没有加速镜像的通用型强，需要每个设备单独设置</li>
+</ul>
+</li>
+<li>间接拉取镜像。在境外机器已经配置了代理的设备上拉取镜像，再将镜像导出、传输到需要使用镜像的设备上、最后导入。
+<ul>
+<li>优点&hellip;能用</li>
+<li>缺点自然就是很麻烦，需要提前准备好传输文件的方案</li>
+</ul>
+</li>
+</ol>
+<p>最后整合上面我使用过的几个拉取镜像的方案，最后的选择是自建一个加速镜像，免得以后的到处找能用的加速镜像源</p>
+<h1 id="自建加速镜像">自建加速镜像</h1>
+<p>在尝试搭建之前找了挺多资料，主流的方式有：使用官方提供的 registry，第三方的 Nexus、Harbor。但是使用 registry 搭建一直没有成功，客户端一直报找不到指定镜像；使用 Nexus 搭建又有些太复杂。最后自己总结出来了这两个比较方便的方案。</p>
+<p>一点小发现：<br>
+在使用 Nginx 搭建时，发现服务器的流量很小，经过检查 Nginx 的日志后发现，Docker hub 镜像仓库返回的下载地址是需要 307 跳转的，而跳转后的地址依然下载很慢，所以需要在服务端处理这个跳转，将跳转后的数据返回客户端。</p>
+<h2 id="方案一使用-nginx-搭建">方案一：使用 Nginx 搭建</h2>
+<p><em>系统：Ububtu 22.04  服务器：Zgocloud 洛杉矶 9929+CMIN2</em><br>
+提到要加速一个网站，自然就能想到使用 Nginx 反代一下了。接下来是具体的配置方案</p>
+<ol>
+<li>
+<p>安装 Nginx</p>
+<pre tabindex="0"><code>sudo apt update
+sudo apt install nginx
+</code></pre></li>
+<li>
+<p>防火墙放行指定端口<br>
+我这里使用的防火墙是系统自带的 UFW，并且没有开厂商提供的防火墙（忘记是关掉了还是本来就没有，反正没开），所以只需要 <strong>sudo ufw allow &lsquo;Nginx Full&rsquo;</strong> 一条命令即可，这样就会放行 IPv4 和 IPv6 的 80 和 443 端口（当然也可以手动 <strong>sudo ufw allow 443</strong> 这样只开放 443 端口）<br>
+如果没有使用防火墙，就不用设置这一步，如果还使用了厂商提供的防火墙，就需要在厂商的面板处同样开放这些端口</p>
+</li>
+<li>
+<p>配置 Nginx
+使用命令 <strong>sudo vim /etc/nginx/nginx.conf</strong> 编辑 Nginx 配置，在 http 块下增加一个 server 块</p>
+<p><em>/etc/nginx/nginx.conf</em></p>
+<pre tabindex="0"><code>#反代docker hub镜像源
+     server {
+             listen 443 ssl;
+             server_name 域名;
+
+             ssl_certificate 证书地址;
+             ssl_certificate_key 密钥地址;
+
+             ssl_session_timeout 24h;
+             ssl_ciphers &#39;ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256&#39;;
+             ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
+
+             location / {
+                     proxy_pass https://registry-1.docker.io;  # Docker Hub 的官方镜像仓库
+                     proxy_set_header Host registry-1.docker.io;
+                     proxy_set_header X-Real-IP $remote_addr;
+                     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                     proxy_set_header X-Forwarded-Proto $scheme;
+
+                     # 关闭缓存
+                     proxy_buffering off;
+
+                     # 转发认证相关的头部
+                     proxy_set_header Authorization $http_authorization;
+                     proxy_pass_header  Authorization;
+
+                     # 对 upstream 状态码检查，实现 error_page 错误重定向
+                     proxy_intercept_errors on;
+                     # error_page 指令默认只检查了第一次后端返回的状态码，开启后可以跟随多次重定向。
+                     recursive_error_pages on;
+                     # 根据状态码执行对应操作，以下为301、302、307状态码都会触发
+                     error_page 301 302 307 = @handle_redirect;
+
+             }
+             location @handle_redirect {
+                     resolver 1.1.1.1;
+                     set $saved_redirect_location &#39;$upstream_http_location&#39;;
+                     proxy_pass $saved_redirect_location;
+             }
+     }
+</code></pre><p>然后按 <strong>Esc</strong> ，输入 <strong>:wq</strong> 保存退出即可</p>
+</li>
+<li>
+<p>重新加载 Nginx 配置
+输入命令 <strong>sudo nginx -s reload</strong>，没有报错就说明配置已经生效</p>
+</li>
+</ol>
+<h2 id="方案二使用-cloudflare-worker-搭建">方案二：使用 CloudFlare Worker 搭建</h2>
+<p>作为一个贫穷（doge）的用户，可以免费使用的 CloudFlare Worker 自然要想方设法的用用了，虽然 CloudFlare Worker 的访问速度在国内也不算稳定，但在 CloudFlare 的边缘网络的加持下，白天的速度还是非常可观的，晚上会比较慢但还是比直接使用官方的镜像源要快上很多（又不要钱，要啥自行车.jpg）
+这里是在 <a href="https://github.com/Doublemine/container-registry-worker">基于 Cloudflare Worker 的容器镜像加速器</a> 的基础上稍作修改</p>
+<ol>
+<li>
+<p>在面板左侧找到 <strong>Workers 和 Pages</strong>，然后点击右侧的 <strong>创建应用程序</strong>、<strong>创建 Worker</strong>，修改一个好记的名字，<strong>部署</strong></p>
+</li>
+<li>
+<p>接下来编辑代码，将 worker.js 的内容替换为下面内容</p>
+<p><em>worker.js</em></p>
+<pre tabindex="0"><code>import HTML from &#39;./docker.html&#39;;
+
+export default {
+    async fetch(request) {
+        const url = new URL(request.url);
+        const path = url.pathname;
+        const originalHost = request.headers.get(&#34;host&#34;);
+        const registryHost = &#34;registry-1.docker.io&#34;;
+
+        if (path.startsWith(&#34;/v2/&#34;)) {
+        const headers = new Headers(request.headers);
+        headers.set(&#34;host&#34;, registryHost);
+
+        const registryUrl = `https://${registryHost}${path}`;
+        const registryRequest = new Request(registryUrl, {
+            method: request.method,
+            headers: headers,
+            body: request.body,
+            // redirect: &#34;manual&#34;,
+            redirect: &#34;follow&#34;,
+        });
+
+        const registryResponse = await fetch(registryRequest);
+
+        console.log(registryResponse.status);
+
+        const responseHeaders = new Headers(registryResponse.headers);
+        responseHeaders.set(&#34;access-control-allow-origin&#34;, originalHost);
+        responseHeaders.set(&#34;access-control-allow-headers&#34;, &#34;Authorization&#34;);
+        return new Response(registryResponse.body, {
+            status: registryResponse.status,
+            statusText: registryResponse.statusText,
+            headers: responseHeaders,
+        });
+        } else {
+        return new Response(HTML.replace(/{{host}}/g, originalHost), {
+            status: 200,
+            headers: {
+            &#34;content-type&#34;: &#34;text/html&#34;
+            }
+        });
+        }
+    }
+}
+</code></pre><p>这里相比原项目，将 <strong>redirect: &ldquo;manual&rdquo;</strong> 修改为了 <strong>redirect: &ldquo;follow&rdquo;</strong>，目的是为了让脚本自行处理 307 跳转，直接返回给我们跳转后的数据。<br>
+新建一个名为 <strong>docker.html</strong> 的 文件，内容如下</p>
+<p><em>docker.html</em></p>
+<pre tabindex="0"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&#34;utf-8&#34; /&gt;
+        &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1&#34; /&gt;
+        &lt;title&gt;Mirror Usage&lt;/title&gt;
+        &lt;style&gt;
+        html {
+        height: 100%;
+        }
+        body {
+        font-family: &#34;Roboto&#34;, &#34;Helvetica&#34;, &#34;Arial&#34;, sans-serif;
+        font-size: 16px;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        }
+        .container {
+            margin: 0 auto;
+            max-width: 600px;
+        }
+
+        .header {
+            background-color: #438cf8;
+            color: white;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            padding: 32px;
+        }
+
+        .footer {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class=&#34;header&#34;&gt;
+        &lt;h1&gt;Mirror Usage&lt;/h1&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;container&#34;&gt;
+        &lt;div class=&#34;content&#34;&gt;
+            &lt;p&gt;镜像加速说明&lt;/p&gt;
+            &lt;p&gt;
+            为了加速镜像拉取,你可以使用以下命令设置registery mirror:
+            &lt;/p&gt;
+            &lt;pre&gt;
+            sudo tee /etc/docker/daemon.json &amp;lt;&amp;lt;EOF
+            {
+                &#34;registry-mirrors&#34;: [&#34;https://{{host}}&#34;]
+            }
+            EOF
+            &lt;/pre&gt;
+            &lt;/br&gt;
+            &lt;p&gt;
+            为了避免 Worker 用量耗尽,你可以手动 pull 镜像然后 re-tag 之后 push 至本地镜像仓库:
+            &lt;/p&gt;
+            &lt;pre&gt;
+            docker pull {{host}}/library/alpine:latest # 拉取 library 镜像
+            docker pull {{host}}/coredns/coredns:latest # 拉取 library 镜像
+            &lt;/pre&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;footer&#34;&gt;
+        &lt;p&gt;Powered by Cloudflare Workers&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre></li>
+<li>
+<p>接下来，点击右上角的 <strong>部署</strong>，稍等片刻</p>
+</li>
+<li>
+<p>最后，返回面板，在 <strong>设置</strong>，<strong>触发器</strong> 处设置一个自己的域名，一切就大功告成了<br>
+<em>不建议使用自带的 workers.dev 的域名，被墙了</em></p>
+</li>
+</ol>
+<h2 id="方案一二整合">方案一、二整合</h2>
+<p>本来上面的两个方案是独立的，一个使用 Nginx 部署，一个使用 CloudFlare Worker 部署，但是就在我写这篇博客的时候，突然想到，为什么不能把上面的两个方案整合起来呢？<br>
+利用服务器搭建的 Nginx 作为中转，优先由服务器直连 Docker hub 的官方源，当服务器的 IP 请求次数超限后（会报 429 错误），就把请求转发到 CloudFlare Worker 部署的镜像源上，利用 CloudFlare Worker 再做一次中转。这样就即保证了使用服务器中转提高速度，又保证了不会因为服务器的 IP 请求速度过多而受限制，唯一的限制就是服务器的带宽和流量了，几乎完美！！！</p>
+<p>部署方法：<br>
+将上面部署的 Nginx 配置替换为下面的配置并使用 <strong>sudo nginx -s reload</strong> 重新加载即可</p>
+<p><em>/etc/nginx/nginx.conf</em></p>
+<pre tabindex="0"><code>#反代docker hub镜像源
+    server {
+            listen 443 ssl;
+            server_name 域名;
+
+            ssl_certificate 证书地址;
+            ssl_certificate_key 密钥地址;
+
+            proxy_ssl_server_name on; # 启用SNI
+
+            ssl_session_timeout 24h;
+            ssl_ciphers &#39;ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256&#39;;
+            ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
+
+            location / {
+                    proxy_pass https://registry-1.docker.io;  # Docker Hub 的官方镜像仓库
+
+                    proxy_set_header Host registry-1.docker.io;
+                    proxy_set_header X-Real-IP $remote_addr;
+                    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                    proxy_set_header X-Forwarded-Proto $scheme;
+
+                    # 关闭缓存
+                    proxy_buffering off;
+
+                    # 转发认证相关的头部
+                    proxy_set_header Authorization $http_authorization;
+                    proxy_pass_header  Authorization;
+
+                    # 对 upstream 状态码检查，实现 error_page 错误重定向
+                    proxy_intercept_errors on;
+                    # error_page 指令默认只检查了第一次后端返回的状态码，开启后可以跟随多次重定向。
+                    recursive_error_pages on;
+                    # 根据状态码执行对应操作，以下为301、302、307状态码都会触发
+                    #error_page 301 302 307 = @handle_redirect;
+
+                    error_page 429 = @handle_too_many_requests;
+            }
+            #处理重定向
+            location @handle_redirect {
+                    resolver 1.1.1.1;
+                    set $saved_redirect_location &#39;$upstream_http_location&#39;;
+                    proxy_pass $saved_redirect_location;
+            }
+            # 处理429错误
+            location @handle_too_many_requests {
+                    proxy_set_header Host 替换为在CloudFlare Worker设置的域名;  # 替换为另一个服务器的地址
+                    proxy_pass http://替换为在CloudFlare Worker设置的域名;
+                    proxy_set_header Host $http_host;
+            }
+    }
+</code></pre><p>新增的一些代码的作用：</p>
+<ol>
+<li><strong>proxy_ssl_server_name on;</strong><br>
+HTTPS, 需要在握手时候验证证书, 所以在握手时候需要将域名告诉对方, 找到匹配的证书, 这就是 SNI 的工作. 否则会导致证书找不到而请求失败.<br>
+默认情况下, nginx 并不会开启 proxy_ssl_server_name, 也就是说不启用 SNI. 如果使用 nginx 反代一个虚拟主机的服务, 比如 Cloudflare Workers, 此时如果不开启 SNI, 会导致与 CF 握手时候, CF 并不清楚请求哪一个域名下的服务, 所以找不到匹配的证书, 因此会报 502 错误. 当然也可以使用 proxy_ssl_name 字段复写于最终服务器收到的域名.<br>
+<em>引自：<a href="https://faichou.com/sni/">SNI</a></em><br>
+在尝试整合这两个方案的时候不知道这个参数，一直报 502..人都麻了</li>
+<li><strong>error_page 429 = @handle_too_many_requests;</strong><br>
+当错误代码为 429 时（即请求次数超限）转发到在 Cloudflare Workers 部署的镜像源</li>
+<li><strong>proxy_set_header Host 替换为在 CloudFlare Worker 设置的域名;</strong><br>
+将发给 CloudFlare Worker 的请求加上正确的域名方可让请求到达我们搭建的镜像源，如果不加会报 404</li>
+</ol>
+<h1 id="各种加速镜像实测">各种加速镜像实测</h1>
+<p><em>测试系统为 Debian12，测试镜像为 uptime-kuma: latest</em><br>
+<em>使用命令</em> <em>time docker pull 加速镜像地址/louislam/uptime-kuma</em> <em>测试</em><br>
+<em>测试时间为 2024 年 04 月 16 日 22 时</em></p>
+<ol>
+<li>dockerproxy.com<br>
+用时 19.370s</li>
+<li>docker.m.daocloud.io<br>
+用时 13.927s</li>
+<li>docker.mirrors.sjtug.sjtu.edu.cn<br>
+用时 12.157s</li>
+<li>docker.nju.edu.cn<br>
+用时 12.690s</li>
+<li>Nginx 反代自建方案
+<ol>
+<li>处理重定向
+<ul>
+<li>晚上十点测试，用时 16.342s</li>
+<li>次日下午五点测试，用时 15.432s</li>
+</ul>
+</li>
+<li>不处理重定向<br>
+次日下午五点测试，虽然不会出现使用官方源一样的卡死，但极慢</li>
+</ol>
+</li>
+<li>CloudFlare Worker 反代自建方案<br>
+几乎无法使用，部分层速度很慢</li>
+<li>直连官方镜像仓库<br>
+几乎无法使用，完全看脸</li>
+</ol>
+<h1 id="总结">总结</h1>
+<p>根据测试，自建一个 Docker hub 加速镜像完全可行，使用 Nginx 搭建会比较看重服务器的线路，但只要不算太差，就完全可用了。不处理跳转会比较节省流量，但是为了速度，节省这一点流量也没什么必要。有一定的成本，但是如果本身就已经买了服务器的话，搭建个镜像源就几乎是顺带的事情了。<br>
+而使用 CloudFlare Worker 搭建..只能说稍微好一点点，如果服务器需要大量拉取镜像的话或许会用到这个方案。<br>
+而将方案一、二整合，几乎就是现阶段最完美的方案了，速度快且不受拉取次数的限制，只要 Docker hub 别乱变，就可以用超久。</p>
+<hr>
+<h1 id="参考文章">参考文章</h1>
+<ul>
+<li><a href="https://www.lfhacks.com/tech/pull-docker-images-behind-proxy/">如何配置 docker 通过代理服务器拉取镜像</a></li>
+<li><a href="https://nova.moe/bypass-docker-hub-429/">绕过从 Docker Hub pull 镜像时的 429 toomanyrequests</a></li>
+<li><a href="https://v2ex.com/t/1007508">怎么搭建自己的 Docker-hub 镜像源，本地搭一个得了 自己用！</a></li>
+<li><a href="https://github.com/Doublemine/container-registry-worker">基于 Cloudflare Worker 的容器镜像加速器</a></li>
+<li><a href="https://docs.docker.com/docker-hub/download-rate-limit/">Docker Hub rate limit</a></li>
+<li><a href="https://gist.github.com/y0ngb1n/7e8f16af3242c7815e7ca2f0833d3ea6">国内的 Docker Hub 镜像加速器，由国内教育机构与各大云服务商提供的镜像加速服务</a></li>
+<li><a href="https://nestealin.com/6a8506af/">利用 nginx 实现 302 重定向自动跟随</a></li>
+<li><a href="https://sakurabakiyoka.com/2021/02/28/nginx-reverse-proxy-get-502-error/">Nginx 反向代理 SSL 站点出现 502 报错的解决办法</a></li>
+<li><a href="https://faichou.com/sni/">SNI</a></li>
+<li><a href="https://blog.dianduidian.com/post/nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%BD%93%E5%90%8E%E7%AB%AF%E4%B8%BAhttps%E6%97%B6%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%86%E8%8A%82%E5%92%8C%E5%8E%9F%E7%90%86/">Nginx 反向代理，当后端为 Https 时的一些细节和原理</a></li>
+</ul>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2024-04-16</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts">
+			下回<br>已经到头啦。
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/%E9%9A%8F%E8%AE%B0/%E4%BD%BF%E7%94%A8%E8%84%9A%E6%9C%AC%E8%BD%BB%E6%9D%BE%E6%B6%88%E8%80%97%E6%B5%81%E9%87%8F/">
+			上回<br>使用脚本轻松消耗流量
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+<div id="waline"></div>
+<script>
+    Waline.init({
+        el: '#waline',
+        
+        serverURL: "https://waline.lty520.faith/" ,
+    });
+    
+    </script>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://blog.lty520.faith/">
+    
+        <div class="nav-title">
+            Ling的博客
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/%E5%8D%9A%E6%96%87">
+                博文
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/%E9%9A%8F%E8%AE%B0">
+                随记
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/ctf">
+                CTF
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS Feed
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2024 Ling的博客
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%af%e9%80%89%e7%9a%84%e5%8a%a0%e9%80%9f%e6%96%b9%e6%a1%88" onclick="onNavClick(`#可选的加速方案-nav`)" id="可选的加速方案-nav">
+									可选的加速方案
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%87%aa%e5%bb%ba%e5%8a%a0%e9%80%9f%e9%95%9c%e5%83%8f" onclick="onNavClick(`#自建加速镜像-nav`)" id="自建加速镜像-nav">
+									自建加速镜像
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e6%96%b9%e6%a1%88%e4%b8%80%e4%bd%bf%e7%94%a8-nginx-%e6%90%ad%e5%bb%ba" onclick="onNavClick(`#方案一使用-nginx-搭建-nav`)" id="方案一使用-nginx-搭建-nav">
+									方案一：使用 Nginx 搭建
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%96%b9%e6%a1%88%e4%ba%8c%e4%bd%bf%e7%94%a8-cloudflare-worker-%e6%90%ad%e5%bb%ba" onclick="onNavClick(`#方案二使用-cloudflare-worker-搭建-nav`)" id="方案二使用-cloudflare-worker-搭建-nav">
+									方案二：使用 CloudFlare Worker 搭建
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%96%b9%e6%a1%88%e4%b8%80%e4%ba%8c%e6%95%b4%e5%90%88" onclick="onNavClick(`#方案一二整合-nav`)" id="方案一二整合-nav">
+									方案一、二整合
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%90%84%e7%a7%8d%e5%8a%a0%e9%80%9f%e9%95%9c%e5%83%8f%e5%ae%9e%e6%b5%8b" onclick="onNavClick(`#各种加速镜像实测-nav`)" id="各种加速镜像实测-nav">
+									各种加速镜像实测
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%80%bb%e7%bb%93" onclick="onNavClick(`#总结-nav`)" id="总结-nav">
+									总结
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e8%80%83%e6%96%87%e7%ab%a0" onclick="onNavClick(`#参考文章-nav`)" id="参考文章-nav">
+									参考文章
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+<div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2024 Ling的博客
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>
