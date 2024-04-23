@@ -13,6 +13,26 @@
     
     
         <item>
+        <title>全平台统一系列</title>
+        <link>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E7%B3%BB%E5%88%97/</link>
+        <pubDate>Thu, 22 Dec 2022 17:28:48 +0800</pubDate>
+        
+        <guid>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E7%B3%BB%E5%88%97/</guid>
+        <description>Ling的博客 https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E7%B3%BB%E5%88%97/ -&lt;p&gt;因为一直苦恼于手中多个平台的软件各不相同，数据难以同步且不便于使用。因此有了这个系列，希望将 Win ､ Android ､ IpadOS(或许还会包括 Linux ､ Ios)等平台的软件进行统一。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;../%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash&#34;&gt;全平台统一代理——Clash&lt;/a&gt;&lt;br&gt;
+全平台使用 Clash 作为代理软件，避免了之前的多个平台的配置无法通用的乱象。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%BE%93%E5%85%A5%E6%B3%95rime&#34;&gt;全平台统一输入法——Rime&lt;/a&gt;&lt;br&gt;
+全平台使用 Rime 作为输入法，避免了之前的多个平台的词库无法统一和同步的乱象。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../%E8%87%AA%E5%BB%BADocker%20Hub%E5%8A%A0%E9%80%9F%E9%95%9C%E5%83%8F&#34;&gt;自建 Docker Hub 加速镜像&lt;/a&gt;&lt;br&gt;
+自建 Docker Hub 加速镜像，免得到处找公共的加速镜像，时不时还要检查之前设置的还能不能用。&lt;/li&gt;
+&lt;/ol&gt;
+- https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E7%B3%BB%E5%88%97/ - </description>
+        </item>
+    
+    
+    
+        <item>
         <title>Hello World</title>
         <link>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/hello-world/</link>
         <pubDate>Wed, 21 Dec 2022 22:55:49 +0800</pubDate>

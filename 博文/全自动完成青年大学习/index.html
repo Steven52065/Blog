@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-<title>WP BUUCTF [BJDCTF2020]just_a_rar</title>
+<title>全自动完成青年大学习</title>
 
 
 
@@ -10,7 +10,7 @@
 <meta name="google-site-verification" content="">
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
 <meta content="telephone=no" name="format-detection">
-<meta name="description" content="">
+<meta name="description" content="基于大佬的脚本和 nonebot2 ，实现一键完成最新一期的青年大学习并发送完成截图">
 <meta name="renderer" content="webkit">
 <meta name="theme-color" content="#ffffff">
 
@@ -94,9 +94,11 @@
                 
                 
                 
+                    
                 
                 
-                <a class="a-block drawer-menu-item false" href="/%E5%8D%9A%E6%96%87">
+                
+                <a class="a-block drawer-menu-item active" href="/%E5%8D%9A%E6%96%87">
                     博文
                 </a>
                 
@@ -114,22 +116,10 @@
                 
                 
                 
-                    
                 
                 
-                
-                <a class="a-block drawer-menu-item active" href="/ctf">
+                <a class="a-block drawer-menu-item false" href="/ctf">
                     CTF
-                </a>
-                
-            
-                
-                
-                
-                
-                
-                <a class="a-block drawer-menu-item false" href="/%E5%8F%8B%E9%93%BE">
-                    友链
                 </a>
                 
             
@@ -166,26 +156,8 @@
 						
 						
 							<li>
-								<a href="#%e9%a2%98%e7%9b%ae" onclick="onNavClick(`#题目-nav`)" id="题目-nav">
-									题目
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#%e6%80%9d%e8%b7%af" onclick="onNavClick(`#思路-nav`)" id="思路-nav">
-									思路
+								<a href="#%e4%b8%bb%e8%a6%81%e5%8a%9f%e8%83%bd" onclick="onNavClick(`#主要功能-nav`)" id="主要功能-nav">
+									主要功能
 								</a>
 							</li>
 						
@@ -246,13 +218,17 @@
                 
             >
                 <div class="post-title">
-                    <h1 class="post-title">WP BUUCTF [BJDCTF2020]just_a_rar</h1>
+                    <h1 class="post-title">全自动完成青年大学习</h1>
                     
+                    
+                    <div class="post-subtitle">
+                        基于大佬的脚本和 nonebot2 ，实现一键完成最新一期的青年大学习并发送完成截图
+                    </div>
                     
                     <div class="post-meta">
                         
                         <time itemprop="datePublished">
-                            2023-02-04 00:30
+                            2023-02-27 22:26
                         </time>
                         
 
@@ -267,7 +243,7 @@
                             
 
                             
-                            15 s.
+                            29 s.
                         
                     </div>
                 </div>
@@ -277,17 +253,30 @@
                 
                 <div class="post-body" v-pre>
                 
-                    <p>题目链接: <a href="https://buuoj.cn/challenges#%5BBJDCTF2020%5Djust_a_rar">https://buuoj.cn/challenges#[BJDCTF2020]just_a_rar</a></p>
-<h1 id="题目">题目</h1>
-<p>加密的压缩包</p>
-<h1 id="思路">思路</h1>
-<p>一个四位数密码的压缩包，暴力破解即可得密码为 <strong>2016</strong><br>
-解压得一张 jpg 图片，在备注处可以找到 flag<br>
-<strong>flag{Wadf_123}</strong></p>
+                    <p>所需第三方库:</p>
+<ol>
+<li>requests (或许用 httpx 异步会更好一点(但是懒得改了 ATZ))</li>
+<li>pillow</li>
+<li>gocq</li>
+<li>nonebot2</li>
+</ol>
+<h1 id="主要功能">主要功能</h1>
+<ol>
+<li>一键完成最新一期的大学习</li>
+<li>使用 nonebot2 机器人将完成截图发到 QQ 上</li>
+</ol>
+<hr>
+<p>参考文章</p>
+<ul>
+<li><a href="https://wp.for-get.com/349.html">利用Python一键完成青年大学习并获取截图</a></li>
+<li><a href="https://v2.nonebot.dev/docs/">nonebot2</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/65330411">使用PIL在图像上绘制文本</a></li>
+<li><a href="https://stackoverflow.com/questions/8868564/draw-underline-text-with-pil">Draw underline text with PIL</a></li>
+</ul>
 
                     
                     <HR width="100%" id="EOF">
-		    <p style="color:#777;">最后修改于 2023-02-04</p>
+		    <p style="color:#777;">最后修改于 2023-02-27</p>
                     
                 </div>
             </div>
@@ -302,8 +291,8 @@
                 
                 
                 
-                <a class="older-posts" href="/ctf/wp-buuctf-bjdctf2020%E9%B8%A1%E4%BD%A0%E5%A4%AA%E7%BE%8E/">
-			上回<br>WP BUUCTF [BJDCTF2020]鸡你太美
+                <a class="older-posts" href="/ctf/wp-buuctf-bjdctf2020just_a_rar/">
+			上回<br>WP BUUCTF [BJDCTF2020]just_a_rar
                 </a>
                 
             </nav>
@@ -353,9 +342,11 @@
             
             
             
+                
             
             
-            <a class="a-block nav-link-item false" href="/%E5%8D%9A%E6%96%87">
+            
+            <a class="a-block nav-link-item active" href="/%E5%8D%9A%E6%96%87">
                 博文
             </a>
             
@@ -373,22 +364,10 @@
             
             
             
-                
             
             
-            
-            <a class="a-block nav-link-item active" href="/ctf">
+            <a class="a-block nav-link-item false" href="/ctf">
                 CTF
-            </a>
-            
-        
-            
-            
-            
-            
-            
-            <a class="a-block nav-link-item false" href="/%E5%8F%8B%E9%93%BE">
-                友链
             </a>
             
         
@@ -445,26 +424,8 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e9%a2%98%e7%9b%ae" onclick="onNavClick(`#题目-nav`)" id="题目-nav">
-									题目
-								</a>
-							</li>
-						
-						
-					
-				
-			
-				
-				
-					
-						
-						
-						
-						
-						
-							<li>
-								<a href="#%e6%80%9d%e8%b7%af" onclick="onNavClick(`#思路-nav`)" id="思路-nav">
-									思路
+								<a href="#%e4%b8%bb%e8%a6%81%e5%8a%9f%e8%83%bd" onclick="onNavClick(`#主要功能-nav`)" id="主要功能-nav">
+									主要功能
 								</a>
 							</li>
 						

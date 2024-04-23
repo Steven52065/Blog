@@ -13,6 +13,30 @@
     
     
         <item>
+        <title>WP BUUCTF [第一章web入门]粗心的小李</title>
+        <link>https://blog.lty520.faith/ctf/wp-buuctf-%E7%AC%AC%E4%B8%80%E7%AB%A0web%E5%85%A5%E9%97%A8%E7%B2%97%E5%BF%83%E7%9A%84%E5%B0%8F%E6%9D%8E/</link>
+        <pubDate>Tue, 17 Jan 2023 01:41:38 +0800</pubDate>
+        
+        <guid>https://blog.lty520.faith/ctf/wp-buuctf-%E7%AC%AC%E4%B8%80%E7%AB%A0web%E5%85%A5%E9%97%A8%E7%B2%97%E5%BF%83%E7%9A%84%E5%B0%8F%E6%9D%8E/</guid>
+        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-%E7%AC%AC%E4%B8%80%E7%AB%A0web%E5%85%A5%E9%97%A8%E7%B2%97%E5%BF%83%E7%9A%84%E5%B0%8F%E6%9D%8E/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%5B%E7%AC%AC%E4%B8%80%E7%AB%A0%20web%E5%85%A5%E9%97%A8%5D%E7%B2%97%E5%BF%83%E7%9A%84%E5%B0%8F%E6%9D%8E&#34;&gt;https://buuoj.cn/challenges#[%E7%AC%AC%E4%B8%80%E7%AB%A0%20web%E5%85%A5%E9%97%A8]%E7%B2%97%E5%BF%83%E7%9A%84%E5%B0%8F%E6%9D%8E&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
+&lt;p&gt;看看能不能找到信息吧？
+Git测试
+Hello, CTFer!
+当前大量开发人员使用 git 进行版本控制，对站点自动部署。如果配置不当，可能会将 .git 文件夹直接部署到线上环境。这就引起了git泄露漏洞。&lt;/p&gt;
+&lt;p&gt;小李好像不是很小心，经过了几次迭代更新就直接就把整个文件夹放到线上环境了:(&lt;/p&gt;
+&lt;p&gt;very easy&lt;/p&gt;
+&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
+&lt;p&gt;提到了将 .git 文件上传到线上，并且可以找到 /.git/config 文件，由此可以确定 .git 文件夹的相对路径———和 index.html 在同一目录下。
+使用工具 &lt;a href=&#34;https://github.com/lijiejie/GitHack&#34;&gt;GitHack&lt;/a&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;python .\GitHack.py http://9bfa9908-0a98-4587-8547-08565c9261d1.node4.buuoj.cn:81/.git/
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;即可得到一个 index.html 文件，打开即可得 flag &lt;strong&gt;n1book{git_looks_s0_easyfun}&lt;/strong&gt;&lt;/p&gt;
+- https://blog.lty520.faith/ctf/wp-buuctf-%E7%AC%AC%E4%B8%80%E7%AB%A0web%E5%85%A5%E9%97%A8%E7%B2%97%E5%BF%83%E7%9A%84%E5%B0%8F%E6%9D%8E/ - </description>
+        </item>
+    
+    
+    
+        <item>
         <title>WP BUUCTF 面具下的flag</title>
         <link>https://blog.lty520.faith/ctf/wp-buuctf-%E9%9D%A2%E5%85%B7%E4%B8%8B%E7%9A%84flag/</link>
         <pubDate>Mon, 16 Jan 2023 23:21:11 +0800</pubDate>
@@ -297,36 +321,6 @@ with open(filename, &amp;#39;rb&amp;#39;) as f:
 &lt;/ol&gt;
 &lt;p&gt;可得 flag 为 &lt;strong&gt;flag{d450209323a847c8d01c6be47c81811a}&lt;/strong&gt;&lt;/p&gt;
 - https://blog.lty520.faith/ctf/wp-buuctf-alice%E4%B8%8Ebob/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>WP BUUCTF 丢失的MD5</title>
-        <link>https://blog.lty520.faith/ctf/wp-buuctf-%E4%B8%A2%E5%A4%B1%E7%9A%84md5/</link>
-        <pubDate>Fri, 13 Jan 2023 00:32:23 +0800</pubDate>
-        
-        <guid>https://blog.lty520.faith/ctf/wp-buuctf-%E4%B8%A2%E5%A4%B1%E7%9A%84md5/</guid>
-        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-%E4%B8%A2%E5%A4%B1%E7%9A%84md5/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%E4%B8%A2%E5%A4%B1%E7%9A%84MD5&#34;&gt;https://buuoj.cn/challenges#%E4%B8%A2%E5%A4%B1%E7%9A%84MD5&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;import hashlib   
-for i in range(32,127):
-    for j in range(32,127):
-        for k in range(32,127):
-            m=hashlib.md5()
-            m.update(&amp;#39;TASC&amp;#39;+chr(i)+&amp;#39;O3RJMV&amp;#39;+chr(j)+&amp;#39;WDJKX&amp;#39;+chr(k)+&amp;#39;ZM&amp;#39;)
-            des=m.hexdigest()
-            if &amp;#39;e9032&amp;#39; in des and &amp;#39;da&amp;#39; in des and &amp;#39;911513&amp;#39; in des:
-                print des
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
-&lt;p&gt;遇到 python 题目，当然是要先运行一下啦&lt;br&gt;
-报错&lt;br&gt;
-仔细研究后发现这 TM 居然是 python2 的题目&amp;hellip;&lt;br&gt;
-只要装上 python2 环境，运行一下，可以得到一串字符串，包上 &lt;strong&gt;flag{}&lt;/strong&gt; 即可&lt;br&gt;
-所以 flag 就为 &lt;strong&gt;flag{e9032994dabac08080091151380478a2}&lt;/strong&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;em&gt;结果这题的大部分时间都用在了装 python2 环境上了&amp;hellip;&lt;/em&gt;&lt;/p&gt;
-- https://blog.lty520.faith/ctf/wp-buuctf-%E4%B8%A2%E5%A4%B1%E7%9A%84md5/ - </description>
         </item>
     
     

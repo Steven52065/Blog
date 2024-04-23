@@ -13,6 +13,36 @@
     
     
         <item>
+        <title>WP BUUCTF 丢失的MD5</title>
+        <link>https://blog.lty520.faith/ctf/wp-buuctf-%E4%B8%A2%E5%A4%B1%E7%9A%84md5/</link>
+        <pubDate>Fri, 13 Jan 2023 00:32:23 +0800</pubDate>
+        
+        <guid>https://blog.lty520.faith/ctf/wp-buuctf-%E4%B8%A2%E5%A4%B1%E7%9A%84md5/</guid>
+        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-%E4%B8%A2%E5%A4%B1%E7%9A%84md5/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%E4%B8%A2%E5%A4%B1%E7%9A%84MD5&#34;&gt;https://buuoj.cn/challenges#%E4%B8%A2%E5%A4%B1%E7%9A%84MD5&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;import hashlib   
+for i in range(32,127):
+    for j in range(32,127):
+        for k in range(32,127):
+            m=hashlib.md5()
+            m.update(&amp;#39;TASC&amp;#39;+chr(i)+&amp;#39;O3RJMV&amp;#39;+chr(j)+&amp;#39;WDJKX&amp;#39;+chr(k)+&amp;#39;ZM&amp;#39;)
+            des=m.hexdigest()
+            if &amp;#39;e9032&amp;#39; in des and &amp;#39;da&amp;#39; in des and &amp;#39;911513&amp;#39; in des:
+                print des
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
+&lt;p&gt;遇到 python 题目，当然是要先运行一下啦&lt;br&gt;
+报错&lt;br&gt;
+仔细研究后发现这 TM 居然是 python2 的题目&amp;hellip;&lt;br&gt;
+只要装上 python2 环境，运行一下，可以得到一串字符串，包上 &lt;strong&gt;flag{}&lt;/strong&gt; 即可&lt;br&gt;
+所以 flag 就为 &lt;strong&gt;flag{e9032994dabac08080091151380478a2}&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;结果这题的大部分时间都用在了装 python2 环境上了&amp;hellip;&lt;/em&gt;&lt;/p&gt;
+- https://blog.lty520.faith/ctf/wp-buuctf-%E4%B8%A2%E5%A4%B1%E7%9A%84md5/ - </description>
+        </item>
+    
+    
+    
+        <item>
         <title>WP BUUCTF 篱笆墙的影子</title>
         <link>https://blog.lty520.faith/ctf/wp-buuctf-%E7%AF%B1%E7%AC%86%E5%A2%99%E7%9A%84%E5%BD%B1%E5%AD%90/</link>
         <pubDate>Fri, 13 Jan 2023 00:09:44 +0800</pubDate>
@@ -450,26 +480,6 @@ sudo systemctl restart clash_meta.service # 重启 Clash Meta
 &lt;li&gt;&lt;a href=&#34;https://docs.cfw.lbyczf.com/&#34;&gt;Clash for Windows&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 - https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>全平台统一系列</title>
-        <link>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E7%B3%BB%E5%88%97/</link>
-        <pubDate>Thu, 22 Dec 2022 17:28:48 +0800</pubDate>
-        
-        <guid>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E7%B3%BB%E5%88%97/</guid>
-        <description>Ling的博客 https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E7%B3%BB%E5%88%97/ -&lt;p&gt;因为一直苦恼于手中多个平台的软件各不相同，数据难以同步且不便于使用。因此有了这个系列，希望将 Win ､ Android ､ IpadOS(或许还会包括 Linux ､ Ios)等平台的软件进行统一。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;../%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash&#34;&gt;全平台统一代理——Clash&lt;/a&gt;&lt;br&gt;
-全平台使用 Clash 作为代理软件，避免了之前的多个平台的配置无法通用的乱象。&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%BE%93%E5%85%A5%E6%B3%95rime&#34;&gt;全平台统一输入法——Rime&lt;/a&gt;&lt;br&gt;
-全平台使用 Rime 作为输入法，避免了之前的多个平台的词库无法统一和同步的乱象。&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../%E8%87%AA%E5%BB%BADocker%20Hub%E5%8A%A0%E9%80%9F%E9%95%9C%E5%83%8F&#34;&gt;自建 Docker Hub 加速镜像&lt;/a&gt;&lt;br&gt;
-自建 Docker Hub 加速镜像，免得到处找公共的加速镜像，时不时还要检查之前设置的还能不能用。&lt;/li&gt;
-&lt;/ol&gt;
-- https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E7%B3%BB%E5%88%97/ - </description>
         </item>
     
     
