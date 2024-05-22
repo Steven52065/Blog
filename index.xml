@@ -118,7 +118,7 @@ sudo apt install nginx
                      proxy_pass $saved_redirect_location;
              }
      }
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后按 &lt;strong&gt;Esc&lt;/strong&gt; ，输入 &lt;strong&gt;:wq&lt;/strong&gt; 保存退出即可&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后按 &lt;strong&gt;Esc&lt;/strong&gt; ，输入 &lt;strong&gt;: wq&lt;/strong&gt; 保存退出即可&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;重新加载 Nginx 配置
@@ -333,6 +333,54 @@ export default {
                     proxy_set_header Host $http_host;
             }
     }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果想要反代 ghcr 镜像源呢？只要参考上面的配置，将域名、header 修改一下即可&lt;br&gt;
+并且因为 ghcr 好像不像 docker hub 有下载频率的限制，所以也不用去 Cloudflare Worker 部署了，直接在服务器上部署一个就行。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#反代ghcr镜像源
+server {
+        listen 443 ssl;
+        server_name 域名;
+
+        ssl_certificate 证书地址;
+        ssl_certificate_key 密钥地址;
+        proxy_ssl_server_name on;
+        ssl_protocols TLSv1.1 TLSv1.2 TLSv1.3;
+        #error_log /home/ubuntuago/proxy_docker.log debug;
+        if ($blocked_agent) {
+                return 403;
+        }
+
+        location / {
+                proxy_pass https://ghcr.io;  # Docker Hub 的官方镜像仓库
+
+                proxy_set_header Host ghcr.io;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+
+                # 关闭缓存
+                proxy_buffering off;
+
+                # 转发认证相关的头部
+                proxy_set_header Authorization $http_authorization;
+                proxy_pass_header  Authorization;
+                # 对 upstream 状态码检查，实现 error_page 错误重定向
+                proxy_intercept_errors on;
+                # error_page 指令默认只检查了第一次后端返回的状态码，开启后可以跟随多次重定向。
+                recursive_error_pages on;
+                # 根据状态码执行对应操作，以下为301、302、307状态码都会触发
+                error_page 301 302 307 = @handle_redirect;
+
+                #error_page 429 = @handle_too_many_requests;
+
+        }
+        #处理重定向
+        location @handle_redirect {
+                resolver 1.1.1.1;
+                set $saved_redirect_location &amp;#39;$upstream_http_location&amp;#39;;
+                proxy_pass $saved_redirect_location;
+        }
+
+}
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;新增的一些代码的作用：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;proxy_ssl_server_name on;&lt;/strong&gt;&lt;br&gt;
@@ -406,7 +454,8 @@ HTTPS, 需要在握手时候验证证书, 所以在握手时候需要将域名�
         <guid>https://blog.lty520.faith/%E9%9A%8F%E8%AE%B0/%E4%BD%BF%E7%94%A8%E8%84%9A%E6%9C%AC%E8%BD%BB%E6%9D%BE%E6%B6%88%E8%80%97%E6%B5%81%E9%87%8F/</guid>
         <description>Ling的博客 https://blog.lty520.faith/%E9%9A%8F%E8%AE%B0/%E4%BD%BF%E7%94%A8%E8%84%9A%E6%9C%AC%E8%BD%BB%E6%9D%BE%E6%B6%88%E8%80%97%E6%B5%81%E9%87%8F/ -&lt;p&gt;系统：Debian12&lt;br&gt;
 最初是想使用Speedtest测速来消耗流量的，但是发现官方的Speedtest-cli无法只测下载不测上传，所以就自己写了个脚本下载文件来消耗流量&lt;br&gt;
-想到有什么大文件能随便下载，就突然想到了“原神”，虽然没玩过，但是这个游戏体积贼大还是知道的。最后，就有了这个脚本&lt;/p&gt;
+想到有什么大文件能随便下载，就突然想到了“原神”，虽然没玩过，但是这个游戏体积贼大还是知道的。最后，就有了这个脚本&lt;br&gt;
+（嘛，稍微薅一点人家的CDN就行了，别一直在那儿下载就好）&lt;/p&gt;
 &lt;h1 id=&#34;脚本内容&#34;&gt;脚本内容&lt;/h1&gt;
 &lt;p&gt;mian.sh&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#!/bin/bash

@@ -389,9 +389,9 @@
                             
 
                             
-                            15 min
+                            17 min
                             
-                            45 s.
+                            7 s.
                         
                     </div>
                 </div>
@@ -485,7 +485,7 @@ sudo apt install nginx
                      proxy_pass $saved_redirect_location;
              }
      }
-</code></pre><p>然后按 <strong>Esc</strong> ，输入 <strong>:wq</strong> 保存退出即可</p>
+</code></pre><p>然后按 <strong>Esc</strong> ，输入 <strong>: wq</strong> 保存退出即可</p>
 </li>
 <li>
 <p>重新加载 Nginx 配置
@@ -700,6 +700,54 @@ export default {
                     proxy_set_header Host $http_host;
             }
     }
+</code></pre><p>如果想要反代 ghcr 镜像源呢？只要参考上面的配置，将域名、header 修改一下即可<br>
+并且因为 ghcr 好像不像 docker hub 有下载频率的限制，所以也不用去 Cloudflare Worker 部署了，直接在服务器上部署一个就行。</p>
+<pre tabindex="0"><code>#反代ghcr镜像源
+server {
+        listen 443 ssl;
+        server_name 域名;
+
+        ssl_certificate 证书地址;
+        ssl_certificate_key 密钥地址;
+        proxy_ssl_server_name on;
+        ssl_protocols TLSv1.1 TLSv1.2 TLSv1.3;
+        #error_log /home/ubuntuago/proxy_docker.log debug;
+        if ($blocked_agent) {
+                return 403;
+        }
+
+        location / {
+                proxy_pass https://ghcr.io;  # Docker Hub 的官方镜像仓库
+
+                proxy_set_header Host ghcr.io;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+
+                # 关闭缓存
+                proxy_buffering off;
+
+                # 转发认证相关的头部
+                proxy_set_header Authorization $http_authorization;
+                proxy_pass_header  Authorization;
+                # 对 upstream 状态码检查，实现 error_page 错误重定向
+                proxy_intercept_errors on;
+                # error_page 指令默认只检查了第一次后端返回的状态码，开启后可以跟随多次重定向。
+                recursive_error_pages on;
+                # 根据状态码执行对应操作，以下为301、302、307状态码都会触发
+                error_page 301 302 307 = @handle_redirect;
+
+                #error_page 429 = @handle_too_many_requests;
+
+        }
+        #处理重定向
+        location @handle_redirect {
+                resolver 1.1.1.1;
+                set $saved_redirect_location &#39;$upstream_http_location&#39;;
+                proxy_pass $saved_redirect_location;
+        }
+
+}
 </code></pre><p>新增的一些代码的作用：</p>
 <ol>
 <li><strong>proxy_ssl_server_name on;</strong><br>

@@ -178,22 +178,22 @@ Google 可得一个专辑的名字 &lt;strong&gt;Anaconda&lt;/strong&gt;&lt;br&g
 比 Pixel3XL 的单摄强，等效 35mm 比一般的手机更近一些，虚化挺好看&lt;br&gt;
 微距用着感觉比 K50 至尊版 的要更近、更清晰 一点&lt;/li&gt;
 &lt;li&gt;性能&lt;br&gt;
-8Gen2 ，实测雷兔兔跑分 1216748 分,比别家的要低几万，影响也不大（并非到手就测，或许是后台已经在运行一些软件的缘故？）&lt;br&gt;
+8Gen2 ，实测雷兔兔跑分 1216748 分, 比别家的要低几万，影响也不大（并非到手就测，或许是后台已经在运行一些软件的缘故？）&lt;br&gt;
 &lt;img src=&#34;https://blog.lty520.faith/img/%E5%8D%9A%E6%96%87/%E5%8A%AA%E6%AF%94%E4%BA%9AZ50%E7%9A%84%E8%B0%83%E6%95%99/%E9%9B%B7%E5%85%94%E5%85%94%E8%B7%91%E5%88%86.jpg&#34; alt=&#34;跑分截图&#34;&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1 id=&#34;系统&#34;&gt;系统&lt;/h1&gt;
 &lt;h2 id=&#34;谷歌服务&#34;&gt;谷歌服务&lt;/h2&gt;
 &lt;p&gt;因其自带谷歌服务，所以只需要在 &lt;a href=&#34;https://apkpure.com/cn/google-play-store/com.android.vending&#34;&gt;Apkpure&lt;/a&gt; 下载一个 &lt;strong&gt;Google Play Store&lt;/strong&gt; 安装上，就可以找到谷歌应用商店的图标了&lt;br&gt;
-&lt;em&gt;尝试过使用谷歌服务安装器（如 Go谷歌安装器 ），会显示谷歌框架完整，但哪怕重装谷歌框架也无法解决找不到谷歌应用商店的图标的问题。所以可能只能手动安装了&lt;/em&gt;&lt;/p&gt;
+&lt;em&gt;尝试过使用谷歌服务安装器（如 Go 谷歌安装器 ），会显示谷歌框架完整，但哪怕重装谷歌框架也无法解决找不到谷歌应用商店的图标的问题。所以可能只能手动安装了&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id=&#34;lspatchhttpsgithubcomlsposedlspatch&#34;&gt;&lt;a href=&#34;https://github.com/LSPosed/LSPatch&#34;&gt;LSPatch&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;因为不能解 BL 锁刷机，所以只能选择这种方案了&lt;br&gt;
 &lt;em&gt;曾经在另一部同样不能解 BL 和 Root 的手机试过太极框架，或许是手机太老的缘故，体验并不好，所以这次换了这个&lt;/em&gt;&lt;/p&gt;
 &lt;h3 id=&#34;安装-lspatch&#34;&gt;安装 LSPatch&lt;/h3&gt;
-&lt;p&gt;在&lt;a href=&#34;https://github.com/LSPosed/LSPatch/releases&#34;&gt; LSPosed/LSPatch/releases &lt;/a&gt; 下载安装后即可&lt;/p&gt;
+&lt;p&gt;在 &lt;a href=&#34;https://github.com/LSPosed/LSPatch/releases&#34;&gt; LSPosed/LSPatch/releases &lt;/a&gt; 下载安装后即可&lt;/p&gt;
 &lt;h4 id=&#34;使用-shizuku-自动安装修补后的-app&#34;&gt;使用 Shizuku ，自动安装修补后的 app&lt;/h4&gt;
 &lt;p&gt;默认的 LSPatch 也可以用，但修补后的 app 必须手动安装，所以可以安装 &lt;a href=&#34;https://shizuku.rikka.app/&#34;&gt;Shizuku&lt;/a&gt; ，给 LSPatch 权限后即可自动安装修补后的 app&lt;br&gt;
 &lt;em&gt;没有 Shizuku 也是完全可以的，只不过需要手动安装，麻烦一点&lt;/em&gt;&lt;br&gt;
-&lt;em&gt;Shizuku 安装教程 &lt;a href=&#34;https://www.bilibili.com/video/BV1Ye411N7Av/&#34;&gt;没有 Root 也能玩机？这是我讲过最强的APP！！！！&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;em&gt;Shizuku 安装教程 &lt;a href=&#34;https://www.bilibili.com/video/BV1Ye411N7Av/&#34;&gt;没有 Root 也能玩机？这是我讲过最强的 APP！！！！&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3 id=&#34;使用到的模块&#34;&gt;使用到的模块&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;QQ
@@ -201,9 +201,9 @@ Google 可得一个专辑的名字 &lt;strong&gt;Anaconda&lt;/strong&gt;&lt;br&g
 &lt;li&gt;&lt;a href=&#34;https://github.com/fankes/TSBattery&#34;&gt;TSBattery&lt;/a&gt; 可以限制 QQ 的一些服务，省点电&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/cinit/QAuxiliary&#34;&gt;QAuxiliary&lt;/a&gt; 功能很多，主要用它去掉 QQ 的一些没用的功能（比如“一起听歌”、“群帖子”之类的）&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Xposed-Modules-Repo/com.fkzhang.qqxposed&#34;&gt;QX&lt;/a&gt; 防撤回&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Hicores/QTool&#34;&gt;QTool&lt;/a&gt; 可以显示&lt;strong&gt;合并转发&lt;/strong&gt;的来源，有一些群管理辅助功能；净化功能与 &lt;strong&gt;QAuxiliary&lt;/strong&gt; 重合
+&lt;li&gt;&lt;a href=&#34;https://github.com/Hicores/QTool&#34;&gt;QTool&lt;/a&gt; 可以显示 &lt;strong&gt;合并转发&lt;/strong&gt; 的来源，有一些群管理辅助功能；净化功能与 &lt;strong&gt;QAuxiliary&lt;/strong&gt; 重合
 &lt;ul&gt;
-&lt;li&gt;2023年10月 合并转发来源已经被腾讯限制，无法查看到了&lt;/li&gt;
+&lt;li&gt;2023 年 10 月 合并转发来源已经被腾讯限制，无法查看到了&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -220,13 +220,17 @@ Google 可得一个专辑的名字 &lt;strong&gt;Anaconda&lt;/strong&gt;&lt;br&g
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;h1 id=&#34;充电电池&#34;&gt;充电/电池&lt;/h1&gt;
+&lt;p&gt;截止到 2024 年 04 月 24 日，手机已经使用了一年零 3 个月（手机购买时间为 2023 年 01 月 25 日），系统为 13.021，开启“急速闪充”&lt;br&gt;
+使用维简 C4 功率计在手机剩余电量 3%的时候进行了一次充电测试，测得充入电量 18.673wh，使用 Scene5 测得手机充入电量 15.57wh，使用 Scene5 得到手机理论电池容量为 19.3wh（5000mah），所以算得手机充电效率约为 83.38%（使用 15.57wh/18.673wh 得到），剩余容量约为 80.67wh（使用 15.57wh/19.3wh 得到），到功率降为 0，充电持续了 57 分钟。&lt;br&gt;
+使用 Battery Guru 基于十次充电充入的 795%（34323mAh）的电量，得到的电池健康度为 85%。&lt;/p&gt;
 &lt;h1 id=&#34;桌面&#34;&gt;桌面&lt;/h1&gt;
 &lt;h2 id=&#34;第三方桌面&#34;&gt;第三方桌面&lt;/h2&gt;
 &lt;p&gt;因为上一部手机是 Pixel3XL ，习惯了 Pixel Launcher 的风格（而且感觉谷歌的 Material You 风格真的比国内这些个魔改系统好看多了）&lt;br&gt;
 因此选择了类似于 Pixel Launcher 的 &lt;a href=&#34;https://lawnchair.app/&#34;&gt;Lawnchair&lt;/a&gt; 直接下载安装即可&lt;br&gt;
 因为努比亚禁止了使用第三方桌面（真搞不懂明明这么小的市场份额还不愿意放开一点&amp;hellip;），所以可以使用 hyperion ，安装后会让你选择 hyperion 的桌面，这时只要选择 &lt;strong&gt;Lawnchair&lt;/strong&gt; 就可以了（怪）&lt;/p&gt;
 &lt;h2 id=&#34;图标&#34;&gt;图标&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/LawnchairLauncher/lawnicons&#34;&gt; lawnicons &lt;/a&gt;和 &lt;a href=&#34;https://www.coolapk.com/apk/app.lawnchair.lawnicons&#34;&gt;cayicons&lt;/a&gt;&lt;br&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/LawnchairLauncher/lawnicons&#34;&gt; lawnicons &lt;/a&gt; 和 &lt;a href=&#34;https://www.coolapk.com/apk/app.lawnchair.lawnicons&#34;&gt;cayicons&lt;/a&gt;&lt;br&gt;
 对比：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;lawnicons 在 github 上开源，可以直接提交自己的图标；但对国内软件兼容性差&lt;/li&gt;
@@ -242,7 +246,7 @@ Google 可得一个专辑的名字 &lt;strong&gt;Anaconda&lt;/strong&gt;&lt;br&g
 下载大部分应用（如果有的话），毕竟总所周知国内厂商做的应用，国际板通常都会比国内版干净、好用、要求权限少&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://f-droid.org/&#34;&gt;F-Droid&lt;/a&gt;&lt;br&gt;
 可以用来下载一些免费开源软件，貌似更新比 Google play store 要快一些（比如 Trime ）&lt;br&gt;
-&lt;em&gt;下载太慢或打不开可以使用&lt;a href=&#34;https://mirrors.tuna.tsinghua.edu.cn/help/fdroid/&#34;&gt;清华大学开源软件镜像站&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;em&gt;下载太慢或打不开可以使用 &lt;a href=&#34;https://mirrors.tuna.tsinghua.edu.cn/help/fdroid/&#34;&gt;清华大学开源软件镜像站&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://apkpure.com/cn/&#34;&gt;APKPure&lt;/a&gt;&lt;br&gt;
 用以下载 Google play store 没有的软件&lt;/li&gt;
 &lt;li&gt;酷安&lt;br&gt;
@@ -252,12 +256,16 @@ Google 可得一个专辑的名字 &lt;strong&gt;Anaconda&lt;/strong&gt;&lt;br&g
 &lt;p&gt;毕竟努比亚是个小厂（和国内的华米 OV 以及国外的三星苹果相比），系统功能没那么完善，还需要一些第三方 app 进行补充；以及将一些系统 app 换成更习惯的第三方 app &lt;br&gt;
 &lt;em&gt;说实话个人感觉这个系统给我的惊喜还是蛮多的（毕竟之前用的是 Pixel&amp;hellip;）&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id=&#34;跳过广告&#34;&gt;跳过广告&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://wpengapp.com/lightstart&#34;&gt;轻启动&lt;/a&gt; 跳过 app 的开屏广告&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/gkd-kit/gkd&#34;&gt;GKD&lt;/a&gt; 订阅已有的规则或自己编写规则，实现不止跳过广告的各种无障碍功能&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://wpengapp.com/lightstart&#34;&gt;轻启动&lt;/a&gt; 跳过 app 的开屏广告&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;输入法&#34;&gt;输入法&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;../%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%BE%93%E5%85%A5%E6%B3%95rime&#34;&gt;Rime&lt;/a&gt; 毕竟都统一了是吧&lt;em&gt;目前还没有&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;../%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%BE%93%E5%85%A5%E6%B3%95rime&#34;&gt;Rime&lt;/a&gt; 毕竟都统一了是吧 &lt;em&gt;目前还没有&lt;/em&gt;&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;- 23年2月1日
    安卓13无法正常显示候选框
       3.2.7 可以正常使用
+- 3.2.16 可以正常使用
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;浏览器&#34;&gt;浏览器&lt;/h2&gt;
 &lt;p&gt;Chrome 因为书签的同步被绑在了谷歌的服务下&amp;hellip;（不过没有那些乱七八糟的资讯也还蛮好的）&lt;/p&gt;
 &lt;h2 id=&#34;密码管理&#34;&gt;密码管理&lt;/h2&gt;
@@ -271,15 +279,15 @@ Google 可得一个专辑的名字 &lt;strong&gt;Anaconda&lt;/strong&gt;&lt;br&g
 &lt;p&gt;日文大佬的 谷歌相机
 日常使用徕卡灵动&lt;/p&gt;
 &lt;h1 id=&#34;问题&#34;&gt;问题&lt;/h1&gt;
-&lt;p&gt;&lt;em&gt;截止到2023年10月30日&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;截止到 2023 年 10 月 30 日&lt;/em&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;充电功率虚标
 &lt;ul&gt;
-&lt;li&gt;标称的80W，实际大概最高30-40W。&lt;/li&gt;
+&lt;li&gt;标称的 80W，实际大概最高 30-40W。&lt;/li&gt;
 &lt;li&gt;充电实测&lt;/li&gt;
-&lt;li&gt;环境温度26度左右，无手机壳，手机背面架起，熄屏。
-[努比亚z50 13.0.18系统 开急速闪充](/img/博文/努比亚Z50的调教/努比亚z50 13.0.18系统 开急速闪充.png)
-[努比亚z50 13.0.19系统 开急速闪充](/img/博文/努比亚Z50的调教/努比亚z50 13.0.19系统 开急速闪充.png)&lt;/li&gt;
+&lt;li&gt;环境温度 26 度左右，无手机壳，手机背面架起，熄屏。
+[努比亚 z50 13.0.18 系统 开急速闪充](/img/博文/努比亚Z50的调教/努比亚z50 13.0.18系统 开急速闪充.png)
+[努比亚 z50 13.0.19 系统 开急速闪充](/img/博文/努比亚Z50的调教/努比亚z50 13.0.19系统 开急速闪充.png)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;后台限制不够严格
@@ -292,7 +300,7 @@ Google 可得一个专辑的名字 &lt;strong&gt;Anaconda&lt;/strong&gt;&lt;br&g
 &lt;/li&gt;
 &lt;li&gt;对部分应用的限制有问题
 &lt;ol&gt;
-&lt;li&gt;TTS Server 只要启用了他作为系统TTS，就会一次保持运行，并且保持在每小时2.7毫安时左右的耗电量&lt;/li&gt;
+&lt;li&gt;TTS Server 只要启用了他作为系统 TTS，就会一次保持运行，并且保持在每小时 2.7 毫安时左右的耗电量&lt;/li&gt;
 &lt;li&gt;熄屏状态下的媒体播放
 时而会发生“播放暂停”的现象，只能通过手动点亮屏幕来继续播放&lt;/li&gt;
 &lt;/ol&gt;
