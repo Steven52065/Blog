@@ -47,7 +47,7 @@
       
       <guid>https://blog.lty520.faith/%E9%9A%8F%E8%AE%B0/%E7%99%BD%E5%AB%96%E8%8A%82%E7%82%B9%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
       <description>因为是 Vless 的节点，所以本文只会介绍 V2ray 相关软件的使用方法。其他客户端( Clash、Openwrt 等)就不写了
-节点仅保证最低限度的访问外网，即使用 Google、Youtube、Github 等，无法保证可以使用 New Bing、ChatGPT、Netflix 等对节点要求较高的网站。 晚八点前后的网络高峰期速度慢是正常现象，可以通过使用优选 IP 来缓解 使用教程 Windows 下载 V2rayN 客户端 ，选择最新版本，下载 v2rayN.zip 文件，并解压 下载 Xray-core ,选择对应的系统、架构下载（如果不知道，那就是 Xray-windows-64.zip ），将解压出的文件放到 V2rayN 客户端 的文件目录下（即和 v2rayN.exe 文件在一起）。 启动 V2rayN ，复制节点信息后在 V2rayN 中右键，并选择“从剪贴板批量导入URL”，若出现“成功”二字，导入成功 右键节点，选择“测试服务器真连接延迟”若测试结果中出现延时，说明节点正常（用不了是你的问题） 开始使用吧 Android 下载 V2rayNG 客户端, github 或 Google play 选一。 复制节点信息后点击 V2rayNG 上方“+”，“从剪贴板导入” 点击右上角三个点，“测试全部配置真连接”，若出现测试结果，说明节点没问题（用不了是你的问题） 点击右下角的圆形图标，开始使用吧 Ios 搞个非国区帐号，并下载 Shadowrocket （国区里的是假的） 复制节点信息后打开 Shadowrocket 即可自动导入 打开上方开关，开始使用吧 有测试结果但节点无法使用 Windows 点击“重启服务”试试 关闭除 V2rayN 以外的代理软件和浏览器的代理插件并重启 V2rayN 重启电脑 换手机 Android 重启手机 换苹果 Ios 重启手机 换安卓 节点可用但速度慢 寻找优选 IP 1.</description>
+节点仅保证最低限度的访问外网，即使用 Google、Youtube、Github 等，无法保证可以使用 New Bing、ChatGPT、Netflix 等对节点要求较高的网站。 晚八点前后的网络高峰期速度慢是正常现象，可以通过使用优选 IP 来缓解 使用教程 Windows 下载 V2rayN 客户端 ，选择最新版本，下载 v2rayN-With-Core.zip 文件，并解压 启动 V2rayN ，复制节点信息后在 V2rayN 中按 Ctrl+C 粘贴，若出现节点，则导入成功 右键节点，选择“测试服务器真连接延迟”若测试结果中出现延时，说明节点正常（用不了大概是你的问题） 开始使用吧 Android 下载 V2rayNG 客户端, github 或 Google play 选一。 复制节点信息后点击 V2rayNG 上方“+”，“从剪贴板导入” 点击右上角三个点，“测试全部配置真连接”，若出现测试结果，说明节点没问题（用不了是你的问题） 点击右下角的圆形图标，开始使用吧 Ios 搞个非国区帐号，并下载 Shadowrocket （国区里的是假的） 复制节点信息后打开 Shadowrocket 即可自动导入 打开上方开关，开始使用吧 有测试结果但节点无法使用 Windows 点击“重启服务”试试 关闭除 V2rayN 以外的代理软件和浏览器的代理插件并重启 V2rayN 重启电脑 换手机 Android 重启手机 换苹果 Ios 重启手机 换安卓 节点可用但速度慢 寻找优选 IP 1.</description>
     </item>
     
   </channel>
