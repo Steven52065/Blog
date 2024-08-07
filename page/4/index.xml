@@ -263,7 +263,20 @@ flag 为 &lt;strong&gt;flag{1sb_i4_s0_Ea4y}&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;优选-ip-的使用&#34;&gt;优选 IP 的使用&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;&lt;strong&gt;这个 IP 的测试结果仅在当前网络环境下有效，换了不一定好。优选 IP 可能会失效，若使用优选 IP 后无法连接节点，请去掉优选 IP 尝试或更换优选 IP&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;双击编辑节点，用优选到的 IP 替换到“地址”栏内的内容&lt;/p&gt;
+&lt;p&gt;双击编辑节点，用优选到的 IP 替换到“地址”栏内的内容并将原“地址”栏内的内容放进“伪装域名”栏内&lt;/p&gt;
+&lt;h1 id=&#34;其他补充知识&#34;&gt;其他补充知识&lt;/h1&gt;
+&lt;h2 id=&#34;国内外分流&#34;&gt;国内外分流&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;因为节点的延时较高且ip为美国，为了避免通往国内的流量进入代理而导致使用体验降低以及IP变动而导致国内软件的账号风控，建议使用“绕过局域网和大陆”的分流规则（当然如果你有自己的想法也是很好哒）&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;教程&#34;&gt;教程：&lt;/h3&gt;
+&lt;h4 id=&#34;android-v2rayng&#34;&gt;Android V2rayNG：&lt;/h4&gt;
+&lt;p&gt;在左上角，依次点击「设置」「预定义规则」，选择「绕过局域网及大陆地址」即可实现分流功能。&lt;/p&gt;
+&lt;h4 id=&#34;windows-v2rayn&#34;&gt;Windows V2rayN：&lt;/h4&gt;
+&lt;p&gt;在软件下方路由处选择「绕过大陆(Whitelist)」即可（默认应该就是这个）&lt;/p&gt;
+&lt;h4 id=&#34;iosipados-shadowrocket&#34;&gt;IOS/IpadOS Shadowrocket：&lt;/h4&gt;
+&lt;p&gt;好久不用记不清了，记得默认的配置文件就是绕过大陆的吧&lt;/p&gt;
+&lt;h2 id=&#34;什么是节点信息&#34;&gt;什么是“节点信息”？&lt;/h2&gt;
+&lt;p&gt;通常，节点信息都是一串“乱码”，比如现在的就是上面以vmess开头的这一串。
+以后可能会变成其他内容开头，但都会是这样的“乱码”的样式。&lt;/p&gt;
 - https://blog.lty520.faith/%E9%9A%8F%E8%AE%B0/%E7%99%BD%E5%AB%96%E8%8A%82%E7%82%B9%E7%9A%84%E4%BD%BF%E7%94%A8/ - </description>
         </item>
     
