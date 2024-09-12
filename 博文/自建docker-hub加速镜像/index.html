@@ -166,6 +166,24 @@
 						
 						
 							<li>
+								<a href="#%e6%9b%b4%e6%96%b0%e6%97%a5%e5%bf%97" onclick="onNavClick(`#更新日志-nav`)" id="更新日志-nav">
+									更新日志
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
 								<a href="#%e5%8f%af%e9%80%89%e7%9a%84%e5%8a%a0%e9%80%9f%e6%96%b9%e6%a1%88" onclick="onNavClick(`#可选的加速方案-nav`)" id="可选的加速方案-nav">
 									可选的加速方案
 								</a>
@@ -262,6 +280,24 @@
 							
 								</ul>
 							
+						
+						
+						
+							<li>
+								<a href="#%e9%95%9c%e5%83%8f%e6%ba%90%e4%bd%bf%e7%94%a8%e6%96%b9%e5%bc%8f" onclick="onNavClick(`#镜像源使用方式-nav`)" id="镜像源使用方式-nav">
+									镜像源使用方式
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
 						
 						
 						
@@ -389,9 +425,9 @@
                             
 
                             
-                            17 min
+                            21 min
                             
-                            7 s.
+                            2 s.
                         
                     </div>
                 </div>
@@ -401,7 +437,14 @@
                 
                 <div class="post-body" v-pre>
                 
-                    <h1 id="可选的加速方案">可选的加速方案</h1>
+                    <h1 id="更新日志">更新日志</h1>
+<ol>
+<li>2024 年 09 月 12 日<br>
+auth.docker.io 被墙，增加反代 auth.docker.io 的配置<br>
+官方的镜像仓库无论是否登录，都会要求认证，而当我们使用反代了官方仓库的镜像源拉取镜像时，官方仓库会首先返回一个 <strong>401 Unauthorized</strong> 响应，并附带一个 <strong>WWW-Authenticate</strong> 头，其中包含了获取认证所需的服务地址和授权范围（scope）。而这个“获取认证所需的服务地址”默认是 auth.docker.io。但是这个域名今天已经被封禁了，进而影响了我们拉取镜像。<br>
+在经过测试后发现可以通过重写这一 <strong>WWW-Authenticate</strong> 头，将认证请求导向我们自己的反代，交由反代服务器去访问 auth.docker.io，这样就规避了对 auth.docker.io 的封禁。</li>
+</ol>
+<h1 id="可选的加速方案">可选的加速方案</h1>
 <ol>
 <li>使用公共的加速镜像 <a href="https://gist.github.com/y0ngb1n/7e8f16af3242c7815e7ca2f0833d3ea6">国内的 Docker Hub 镜像加速器，由国内教育机构与各大云服务商提供的镜像加速服务</a>
 <ul>
@@ -426,7 +469,7 @@
 <h1 id="自建加速镜像">自建加速镜像</h1>
 <p>在尝试搭建之前找了挺多资料，主流的方式有：使用官方提供的 registry，第三方的 Nexus、Harbor。但是使用 registry 搭建一直没有成功，客户端一直报找不到指定镜像；使用 Nexus 搭建又有些太复杂。最后自己总结出来了这两个比较方便的方案。</p>
 <p>一点小发现：<br>
-在使用 Nginx 搭建时，发现服务器的流量很小，经过检查 Nginx 的日志后发现，Docker hub 镜像仓库返回的下载地址是需要 307 跳转的，而跳转后的地址依然下载很慢，所以需要在服务端处理这个跳转，将跳转后的数据返回客户端。</p>
+在使用 Nginx 搭建时，发现服务器的流量很小，经过检查 Nginx 的日志后发现，Docker hub 镜像仓库返回的下载地址是需要 307 跳转的，而跳转后的地址直连依然下载很慢，所以需要在服务端处理这个跳转，由服务端请求并将跳转后的数据返回客户端。</p>
 <h2 id="方案一使用-nginx-搭建">方案一：使用 Nginx 搭建</h2>
 <p><em>系统：Ububtu 22.04  服务器：Zgocloud 洛杉矶 9929+CMIN2</em><br>
 提到要加速一个网站，自然就能想到使用 Nginx 反代一下了。接下来是具体的配置方案</p>
@@ -457,7 +500,7 @@ sudo apt install nginx
              ssl_ciphers &#39;ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256&#39;;
              ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
 
-             location / {
+             location /v2/ {
                      proxy_pass https://registry-1.docker.io;  # Docker Hub 的官方镜像仓库
                      proxy_set_header Host registry-1.docker.io;
                      proxy_set_header X-Real-IP $remote_addr;
@@ -471,6 +514,11 @@ sudo apt install nginx
                      proxy_set_header Authorization $http_authorization;
                      proxy_pass_header  Authorization;
 
+                     # 重写 www-authenticate 头为你的反代地址
+                     proxy_hide_header www-authenticate;
+                     add_header www-authenticate &#39;Bearer realm=&#34;https://域名/token&#34;,service=&#34;registry.docker.io&#34;&#39; always;
+                     # always 参数确保该头部在返回 401 错误时无论什么情况下都会被添加。
+
                      # 对 upstream 状态码检查，实现 error_page 错误重定向
                      proxy_intercept_errors on;
                      # error_page 指令默认只检查了第一次后端返回的状态码，开启后可以跟随多次重定向。
@@ -478,6 +526,24 @@ sudo apt install nginx
                      # 根据状态码执行对应操作，以下为301、302、307状态码都会触发
                      error_page 301 302 307 = @handle_redirect;
 
+             }
+             # 处理 Docker OAuth2 Token 认证请求
+             location /token {
+                 resolver 1.1.1.1 valid=600s;
+                 proxy_pass https://auth.docker.io;  # Docker 认证服务器
+
+                 # 设置请求头，确保转发正确
+                 proxy_set_header Host auth.docker.io;
+                 proxy_set_header X-Real-IP $remote_addr;
+                 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                 proxy_set_header X-Forwarded-Proto $scheme;
+
+                 # 传递 Authorization 头信息，获取 Token
+                 proxy_set_header Authorization $http_authorization;
+                 proxy_pass_header Authorization;
+
+                 # 禁用缓存
+                 proxy_buffering off;
              }
              location @handle_redirect {
                      resolver 1.1.1.1;
@@ -645,7 +711,7 @@ export default {
 </ol>
 <h2 id="方案一二整合">方案一、二整合</h2>
 <p>本来上面的两个方案是独立的，一个使用 Nginx 部署，一个使用 CloudFlare Worker 部署，但是就在我写这篇博客的时候，突然想到，为什么不能把上面的两个方案整合起来呢？<br>
-利用服务器搭建的 Nginx 作为中转，优先由服务器直连 Docker hub 的官方源，当服务器的 IP 请求次数超限后（会报 429 错误），就把请求转发到 CloudFlare Worker 部署的镜像源上，利用 CloudFlare Worker 再做一次中转。这样就即保证了使用服务器中转提高速度，又保证了不会因为服务器的 IP 请求速度过多而受限制，唯一的限制就是服务器的带宽和流量了，几乎完美！！！</p>
+利用服务器搭建的 Nginx 作为中转，优先由服务器直连 Docker hub 的官方仓库，当服务器的 IP 请求次数超限后（会报 429 错误），就把请求转发到 CloudFlare Worker 部署的镜像源上，利用 CloudFlare Worker 再做一次中转。这样就即保证了使用服务器中转提高速度，又保证了不会因为服务器的 IP 请求速度过多而受限制，唯一的限制就是服务器的带宽和流量了，几乎完美！！！</p>
 <p>部署方法：<br>
 将上面部署的 Nginx 配置替换为下面的配置并使用 <strong>sudo nginx -s reload</strong> 重新加载即可</p>
 <p><em>/etc/nginx/nginx.conf</em></p>
@@ -663,7 +729,7 @@ export default {
             ssl_ciphers &#39;ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256&#39;;
             ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
 
-            location / {
+            location /v2/ {
                     proxy_pass https://registry-1.docker.io;  # Docker Hub 的官方镜像仓库
 
                     proxy_set_header Host registry-1.docker.io;
@@ -678,6 +744,11 @@ export default {
                     proxy_set_header Authorization $http_authorization;
                     proxy_pass_header  Authorization;
 
+                    # 重写 www-authenticate 头为你的反代地址
+                    proxy_hide_header www-authenticate;
+                    add_header www-authenticate &#39;Bearer realm=&#34;https://域名/token&#34;,service=&#34;registry.docker.io&#34;&#39; always;
+                    # always 参数确保该头部在返回 401 错误时无论什么情况下都会被添加。
+
                     # 对 upstream 状态码检查，实现 error_page 错误重定向
                     proxy_intercept_errors on;
                     # error_page 指令默认只检查了第一次后端返回的状态码，开启后可以跟随多次重定向。
@@ -687,6 +758,24 @@ export default {
 
                     error_page 429 = @handle_too_many_requests;
             }
+                # 处理 Docker OAuth2 Token 认证请求
+                location /token {
+                    resolver 1.1.1.1 valid=600s;
+                    proxy_pass https://auth.docker.io;  # Docker 认证服务器
+
+                    # 设置请求头，确保转发正确
+                    proxy_set_header Host auth.docker.io;
+                    proxy_set_header X-Real-IP $remote_addr;
+                    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                    proxy_set_header X-Forwarded-Proto $scheme;
+
+                    # 传递 Authorization 头信息，获取 Token
+                    proxy_set_header Authorization $http_authorization;
+                    proxy_pass_header Authorization;
+
+                    # 禁用缓存
+                    proxy_buffering off;
+                }
             #处理重定向
             location @handle_redirect {
                     resolver 1.1.1.1;
@@ -760,6 +849,11 @@ HTTPS, 需要在握手时候验证证书, 所以在握手时候需要将域名�
 <li><strong>proxy_set_header Host 替换为在 CloudFlare Worker 设置的域名;</strong><br>
 将发给 CloudFlare Worker 的请求加上正确的域名方可让请求到达我们搭建的镜像源，如果不加会报 404</li>
 </ol>
+<h1 id="镜像源使用方式">镜像源使用方式</h1>
+<p>配置镜像源的方式在网上有很多，这里不做赘述<br>
+但是使用“方案一”、“方案一、二整合”的方式搭建后，如果要使用我们的反代登录到官方仓库，应在 <strong>docker login</strong> 后增加反代服务器的域名，例如 <strong>docker login example.com</strong> 然后再正常输入 docker hub 的用户名、密码。</p>
+<p><em>注意！如果利用反代服务器登录 docker hub 仓库，反代服务器是可以获取到你的账号密码的，所以请谨慎使用他人搭建的服务登录！</em><br>
+<em>如果没有拉取自己的私有仓库的镜像的需求，保持匿名拉取相对会安全一些。</em></p>
 <h1 id="各种加速镜像实测">各种加速镜像实测</h1>
 <p><em>测试系统为 Debian12，测试镜像为 uptime-kuma: latest</em><br>
 <em>使用命令</em> <em>time docker pull 加速镜像地址/louislam/uptime-kuma</em> <em>测试</em><br>
@@ -782,7 +876,7 @@ HTTPS, 需要在握手时候验证证书, 所以在握手时候需要将域名�
 </ul>
 </li>
 <li>不处理重定向<br>
-次日下午五点测试，虽然不会出现使用官方源一样的卡死，但极慢</li>
+次日下午五点测试，虽然不会出现使用官方仓库一样的卡死，但极慢</li>
 </ol>
 </li>
 <li>CloudFlare Worker 反代自建方案<br>
@@ -793,7 +887,7 @@ HTTPS, 需要在握手时候验证证书, 所以在握手时候需要将域名�
 <h1 id="总结">总结</h1>
 <p>根据测试，自建一个 Docker hub 加速镜像完全可行，使用 Nginx 搭建会比较看重服务器的线路，但只要不算太差，就完全可用了。不处理跳转会比较节省流量，但是为了速度，节省这一点流量也没什么必要。有一定的成本，但是如果本身就已经买了服务器的话，搭建个镜像源就几乎是顺带的事情了。<br>
 而使用 CloudFlare Worker 搭建..只能说稍微好一点点，如果服务器需要大量拉取镜像的话或许会用到这个方案。<br>
-而将方案一、二整合，几乎就是现阶段最完美的方案了，速度快且不受拉取次数的限制，只要 Docker hub 别乱变，就可以用超久。</p>
+而将方案一、二整合，几乎就是现阶段最完美的方案了，速度快且不受拉取次数的限制，只要 Docker hub 别乱修改拉取镜像的流程，理论上可以用超久。</p>
 <hr>
 <h1 id="参考文章">参考文章</h1>
 <ul>
@@ -969,6 +1063,24 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
+								<a href="#%e6%9b%b4%e6%96%b0%e6%97%a5%e5%bf%97" onclick="onNavClick(`#更新日志-nav`)" id="更新日志-nav">
+									更新日志
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
 								<a href="#%e5%8f%af%e9%80%89%e7%9a%84%e5%8a%a0%e9%80%9f%e6%96%b9%e6%a1%88" onclick="onNavClick(`#可选的加速方案-nav`)" id="可选的加速方案-nav">
 									可选的加速方案
 								</a>
@@ -1065,6 +1177,24 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 							
 								</ul>
 							
+						
+						
+						
+							<li>
+								<a href="#%e9%95%9c%e5%83%8f%e6%ba%90%e4%bd%bf%e7%94%a8%e6%96%b9%e5%bc%8f" onclick="onNavClick(`#镜像源使用方式-nav`)" id="镜像源使用方式-nav">
+									镜像源使用方式
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
 						
 						
 						
