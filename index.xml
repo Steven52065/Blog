@@ -355,24 +355,24 @@ export default {
 
                     error_page 429 = @handle_too_many_requests;
             }
-                # 处理 Docker OAuth2 Token 认证请求
-                location /token {
-                    resolver 1.1.1.1 valid=600s;
-                    proxy_pass https://auth.docker.io;  # Docker 认证服务器
+            # 处理 Docker OAuth2 Token 认证请求
+            location /token {
+                resolver 1.1.1.1 valid=600s;
+                proxy_pass https://auth.docker.io;  # Docker 认证服务器
 
-                    # 设置请求头，确保转发正确
-                    proxy_set_header Host auth.docker.io;
-                    proxy_set_header X-Real-IP $remote_addr;
-                    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-                    proxy_set_header X-Forwarded-Proto $scheme;
+                # 设置请求头，确保转发正确
+                proxy_set_header Host auth.docker.io;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
 
-                    # 传递 Authorization 头信息，获取 Token
-                    proxy_set_header Authorization $http_authorization;
-                    proxy_pass_header Authorization;
+                # 传递 Authorization 头信息，获取 Token
+                proxy_set_header Authorization $http_authorization;
+                proxy_pass_header Authorization;
 
-                    # 禁用缓存
-                    proxy_buffering off;
-                }
+                # 禁用缓存
+                proxy_buffering off;
+            }
             #处理重定向
             location @handle_redirect {
                     resolver 1.1.1.1;
