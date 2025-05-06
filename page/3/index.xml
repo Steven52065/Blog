@@ -6,9 +6,28 @@
     <description>Recent content on Ling的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 16 Apr 2024 20:21:05 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 06 May 2025 11:24:03 +0800</lastBuildDate>
     
         <atom:link href="https://blog.lty520.faith/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>WP BUUCTF 文件中的秘密</title>
+        <link>https://blog.lty520.faith/ctf/wp-buuctf-%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E7%A7%98%E5%AF%86/</link>
+        <pubDate>Tue, 17 Jan 2023 02:15:06 +0800</pubDate>
+        
+        <guid>https://blog.lty520.faith/ctf/wp-buuctf-%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E7%A7%98%E5%AF%86/</guid>
+        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E7%A7%98%E5%AF%86/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E7%A7%98%E5%AF%86&#34;&gt;https://buuoj.cn/challenges#%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E7%A7%98%E5%AF%86&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.lty520.faith/img/CTF/WP-BUUCTF-%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E7%A7%98%E5%AF%86/%E5%9B%BE%E7%89%87%E4%B8%AD%E7%9A%84%E7%A7%98%E5%AF%86.jpeg&#34; alt=&#34;题图&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
+&lt;p&gt;在文件属性-详细信息-备注 中放着 flag &lt;strong&gt;flag{870c5a72806115cb5439345d8b014396}&lt;/strong&gt;&lt;br&gt;
+&lt;img src=&#34;https://blog.lty520.faith/img/CTF/WP-BUUCTF-%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E7%A7%98%E5%AF%86/img1.png&#34; alt=&#34;属性&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;又是用 binwalk，又是用 notepad++ ，结果这么简单&amp;hellip;（好熟悉的话）&lt;/em&gt;&lt;/p&gt;
+- https://blog.lty520.faith/ctf/wp-buuctf-%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E7%A7%98%E5%AF%86/ - </description>
+        </item>
     
     
     
@@ -300,27 +319,6 @@ with open(filename, &amp;#39;rb&amp;#39;) as f:
 &lt;li&gt;脚本来源 &lt;a href=&#34;https://www.cnblogs.com/yunqian2017/p/14449346.html&#34;&gt;png图片CRC爆破原理的学习&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 - https://blog.lty520.faith/ctf/wp-buuctf-%E5%A4%A7%E7%99%BD/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>WP BUUCTF Alice与Bob</title>
-        <link>https://blog.lty520.faith/ctf/wp-buuctf-alice%E4%B8%8Ebob/</link>
-        <pubDate>Fri, 13 Jan 2023 02:05:24 +0800</pubDate>
-        
-        <guid>https://blog.lty520.faith/ctf/wp-buuctf-alice%E4%B8%8Ebob/</guid>
-        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-alice%E4%B8%8Ebob/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#Alice%E4%B8%8EBob&#34;&gt;https://buuoj.cn/challenges#Alice%E4%B8%8EBob&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
-&lt;p&gt;密码学历史中，有两位知名的杰出人物，Alice和Bob。他们的爱情经过置换和轮加密也难以混淆，即使是没有身份认证也可以知根知底。就像在数学王国中的素数一样，孤傲又热情。下面是一个大整数:98554799767,请分解为两个素数，分解后，小的放前面，大的放后面，合成一个新的数字，进行md5的32位小写哈希，提交答案。 注意：得到的 flag 请包上 flag{} 提交&lt;/p&gt;
-&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
-&lt;p&gt;去掉阅读短文似的没用的信息，即先分解质因数，再求md5即可&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;使用 &lt;a href=&#34;https://zh.numberempire.com/numberfactorizer.php&#34;&gt;整数分解工具&lt;/a&gt; 将 98554799767 分解为 101999 和 966233&lt;/li&gt;
-&lt;li&gt;求 101999966233 的 md5 结果，为 d450209323a847c8d01c6be47c81811a&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;可得 flag 为 &lt;strong&gt;flag{d450209323a847c8d01c6be47c81811a}&lt;/strong&gt;&lt;/p&gt;
-- https://blog.lty520.faith/ctf/wp-buuctf-alice%E4%B8%8Ebob/ - </description>
         </item>
     
     

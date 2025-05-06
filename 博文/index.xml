@@ -4,125 +4,65 @@
     <title>博文s on Ling的博客</title>
     <link>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/</link>
     <description>Recent content in 博文s on Ling的博客</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 16 Apr 2024 20:21:05 +0800</lastBuildDate><atom:link href="https://blog.lty520.faith/%E5%8D%9A%E6%96%87/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Apr 2024 20:21:05 +0800</lastBuildDate>
+    <atom:link href="https://blog.lty520.faith/%E5%8D%9A%E6%96%87/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>自建Docker Hub加速镜像</title>
       <link>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E8%87%AA%E5%BB%BAdocker-hub%E5%8A%A0%E9%80%9F%E9%95%9C%E5%83%8F/</link>
       <pubDate>Tue, 16 Apr 2024 20:21:05 +0800</pubDate>
-      
       <guid>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E8%87%AA%E5%BB%BAdocker-hub%E5%8A%A0%E9%80%9F%E9%95%9C%E5%83%8F/</guid>
-      <description>更新日志 2024 年 09 月 12 日
-auth.docker.io 被墙，增加反代 auth.docker.io 的配置
-官方的镜像仓库无论是否登录，都会要求认证，而当我们使用反代了官方仓库的镜像源拉取镜像时，官方仓库会首先返回一个 401 Unauthorized 响应，并附带一个 WWW-Authenticate 头，其中包含了获取认证所需的服务地址和授权范围（scope）。而这个“获取认证所需的服务地址”默认是 auth.docker.io。但是这个域名今天已经被封禁了，进而影响了我们拉取镜像。
-在经过测试后发现可以通过重写这一 WWW-Authenticate 头，将认证请求导向我们自己的反代，交由反代服务器去访问 auth.docker.io，这样就规避了对 auth.docker.io 的封禁。 可选的加速方案 使用公共的加速镜像 国内的 Docker Hub 镜像加速器，由国内教育机构与各大云服务商提供的镜像加速服务 速度通常不错，但由于 Docker hub 限制了未注册用户的拉取频率，可能会导致加速镜像无法及时同步最新的镜像（例如 阿里云镜像源） 由于很高的成本，可能会导致一些原本提供了镜像源的厂商、机构停止提供（如 163、七牛云等）或转向仅为内网内的设备和用户提供服务（如腾讯云、中国科学技术大学开源软件镜像 等） 使用代理拉取镜像 如何配置 docker 通过代理服务器拉取镜像。简单来说就是通过设置由 systemd 管理的 docker daemon 的环境变量来实现利用代理拉取镜像 优点自然就是带宽几乎没有限制，并且镜像不会缓存，不会下载到未更新的镜像 缺点是需要设备上或局域网内有现成的代理且一些特殊设备（例如威联通、群晖）经过了厂商魔改难以手动设置环境变量，没有加速镜像的通用型强，需要每个设备单独设置 间接拉取镜像。在境外机器已经配置了代理的设备上拉取镜像，再将镜像导出、传输到需要使用镜像的设备上、最后导入。 优点&amp;hellip;能用 缺点自然就是很麻烦，需要提前准备好传输文件的方案 最后整合上面我使用过的几个拉取镜像的方案，最后的选择是自建一个加速镜像，免得以后的到处找能用的加速镜像源
-自建加速镜像 在尝试搭建之前找了挺多资料，主流的方式有：使用官方提供的 registry，第三方的 Nexus、Harbor。但是使用 registry 搭建一直没有成功，客户端一直报找不到指定镜像；使用 Nexus 搭建又有些太复杂。最后自己总结出来了这两个比较方便的方案。
-一点小发现：
-在使用 Nginx 搭建时，发现服务器的流量很小，经过检查 Nginx 的日志后发现，Docker hub 镜像仓库返回的下载地址是需要 307 跳转的，而跳转后的地址直连依然下载很慢，所以需要在服务端处理这个跳转，由服务端请求并将跳转后的数据返回客户端。</description>
+      <description>&lt;h1 id=&#34;更新日志&#34;&gt;更新日志&lt;/h1&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;2024 年 09 月 12 日&lt;br&gt;&#xA;auth.docker.io 被墙，增加反代 auth.docker.io 的配置&lt;br&gt;&#xA;官方的镜像仓库无论是否登录，都会要求认证，而当我们使用反代了官方仓库的镜像源拉取镜像时，官方仓库会首先返回一个 &lt;strong&gt;401 Unauthorized&lt;/strong&gt; 响应，并附带一个 &lt;strong&gt;WWW-Authenticate&lt;/strong&gt; 头，其中包含了获取认证所需的服务地址和授权范围（scope）。而这个“获取认证所需的服务地址”默认是 auth.docker.io。但是这个域名今天已经被封禁了，进而影响了我们拉取镜像。&lt;br&gt;&#xA;在经过测试后发现可以通过重写这一 &lt;strong&gt;WWW-Authenticate&lt;/strong&gt; 头，将认证请求导向我们自己的反代，交由反代服务器去访问 auth.docker.io，这样就规避了对 auth.docker.io 的封禁。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h1 id=&#34;可选的加速方案&#34;&gt;可选的加速方案&lt;/h1&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;使用公共的加速镜像 &lt;a href=&#34;https://gist.github.com/y0ngb1n/7e8f16af3242c7815e7ca2f0833d3ea6&#34;&gt;国内的 Docker Hub 镜像加速器，由国内教育机构与各大云服务商提供的镜像加速服务&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;速度通常不错，但由于 Docker hub 限制了未注册用户的拉取频率，可能会导致加速镜像无法及时同步最新的镜像（例如 &lt;a href=&#34;https://help.aliyun.com/zh/acr/user-guide/accelerate-the-pulls-of-docker-official-images&#34;&gt;阿里云镜像源&lt;/a&gt;）&lt;/li&gt;&#xA;&lt;li&gt;由于很高的成本，可能会导致一些原本提供了镜像源的厂商、机构停止提供（如 163、七牛云等）或转向仅为内网内的设备和用户提供服务（如腾讯云、&lt;a href=&#34;https://mirrors.ustc.edu.cn/help/dockerhub.html&#34;&gt;中国科学技术大学开源软件镜像&lt;/a&gt; 等）&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;使用代理拉取镜像 &lt;a href=&#34;https://www.lfhacks.com/tech/pull-docker-images-behind-proxy/&#34;&gt;如何配置 docker 通过代理服务器拉取镜像&lt;/a&gt;。简单来说就是通过设置由 systemd 管理的 docker daemon 的环境变量来实现利用代理拉取镜像&#xA;&lt;ul&gt;&#xA;&lt;li&gt;优点自然就是带宽几乎没有限制，并且镜像不会缓存，不会下载到未更新的镜像&lt;/li&gt;&#xA;&lt;li&gt;缺点是需要设备上或局域网内有现成的代理且一些特殊设备（例如威联通、群晖）经过了厂商魔改难以手动设置环境变量，没有加速镜像的通用型强，需要每个设备单独设置&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;间接拉取镜像。在境外机器已经配置了代理的设备上拉取镜像，再将镜像导出、传输到需要使用镜像的设备上、最后导入。&#xA;&lt;ul&gt;&#xA;&lt;li&gt;优点&amp;hellip;能用&lt;/li&gt;&#xA;&lt;li&gt;缺点自然就是很麻烦，需要提前准备好传输文件的方案&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;最后整合上面我使用过的几个拉取镜像的方案，最后的选择是自建一个加速镜像，免得以后的到处找能用的加速镜像源&lt;/p&gt;&#xA;&lt;h1 id=&#34;自建加速镜像&#34;&gt;自建加速镜像&lt;/h1&gt;&#xA;&lt;p&gt;在尝试搭建之前找了挺多资料，主流的方式有：使用官方提供的 registry，第三方的 Nexus、Harbor。但是使用 registry 搭建一直没有成功，客户端一直报找不到指定镜像；使用 Nexus 搭建又有些太复杂。最后自己总结出来了这两个比较方便的方案。&lt;/p&gt;&#xA;&lt;p&gt;一点小发现：&lt;br&gt;&#xA;在使用 Nginx 搭建时，发现服务器的流量很小，经过检查 Nginx 的日志后发现，Docker hub 镜像仓库返回的下载地址是需要 307 跳转的，而跳转后的地址直连依然下载很慢，所以需要在服务端处理这个跳转，由服务端请求并将跳转后的数据返回客户端。&lt;/p&gt;&#xA;&lt;h2 id=&#34;方案一使用-nginx-搭建&#34;&gt;方案一：使用 Nginx 搭建&lt;/h2&gt;&#xA;&lt;p&gt;&lt;em&gt;系统：Ububtu 22.04  服务器：Zgocloud 洛杉矶 9929+CMIN2&lt;/em&gt;&lt;br&gt;&#xA;提到要加速一个网站，自然就能想到使用 Nginx 反代一下了。接下来是具体的配置方案&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>自动下载Youtube视频并上传</title>
       <link>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BDyoutube%E8%A7%86%E9%A2%91%E5%B9%B6%E4%B8%8A%E4%BC%A0/</link>
       <pubDate>Sat, 25 Nov 2023 22:24:29 +0800</pubDate>
-      
       <guid>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E8%87%AA%E5%8A%A8%E4%B8%8B%E8%BD%BDyoutube%E8%A7%86%E9%A2%91%E5%B9%B6%E4%B8%8A%E4%BC%A0/</guid>
-      <description>软件选择 yt-dlp 用来下载 Youtube 频道的视频 rclone 用于将下载好的视频上传到网盘里 Onedrive 借助 Microsoft E5 账号，可以获得 5TB 的空间，并且下载上传的速度也比较快 依赖安装 安装 yt-dle 从 GitHub 存储库下载最新版本的 yt-dlp sudo wget -qO /usr/local/bin/yt-dlp https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp 设置文件的读取和执行权限 sudo chmod a+rx /usr/local/bin/yt-dlp 现在yt-dlp可以作为系统的命令用于所有用户。 测试 yt-dlp --version 可以使用以下命令将 yt-dlp 更新到最新版本： sudo yt-dlp -U 安装 ffmpeg 这个不用太追求新版，所以直接
-sudo apt install ffmpeg 可以使用
-ffmpeg -version 就说明安装成功了
-安装 rclone 使用官方提供的脚本即可
-sudo -v ; curl https://rclone.org/install.sh | sudo bash 添加网盘 这部分由 瓦力箱子 Rclone安装配置教程: 挂载OneDrive同步文件 稍加修改而来
-获取OneDrive授权 这一步是在本地电脑Windows系统操作，进入Rclone下载页面，点击下载Windows版本的Rclone软件，选择Intel/AMD-64Bit即可。如果是32位操作系统，那么选择32Bit的。</description>
+      <description>&lt;h1 id=&#34;软件选择&#34;&gt;软件选择&lt;/h1&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/yt-dlp/yt-dlp#release-files&#34;&gt;yt-dlp&lt;/a&gt; 用来下载 Youtube 频道的视频&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://rclone.org/&#34;&gt;rclone&lt;/a&gt; 用于将下载好的视频上传到网盘里&lt;/li&gt;&#xA;&lt;li&gt;Onedrive 借助 Microsoft E5 账号，可以获得 5TB 的空间，并且下载上传的速度也比较快&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h1 id=&#34;依赖安装&#34;&gt;依赖安装&lt;/h1&gt;&#xA;&lt;h2 id=&#34;安装-yt-dle&#34;&gt;安装 yt-dle&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;从 GitHub 存储库下载最新版本的 yt-dlp&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo wget -qO /usr/local/bin/yt-dlp https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&#xA;&lt;li&gt;设置文件的读取和执行权限&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo chmod a+rx /usr/local/bin/yt-dlp&#xA;&lt;/code&gt;&lt;/pre&gt;现在yt-dlp可以作为系统的命令用于所有用户。&lt;/li&gt;&#xA;&lt;li&gt;测试&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;yt-dlp --version&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&#xA;&lt;li&gt;可以使用以下命令将 yt-dlp 更新到最新版本：&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo yt-dlp -U&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;安装-ffmpeg&#34;&gt;安装 ffmpeg&lt;/h2&gt;&#xA;&lt;p&gt;这个不用太追求新版，所以直接&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo apt install ffmpeg&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;可以使用&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ffmpeg -version&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;就说明安装成功了&lt;/p&gt;&#xA;&lt;h2 id=&#34;安装-rclone&#34;&gt;安装 rclone&lt;/h2&gt;&#xA;&lt;p&gt;使用官方提供的脚本即可&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo -v ; curl https://rclone.org/install.sh | sudo bash&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;添加网盘&#34;&gt;添加网盘&lt;/h1&gt;&#xA;&lt;p&gt;&lt;em&gt;这部分由 &lt;a href=&#34;https://walixz.com/rclone-sync-onedrive.html&#34;&gt;瓦力箱子 Rclone安装配置教程: 挂载OneDrive同步文件&lt;/a&gt; 稍加修改而来&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;获取onedrive授权&#34;&gt;获取OneDrive授权&lt;/h2&gt;&#xA;&lt;p&gt;这一步是在本地电脑Windows系统操作，进入&lt;a href=&#34;https://rclone.org/downloads/&#34;&gt;Rclone下载页面&lt;/a&gt;，点击下载Windows版本的Rclone软件，选择Intel/AMD-64Bit即可。如果是32位操作系统，那么选择32Bit的。&lt;/p&gt;&#xA;&lt;p&gt;下载后将全部文件解压到文件夹，在文件夹处打开CMD，输入下面的命令。&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.\rclone.exe authorize &amp;#34;onedrive&amp;#34;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;命令输入完回车后会自动打开浏览器，登录你的OneDrive账号，点击“是”按钮同意授权。成功后返回到命令窗口就能看到长串授权码，即花括号以及里面的内容。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>关于2008年汶川地震因美国关闭GPS导致飞机失事事件存疑的资料</title>
       <link>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%B3%E4%BA%8E2008%E5%B9%B4%E6%B1%B6%E5%B7%9D%E5%9C%B0%E9%9C%87%E7%BE%8E%E5%9B%BD%E5%85%B3%E9%97%ADgps%E5%AF%BC%E8%87%B4%E9%A3%9E%E6%9C%BA%E5%A4%B1%E4%BA%8B%E7%9A%84%E8%B5%84%E6%96%99/</link>
       <pubDate>Sat, 18 Nov 2023 21:59:58 +0800</pubDate>
-      
       <guid>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%B3%E4%BA%8E2008%E5%B9%B4%E6%B1%B6%E5%B7%9D%E5%9C%B0%E9%9C%87%E7%BE%8E%E5%9B%BD%E5%85%B3%E9%97%ADgps%E5%AF%BC%E8%87%B4%E9%A3%9E%E6%9C%BA%E5%A4%B1%E4%BA%8B%E7%9A%84%E8%B5%84%E6%96%99/</guid>
-      <description>实事求是，就是要客观地、全面地、本质地看待问题和解决问题。 ——1968 年汉版《毛泽东思想万岁》
-失事飞机资料 米-171 直升机
-长度: 20.17 米 旋翼直径: 21.29 米 高度: 4.76 米 空重: 7,055 公斤 载重: 4,000 公斤 最大起飞重量: 13,000 公斤 正常起飞重量: 11,100 公斤 最大速度: 250 公里/小时 巡航速度: 230 公里/小时 最大升限: 5,000 米 最大航程: 570 公里 发动机: 两部 TV3-117VM 涡轮发动机 功率: 2,070 匹马力 乘员: 20 至 26 人 电子系统：机载设备包括 BAKLAN-20 指挥无线电台、YADRO-1G1 通信无线电台、ARK-15M 短波无线电罗盘和 ARK-UD 搜索无线电罗盘、DISS-32-90 多普勒导航仪、AGK-77 主自动地平仪和 AGR-74V 备用自动地平仪、BKK-18 自动地平仪姿态监控器、A-037 无线电高度表、A-723 远程导航设备、8A-813 气象雷达。
-未有雷达设备，必须靠机师目视（来自维基百科，存疑）
-总结：
-没有可以探测前方障碍物的雷达
-资料来源：</description>
+      <description>&lt;p&gt;实事求是，就是要客观地、全面地、本质地看待问题和解决问题。   ——1968 年汉版《毛泽东思想万岁》&lt;/p&gt;&#xA;&lt;h1 id=&#34;失事飞机资料&#34;&gt;失事飞机资料&lt;/h1&gt;&#xA;&lt;p&gt;米-171 直升机&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;长度: 20.17 米&lt;/li&gt;&#xA;&lt;li&gt;旋翼直径: 21.29 米&lt;/li&gt;&#xA;&lt;li&gt;高度: 4.76 米&lt;/li&gt;&#xA;&lt;li&gt;空重: 7,055 公斤&lt;/li&gt;&#xA;&lt;li&gt;载重: 4,000 公斤&lt;/li&gt;&#xA;&lt;li&gt;最大起飞重量: 13,000 公斤&lt;/li&gt;&#xA;&lt;li&gt;正常起飞重量: 11,100 公斤&lt;/li&gt;&#xA;&lt;li&gt;最大速度: 250 公里/小时&lt;/li&gt;&#xA;&lt;li&gt;巡航速度: 230 公里/小时&lt;/li&gt;&#xA;&lt;li&gt;最大升限: 5,000 米&lt;/li&gt;&#xA;&lt;li&gt;最大航程: 570 公里&lt;/li&gt;&#xA;&lt;li&gt;发动机: 两部 TV3-117VM 涡轮发动机&lt;/li&gt;&#xA;&lt;li&gt;功率: 2,070 匹马力&lt;/li&gt;&#xA;&lt;li&gt;乘员: 20 至 26 人&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;电子系统：机载设备包括 BAKLAN-20 指挥无线电台、YADRO-1G1 通信无线电台、ARK-15M 短波无线电罗盘和 ARK-UD 搜索无线电罗盘、DISS-32-90 多普勒导航仪、AGK-77 主自动地平仪和 AGR-74V 备用自动地平仪、BKK-18 自动地平仪姿态监控器、A-037 无线电高度表、A-723 远程导航设备、8A-813 气象雷达。&lt;/p&gt;&#xA;&lt;p&gt;未有雷达设备，必须靠机师目视（来自维基百科，存疑）&lt;/p&gt;&#xA;&lt;p&gt;总结：&lt;br&gt;&#xA;没有可以探测前方障碍物的雷达&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;资料来源：&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>努比亚Z50的调教</title>
       <link>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%8A%AA%E6%AF%94%E4%BA%9Az50%E7%9A%84%E8%B0%83%E6%95%99/</link>
       <pubDate>Wed, 01 Feb 2023 13:30:03 +0800</pubDate>
-      
       <guid>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%8A%AA%E6%AF%94%E4%BA%9Az50%E7%9A%84%E8%B0%83%E6%95%99/</guid>
-      <description>型号：黑礁 12+256
-总评 一部给了我不少惊喜的手机
-颜值
-还不错，背板是类似与 Pixel3XL 的撞色设计，方形的镜头模组个人感觉比华为的圆环好看一些 系统
-因为买前就听说了 MyOS 抄了各大厂的系统以及算是小厂的系统，所以对系统的期望并不高（以及用惯了 Pixel 这种完全没有本地化适配的系统），上手用起来还是可以的，各大厂该有的功能基本都有 相机
-比 Pixel3XL 的单摄强，等效 35mm 比一般的手机更近一些，虚化挺好看
-微距用着感觉比 K50 至尊版 的要更近、更清晰 一点 性能
-8Gen2 ，实测雷兔兔跑分 1216748 分, 比别家的要低几万，影响也不大（并非到手就测，或许是后台已经在运行一些软件的缘故？）
-系统 谷歌服务 因其自带谷歌服务，所以只需要在 Apkpure 下载一个 Google Play Store 安装上，就可以找到谷歌应用商店的图标了
-尝试过使用谷歌服务安装器（如 Go 谷歌安装器 ），会显示谷歌框架完整，但哪怕重装谷歌框架也无法解决找不到谷歌应用商店的图标的问题。所以可能只能手动安装了
-LSPatch 因为不能解 BL 锁刷机，所以只能选择这种方案了
-曾经在另一部同样不能解 BL 和 Root 的手机试过太极框架，或许是手机太老的缘故，体验并不好，所以这次换了这个
-安装 LSPatch 在 LSPosed/LSPatch/releases 下载安装后即可
-使用 Shizuku ，自动安装修补后的 app 默认的 LSPatch 也可以用，但修补后的 app 必须手动安装，所以可以安装 Shizuku ，给 LSPatch 权限后即可自动安装修补后的 app</description>
+      <description>&lt;p&gt;型号：黑礁 12+256&lt;/p&gt;&#xA;&lt;h1 id=&#34;总评&#34;&gt;总评&lt;/h1&gt;&#xA;&lt;p&gt;一部给了我不少惊喜的手机&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;颜值&lt;br&gt;&#xA;还不错，背板是类似与 Pixel3XL 的撞色设计，方形的镜头模组个人感觉比华为的圆环好看一些&lt;/li&gt;&#xA;&lt;li&gt;系统&lt;br&gt;&#xA;因为买前就听说了 MyOS 抄了各大厂的系统以及算是小厂的系统，所以对系统的期望并不高（以及用惯了 Pixel 这种完全没有本地化适配的系统），上手用起来还是可以的，各大厂该有的功能基本都有&lt;/li&gt;&#xA;&lt;li&gt;相机&lt;br&gt;&#xA;比 Pixel3XL 的单摄强，等效 35mm 比一般的手机更近一些，虚化挺好看&lt;br&gt;&#xA;微距用着感觉比 K50 至尊版 的要更近、更清晰 一点&lt;/li&gt;&#xA;&lt;li&gt;性能&lt;br&gt;&#xA;8Gen2 ，实测雷兔兔跑分 1216748 分, 比别家的要低几万，影响也不大（并非到手就测，或许是后台已经在运行一些软件的缘故？）&lt;br&gt;&#xA;&lt;img src=&#34;https://blog.lty520.faith/img/%E5%8D%9A%E6%96%87/%E5%8A%AA%E6%AF%94%E4%BA%9AZ50%E7%9A%84%E8%B0%83%E6%95%99/%E9%9B%B7%E5%85%94%E5%85%94%E8%B7%91%E5%88%86.jpg&#34; alt=&#34;跑分截图&#34;&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h1 id=&#34;系统&#34;&gt;系统&lt;/h1&gt;&#xA;&lt;h2 id=&#34;谷歌服务&#34;&gt;谷歌服务&lt;/h2&gt;&#xA;&lt;p&gt;因其自带谷歌服务，所以只需要在 &lt;a href=&#34;https://apkpure.com/cn/google-play-store/com.android.vending&#34;&gt;Apkpure&lt;/a&gt; 下载一个 &lt;strong&gt;Google Play Store&lt;/strong&gt; 安装上，就可以找到谷歌应用商店的图标了&lt;br&gt;&#xA;&lt;em&gt;尝试过使用谷歌服务安装器（如 Go 谷歌安装器 ），会显示谷歌框架完整，但哪怕重装谷歌框架也无法解决找不到谷歌应用商店的图标的问题。所以可能只能手动安装了&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;lspatch&#34;&gt;&lt;a href=&#34;https://github.com/LSPosed/LSPatch&#34;&gt;LSPatch&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;因为不能解 BL 锁刷机，所以只能选择这种方案了&lt;br&gt;&#xA;&lt;em&gt;曾经在另一部同样不能解 BL 和 Root 的手机试过太极框架，或许是手机太老的缘故，体验并不好，所以这次换了这个&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;安装-lspatch&#34;&gt;安装 LSPatch&lt;/h3&gt;&#xA;&lt;p&gt;在 &lt;a href=&#34;https://github.com/LSPosed/LSPatch/releases&#34;&gt; LSPosed/LSPatch/releases &lt;/a&gt; 下载安装后即可&lt;/p&gt;&#xA;&lt;h4 id=&#34;使用-shizuku-自动安装修补后的-app&#34;&gt;使用 Shizuku ，自动安装修补后的 app&lt;/h4&gt;&#xA;&lt;p&gt;默认的 LSPatch 也可以用，但修补后的 app 必须手动安装，所以可以安装 &lt;a href=&#34;https://shizuku.rikka.app/&#34;&gt;Shizuku&lt;/a&gt; ，给 LSPatch 权限后即可自动安装修补后的 app&lt;br&gt;&#xA;&lt;em&gt;没有 Shizuku 也是完全可以的，只不过需要手动安装，麻烦一点&lt;/em&gt;&lt;br&gt;&#xA;&lt;em&gt;Shizuku 安装教程 &lt;a href=&#34;https://www.bilibili.com/video/BV1Ye411N7Av/&#34;&gt;没有 Root 也能玩机？这是我讲过最强的 APP！！！！&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>全平台统一输入法——Rime</title>
       <link>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%BE%93%E5%85%A5%E6%B3%95rime/</link>
       <pubDate>Wed, 25 Jan 2023 15:17:09 +0800</pubDate>
-      
       <guid>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%BE%93%E5%85%A5%E6%B3%95rime/</guid>
-      <description>输入法的使用历程 PC 安卓使用原版搜狗输入法，ios 使用原装输入法 习惯驱使 PC 使用禁止联网的搜狗输入法 考虑到隐私问题及不断爆出的输入法上传用户打字内容的新闻 安卓使用 Gboard 隐私问题及换用了 Pixel 手机 PC 使用 Win11 自带输入法 换电脑，找不到禁止联网的搜狗输入法的安装包了 决定全平台使用 Rime 希望去除输入法的隐私暴露问题和解决多平台输入法的词库统一问题 全平台 Rime 的调教过程 基本配置 使用 SivanLaai/rime-pure 【rime 小狼毫\trime 同文】手机/PC 一站式配置【简约皮肤\拼音搜狗词库\原创 trime 同文 四叶草九宫格拼音\四叶草拼音\小鹤双拼\极品五笔\QQ 五笔\徐码\郑码】 的配置
-使用 studyzy/imewlconverter 深蓝词库转换 将搜狗输入法的细胞词库转换为 Rime 支持的词库
-添加的词库
-网络流行新词【官方推荐】 全国县及县以上行政区划地名 开发大神专用词库【官方推荐】 使用 坚果云 同步多个平台的个人词典
-Win 添加拆字词库 思路 由于长期使用搜狗输入法，习惯了拆字输入一些不认识的字(如: henian = 稔；huohuohuo = 焱)
-参考文章 rime 拆字词库 给 Rime 添加了 拆字词库后也出现了评论区里提到的卡顿问题，使用体验不是很好
-参考 Issue rime 导入拆字词库后在输入拼音中包含 u 的词语的时候会卡一下才弹出候选词列表 决定尝试用拆字词库替换原装的五笔反查词库</description>
+      <description>&lt;h1 id=&#34;输入法的使用历程&#34;&gt;输入法的使用历程&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;PC 安卓使用原版搜狗输入法，ios 使用原装输入法&#xA;&lt;ul&gt;&#xA;&lt;li&gt;习惯驱使&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;PC 使用禁止联网的搜狗输入法&#xA;&lt;ul&gt;&#xA;&lt;li&gt;考虑到隐私问题及不断爆出的输入法上传用户打字内容的新闻&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;安卓使用 Gboard&#xA;&lt;ul&gt;&#xA;&lt;li&gt;隐私问题及换用了 Pixel 手机&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;PC 使用 Win11 自带输入法&#xA;&lt;ul&gt;&#xA;&lt;li&gt;换电脑，找不到禁止联网的搜狗输入法的安装包了&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;决定全平台使用 Rime&#xA;&lt;ul&gt;&#xA;&lt;li&gt;希望去除输入法的隐私暴露问题和解决多平台输入法的词库统一问题&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;全平台-rime-的调教过程&#34;&gt;全平台 Rime 的调教过程&lt;/h1&gt;&#xA;&lt;h2 id=&#34;基本配置&#34;&gt;基本配置&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;使用 &lt;a href=&#34;https://github.com/SivanLaai/rime-pure&#34;&gt;SivanLaai/rime-pure 【rime 小狼毫\trime 同文】手机/PC 一站式配置【简约皮肤\拼音搜狗词库\原创 trime 同文 四叶草九宫格拼音\四叶草拼音\小鹤双拼\极品五笔\QQ 五笔\徐码\郑码】&lt;/a&gt; 的配置&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;使用 &lt;a href=&#34;https://github.com/studyzy/imewlconverter&#34;&gt;studyzy/imewlconverter 深蓝词库转换&lt;/a&gt; 将搜狗输入法的细胞词库转换为 Rime 支持的词库&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;添加的词库&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://pinyin.sogou.com/dict/detail/index/4&#34;&gt;网络流行新词【官方推荐】&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://pinyin.sogou.com/dict/detail/index/11314&#34;&gt;全国县及县以上行政区划地名&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://pinyin.sogou.com/dict/detail/index/75228&#34;&gt;开发大神专用词库【官方推荐】&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;使用 &lt;strong&gt;坚果云&lt;/strong&gt; 同步多个平台的个人词典&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;win&#34;&gt;Win&lt;/h2&gt;&#xA;&lt;h3 id=&#34;添加拆字词库&#34;&gt;添加拆字词库&lt;/h3&gt;&#xA;&lt;h4 id=&#34;思路&#34;&gt;思路&lt;/h4&gt;&#xA;&lt;p&gt;由于长期使用搜狗输入法，习惯了拆字输入一些不认识的字(如: henian = 稔；huohuohuo = 焱)&lt;br&gt;&#xA;参考文章 &lt;a href=&#34;http://gerry.lamost.org/blog/?p=296003&#34;&gt;rime 拆字词库&lt;/a&gt; 给 Rime 添加了 拆字词库后也出现了评论区里提到的卡顿问题，使用体验不是很好&lt;br&gt;&#xA;参考 Issue &lt;a href=&#34;https://github.com/rime/home/issues/762&#34;&gt;rime 导入拆字词库后在输入拼音中包含 u 的词语的时候会卡一下才弹出候选词列表&lt;/a&gt; 决定尝试用拆字词库替换原装的五笔反查词库&lt;/p&gt;&#xA;&lt;h4 id=&#34;过程&#34;&gt;过程&lt;/h4&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;使用脚本将拆字词库的 &amp;lsquo;u&amp;rsquo; 去掉&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;with open(&amp;#39;chaizi.dict.yaml&amp;#39;,&amp;#39;a&amp;#39;,encoding=&amp;#39;UTF-8&amp;#39;) as ff:&#xA;    for line in open(&amp;#39;luna_pinyin_simp.chaizi.dict.yaml&amp;#39;,&amp;#39;r&amp;#39;,encoding=&amp;#39;UTF-8&amp;#39;):&#xA;        a = line.replace(&amp;#39;&#x9;u&amp;#39;,&amp;#39;&#x9;&amp;#39;)&#xA;        ff.write(a)&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;注意：其格式爲以製表符分隔的值（TSV），每行定義一條「文字－編碼」的對應關係（不是空格！！！）&lt;/strong&gt; &lt;em&gt;复制自&lt;a href=&#34;https://github.com/rime/home/wiki/RimeWithSchemata#%E7%A2%BC%E8%A1%A8%E8%88%87%E8%A9%9E%E5%85%B8&#34;&gt;RimeWithSchemata&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>全平台统一代理——Clash</title>
       <link>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/</link>
       <pubDate>Thu, 22 Dec 2022 21:22:33 +0800</pubDate>
-      
       <guid>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/</guid>
-      <description>代理软件的使用历程 使用赛风 VPN 听人提及到 SSR ，转用 SSR 每个设备分别使用 SSR 由于 SSR 封锁严重，跟随购买的机场换为 V2ray 每个设备分别使用 V2ray 困扰于每个平台都要运行代理软件 + V2ray 客户端不怎么好使+ Linux 运行代理程序需要命令行+手中刚好有树莓派，决定换用 Openwrt Openwrt 单臂路由 + SSRPlus 因为是单臂路由，有的设备不能自定义网关 + SSRPlus 自定义程度不够+ PassWall 莫名其妙的不能用+住校+主流机场换用了 Clash ，决定每个平台分别使用 Clash 决定全平台使用 Clash Subconverter 的调教过程 虽然用了 Clash ，但机场提供的配置方案不是很符合个人需求(而且主用的机场没有 ipv6 的配置)，且手中有多个机场(主用机场 + 便宜的备用机场 + 按流量付费，使用特殊节点的机场)，于是使用了 subconverter 来制作 Clash 配置文件。
-目的 将 多个 机场的订阅合并为一个 国内直连( ipv4 + ipv6 )，游戏平台自选直连和代理，哔哩哔哩自选直连和代理， Netflix 自选直连和代理，其他国外一律代理 有一个单独的文件用以手动添加一些直连的域名(用于 DDNS NAS 的域名) 使用 Doh 进行域名解析 配置 以默认为主，修改部分条目</description>
+      <description>&lt;h1 id=&#34;代理软件的使用历程&#34;&gt;代理软件的使用历程&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;使用赛风 VPN&#xA;&lt;ul&gt;&#xA;&lt;li&gt;听人提及到 SSR ，转用 SSR&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;每个设备分别使用 SSR&#xA;&lt;ul&gt;&#xA;&lt;li&gt;由于 SSR 封锁严重，跟随购买的机场换为 V2ray&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;每个设备分别使用 V2ray&#xA;&lt;ul&gt;&#xA;&lt;li&gt;困扰于每个平台都要运行代理软件 + V2ray 客户端不怎么好使+ Linux 运行代理程序需要命令行+手中刚好有树莓派，决定换用 Openwrt&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Openwrt 单臂路由 + SSRPlus&#xA;&lt;ul&gt;&#xA;&lt;li&gt;因为是单臂路由，有的设备不能自定义网关 + SSRPlus 自定义程度不够+ PassWall 莫名其妙的不能用+住校+主流机场换用了 Clash ，决定每个平台分别使用 Clash&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;决定全平台使用 Clash&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;subconverter-的调教过程&#34;&gt;Subconverter 的调教过程&lt;/h1&gt;&#xA;&lt;p&gt;虽然用了 Clash ，但机场提供的配置方案不是很符合个人需求(而且主用的机场没有 ipv6 的配置)，且手中有多个机场(主用机场 + 便宜的备用机场 + 按流量付费，使用特殊节点的机场)，于是使用了 &lt;a href=&#34;https://github.com/tindy2013/subconverter&#34;&gt;subconverter&lt;/a&gt; 来制作 Clash 配置文件。&lt;/p&gt;&#xA;&lt;h2 id=&#34;目的&#34;&gt;目的&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;将 &lt;strong&gt;多个&lt;/strong&gt; 机场的订阅合并为一个&lt;/li&gt;&#xA;&lt;li&gt;国内直连( ipv4 + ipv6 )，游戏平台自选直连和代理，哔哩哔哩自选直连和代理， Netflix 自选直连和代理，其他国外一律代理&lt;/li&gt;&#xA;&lt;li&gt;有一个单独的文件用以手动添加一些直连的域名(用于 DDNS NAS 的域名)&lt;/li&gt;&#xA;&lt;li&gt;使用 Doh 进行域名解析&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;以默认为主，修改部分条目&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>全平台统一系列</title>
       <link>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E7%B3%BB%E5%88%97/</link>
       <pubDate>Thu, 22 Dec 2022 17:28:48 +0800</pubDate>
-      
       <guid>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E7%B3%BB%E5%88%97/</guid>
-      <description>因为一直苦恼于手中多个平台的软件各不相同，数据难以同步且不便于使用。因此有了这个系列，希望将 Win ､ Android ､ IpadOS(或许还会包括 Linux ､ Ios)等平台的软件进行统一。
-全平台统一代理——Clash
-全平台使用 Clash 作为代理软件，避免了之前的多个平台的配置无法通用的乱象。 全平台统一输入法——Rime
-全平台使用 Rime 作为输入法，避免了之前的多个平台的词库无法统一和同步的乱象。 自建 Docker Hub 加速镜像
-自建 Docker Hub 加速镜像，免得到处找公共的加速镜像，时不时还要检查之前设置的还能不能用。 </description>
+      <description>&lt;p&gt;因为一直苦恼于手中多个平台的软件各不相同，数据难以同步且不便于使用。因此有了这个系列，希望将 Win ､ Android ､ IpadOS(或许还会包括 Linux ､ Ios)等平台的软件进行统一。&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;a href=&#34;../%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash&#34;&gt;全平台统一代理——Clash&lt;/a&gt;&lt;br&gt;&#xA;全平台使用 Clash 作为代理软件，避免了之前的多个平台的配置无法通用的乱象。&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;../%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E8%BE%93%E5%85%A5%E6%B3%95rime&#34;&gt;全平台统一输入法——Rime&lt;/a&gt;&lt;br&gt;&#xA;全平台使用 Rime 作为输入法，避免了之前的多个平台的词库无法统一和同步的乱象。&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;../%E8%87%AA%E5%BB%BADocker%20Hub%E5%8A%A0%E9%80%9F%E9%95%9C%E5%83%8F&#34;&gt;自建 Docker Hub 加速镜像&lt;/a&gt;&lt;br&gt;&#xA;自建 Docker Hub 加速镜像，免得到处找公共的加速镜像，时不时还要检查之前设置的还能不能用。&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
     </item>
-    
     <item>
       <title>Hello World</title>
       <link>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/hello-world/</link>
       <pubDate>Wed, 21 Dec 2022 22:55:49 +0800</pubDate>
-      
       <guid>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/hello-world/</guid>
-      <description>尝试过很多种博客框架，比如: WordPress ､ Hexo
-然后因为各种原因，博客一直没用起来。有的原因是用了一段时间，搭博客的服务器跑路了(白嫖的服务器)，有的是莫名其妙就不能用了(Github Pages)
-现在终于又搭了起来，希望可以用下去(希望吧)
-搭建过程参考文章
-Github Pages + Hugo 搭建个人博客 在VScode上配置Git 从零开始搭建个人博客（四）- hugo自动部署到vercel Hugo Themes 在VSCode上配置hugo编辑环境 官方文档 waline 评论系统 </description>
+      <description>&lt;p&gt;尝试过很多种博客框架，比如: WordPress ､ Hexo&lt;br&gt;&#xA;然后因为各种原因，博客一直没用起来。有的原因是用了一段时间，搭博客的服务器跑路了(白嫖的服务器)，有的是莫名其妙就不能用了(Github Pages)&lt;br&gt;&#xA;现在终于又搭了起来，希望可以用下去(希望吧)&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;搭建过程参考文章&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://zz2summer.github.io/github-pages-hugo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/#%E5%85%AD%E9%83%A8%E7%BD%B2%E5%88%B0-github&#34;&gt;Github Pages + Hugo 搭建个人博客&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/31417255&#34;&gt;在VScode上配置Git&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.leftpocket.cn/post/hugo/hugo_vercel/&#34;&gt;从零开始搭建个人博客（四）- hugo自动部署到vercel&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://themes.gohugo.io/themes/hugo-theme-diary/&#34;&gt;Hugo Themes&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://blog.kidhero.club/p/%E5%9C%A8vscode%E4%B8%8A%E9%85%8D%E7%BD%AEhugo%E7%BC%96%E8%BE%91%E7%8E%AF%E5%A2%83/&#34;&gt;在VSCode上配置hugo编辑环境&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://gohugo.io/getting-started/quick-start/&#34;&gt;官方文档&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://waline.js.org/&#34;&gt;waline 评论系统&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
-    
   </channel>
 </rss>

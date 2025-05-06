@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="zh"><head>
-<title>WP BUUCTF Quoted Printable</title>
+<html lang="zh"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<title>各平台常用的一些软件</title>
 
 
 
@@ -10,7 +10,7 @@
 <meta name="google-site-verification" content="G-3MGTDD77JD">
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5, user-scalable=5" name="viewport">
 <meta content="telephone=no" name="format-detection">
-<meta name="description" content="">
+<meta name="description" content="随着各种设备使用时间越来越长，很多软件都在更换了设备之后找不着了，所以单开一篇，记录一下曾经用过的、常用的、比较小众的、偶尔用到一次又不好找的软件。">
 <meta name="renderer" content="webkit">
 <meta name="theme-color" content="#ffffff">
 
@@ -49,7 +49,7 @@
 
 
 
-<link rel="icon" href="https://blog.lty520.faith/img/favicon.svg">
+<link rel="icon" href="http://localhost:1313/img/favicon.svg">
 
 
 
@@ -118,9 +118,11 @@
                 
                 
                 
+                    
                 
                 
-                <a class="a-block drawer-menu-item false" href="/%E9%9A%8F%E8%AE%B0">
+                
+                <a class="a-block drawer-menu-item active" href="/%E9%9A%8F%E8%AE%B0">
                     随记
                 </a>
                 
@@ -128,11 +130,9 @@
                 
                 
                 
-                    
                 
                 
-                
-                <a class="a-block drawer-menu-item active" href="/ctf">
+                <a class="a-block drawer-menu-item false" href="/ctf">
                     CTF
                 </a>
                 
@@ -180,8 +180,32 @@
 						
 						
 							<li>
-								<a href="#%e9%a2%98%e7%9b%ae" class="nav-题目">
-									题目
+								<a href="#windows" class="nav-windows">
+									Windows
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e7%b3%bb%e7%bb%9f%e5%bc%80%e8%8d%92%e5%bf%85%e5%a4%87" class="nav-系统开荒必备">
+									系统开荒必备
 								</a>
 							</li>
 						
@@ -198,8 +222,8 @@
 						
 						
 							<li>
-								<a href="#%e6%80%9d%e8%b7%af" class="nav-思路">
-									思路
+								<a href="#%e5%90%84%e7%b1%bb%e5%b0%8f%e5%b7%a5%e5%85%b7" class="nav-各类小工具">
+									各类小工具
 								</a>
 							</li>
 						
@@ -226,7 +250,7 @@
                 menu
             </i>
         </button>
-        <a id="navTitle" class="navbar-brand" href="https://blog.lty520.faith/">
+        <a id="navTitle" class="navbar-brand" href="http://localhost:1313/">
             Ling的博客
         </a>
         
@@ -240,7 +264,7 @@
 </nav>
 <div class="single-column-header-container" id="pageHead"
      v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
-    <a href="https://blog.lty520.faith/">
+    <a href="http://localhost:1313/">
         <div class="single-column-header-title">Ling的博客</div>
         
 
@@ -260,12 +284,16 @@
                 
             >
                 <div class="post-title">
-                    WP BUUCTF Quoted Printable
+                    各平台常用的一些软件
+                    
+                    <div class="post-subtitle">
+                        随着各种设备使用时间越来越长，很多软件都在更换了设备之后找不着了，所以单开一篇，记录一下曾经用过的、常用的、比较小众的、偶尔用到一次又不好找的软件。
+                    </div>
                     
                     <div class="post-meta">
                         
                         <time itemprop="datePublished">
-                            2023-01-12 00:03
+                            2024-05-22 20:49
                         </time>
                         
 
@@ -280,7 +308,7 @@
                             
 
                             
-                            47 s.
+                            57 s.
                         
                     </div>
                 </div>
@@ -290,22 +318,40 @@
                 
                 <div class="post-body" v-pre>
                 
-                    <p>题目链接: <a href="https://buuoj.cn/challenges#Quoted-printable">https://buuoj.cn/challenges#Quoted-printable</a></p>
-<h1 id="题目">题目</h1>
-<p>=E9=82=A3=E4=BD=A0=E4=B9=9F=E5=BE=88=E6=A3=92=E5=93=A6</p>
-<h1 id="思路">思路</h1>
-<p>没啥思路，尝试了一下，并不是16进制<br>
-尝试扔到 CyberChef 里，居然解出来了<br>
-flag 为 <strong>flag{那你也很棒哦}</strong><br>
-查了一下，这东西叫 Quoted-printable ，可译为<strong>可打印字符引用编码</strong>或<strong>使用可打印字符的编码</strong><br>
-将8-bit字节值可编码为3个字符：一个等号“=”后跟随两个十六进制数字（0–9或A–F）表示该字节的数值。
-<em>所以还是16进制&hellip;这点并没有猜错 2333</em></p>
-<hr>
-<p><a href="https://zh.wikipedia.org/wiki/Quoted-printable">Quoted-printable 维基百科</a></p>
+                    <h1 id="windows">Windows</h1>
+<h2 id="系统开荒必备">系统开荒必备</h2>
+<ul>
+<li>输入法
+<ul>
+<li><a href="https://github.com/rime/weasel">小狼毫</a><br>
+开源输入法，配置繁琐但可以多平台共用配置、共享词库</li>
+</ul>
+</li>
+<li>密码管理
+<ul>
+<li><a href="https://keepass.info/">KeePass Password Safe</a></li>
+</ul>
+</li>
+<li>文件搜索
+<ul>
+<li><a href="https://www.voidtools.com/zh-cn/">Everything</a></li>
+<li><a href="https://www.listary.com/">Listary</a><br>
+Everything在搜索不太确定的文件时相对好用，界面的信息密度高；而Listary适合快速打开一个软件或者打开一个名字很确定的文件夹等</li>
+</ul>
+</li>
+</ul>
+<h2 id="各类小工具">各类小工具</h2>
+<ul>
+<li><a href="https://www.ipip.net/download.html">BestTrace</a><br>
+ipip.net 推出的一个路由追踪客户端软件</li>
+<li><a href="https://efotinis.neocities.org/deskpins/">DeskPins</a>
+简单好用的窗口置顶小工具，虽然PowerToys也有这个功能，但相比于快捷键，在任务栏中点一下，然后点击需要置顶的窗口就能置顶简直优雅</li>
+<li></li>
+</ul>
 
                     
                     <HR width="100%" id="EOF">
-		    <p style="color:#777;">最后修改于 2023-01-12</p>
+		    <p style="color:#777;">最后修改于 2024-05-22</p>
                     
                 </div>
             </div>
@@ -314,14 +360,14 @@ flag 为 <strong>flag{那你也很棒哦}</strong><br>
             <nav class="post-pagination">
 
                 
-                <a class="newer-posts" href="/ctf/wp-buuctf-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019knife/">
-			下回<br>WP BUUCTF [极客大挑战2019]Knife
+                <a class="newer-posts" href="/%E9%9A%8F%E8%AE%B0/ai%E5%88%9B%E4%BD%9C%E4%B8%8E%E4%BA%BA%E7%B1%BB%E5%88%9B%E4%BD%9C/">
+			下回<br>AI创作与人类创作
                 </a>
                 
                 
                 
-                <a class="older-posts" href="/ctf/wp-buuctf-lsb/">
-			上回<br>WP BUUCTF LSB
+                <a class="older-posts" href="/%E5%8F%8B%E9%93%BE/">
+			上回<br>友链
                 </a>
                 
             </nav>
@@ -358,7 +404,7 @@ flag 为 <strong>flag{那你也很棒哦}</strong><br>
                     </div>
             </div><div id="sideContainer" class="side-container">
     
-    <a class="a-block nav-head false" href="https://blog.lty520.faith/">
+    <a class="a-block nav-head false" href="http://localhost:1313/">
     
         <div class="nav-title">
             Ling的博客
@@ -382,9 +428,11 @@ flag 为 <strong>flag{那你也很棒哦}</strong><br>
             
             
             
+                
             
             
-            <a class="a-block nav-link-item false" href="/%E9%9A%8F%E8%AE%B0">
+            
+            <a class="a-block nav-link-item active" href="/%E9%9A%8F%E8%AE%B0">
                 随记
             </a>
             
@@ -392,11 +440,9 @@ flag 为 <strong>flag{那你也很棒哦}</strong><br>
             
             
             
-                
             
             
-            
-            <a class="a-block nav-link-item active" href="/ctf">
+            <a class="a-block nav-link-item false" href="/ctf">
                 CTF
             </a>
             
@@ -466,8 +512,32 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e9%a2%98%e7%9b%ae" class="nav-题目">
-									题目
+								<a href="#windows" class="nav-windows">
+									Windows
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e7%b3%bb%e7%bb%9f%e5%bc%80%e8%8d%92%e5%bf%85%e5%a4%87" class="nav-系统开荒必备">
+									系统开荒必备
 								</a>
 							</li>
 						
@@ -484,8 +554,8 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e6%80%9d%e8%b7%af" class="nav-思路">
-									思路
+								<a href="#%e5%90%84%e7%b1%bb%e5%b0%8f%e5%b7%a5%e5%85%b7" class="nav-各类小工具">
+									各类小工具
 								</a>
 							</li>
 						

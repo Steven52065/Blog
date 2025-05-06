@@ -6,9 +6,88 @@
     <description>Recent content on Ling的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 16 Apr 2024 20:21:05 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 06 May 2025 11:24:03 +0800</lastBuildDate>
     
         <atom:link href="https://blog.lty520.faith/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>AI创作与人类创作</title>
+        <link>https://blog.lty520.faith/%E9%9A%8F%E8%AE%B0/ai%E5%88%9B%E4%BD%9C%E4%B8%8E%E4%BA%BA%E7%B1%BB%E5%88%9B%E4%BD%9C/</link>
+        <pubDate>Tue, 06 May 2025 11:24:03 +0800</pubDate>
+        
+        <guid>https://blog.lty520.faith/%E9%9A%8F%E8%AE%B0/ai%E5%88%9B%E4%BD%9C%E4%B8%8E%E4%BA%BA%E7%B1%BB%E5%88%9B%E4%BD%9C/</guid>
+        <description>Ling的博客 https://blog.lty520.faith/%E9%9A%8F%E8%AE%B0/ai%E5%88%9B%E4%BD%9C%E4%B8%8E%E4%BA%BA%E7%B1%BB%E5%88%9B%E4%BD%9C/ -&lt;p&gt;从Chatgpt爆火到处都在讨论，到在自己电脑上用Stable Diffusion跑头像，再到Cursor编程，自己大学还没毕业似乎程序员就要毕业了。看着周围人对于AI的不同态度：全面拥抱、完全鄙视、随大流&amp;hellip;&lt;br&gt;
+整理了一下自己的观点，利用五一假期写了这篇博客，与（少之又少的看我博客的）各位分享一下。&lt;/p&gt;
+&lt;h1 id=&#34;历史&#34;&gt;历史&lt;/h1&gt;
+&lt;p&gt;2017 年 5 月 27 日，AlphaGo 战胜了人类最强围棋手，2022 年 11 月 30 日 Openai 推出 Chatgpt，大众第一次广泛地与如此强大的人工智能进行深度对话；2022 年 8 月 Stability AI 发布 Stable Diffusion，大众第一次广泛接触了高质量的AI绘画；2024 年 3 月 21 日 Suno AI 推出 Suno V3，大众第一次接触到了由人工智能轻松创作的完整音乐&amp;hellip;&lt;br&gt;
+截止到 2025 年 05 月 04 日，LLM 在 MMLU 等热门基准测试上的准确率已超过 90%，在“人类的最后考试”中最强的 Openai O3 也达到了 20.3%的准确率和 34.0%的置信度。在“动脑子”的领域，AI 已经离人类越来越近，并且在部分领域开始超越了。AI 给人类打下手的幻想似乎变成了人类给 AI 打下手。&lt;br&gt;
+&lt;img src=&#34;https://blog.lty520.faith/img/%E9%9A%8F%E8%AE%B0/AI%E5%88%9B%E4%BD%9C%E4%B8%8E%E4%BA%BA%E7%B1%BB%E5%88%9B%E4%BD%9C/AccuracyofLLMsAcrossBenchmarks.png&#34; alt=&#34;Accuracy of LLMs Across Benchmarks&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;争议&#34;&gt;争议&lt;/h1&gt;
+&lt;p&gt;AI 技术自诞生以来就伴随着大量的争议，比如 Chatgpt 大量爬取网站内容、大量下载盗版书籍；Stable Diffusion 的训练数据（如 LAION 数据集）包含了大量未经授权的插画作品以及部分用户使用指定的插画师的作品（只需几十张乃至十几张即可）来训练模型模仿特定画师的画风；Suno 遭受全球三大唱片公司联手起诉，指控其非法使用版权音乐训练模型并提供服务，涉嫌抄袭数千首歌曲。&lt;br&gt;
+总结来说就是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;训练时使用了盗版内容。&lt;/li&gt;
+&lt;li&gt;可以轻松模拟特定的作品（例如鲁迅的文风）。&lt;/li&gt;
+&lt;li&gt;产出的作品可能会和训练的作品相似而构成“抄袭”。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这三个问题在人类学习的时候就会遇到，但显然人类早已达成了共识：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;学习、练习的时候能找到的素材可以随便拿来练，临摹就是练习最重要的一部分。&lt;/li&gt;
+&lt;li&gt;模仿文风、画风虽然一般只能进行道德上的谴责，不会也无法追究法律责任，但负责任的平台或厂商通常会设立规范，限制对特定在世艺术家风格的直接、恶意模仿，并避免在其产品或服务中直接使用明显侵权或引发争议的内容。这在一定程度上抑制了过于刻意的模仿在市场上的泛滥。&lt;/li&gt;
+&lt;li&gt;在最终创作时，成熟的创作者会有意识地避免与知名作品过于雷同，并可能借助工具（如论文的查重系统）来确保原创性。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;ai-学习的太多太快&#34;&gt;AI 学习的太多太快&lt;/h2&gt;
+&lt;p&gt;但是在 AI 到来之后，就出现了问题。&lt;br&gt;
+人类一辈子最多可能也就能看约 8GB 的文本。这在人类看来已经非常之多了，但相比世界上所有的书籍来说，依然少之又少。所以对于人类来说，阅读别人的作品来学习或给自己的作品提供灵感并无问题，毕竟世界上的作品一辈子也看不完。 &lt;br&gt;
+GPT3 使用了 4000 亿 Token 训练（约 570GB），Deepseek V3 使用了 14.8 万亿 tokens 的预训练。Llama 3.1 用了 15 万亿 tokens，Qwen 2.5 使用了 18 万亿 token，Gemma 3 1B 都使用了 2 万亿个词元进行训练；Stable Diffusion 所使用的 LAION-5B 数据集更是包括了 58.5 亿个图像文本对。&lt;br&gt;
+相比于人类只能阅读少量的知名作品和自己感兴趣的作品（并且绝大部分只是泛读，极少部分才会精读多遍），AI 可以读遍从古至今人类所产出的所有知识，直接击碎了人们千百年来“默许”的“临摹”、“借鉴”、“参考”、“超越”的学习方式，因为 AI 真的读的太多了，学的太快了。&lt;/p&gt;
+&lt;p&gt;所有人都是从“抄袭”开始学习，AI 也是，只是 AI 学的太快了。&lt;br&gt;
+&lt;img src=&#34;https://blog.lty520.faith/img/%E9%9A%8F%E8%AE%B0/AI%E5%88%9B%E4%BD%9C%E4%B8%8E%E4%BA%BA%E7%B1%BB%E5%88%9B%E4%BD%9C/AI%E6%98%AF%E7%9C%9F%E5%AD%A6%E5%95%8A.png&#34; alt=&#34;AI 是真学啊&#34;&gt;&lt;br&gt;
+&lt;em&gt;8GB 是按每分钟读 300 字，每天 10 小时，阅读 50 年计算，共 300×60×10×365×50 = 3,285,000,000 字（约 33 亿），按每个汉字约占 2.5 字节计算，合计约 7.65GB。&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;当前的法律与规范尝试&#34;&gt;当前的法律与规范尝试&lt;/h2&gt;
+&lt;p&gt;截止到 2025 年，各国目前正尝试通过援引各自著作权法中的合理使用或特定权利限制条款，来处理 AI 训练数据是否构成侵权的诉讼，但相关法律的适用标准和最终态度仍在探索或等待判例明确，尚未形成统一结论。&lt;br&gt;
+虽然各国已有的判例也各不相同，但不难看出一种普遍的倾向：既要对AI训练数据的版权问题进行规范，又担心过度限制会扼杀技术创新与发展——毕竟，人类自身的学习和创作过程也充满了对前人成果的借鉴与吸收。&lt;/p&gt;
+&lt;p&gt;笔者认为由官方整理出一批公开免授权的数据集供所有人训练、使用，并且立法要求所有 AI 生成的内容附带标识和水印，或许是比较合理的解决方案，但是法律毕竟是滞后于社会的，在法律还不够完善的当下，版权引起的争议还会持续很久。&lt;/p&gt;
+&lt;h1 id=&#34;ai-生成作品的灵魂&#34;&gt;AI 生成作品的“灵魂”&lt;/h1&gt;
+&lt;p&gt;首先，一个作品本身只是不同字符、像素、声音的排列组合（或者说是 0 和 1 的排列组合），其本身当然是没有灵魂的。那么灵魂从哪儿来呢？显然是从创作者而来。是创作者在创作的过程中，倾注了自己的心血，做出了自己想要的东西，作品才拥有了灵魂。&lt;br&gt;
+那么严格依照甲方和上级的要求，修改了几十次完成的“作品”有没有灵魂呢？996 乃至 007 通宵达旦应付上的作品，有没有灵魂呢？自己作为专业人士明知道 A 方案更好，却不得不按照甲方这个外行人士的要求修改为更差的 B 方案后完成的作品，有没有灵魂呢？&lt;br&gt;
+我想是没有的。因为这些作品不是创作者自己想要创作的，仅仅是生活所迫而不得不完成；作品想表达的内涵也不是创作者自己心中所想的，仅仅是扮演了“画笔”和“乐器”，忠诚的完成了甲方的作品。&lt;/p&gt;
+&lt;p&gt;所以，AI 生成的作品，有“灵魂”吗？&lt;/p&gt;
+&lt;p&gt;我认为，这取决于人类在创作过程中的角色和意图。如果一个人带着清晰的构想和强烈的表达欲，将AI作为一种实现想法的工具（如同延伸了他的双手和思想），通过反复的提示、筛选、修改，主导了创作过程，最终生成的作品体现了他的心中所想，那么，即使借助了AI，这个作品也可以说被赋予了人的“灵魂”，这里的AI和画笔、乐器没有区别。&lt;br&gt;
+反之，如果作品仅仅是AI基于简单指令或自动化流程批量生产的产物，缺乏“创作者”自己的意图和情感的注入，那么它更像是一种技术性的工业产品，很难说拥有我们通常意义上所理解的“灵魂”。&lt;/p&gt;
+&lt;h1 id=&#34;ai-生成作品的创新&#34;&gt;AI 生成作品的“创新”&lt;/h1&gt;
+&lt;p&gt;AI的“创新”一直是一个被很多人提到的问题，其中一种最常见的质疑是将AI绘画贬称为“尸块拼接”。&lt;br&gt;
+首先，从技术层面来看，这种比喻并不准确。无论是AI绘画常用的扩散模型（diffusion model），还是大语言模型（LLM）所依赖的Transformer架构，它们的核心机制并非简单地从数据库里抓取图像或文本片段进行拼凑（比如这张图里拿一只脚，从那张图里拿一个头，最后拼起来）。它们的本质是在海量数据中学习像素之间、或文本单元（Token）之间的统计规律与复杂关系，并基于这些学习到的模式总结出规律来生成全新的内容。这个过程更像是学习一种风格或模式，而非直接复制粘贴。&lt;br&gt;
+其次，对比之下，人类创作中的“绝对原创”也并非我们想象的那么普遍。&lt;br&gt;
+如果“创新”仅指那种“前无古人后无来者”的绝对独创，那么纵观历史，真正能达到此标准的也寥寥无几。大多数人类创作者的工作，是在前人成果基础上的改进、元素的重新组合、跨领域知识的迁移与应用——这些本身就是一种重要的创新形式。&lt;br&gt;
+从这个角度看，目前AI所展现出的能力，例如对现有风格的模仿、融合，以及在庞大数据模式中发现新的组合方式，与人类这种渐进式创新的过程表现出一定的相似性。AI通过学习、组合、随机，有时也能生成出乎意料、带来启发性的结果。
+再者，对于文学创作和艺术创作领域，有多少创作者敢断言自己创作的作品中没有前人的一丁点蛛丝马迹呢？那些可能在十几、几十年前无意中接触过的作品，早已沉淀在潜意识里，创作时其元素或风格可能在不经意间就融入了自己的作品。这并非需要苛责的“抄袭”，而是创作过程中普遍存在的现象。&lt;br&gt;
+事实上，深受前人影响并在此基础上进行演变和创造，是人类文明发展的常态，贯穿了数千年的艺术、文学与科技史。&lt;/p&gt;
+&lt;h1 id=&#34;结论&#34;&gt;结论&lt;/h1&gt;
+&lt;p&gt;有多少“作家”、“画家”、“程序员”，在工作中是真的认为自己在创作一个伟大的作品呢？少之又少。绝大部分只是在完成工作，完成上级安排的任务，完成甲方的要求，机械性的给一个又一个不知道哪儿来的bug打补丁，本质上和建筑工人、司机没有区别。&lt;br&gt;
+而 AI 也将取代这些重复性的工作，这对于市场来说是好事，因为可以降低人工成本，并且 AI 不会有怨气，AI 会忠诚的完成指示，并且在制作了十几版方案“心平气和”的用回第一版方案。&lt;br&gt;
+影响最大的是谁呢？必然是原本的一线工作者（包括但不限于作家、画师、程序员）。但是这是无法改变也无法阻拦的，这就像是产业革命，会提高生产力，在未来提供更多的就业岗位和机会，但是必然会带来变革和痛苦。&lt;br&gt;
+如果一直局限于“AI 怎么抢了我的工作？”、“我要和 AI 卷”&amp;hellip;就必然会在新的生产关系中被淘汰。&lt;br&gt;
+将工作和爱好分开，AI 只会取代你的工作，不可能取代你的爱好。有了打印机，依然有人喜欢书法；有了电子音乐，依然有人喜欢钢琴、吉他；有了汽车，依然有人喜欢骑马。
+积极使用 AI、拥抱 AI，挺过 AI 爆发的初期，AI 就会像蒸汽机和电力之于工业革命那样，给社会带来新的动力。&lt;/p&gt;
+&lt;h1 id=&#34;参考文章&#34;&gt;参考文章&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://zh.wikipedia.org/zh-cn/ChatGPT&#34;&gt;ChatGPT&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zh.wikipedia.org/zh-cn/Suno_AI&#34;&gt;Suno AI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zh.wikipedia.org/zh-cn/Stable_Diffusion&#34;&gt;Stable Diffusion&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zh.wikipedia.org/zh-cn/%E5%A4%A7%E5%9E%8B%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B#&#34;&gt;大语言模型&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://agi.safe.ai/&#34;&gt;Humanity&amp;rsquo;s Last Exam&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://finance.sina.com.cn/tech/roll/2024-06-25/doc-inazxtnk1483595.shtml&#34;&gt;AI 音乐侵权争议再起，三大唱片公司起诉两家 AI 音乐生成厂商&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://arxiv.org/pdf/2005.14165&#34;&gt;Language Models are Few-Shot Learners&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://wallstreetcn.com/articles/3738170&#34;&gt;省钱也是技术活：解密 DeepSeek 的极致压榨术&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.zhonglun.com/research/articles/53915.html&#34;&gt;以全球范围 AIGC 训练数据侵权诉讼为例梳理合理使用规则的适用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.thepaper.cn/newsDetail_forward_20463308&#34;&gt;关于 AI 绘画这件事，我们找了几个从业者聊聊&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/627133524&#34;&gt;深入浅出讲解Stable Diffusion原理，新手也能看明白&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+- https://blog.lty520.faith/%E9%9A%8F%E8%AE%B0/ai%E5%88%9B%E4%BD%9C%E4%B8%8E%E4%BA%BA%E7%B1%BB%E5%88%9B%E4%BD%9C/ - </description>
+        </item>
     
     
     
@@ -1407,56 +1486,6 @@ CHKDSK 正在恢复剩余的未索引文件。
 &lt;hr&gt;
 &lt;p&gt;&lt;em&gt;所以这是让我猜啥啊？？&lt;/em&gt;&lt;/p&gt;
 - https://blog.lty520.faith/ctf/wp-buuctf-bjdctf2020%E4%BD%A0%E7%8C%9C%E6%88%91%E6%98%AF%E4%B8%AA%E5%95%A5/ - </description>
-        </item>
-    
-    
-    
-        <item>
-        <title>WP BUUCTF [GXYCTF2019]佛系青年</title>
-        <link>https://blog.lty520.faith/ctf/wp-buuctf-gxyctf2019%E4%BD%9B%E7%B3%BB%E9%9D%92%E5%B9%B4/</link>
-        <pubDate>Fri, 03 Feb 2023 23:54:07 +0800</pubDate>
-        
-        <guid>https://blog.lty520.faith/ctf/wp-buuctf-gxyctf2019%E4%BD%9B%E7%B3%BB%E9%9D%92%E5%B9%B4/</guid>
-        <description>Ling的博客 https://blog.lty520.faith/ctf/wp-buuctf-gxyctf2019%E4%BD%9B%E7%B3%BB%E9%9D%92%E5%B9%B4/ -&lt;p&gt;题目链接: &lt;a href=&#34;https://buuoj.cn/challenges#%5BGXYCTF2019%5D%E4%BD%9B%E7%B3%BB%E9%9D%92%E5%B9%B4&#34;&gt;https://buuoj.cn/challenges#[GXYCTF2019]%E4%BD%9B%E7%B3%BB%E9%9D%92%E5%B9%B4&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;题目&#34;&gt;题目&lt;/h1&gt;
-&lt;p&gt;压缩包&lt;/p&gt;
-&lt;h1 id=&#34;思路&#34;&gt;思路&lt;/h1&gt;
-&lt;p&gt;压缩包可以看出是采用了伪加密，解开后可得两个文件&lt;br&gt;
-fo.txt&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;                                                                      _ooOoo_
-                                                                     o8888888o
-                                                                     88&amp;#34; . &amp;#34;88
-                                                                     (| -_- |)
-                                                                      O\ = /O
-                                                                  ____/`---&amp;#39;\____
-                                                                .   &amp;#39; \\| |// `.
-                                                                 / \\||| : |||// \
-                                                               / _||||| -:- |||||- \
-                                                                 | | \\\ - /// | |
-                                                               | \_| &amp;#39;&amp;#39;\---/&amp;#39;&amp;#39; | |
-                                                                \ .-\__ `-` ___/-. /
-                                                             ___`. .&amp;#39; /--.--\ `. . __
-                                                          .&amp;#34;&amp;#34; &amp;#39;&amp;lt; `.___\_&amp;lt;|&amp;gt;_/___.&amp;#39; &amp;gt;&amp;#39;&amp;#34;&amp;#34;.
-                                                         | | : `- \`.;`\ _ /`;.`/ - ` : | |
-                                                           \ \ `-. \_ __\ /__ _/ .-` / /
-                                                   ======`-.____`-.___\_____/___.-`____.-&amp;#39;======
-                                                                      `=---=&amp;#39;            
-
-                                                   .............................................
-                                                          佛祖保佑             永无BUG
-                                                          写字楼里写字间，写字间里程序员；
-                                                          程序人员写程序，又拿程序换酒钱。
-                                                          酒醒只在网上坐，酒醉还来网下眠；
-                                                          酒醉酒醒日复日，网上网下年复年。
-                                                          但愿老死电脑间，不愿鞠躬老板前；
-                                                          奔驰宝马贵者趣，公交自行程序员。
-                                                          别人笑我忒疯癫，我笑自己命太贱；
-                                                          不见满街漂亮妹，哪个归得程序员？
-
-佛曰：遮等諳勝能礙皤藐哆娑梵迦侄羅哆迦梵者梵楞蘇涅侄室實真缽朋能。奢怛俱道怯都諳怖梵尼怯一罰心缽謹缽薩苦奢夢怯帝梵遠朋陀諳陀穆諳所呐知涅侄以薩怯想夷奢醯數羅怯諸
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;将最后一段扔进&lt;a href=&#34;https://www.keyfc.net/bbs/tools/tudoucode.aspx&#34;&gt;与佛论禅&lt;/a&gt;即可解出flag&lt;br&gt;
-&lt;strong&gt;flag{w0_fo_ci_Be1}&lt;/strong&gt;&lt;/p&gt;
-- https://blog.lty520.faith/ctf/wp-buuctf-gxyctf2019%E4%BD%9B%E7%B3%BB%E9%9D%92%E5%B9%B4/ - </description>
         </item>
     
     

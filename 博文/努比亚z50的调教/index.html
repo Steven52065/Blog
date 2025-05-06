@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head>
+<html lang="zh"><head>
 <title>努比亚Z50的调教</title>
 
 
@@ -7,8 +7,8 @@
 
 <meta charset="utf-8">
 <meta name="X-UA-Compatible" content="IE=edge">
-<meta name="google-site-verification" content="">
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta name="google-site-verification" content="G-3MGTDD77JD">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5, user-scalable=5" name="viewport">
 <meta content="telephone=no" name="format-detection">
 <meta name="description" content="换了个新手机——努比亚Z50，所以需要调教一下，让自己用的舒服一点（因为努比亚不能解 BL 锁刷机 ，所以这篇教程的内容的适用性还是比较强的）">
 <meta name="renderer" content="webkit">
@@ -21,6 +21,23 @@
 
 
 
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-3MGTDD77JD"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-3MGTDD77JD');
+        }
+      </script>
 
 
 
@@ -39,11 +56,8 @@
       <script src="/js/toc.js"></script>
     
     <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
-<link rel="stylesheet" href="/scss/journal.min.e78ecf1f01bdd175a52616472d7f6c77fa0d72eb91b15a27ce24fb7d302a6aa2.css" integrity="sha256-547PHwG90XWlJhZHLX9sd/oNcuuRsVonziT7fTAqaqI=" media="screen">
 
-
-
-<link rel="stylesheet" href="/scss/dark-mode.min.e96cc014086ea3bea59fb4923f8c19d6b203a7af229ee5f9599c0a4cb90e3bbd.css" integrity="sha256-6WzAFAhuo76ln7SSP4wZ1rIDp68inuX5WZwKTLkOO70=" media="screen">
+<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
 
 
 <link rel="stylesheet"
@@ -166,7 +180,7 @@
 						
 						
 							<li>
-								<a href="#%e6%80%bb%e8%af%84" onclick="onNavClick(`#总评-nav`)" id="总评-nav">
+								<a href="#%e6%80%bb%e8%af%84" class="nav-总评">
 									总评
 								</a>
 							</li>
@@ -184,7 +198,7 @@
 						
 						
 							<li>
-								<a href="#%e7%b3%bb%e7%bb%9f" onclick="onNavClick(`#系统-nav`)" id="系统-nav">
+								<a href="#%e7%b3%bb%e7%bb%9f" class="nav-系统">
 									系统
 								</a>
 							</li>
@@ -208,7 +222,7 @@
 						
 						
 							<li>
-								<a href="#%e8%b0%b7%e6%ad%8c%e6%9c%8d%e5%8a%a1" onclick="onNavClick(`#谷歌服务-nav`)" id="谷歌服务-nav">
+								<a href="#%e8%b0%b7%e6%ad%8c%e6%9c%8d%e5%8a%a1" class="nav-谷歌服务">
 									谷歌服务
 								</a>
 							</li>
@@ -226,7 +240,7 @@
 						
 						
 							<li>
-								<a href="#lspatchhttpsgithubcomlsposedlspatch" onclick="onNavClick(`#lspatchhttpsgithubcomlsposedlspatch-nav`)" id="lspatchhttpsgithubcomlsposedlspatch-nav">
+								<a href="#lspatch" class="nav-lspatch">
 									LSPatch
 								</a>
 							</li>
@@ -250,7 +264,7 @@
 						
 						
 							<li>
-								<a href="#%e5%ae%89%e8%a3%85-lspatch" onclick="onNavClick(`#安装-lspatch-nav`)" id="安装-lspatch-nav">
+								<a href="#%e5%ae%89%e8%a3%85-lspatch" class="nav-安装-lspatch">
 									安装 LSPatch
 								</a>
 							</li>
@@ -274,7 +288,7 @@
 						
 						
 							<li>
-								<a href="#%e4%bd%bf%e7%94%a8-shizuku-%e8%87%aa%e5%8a%a8%e5%ae%89%e8%a3%85%e4%bf%ae%e8%a1%a5%e5%90%8e%e7%9a%84-app" onclick="onNavClick(`#使用-shizuku-自动安装修补后的-app-nav`)" id="使用-shizuku-自动安装修补后的-app-nav">
+								<a href="#%e4%bd%bf%e7%94%a8-shizuku-%e8%87%aa%e5%8a%a8%e5%ae%89%e8%a3%85%e4%bf%ae%e8%a1%a5%e5%90%8e%e7%9a%84-app" class="nav-使用-shizuku-自动安装修补后的-app">
 									使用 Shizuku ，自动安装修补后的 app
 								</a>
 							</li>
@@ -296,7 +310,7 @@
 						
 						
 							<li>
-								<a href="#%e4%bd%bf%e7%94%a8%e5%88%b0%e7%9a%84%e6%a8%a1%e5%9d%97" onclick="onNavClick(`#使用到的模块-nav`)" id="使用到的模块-nav">
+								<a href="#%e4%bd%bf%e7%94%a8%e5%88%b0%e7%9a%84%e6%a8%a1%e5%9d%97" class="nav-使用到的模块">
 									使用到的模块
 								</a>
 							</li>
@@ -320,7 +334,7 @@
 						
 						
 							<li>
-								<a href="#%e5%85%85%e7%94%b5%e7%94%b5%e6%b1%a0" onclick="onNavClick(`#充电电池-nav`)" id="充电电池-nav">
+								<a href="#%e5%85%85%e7%94%b5%e7%94%b5%e6%b1%a0" class="nav-充电电池">
 									充电/电池
 								</a>
 							</li>
@@ -338,7 +352,7 @@
 						
 						
 							<li>
-								<a href="#%e6%a1%8c%e9%9d%a2" onclick="onNavClick(`#桌面-nav`)" id="桌面-nav">
+								<a href="#%e6%a1%8c%e9%9d%a2" class="nav-桌面">
 									桌面
 								</a>
 							</li>
@@ -362,7 +376,7 @@
 						
 						
 							<li>
-								<a href="#%e7%ac%ac%e4%b8%89%e6%96%b9%e6%a1%8c%e9%9d%a2" onclick="onNavClick(`#第三方桌面-nav`)" id="第三方桌面-nav">
+								<a href="#%e7%ac%ac%e4%b8%89%e6%96%b9%e6%a1%8c%e9%9d%a2" class="nav-第三方桌面">
 									第三方桌面
 								</a>
 							</li>
@@ -380,7 +394,7 @@
 						
 						
 							<li>
-								<a href="#%e5%9b%be%e6%a0%87" onclick="onNavClick(`#图标-nav`)" id="图标-nav">
+								<a href="#%e5%9b%be%e6%a0%87" class="nav-图标">
 									图标
 								</a>
 							</li>
@@ -402,7 +416,7 @@
 						
 						
 							<li>
-								<a href="#%e8%bd%af%e4%bb%b6%e4%b8%8b%e8%bd%bd" onclick="onNavClick(`#软件下载-nav`)" id="软件下载-nav">
+								<a href="#%e8%bd%af%e4%bb%b6%e4%b8%8b%e8%bd%bd" class="nav-软件下载">
 									软件下载
 								</a>
 							</li>
@@ -420,7 +434,7 @@
 						
 						
 							<li>
-								<a href="#%e5%8a%9f%e8%83%bd%e8%a1%a5%e5%85%a8%e6%9b%bf%e6%8d%a2" onclick="onNavClick(`#功能补全替换-nav`)" id="功能补全替换-nav">
+								<a href="#%e5%8a%9f%e8%83%bd%e8%a1%a5%e5%85%a8%e6%9b%bf%e6%8d%a2" class="nav-功能补全替换">
 									功能补全/替换
 								</a>
 							</li>
@@ -444,7 +458,7 @@
 						
 						
 							<li>
-								<a href="#%e8%b7%b3%e8%bf%87%e5%b9%bf%e5%91%8a" onclick="onNavClick(`#跳过广告-nav`)" id="跳过广告-nav">
+								<a href="#%e8%b7%b3%e8%bf%87%e5%b9%bf%e5%91%8a" class="nav-跳过广告">
 									跳过广告
 								</a>
 							</li>
@@ -462,7 +476,7 @@
 						
 						
 							<li>
-								<a href="#%e8%be%93%e5%85%a5%e6%b3%95" onclick="onNavClick(`#输入法-nav`)" id="输入法-nav">
+								<a href="#%e8%be%93%e5%85%a5%e6%b3%95" class="nav-输入法">
 									输入法
 								</a>
 							</li>
@@ -480,7 +494,7 @@
 						
 						
 							<li>
-								<a href="#%e6%b5%8f%e8%a7%88%e5%99%a8" onclick="onNavClick(`#浏览器-nav`)" id="浏览器-nav">
+								<a href="#%e6%b5%8f%e8%a7%88%e5%99%a8" class="nav-浏览器">
 									浏览器
 								</a>
 							</li>
@@ -498,7 +512,7 @@
 						
 						
 							<li>
-								<a href="#%e5%af%86%e7%a0%81%e7%ae%a1%e7%90%86" onclick="onNavClick(`#密码管理-nav`)" id="密码管理-nav">
+								<a href="#%e5%af%86%e7%a0%81%e7%ae%a1%e7%90%86" class="nav-密码管理">
 									密码管理
 								</a>
 							</li>
@@ -516,7 +530,7 @@
 						
 						
 							<li>
-								<a href="#%e6%9d%83%e9%99%90%e7%ae%a1%e7%90%86" onclick="onNavClick(`#权限管理-nav`)" id="权限管理-nav">
+								<a href="#%e6%9d%83%e9%99%90%e7%ae%a1%e7%90%86" class="nav-权限管理">
 									权限管理
 								</a>
 							</li>
@@ -534,7 +548,7 @@
 						
 						
 							<li>
-								<a href="#%e5%90%8e%e5%8f%b0%e9%99%90%e5%88%b6" onclick="onNavClick(`#后台限制-nav`)" id="后台限制-nav">
+								<a href="#%e5%90%8e%e5%8f%b0%e9%99%90%e5%88%b6" class="nav-后台限制">
 									后台限制
 								</a>
 							</li>
@@ -552,7 +566,7 @@
 						
 						
 							<li>
-								<a href="#%e7%ac%ac%e4%b8%89%e6%96%b9%e7%9b%b8%e6%9c%ba" onclick="onNavClick(`#第三方相机-nav`)" id="第三方相机-nav">
+								<a href="#%e7%ac%ac%e4%b8%89%e6%96%b9%e7%9b%b8%e6%9c%ba" class="nav-第三方相机">
 									第三方相机
 								</a>
 							</li>
@@ -574,7 +588,7 @@
 						
 						
 							<li>
-								<a href="#%e9%97%ae%e9%a2%98" onclick="onNavClick(`#问题-nav`)" id="问题-nav">
+								<a href="#%e9%97%ae%e9%a2%98" class="nav-问题">
 									问题
 								</a>
 							</li>
@@ -636,8 +650,7 @@
                 
             >
                 <div class="post-title">
-                    <h1 class="post-title">努比亚Z50的调教</h1>
-                    
+                    努比亚Z50的调教
                     
                     <div class="post-subtitle">
                         换了个新手机——努比亚Z50，所以需要调教一下，让自己用的舒服一点（因为努比亚不能解 BL 锁刷机 ，所以这篇教程的内容的适用性还是比较强的）
@@ -692,7 +705,7 @@
 <h2 id="谷歌服务">谷歌服务</h2>
 <p>因其自带谷歌服务，所以只需要在 <a href="https://apkpure.com/cn/google-play-store/com.android.vending">Apkpure</a> 下载一个 <strong>Google Play Store</strong> 安装上，就可以找到谷歌应用商店的图标了<br>
 <em>尝试过使用谷歌服务安装器（如 Go 谷歌安装器 ），会显示谷歌框架完整，但哪怕重装谷歌框架也无法解决找不到谷歌应用商店的图标的问题。所以可能只能手动安装了</em></p>
-<h2 id="lspatchhttpsgithubcomlsposedlspatch"><a href="https://github.com/LSPosed/LSPatch">LSPatch</a></h2>
+<h2 id="lspatch"><a href="https://github.com/LSPosed/LSPatch">LSPatch</a></h2>
 <p>因为不能解 BL 锁刷机，所以只能选择这种方案了<br>
 <em>曾经在另一部同样不能解 BL 和 Root 的手机试过太极框架，或许是手机太老的缘故，体验并不好，所以这次换了这个</em></p>
 <h3 id="安装-lspatch">安装 LSPatch</h3>
@@ -856,6 +869,7 @@
     Waline.init({
         el: '#waline',
         
+        dark: "body.night",
         serverURL: "https://waline.lty520.faith/" ,
     });
     
@@ -949,15 +963,17 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 
 &copy;
 	
-	2024 Ling的博客
+	2025 Ling的博客
 	
 
     </div>
     
 </div><div id="extraContainer" class="extra-container">
-    
-    
-    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+    <div class="toc-wrapper">
+        
+
+        
+        <div class="toc">
 
 
 	<div class="toc-content">
@@ -979,7 +995,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e6%80%bb%e8%af%84" onclick="onNavClick(`#总评-nav`)" id="总评-nav">
+								<a href="#%e6%80%bb%e8%af%84" class="nav-总评">
 									总评
 								</a>
 							</li>
@@ -997,7 +1013,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e7%b3%bb%e7%bb%9f" onclick="onNavClick(`#系统-nav`)" id="系统-nav">
+								<a href="#%e7%b3%bb%e7%bb%9f" class="nav-系统">
 									系统
 								</a>
 							</li>
@@ -1021,7 +1037,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e8%b0%b7%e6%ad%8c%e6%9c%8d%e5%8a%a1" onclick="onNavClick(`#谷歌服务-nav`)" id="谷歌服务-nav">
+								<a href="#%e8%b0%b7%e6%ad%8c%e6%9c%8d%e5%8a%a1" class="nav-谷歌服务">
 									谷歌服务
 								</a>
 							</li>
@@ -1039,7 +1055,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#lspatchhttpsgithubcomlsposedlspatch" onclick="onNavClick(`#lspatchhttpsgithubcomlsposedlspatch-nav`)" id="lspatchhttpsgithubcomlsposedlspatch-nav">
+								<a href="#lspatch" class="nav-lspatch">
 									LSPatch
 								</a>
 							</li>
@@ -1063,7 +1079,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e5%ae%89%e8%a3%85-lspatch" onclick="onNavClick(`#安装-lspatch-nav`)" id="安装-lspatch-nav">
+								<a href="#%e5%ae%89%e8%a3%85-lspatch" class="nav-安装-lspatch">
 									安装 LSPatch
 								</a>
 							</li>
@@ -1087,7 +1103,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e4%bd%bf%e7%94%a8-shizuku-%e8%87%aa%e5%8a%a8%e5%ae%89%e8%a3%85%e4%bf%ae%e8%a1%a5%e5%90%8e%e7%9a%84-app" onclick="onNavClick(`#使用-shizuku-自动安装修补后的-app-nav`)" id="使用-shizuku-自动安装修补后的-app-nav">
+								<a href="#%e4%bd%bf%e7%94%a8-shizuku-%e8%87%aa%e5%8a%a8%e5%ae%89%e8%a3%85%e4%bf%ae%e8%a1%a5%e5%90%8e%e7%9a%84-app" class="nav-使用-shizuku-自动安装修补后的-app">
 									使用 Shizuku ，自动安装修补后的 app
 								</a>
 							</li>
@@ -1109,7 +1125,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e4%bd%bf%e7%94%a8%e5%88%b0%e7%9a%84%e6%a8%a1%e5%9d%97" onclick="onNavClick(`#使用到的模块-nav`)" id="使用到的模块-nav">
+								<a href="#%e4%bd%bf%e7%94%a8%e5%88%b0%e7%9a%84%e6%a8%a1%e5%9d%97" class="nav-使用到的模块">
 									使用到的模块
 								</a>
 							</li>
@@ -1133,7 +1149,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e5%85%85%e7%94%b5%e7%94%b5%e6%b1%a0" onclick="onNavClick(`#充电电池-nav`)" id="充电电池-nav">
+								<a href="#%e5%85%85%e7%94%b5%e7%94%b5%e6%b1%a0" class="nav-充电电池">
 									充电/电池
 								</a>
 							</li>
@@ -1151,7 +1167,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e6%a1%8c%e9%9d%a2" onclick="onNavClick(`#桌面-nav`)" id="桌面-nav">
+								<a href="#%e6%a1%8c%e9%9d%a2" class="nav-桌面">
 									桌面
 								</a>
 							</li>
@@ -1175,7 +1191,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e7%ac%ac%e4%b8%89%e6%96%b9%e6%a1%8c%e9%9d%a2" onclick="onNavClick(`#第三方桌面-nav`)" id="第三方桌面-nav">
+								<a href="#%e7%ac%ac%e4%b8%89%e6%96%b9%e6%a1%8c%e9%9d%a2" class="nav-第三方桌面">
 									第三方桌面
 								</a>
 							</li>
@@ -1193,7 +1209,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e5%9b%be%e6%a0%87" onclick="onNavClick(`#图标-nav`)" id="图标-nav">
+								<a href="#%e5%9b%be%e6%a0%87" class="nav-图标">
 									图标
 								</a>
 							</li>
@@ -1215,7 +1231,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e8%bd%af%e4%bb%b6%e4%b8%8b%e8%bd%bd" onclick="onNavClick(`#软件下载-nav`)" id="软件下载-nav">
+								<a href="#%e8%bd%af%e4%bb%b6%e4%b8%8b%e8%bd%bd" class="nav-软件下载">
 									软件下载
 								</a>
 							</li>
@@ -1233,7 +1249,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e5%8a%9f%e8%83%bd%e8%a1%a5%e5%85%a8%e6%9b%bf%e6%8d%a2" onclick="onNavClick(`#功能补全替换-nav`)" id="功能补全替换-nav">
+								<a href="#%e5%8a%9f%e8%83%bd%e8%a1%a5%e5%85%a8%e6%9b%bf%e6%8d%a2" class="nav-功能补全替换">
 									功能补全/替换
 								</a>
 							</li>
@@ -1257,7 +1273,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e8%b7%b3%e8%bf%87%e5%b9%bf%e5%91%8a" onclick="onNavClick(`#跳过广告-nav`)" id="跳过广告-nav">
+								<a href="#%e8%b7%b3%e8%bf%87%e5%b9%bf%e5%91%8a" class="nav-跳过广告">
 									跳过广告
 								</a>
 							</li>
@@ -1275,7 +1291,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e8%be%93%e5%85%a5%e6%b3%95" onclick="onNavClick(`#输入法-nav`)" id="输入法-nav">
+								<a href="#%e8%be%93%e5%85%a5%e6%b3%95" class="nav-输入法">
 									输入法
 								</a>
 							</li>
@@ -1293,7 +1309,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e6%b5%8f%e8%a7%88%e5%99%a8" onclick="onNavClick(`#浏览器-nav`)" id="浏览器-nav">
+								<a href="#%e6%b5%8f%e8%a7%88%e5%99%a8" class="nav-浏览器">
 									浏览器
 								</a>
 							</li>
@@ -1311,7 +1327,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e5%af%86%e7%a0%81%e7%ae%a1%e7%90%86" onclick="onNavClick(`#密码管理-nav`)" id="密码管理-nav">
+								<a href="#%e5%af%86%e7%a0%81%e7%ae%a1%e7%90%86" class="nav-密码管理">
 									密码管理
 								</a>
 							</li>
@@ -1329,7 +1345,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e6%9d%83%e9%99%90%e7%ae%a1%e7%90%86" onclick="onNavClick(`#权限管理-nav`)" id="权限管理-nav">
+								<a href="#%e6%9d%83%e9%99%90%e7%ae%a1%e7%90%86" class="nav-权限管理">
 									权限管理
 								</a>
 							</li>
@@ -1347,7 +1363,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e5%90%8e%e5%8f%b0%e9%99%90%e5%88%b6" onclick="onNavClick(`#后台限制-nav`)" id="后台限制-nav">
+								<a href="#%e5%90%8e%e5%8f%b0%e9%99%90%e5%88%b6" class="nav-后台限制">
 									后台限制
 								</a>
 							</li>
@@ -1365,7 +1381,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e7%ac%ac%e4%b8%89%e6%96%b9%e7%9b%b8%e6%9c%ba" onclick="onNavClick(`#第三方相机-nav`)" id="第三方相机-nav">
+								<a href="#%e7%ac%ac%e4%b8%89%e6%96%b9%e7%9b%b8%e6%9c%ba" class="nav-第三方相机">
 									第三方相机
 								</a>
 							</li>
@@ -1387,7 +1403,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e9%97%ae%e9%a2%98" onclick="onNavClick(`#问题-nav`)" id="问题-nav">
+								<a href="#%e9%97%ae%e9%a2%98" class="nav-问题">
 									问题
 								</a>
 							</li>
@@ -1400,9 +1416,11 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 	</div>
 
 </div>
-    
+        
+    </div>
     <div class="pagination">
-        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
             <i class="material-icons pagination-action-icon">
                 keyboard_arrow_up
             </i>
@@ -1417,6 +1435,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
         
     </div>
 </div>
+
 <div id="single-column-footer">
 Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
 <br>
@@ -1425,7 +1444,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 
 &copy;
 	
-	2024 Ling的博客
+	2025 Ling的博客
 	
 </div>
             </div>

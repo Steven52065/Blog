@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head>
+<html lang="zh"><head>
 <title>WP BUUCTF [GXYCTF2019]佛系青年</title>
 
 
@@ -7,8 +7,8 @@
 
 <meta charset="utf-8">
 <meta name="X-UA-Compatible" content="IE=edge">
-<meta name="google-site-verification" content="">
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta name="google-site-verification" content="G-3MGTDD77JD">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5, user-scalable=5" name="viewport">
 <meta content="telephone=no" name="format-detection">
 <meta name="description" content="">
 <meta name="renderer" content="webkit">
@@ -21,6 +21,23 @@
 
 
 
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-3MGTDD77JD"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-3MGTDD77JD');
+        }
+      </script>
 
 
 
@@ -39,11 +56,8 @@
       <script src="/js/toc.js"></script>
     
     <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
-<link rel="stylesheet" href="/scss/journal.min.e78ecf1f01bdd175a52616472d7f6c77fa0d72eb91b15a27ce24fb7d302a6aa2.css" integrity="sha256-547PHwG90XWlJhZHLX9sd/oNcuuRsVonziT7fTAqaqI=" media="screen">
 
-
-
-<link rel="stylesheet" href="/scss/dark-mode.min.e96cc014086ea3bea59fb4923f8c19d6b203a7af229ee5f9599c0a4cb90e3bbd.css" integrity="sha256-6WzAFAhuo76ln7SSP4wZ1rIDp68inuX5WZwKTLkOO70=" media="screen">
+<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
 
 
 <link rel="stylesheet"
@@ -166,7 +180,7 @@
 						
 						
 							<li>
-								<a href="#%e9%a2%98%e7%9b%ae" onclick="onNavClick(`#题目-nav`)" id="题目-nav">
+								<a href="#%e9%a2%98%e7%9b%ae" class="nav-题目">
 									题目
 								</a>
 							</li>
@@ -184,7 +198,7 @@
 						
 						
 							<li>
-								<a href="#%e6%80%9d%e8%b7%af" onclick="onNavClick(`#思路-nav`)" id="思路-nav">
+								<a href="#%e6%80%9d%e8%b7%af" class="nav-思路">
 									思路
 								</a>
 							</li>
@@ -246,8 +260,7 @@
                 
             >
                 <div class="post-title">
-                    <h1 class="post-title">WP BUUCTF [GXYCTF2019]佛系青年</h1>
-                    
+                    WP BUUCTF [GXYCTF2019]佛系青年
                     
                     <div class="post-meta">
                         
@@ -356,6 +369,7 @@ fo.txt</p>
     Waline.init({
         el: '#waline',
         
+        dark: "body.night",
         serverURL: "https://waline.lty520.faith/" ,
     });
     
@@ -449,15 +463,17 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 
 &copy;
 	
-	2024 Ling的博客
+	2025 Ling的博客
 	
 
     </div>
     
 </div><div id="extraContainer" class="extra-container">
-    
-    
-    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+    <div class="toc-wrapper">
+        
+
+        
+        <div class="toc">
 
 
 	<div class="toc-content">
@@ -479,7 +495,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e9%a2%98%e7%9b%ae" onclick="onNavClick(`#题目-nav`)" id="题目-nav">
+								<a href="#%e9%a2%98%e7%9b%ae" class="nav-题目">
 									题目
 								</a>
 							</li>
@@ -497,7 +513,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e6%80%9d%e8%b7%af" onclick="onNavClick(`#思路-nav`)" id="思路-nav">
+								<a href="#%e6%80%9d%e8%b7%af" class="nav-思路">
 									思路
 								</a>
 							</li>
@@ -510,9 +526,11 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 	</div>
 
 </div>
-    
+        
+    </div>
     <div class="pagination">
-        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
             <i class="material-icons pagination-action-icon">
                 keyboard_arrow_up
             </i>
@@ -527,6 +545,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
         
     </div>
 </div>
+
 <div id="single-column-footer">
 Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
 <br>
@@ -535,7 +554,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 
 &copy;
 	
-	2024 Ling的博客
+	2025 Ling的博客
 	
 </div>
             </div>

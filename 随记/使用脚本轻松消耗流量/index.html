@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head>
+<html lang="zh"><head>
 <title>使用脚本轻松消耗流量</title>
 
 
@@ -7,8 +7,8 @@
 
 <meta charset="utf-8">
 <meta name="X-UA-Compatible" content="IE=edge">
-<meta name="google-site-verification" content="">
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta name="google-site-verification" content="G-3MGTDD77JD">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5, user-scalable=5" name="viewport">
 <meta content="telephone=no" name="format-detection">
 <meta name="description" content="这两年来，国内各大运营商打击PCDN的力度越来越大了，虽然我没搞PCDN，但是因为玩PT已经在外面使用家里的NAS，也被误伤了一锤。在自行限制了上传速度后，还是不太放心，听闻会检测上下行流量的比例来判断是否为PCDN，于是写了这个脚本来浪费一些下载流量">
 <meta name="renderer" content="webkit">
@@ -21,6 +21,23 @@
 
 
 
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-3MGTDD77JD"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-3MGTDD77JD');
+        }
+      </script>
 
 
 
@@ -39,11 +56,8 @@
       <script src="/js/toc.js"></script>
     
     <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
-<link rel="stylesheet" href="/scss/journal.min.e78ecf1f01bdd175a52616472d7f6c77fa0d72eb91b15a27ce24fb7d302a6aa2.css" integrity="sha256-547PHwG90XWlJhZHLX9sd/oNcuuRsVonziT7fTAqaqI=" media="screen">
 
-
-
-<link rel="stylesheet" href="/scss/dark-mode.min.e96cc014086ea3bea59fb4923f8c19d6b203a7af229ee5f9599c0a4cb90e3bbd.css" integrity="sha256-6WzAFAhuo76ln7SSP4wZ1rIDp68inuX5WZwKTLkOO70=" media="screen">
+<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
 
 
 <link rel="stylesheet"
@@ -166,7 +180,7 @@
 						
 						
 							<li>
-								<a href="#%e8%84%9a%e6%9c%ac%e5%86%85%e5%ae%b9" onclick="onNavClick(`#脚本内容-nav`)" id="脚本内容-nav">
+								<a href="#%e8%84%9a%e6%9c%ac%e5%86%85%e5%ae%b9" class="nav-脚本内容">
 									脚本内容
 								</a>
 							</li>
@@ -190,7 +204,7 @@
 						
 						
 							<li>
-								<a href="#%e8%ae%be%e7%bd%ae%e5%8f%af%e6%89%a7%e8%a1%8c%e6%9d%83%e9%99%90" onclick="onNavClick(`#设置可执行权限-nav`)" id="设置可执行权限-nav">
+								<a href="#%e8%ae%be%e7%bd%ae%e5%8f%af%e6%89%a7%e8%a1%8c%e6%9d%83%e9%99%90" class="nav-设置可执行权限">
 									设置可执行权限
 								</a>
 							</li>
@@ -212,7 +226,7 @@
 						
 						
 							<li>
-								<a href="#%e5%ae%9a%e6%97%b6%e6%89%a7%e8%a1%8c" onclick="onNavClick(`#定时执行-nav`)" id="定时执行-nav">
+								<a href="#%e5%ae%9a%e6%97%b6%e6%89%a7%e8%a1%8c" class="nav-定时执行">
 									定时执行
 								</a>
 							</li>
@@ -274,8 +288,7 @@
                 
             >
                 <div class="post-title">
-                    <h1 class="post-title">使用脚本轻松消耗流量</h1>
-                    
+                    使用脚本轻松消耗流量
                     
                     <div class="post-subtitle">
                         这两年来，国内各大运营商打击PCDN的力度越来越大了，虽然我没搞PCDN，但是因为玩PT已经在外面使用家里的NAS，也被误伤了一锤。在自行限制了上传速度后，还是不太放心，听闻会检测上下行流量的比例来判断是否为PCDN，于是写了这个脚本来浪费一些下载流量
@@ -403,6 +416,7 @@ echo &#34;===============================================&#34;
     Waline.init({
         el: '#waline',
         
+        dark: "body.night",
         serverURL: "https://waline.lty520.faith/" ,
     });
     
@@ -496,15 +510,17 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 
 &copy;
 	
-	2024 Ling的博客
+	2025 Ling的博客
 	
 
     </div>
     
 </div><div id="extraContainer" class="extra-container">
-    
-    
-    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+    <div class="toc-wrapper">
+        
+
+        
+        <div class="toc">
 
 
 	<div class="toc-content">
@@ -526,7 +542,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e8%84%9a%e6%9c%ac%e5%86%85%e5%ae%b9" onclick="onNavClick(`#脚本内容-nav`)" id="脚本内容-nav">
+								<a href="#%e8%84%9a%e6%9c%ac%e5%86%85%e5%ae%b9" class="nav-脚本内容">
 									脚本内容
 								</a>
 							</li>
@@ -550,7 +566,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e8%ae%be%e7%bd%ae%e5%8f%af%e6%89%a7%e8%a1%8c%e6%9d%83%e9%99%90" onclick="onNavClick(`#设置可执行权限-nav`)" id="设置可执行权限-nav">
+								<a href="#%e8%ae%be%e7%bd%ae%e5%8f%af%e6%89%a7%e8%a1%8c%e6%9d%83%e9%99%90" class="nav-设置可执行权限">
 									设置可执行权限
 								</a>
 							</li>
@@ -572,7 +588,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 						
 						
 							<li>
-								<a href="#%e5%ae%9a%e6%97%b6%e6%89%a7%e8%a1%8c" onclick="onNavClick(`#定时执行-nav`)" id="定时执行-nav">
+								<a href="#%e5%ae%9a%e6%97%b6%e6%89%a7%e8%a1%8c" class="nav-定时执行">
 									定时执行
 								</a>
 							</li>
@@ -585,9 +601,11 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 	</div>
 
 </div>
-    
+        
+    </div>
     <div class="pagination">
-        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
             <i class="material-icons pagination-action-icon">
                 keyboard_arrow_up
             </i>
@@ -602,6 +620,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
         
     </div>
 </div>
+
 <div id="single-column-footer">
 Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
 <br>
@@ -610,7 +629,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 
 &copy;
 	
-	2024 Ling的博客
+	2025 Ling的博客
 	
 </div>
             </div>
