@@ -221,84 +221,217 @@ flag 为 &lt;strong&gt;flag{1sb_i4_s0_Ea4y}&lt;/strong&gt;&lt;/p&gt;
     
     
         <item>
-        <title>白嫖节点的使用</title>
-        <link>https://blog.lty520.faith/%E9%9A%8F%E8%AE%B0/%E7%99%BD%E5%AB%96%E8%8A%82%E7%82%B9%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
-        <pubDate>Fri, 23 Dec 2022 22:15:42 +0800</pubDate>
+        <title>全平台统一代理——Clash</title>
+        <link>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/</link>
+        <pubDate>Thu, 22 Dec 2022 21:22:33 +0800</pubDate>
         
-        <guid>https://blog.lty520.faith/%E9%9A%8F%E8%AE%B0/%E7%99%BD%E5%AB%96%E8%8A%82%E7%82%B9%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
-        <description>Ling的博客 https://blog.lty520.faith/%E9%9A%8F%E8%AE%B0/%E7%99%BD%E5%AB%96%E8%8A%82%E7%82%B9%E7%9A%84%E4%BD%BF%E7%94%A8/ -&lt;p&gt;因为是 Vless 的节点，所以本文只会介绍 V2ray 相关软件的使用方法。其他客户端( Clash、Openwrt 等)就不写了&lt;/p&gt;
+        <guid>https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/</guid>
+        <description>Ling的博客 https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/ -&lt;h1 id=&#34;代理软件的使用历程&#34;&gt;代理软件的使用历程&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;使用赛风 VPN
+&lt;ul&gt;
+&lt;li&gt;听人提及到 SSR ，转用 SSR&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;每个设备分别使用 SSR
+&lt;ul&gt;
+&lt;li&gt;由于 SSR 封锁严重，跟随购买的机场换为 V2ray&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;每个设备分别使用 V2ray
+&lt;ul&gt;
+&lt;li&gt;困扰于每个平台都要运行代理软件 + V2ray 客户端不怎么好使+ Linux 运行代理程序需要命令行+手中刚好有树莓派，决定换用 Openwrt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Openwrt 单臂路由 + SSRPlus
+&lt;ul&gt;
+&lt;li&gt;因为是单臂路由，有的设备不能自定义网关 + SSRPlus 自定义程度不够+ PassWall 莫名其妙的不能用+住校+主流机场换用了 Clash ，决定每个平台分别使用 Clash&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;决定全平台使用 Clash&lt;/li&gt;
+&lt;/ul&gt;
 &lt;hr&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;&lt;strong&gt;节点仅保证最低限度的访问外网，即使用 Google、Youtube、Github 等，无法保证可以使用 New Bing、ChatGPT、Netflix 等对节点要求较高的网站。&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;&lt;strong&gt;晚八点前后的网络高峰期速度慢是正常现象，可以通过使用优选 IP 来缓解&lt;/strong&gt;&lt;/em&gt;
-&lt;img src=&#34;https://blog.lty520.faith/img/%E9%9A%8F%E8%AE%B0/%E7%99%BD%E5%AB%96%E8%8A%82%E7%82%B9%E7%9A%84%E4%BD%BF%E7%94%A8/gun.jpg&#34; alt=&#34;gun&#34;&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;使用教程&#34;&gt;使用教程&lt;/h1&gt;
-&lt;h2 id=&#34;windows&#34;&gt;Windows&lt;/h2&gt;
+&lt;h1 id=&#34;subconverter-的调教过程&#34;&gt;Subconverter 的调教过程&lt;/h1&gt;
+&lt;p&gt;虽然用了 Clash ，但机场提供的配置方案不是很符合个人需求(而且主用的机场没有 ipv6 的配置)，且手中有多个机场(主用机场 + 便宜的备用机场 + 按流量付费，使用特殊节点的机场)，于是使用了 &lt;a href=&#34;https://github.com/tindy2013/subconverter&#34;&gt;subconverter&lt;/a&gt; 来制作 Clash 配置文件。&lt;/p&gt;
+&lt;h2 id=&#34;目的&#34;&gt;目的&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;下载 &lt;a href=&#34;https://github.com/2dust/v2rayN/releases&#34;&gt;V2rayN 客户端&lt;/a&gt; ，选择最新版本，下载 &lt;strong&gt;v2rayN-With-Core.zip&lt;/strong&gt; 文件，并解压&lt;br&gt;
-&lt;em&gt;如果无法下载可以尝试使用 &lt;strong&gt;&lt;a href=&#34;https://mirror.ghproxy.com/https://github.com/2dust/v2rayN/releases/download/6.53/v2rayN-With-Core.zip&#34;&gt;https://mirror.ghproxy.com/https://github.com/2dust/v2rayN/releases/download/6.53/v2rayN-With-Core.zip&lt;/a&gt;&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;启动 V2rayN ，复制节点信息后在 V2rayN 中按 &lt;strong&gt;Ctrl+C&lt;/strong&gt; 粘贴，若出现节点，则导入成功&lt;/li&gt;
-&lt;li&gt;右键节点，选择“测试服务器真连接延迟”若测试结果中出现延时，说明节点正常（用不了大概是你的问题）&lt;/li&gt;
-&lt;li&gt;开始使用吧&lt;/li&gt;
+&lt;li&gt;将 &lt;strong&gt;多个&lt;/strong&gt; 机场的订阅合并为一个&lt;/li&gt;
+&lt;li&gt;国内直连( ipv4 + ipv6 )，游戏平台自选直连和代理，哔哩哔哩自选直连和代理， Netflix 自选直连和代理，其他国外一律代理&lt;/li&gt;
+&lt;li&gt;有一个单独的文件用以手动添加一些直连的域名(用于 DDNS NAS 的域名)&lt;/li&gt;
+&lt;li&gt;使用 Doh 进行域名解析&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;android&#34;&gt;Android&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;下载 V2rayNG 客户端, &lt;a href=&#34;https://github.com/2dust/v2rayNG/releases&#34;&gt;github&lt;/a&gt; 或 &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.v2ray.ang&#34;&gt;Google play&lt;/a&gt; 选一。&lt;br&gt;
-&lt;em&gt;如果无法下载可以尝试使用 &lt;strong&gt;&lt;a href=&#34;https://mirror.ghproxy.com/https://github.com/2dust/v2rayNG/releases/download/1.8.35/v2rayNG_1.8.35_arm64-v8a.apk&#34;&gt;https://mirror.ghproxy.com/https://github.com/2dust/v2rayNG/releases/download/1.8.35/v2rayNG_1.8.35_arm64-v8a.apk&lt;/a&gt;&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;复制节点信息后点击 V2rayNG 上方“+”，“从剪贴板导入”&lt;/li&gt;
-&lt;li&gt;点击右上角三个点，“测试全部配置真连接”，若出现测试结果，说明节点没问题（用不了是你的问题）&lt;/li&gt;
-&lt;li&gt;点击右下角的圆形图标，开始使用吧&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;ios&#34;&gt;Ios&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;搞个非国区帐号，并下载 Shadowrocket &lt;strong&gt;（国区里的是假的）&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;复制节点信息后打开 Shadowrocket 即可自动导入&lt;/li&gt;
-&lt;li&gt;打开上方开关，开始使用吧&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&#34;有测试结果但节点无法使用&#34;&gt;有测试结果但节点无法使用&lt;/h1&gt;
-&lt;h2 id=&#34;windows-1&#34;&gt;Windows&lt;/h2&gt;
+&lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;以默认为主，修改部分条目&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;/pref.ini&lt;br&gt;
+添加多条机场订阅并设置API密钥&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[common]
+  api_mode=true
+  api_access_token=API密钥 
+  default_url=机场订阅地址1|机场订阅地址2|机场订阅地址3
+  enable_insert=false
+  insert_url=如果需要在上面几个订阅地址外额外添加节点，可以将enable_insert设置为true并把配置地址放在这里，同样以“|”分隔
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;从 url 获取规则片段，并分成几个策略组&lt;br&gt;
+这里需要注意的是：&lt;br&gt;
+&lt;strong&gt;因为clash匹配规则是自上而下匹配，当匹配上一条规则后，后面的规则就不再进行匹配了，所以需要将一些匹配范围小的放在上面，匹配范围大的放在下面&lt;/strong&gt;&lt;br&gt;
+曾经犯的错误：仅有部分节点可以使用22端口（平时是专门用一个节点代理ssh流量的），而匹配22端口的“SSHRules.list”放在了“已墙域名”（已墙域名里面有 Github 的域名）的后面，导致了无法通过ssh连接上 Github 。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[rulesets]
+    ruleset=DIRECT,rules/DirectDomain.list
+    ;DirectDomain.list  手动添加的直连域名
+
+
+    ruleset=Proxy,rules/ProxyDomain.list
+    ;ProxyDomain.list  手动添加的代理域名
+
+    ruleset=拦截,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/BanAD.list,86400
+    ruleset=拦截,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/BanProgramAD.list,86400
+    ;广告域名
+
+    ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list,86400
+    ;直连域名
+
+    ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list,86400
+    ;局域网IP段
+
+    ruleset=DIRECT,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaIPs/ChinaIPs.list,86400
+    ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list,86400
+    ruleset=DIRECT,[]GEOIP,CN
+    ;中国IP段
+
+    ruleset=SSH,rules/SSHRules.list
+    ;针对22端口的分流
+
+    ruleset=Bilibili,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Ruleset/Bilibili.list,86400
+    ;Bilibili域名
+    ruleset=Netflix,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Netflix.list,86400
+    ;Netflix域名 IP段
+    ruleset=OpenAI,https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/OpenAI/OpenAI.list,86400
+    ;openai域名
+    ruleset=微软服务,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list,86400
+    ;微软服务
+    ruleset=PT Trackers,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Ruleset/PrivateTracker.list,86400
+    ;PT Trackers
+    ruleset=Game,https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Steam/Steam.list,86400
+    ;steam域名
+    ruleset=Game,https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Epic/Epic.list,86400
+    ;epic域名
+    ruleset=Game,https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Xbox/Xbox.list,86400
+    ;Xbox域名
+    ruleset=Game,https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/EA/EA.list,86400
+    ;EA域名
+
+
+    ruleset=Proxy,https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/ProxyGFWlist.list,86400
+    ;已墙域名
+
+    ruleset=Proxy,[]FINAL
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;为策略组添加节点&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[proxy_groups]
+    custom_proxy_group=Proxy`select`.*
+    custom_proxy_group=SSH`select`[]DIRECT`[]Proxy`.*
+    custom_proxy_group=Game`select`[]DIRECT`[]Proxy`.*
+    custom_proxy_group=微软服务`select`.*
+    custom_proxy_group=PT Trackers`select`[]DIRECT`[]Proxy`.*
+    custom_proxy_group=Bilibili`select`[]DIRECT`[]Proxy`.*
+    custom_proxy_group=OpenAI`select`[]DIRECT`[]Proxy`.*
+    custom_proxy_group=Netflix`select`[]Proxy`.*
+    custom_proxy_group=拦截`select`[]REJECT`[]DIRECT`[]Proxy
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;/base/all_base.tpl&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;{% if request.target == &amp;#34;clash&amp;#34; or request.target == &amp;#34;clashr&amp;#34; %}
+    dns:
+        enable: true
+        ipv6: false
+        listen: 0.0.0.0:53
+        enhanced-mode: fake-ip
+        fake-ip-range: 198.18.0.1/16
+        fake-ip-filter:
+            - &amp;#39;*.lan&amp;#39;
+            - &amp;#39;localhost.ptlogin2.qq.com&amp;#39;
+            - &amp;#39;dns.msftncsi.com&amp;#39;
+            - &amp;#39;www.msftncsi.com&amp;#39;
+            - &amp;#39;www.msftconnecttest.com&amp;#39;
+        nameserver:
+            - https://223.5.5.5/dns-query
+        fallback:
+            - https://223.5.5.5/dns-query
+        fallback-filter:
+            geoip: true
+            ipcidr:
+            - 240.0.0.0/4
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;最后将其部署在了服务器上，并用 Nginx 配置了反向代理和 SSL 加密，得益于 Clash 的在多个平台上都有其客户端，将每个客户端的订阅地址修改为 subconverter 提供的配置文件地址，就可以实现了全平台的代理统一&lt;br&gt;
+使用 docker 部署，避免&lt;a href=&#34;https://www.youtube.com/watch?v=FclVhxp1g0Y&amp;amp;ab_channel=%E4%B8%8D%E8%89%AF%E6%9E%97&#34;&gt;subconverter&lt;/a&gt; 的漏洞&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;点击“重启服务”试试&lt;/li&gt;
-&lt;li&gt;关闭除 V2rayN 以外的代理软件和浏览器的代理插件并重启 V2rayN&lt;/li&gt;
-&lt;li&gt;重启电脑&lt;/li&gt;
-&lt;li&gt;换手机&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://hub.docker.com/r/tindy2013/subconverter&#34;&gt;docker hub 镜像&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;android-1&#34;&gt;Android&lt;/h2&gt;
+&lt;h2 id=&#34;可用于-subconverter-的规则片段&#34;&gt;可用于 subconverter 的规则片段&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;重启手机&lt;/li&gt;
-&lt;li&gt;换苹果&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Loyalsoldier/clash-rules/blob/master/README.md&#34;&gt;github.com/Loyalsoldier/clash-rules&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ACL4SSR/ACL4SSR/tree/master/Clash&#34;&gt;github.com/ACL4SSR/ACL4SSR&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash&#34;&gt;github.com/blackmatrix7/ios_rule_script&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/DivineEngine/Profiles/tree/master/Clash/RuleSet&#34;&gt;github.com/DivineEngine/Profiles&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;ios-1&#34;&gt;Ios&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;重启手机&lt;/li&gt;
-&lt;li&gt;换安卓&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;节点可用但速度慢&#34;&gt;节点可用但速度慢&lt;/h1&gt;
-&lt;h2 id=&#34;寻找优选-ip&#34;&gt;寻找优选 IP&lt;/h2&gt;
-&lt;h3 id=&#34;1自己找&#34;&gt;1.自己找&lt;/h3&gt;
-&lt;p&gt;因为使用了 Cloudflare CDN ，默认分配的节点可能比较慢（通常比较慢），可以在 Windows 下下载 &lt;a href=&#34;https://github.com/XIU2/CloudflareSpeedTest/releases&#34;&gt;CloudflareSpeedTest&lt;/a&gt; ,关闭所有代理软件后解压并双击运行 CloudflareST.exe 文件，等待测速完成。测速结果第一行就是既下载速度最快、又平均延迟最低的最快 IP&lt;/p&gt;
-&lt;h3 id=&#34;2用现成的&#34;&gt;2.用现成的&lt;/h3&gt;
-&lt;p&gt;在 &lt;a href=&#34;https://stock.hostmonit.com/CloudFlareYes&#34;&gt;在线成品优选ip网站&lt;/a&gt; 中根据你的运营商选择一个速度较快且延迟较低的 IP&lt;br&gt;
-&lt;em&gt;注：延迟低不代表速度一定快，通常速度快比延迟低更重要&lt;/em&gt;&lt;/p&gt;
-&lt;h2 id=&#34;优选-ip-的使用&#34;&gt;优选 IP 的使用&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;这个 IP 的测试结果仅在当前网络环境下有效，换了不一定好。优选 IP 可能会失效，若使用优选 IP 后无法连接节点，请去掉优选 IP 尝试或更换优选 IP&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h1 id=&#34;linux-平台的调教过程&#34;&gt;Linux 平台的调教过程&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;系统为 Debian 12，X86架构&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;因为我的主力机是 Windows，Linux主要是作为服务器使用，故而并没有安装图形化桌面，使用的是命令行，所以这部分教程也会是命令行的版本&lt;br&gt;
+首先，下载&lt;a href=&#34;https://github.com/MetaCubeX/mihomo/releases&#34;&gt;Clash Meta 核心&lt;/a&gt;，并解压&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;参考命令，文件名要根据实际替换&lt;/em&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;wget https://github.com/MetaCubeX/mihomo/releases/download/v1.18.3/mihomo-linux-amd64-v1.18.3.gz &amp;amp;&amp;amp; gunzip mihomo-linux-amd64-v1.18.3.gz
+chmod +x mihomo-linux-amd64-v1.18.3
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;em&gt;写这一部分的时间是2024-04-10，已经经历过了Clash生态的全面封杀，原本的Clash内核已经不再更新了，所以这里选择了Clash Meta内核&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;接下来，下载&lt;a href=&#34;https://github.com/Loyalsoldier/geoip/releases&#34;&gt;Country.mmdb&lt;/a&gt; ，并放到mihomo-linux-amd64的同一目录下&lt;br&gt;
+然后下载配置文件&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;wget https://域名或IP:端口/sub?target=clash&amp;amp;token=API密钥
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;最后，就可以启动了&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;./mihomo-linux-amd64-v1.18.3 -d ./
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;到了这一步就可以正常使用了，默认的端口应该是7890（央视,7890.jpg）&lt;br&gt;
+可以到其他程序中指定，也可以使用命令设置环境变量&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;export https_proxy=&amp;#34;http://127.0.0.1:7890&amp;#34;
+export http_proxy=&amp;#34;http://127.0.0.1:7890&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;将clash-meta设置为服务并开机自启&#34;&gt;将Clash Meta设置为服务，并开机自启&lt;/h2&gt;
+&lt;p&gt;参考下面的配置文件在 &lt;strong&gt;/etc/systemd/system&lt;/strong&gt; 创建文件&lt;br&gt;
+clash_meta.service&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[Unit]
+Description=Clash_Meta
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=/home/debian/clash_meta/mihomo-linux-amd64-v1.18.3 -d /home/debian/clash_meta
+User=debian
+
+[Install]
+WantedBy=multi-user.target
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;重载并启动&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo systemctl daemon-reload
+sudo systemctl start clash_meta
+sudo systemctl enable clash_meta # 开机自启
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;自动更新配置文件&#34;&gt;自动更新配置文件&lt;/h2&gt;
+&lt;h3 id=&#34;脚本&#34;&gt;脚本&lt;/h3&gt;
+&lt;p&gt;随便找个地方，放更新脚本（这里是和mihomo-linux-amd64-v1.18.3放在了一起&lt;br&gt;
+update_config.sh&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#!/bin/bash
+cd /home/debian/clash_meta
+mv config.yaml config.yaml.back # 备份原有的配置文件
+wget &amp;#34;https://域名或IP:端口/sub?target=clash&amp;amp;token=API密钥&amp;#34; -O config.yaml # 下载新的配置文件
+sudo systemctl restart clash_meta.service # 重启 Clash Meta
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;设置执行权限&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;chmod +x update_config.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;添加定时任务&#34;&gt;添加定时任务&lt;/h3&gt;
+&lt;p&gt;使用命令编辑定时任务&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;crontab -e
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在最后面新加一行&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;0 3 * * *   &amp;#34;/home/debian/clash_meta/update_config.sh&amp;#34; &amp;gt; /dev/null
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;其中前面的时间格式为 &lt;strong&gt;m h  dom mon dow&lt;/strong&gt; 即 分，时，日，月，周（可以参考&lt;a href=&#34;https://zh.wikipedia.org/wiki/Cron&#34;&gt;Wiki&lt;/a&gt;）&lt;/p&gt;
+&lt;p&gt;像上面的写法，就是每天的凌晨三点会执行一次（最好是选在没有人用的凌晨执行，毕竟需要重启Clash）&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;双击编辑节点，用优选到的 IP 替换到“地址”栏内的内容并将原“地址”栏内的内容放进“伪装域名”栏内&lt;/p&gt;
-&lt;h1 id=&#34;其他补充知识&#34;&gt;其他补充知识&lt;/h1&gt;
-&lt;h2 id=&#34;国内外分流&#34;&gt;国内外分流&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;因为节点的延时较高且ip为美国，为了避免通往国内的流量进入代理而导致使用体验降低以及IP变动而导致国内软件的账号风控，建议使用“绕过局域网和大陆”的分流规则（当然如果你有自己的想法也是很好哒）&lt;/em&gt;&lt;/p&gt;
-&lt;h3 id=&#34;教程&#34;&gt;教程：&lt;/h3&gt;
-&lt;h4 id=&#34;android-v2rayng&#34;&gt;Android V2rayNG：&lt;/h4&gt;
-&lt;p&gt;在左上角，依次点击「设置」「预定义规则」，选择「绕过局域网及大陆地址」即可实现分流功能。&lt;/p&gt;
-&lt;h4 id=&#34;windows-v2rayn&#34;&gt;Windows V2rayN：&lt;/h4&gt;
-&lt;p&gt;在软件下方路由处选择「绕过大陆(Whitelist)」即可（默认应该就是这个）&lt;/p&gt;
-&lt;h4 id=&#34;iosipados-shadowrocket&#34;&gt;IOS/IpadOS Shadowrocket：&lt;/h4&gt;
-&lt;p&gt;好久不用记不清了，记得默认的配置文件就是绕过大陆的吧&lt;/p&gt;
-&lt;h2 id=&#34;什么是节点信息&#34;&gt;什么是“节点信息”？&lt;/h2&gt;
-&lt;p&gt;通常，节点信息都是一串“乱码”，比如现在的就是上面以vmess开头的这一串。
-以后可能会变成其他内容开头，但都会是这样的“乱码”的样式。&lt;/p&gt;
-- https://blog.lty520.faith/%E9%9A%8F%E8%AE%B0/%E7%99%BD%E5%AB%96%E8%8A%82%E7%82%B9%E7%9A%84%E4%BD%BF%E7%94%A8/ - </description>
+&lt;h1 id=&#34;参考文章&#34;&gt;参考文章&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://mybj.org/2021/09/subconverter/&#34;&gt;利用 subconverter 实现订阅合并与转换&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/tindy2013/subconverter&#34;&gt;github.com/tindy2013/subconverter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.xianyu.one/2021/05/12/Linux/tutorial/subconverter/&#34;&gt;subconverter 订阅转换及搭配 clash 使用教程&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.cfw.lbyczf.com/&#34;&gt;Clash for Windows&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+- https://blog.lty520.faith/%E5%8D%9A%E6%96%87/%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%BB%9F%E4%B8%80%E4%BB%A3%E7%90%86clash/ - </description>
         </item>
     
     
